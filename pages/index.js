@@ -1,4 +1,5 @@
 import Typewriter from 'typewriter-effect';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -26,6 +27,18 @@ export default function Home() {
           }}
         />
       </h1>
+
+      <Link href="/validator" style={{
+        backgroundColor: 'white',
+        color: 'black',
+        padding: '10px 20px',
+        borderRadius: '10px',
+        fontWeight: 'bold',
+        textDecoration: 'none',
+        marginTop: '20px'
+      }}>
+        Validator Info
+      </Link>
     </main>
   );
 }
