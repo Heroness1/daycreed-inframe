@@ -20,7 +20,7 @@ export default function Home() {
       <h1 style={{ fontSize: '2rem', marginBottom: '10px' }}>
         <Typewriter
           options={{
-            strings: ['Daycreeed', 'Validator Node Operator', 'Infra Enthusiast'],
+            strings: ['Daycreed', 'Validator Node Operator', 'Web3 Enthusiast'],
             autoStart: true,
             loop: true,
           }}
