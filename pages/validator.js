@@ -1,39 +1,35 @@
-import { useState } from 'react';
-
-const validators = ['Akash', 'Gitopia', 'Q Blockchain', 'Avail'];
-
 export default function ValidatorPage() {
-  const [active, setActive] = useState(null);
+  const validators = [
+    { name: 'Akash', link: 'https://akashnet.io' },
+    { name: 'Gitopia', link: 'https://gitopia.com' },
+    { name: 'Q Blockchain', link: 'https://q.org' },
+    { name: 'Avail', link: 'https://availproject.org' },
+  ];
 
   return (
     <main style={{
-      padding: '2rem',
-      fontFamily: 'Sora, sans-serif',
-      color: 'white',
-      background: 'radial-gradient(circle at top, #1a1a1a, #0f0f0f)',
-      minHeight: '100vh',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      height: '100vh',
+      background: 'radial-gradient(circle at 30% 30%, #1a1a1a, #0f0f0f)',
+      color: 'white'
     }}>
       <h1 style={{ fontSize: '2rem', marginBottom: '1rem' }}>My Validators</h1>
-
-      {validators.map((name, i) => (
-        <div
-          key={i}
-          onClick={() => setActive(i)}
-          style={{
-            marginBottom: '1rem',
-            padding: '1rem',
-            background: active === i ? '#333' : '#222',
-            borderRadius: '0.75rem',
-            border: active === i ? '1px solid #888' : '1px solid transparent',
-            cursor: 'pointer',
-            transform: active === i ? 'scale(1.02)' : 'scale(1)',
-            transition: 'all 0.2s ease-in-out',
-          }}
-        >
-          {name}
-        </div>
-      ))}
-
+      <ul style={{ listStyle: 'none', padding: 0 }}>
+        {validators.map((v, i) => (
+          <li key={i} style={{ margin: '0.5rem 0' }}>
+            <a href={v.link} target="_blank" rel="noopener noreferrer" style={{
+              color: '#61dafb',
+              textDecoration: 'none',
+              fontSize: '1.2rem'
+            }}>
+              {v.name}
+            </a>
+          </li>
+        ))}
+      </ul>
       <button
         onClick={() => window.location.href = '/'}
         style={{
