@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const validators = ['Akash', 'Gitopia', 'Q Blockchain', 'Avail'];
 
@@ -27,7 +27,7 @@ export default function ValidatorPage() {
             border: active === i ? '1px solid #88f' : '1px solid transparent',
             cursor: 'pointer',
             transform: active === i ? 'scale(1.02)' : 'scale(1)',
-            transition: 'all 0.2s ease-in-out',
+            transition: 'all 0.2s ease-in-out'
           }}
         >
           {name}
@@ -35,12 +35,12 @@ export default function ValidatorPage() {
       ))}
 
       <button
-        onClick={() => window.location.href = '/'}
+        onClick={() => (window.location.href = '/')}
         style={{
           marginTop: '2rem',
           padding: '0.5rem 1rem',
           background: '#333',
-          color: '#fff',
+          color: 'white',
           border: '1px solid #555',
           borderRadius: '0.5rem',
           cursor: 'pointer'
