@@ -1,42 +1,52 @@
-export default function Validator() {
+import { useState } from 'react';
+
+const validators = ['Akash', 'Gitopia', 'Q Blockchain', 'Avail'];
+
+export default function ValidatorPage() {
+  const [active, setActive] = useState(null);
+
   return (
     <main style={{
       padding: '2rem',
       fontFamily: 'Sora, sans-serif',
       color: 'white',
-      backgroundColor: '#0f0f0f',
-      minHeight: '100vh'
+      background: 'radial-gradient(circle at top, #1a1a1a, #0f0f0f)',
+      minHeight: '100vh',
     }}>
-      <h1 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Validator Nodes</h1>
-      
-      <ul style={{ listStyle: 'none', padding: 0 }}>
-        <li style={cardStyle}>Akash – Cosmos SDK – Running on VPS</li>
-        <li style={cardStyle}>Gitopia – Cosmos SDK – Termius CLI</li>
-        <li style={cardStyle}>QBlockchain – EVM-based – VPS Testing</li>
-        <li style={cardStyle}>Avail – EVM-based – Validator Light Client</li>
-      </ul>
+      <h1 style={{ fontSize: '2rem', marginBottom: '1rem' }}>My Validators</h1>
 
-      <a href="/" style={{
-        display: 'inline-block',
-        marginTop: '2rem',
-        padding: '0.75rem 1.5rem',
-        backgroundColor: '#ffffff10',
-        color: 'white',
-        borderRadius: '0.5rem',
-        textDecoration: 'none',
-        fontWeight: 'bold',
-        transition: 'background 0.3s'
-      }}>
-        ← Back to Home
-      </a>
+      {validators.map((name, i) => (
+        <div
+          key={i}
+          onClick={() => setActive(i)}
+          style={{
+            marginBottom: '1rem',
+            padding: '1rem',
+            background: active === i ? '#333' : '#222',
+            borderRadius: '0.75rem',
+            border: active === i ? '1px solid #888' : '1px solid transparent',
+            cursor: 'pointer',
+            transform: active === i ? 'scale(1.02)' : 'scale(1)',
+            transition: 'all 0.2s ease-in-out',
+          }}
+        >
+          {name}
+        </div>
+      ))}
+
+      <button
+        onClick={() => window.location.href = '/'}
+        style={{
+          marginTop: '2rem',
+          padding: '0.5rem 1rem',
+          background: '#333',
+          color: 'white',
+          border: '1px solid #555',
+          borderRadius: '0.5rem',
+        }}
+      >
+        Back
+      </button>
     </main>
   );
 }
-
-const cardStyle = {
-  backgroundColor: '#1a1a1a',
-  padding: '1rem',
-  marginBottom: '1rem',
-  borderRadius: '0.75rem',
-  boxShadow: '0 0 10px rgba(255, 255, 255, 0.05)'
-};
