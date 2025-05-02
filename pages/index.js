@@ -5,7 +5,7 @@ import { FaTwitter, FaGithub } from 'react-icons/fa'
 
 export default function Home() {
   const [typedText, setTypedText] = useState('')
-  const fullText = 'Welcome'
+  const fullText = 'Hi!'
 
   useEffect(() => {
     let i = 0
@@ -25,6 +25,13 @@ export default function Home() {
       <main className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-8">
         <h1 className="text-4xl font-bold mb-4">{typedText}</h1>
 
+        {/* AVATAR */}
+        <img
+          src="/avatar.png"
+          alt="Avatar"
+          className="w-32 h-32 rounded-full mx-auto mb-6 shadow-lg"
+        />
+
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -32,22 +39,14 @@ export default function Home() {
           className="text-center"
         >
           <p className="text-lg mb-8">
-            Explore my journey in Web3, testnets, and validator setups.
+            My List on Web3.
           </p>
 
-          <div className="flex space-x-6 justify-center mb-6">
-            <a
-              href="https://twitter.com/Daycreeed"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+          <div className="flex space-x-6 justify-center">
+            <a href="https://twitter.com/Daycreeed" target="_blank" rel="noopener noreferrer">
               <FaTwitter className="text-2xl hover:text-blue-400 transition" />
             </a>
-            <a
-              href="https://github.com/Heroness1"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://github.com/Heroness1" target="_blank" rel="noopener noreferrer">
               <FaGithub className="text-2xl hover:text-gray-400 transition" />
             </a>
           </div>
