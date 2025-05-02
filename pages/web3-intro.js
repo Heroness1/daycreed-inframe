@@ -52,7 +52,7 @@ export default function Web3Intro() {
 
       {/* Tombol Back */}
       <div className="flex justify-center mt-10">
-        <a href="/validator">
+        <a href="/testing">
           <button className="px-5 py-2 bg-white text-black rounded hover:bg-gray-200 transition">
             Back
           </button>
