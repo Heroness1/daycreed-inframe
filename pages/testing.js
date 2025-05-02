@@ -6,18 +6,22 @@ import { motion } from 'framer-motion'
 const testingData = [
   {
     name: 'Monad',
+    link: '/monad',
     website: 'https://testnet.monad.xyz/',
   },
   {
     name: '0GLabs',
+    link: '/0glabs',
     website: 'https://0g.ai/testnet-guide',
   },
   {
     name: 'Seismic',
+    link: '/seismic',
     website: 'https://www.seismic.systems/',
   },
   {
     name: 'Aztec Protocol',
+    link: '/aztec',
     website: 'https://aztec.network/',
   },
 ]
@@ -69,7 +73,7 @@ export default function Testing() {
               initial="hidden"
               animate="visible"
             >
-              <Card title={v.name} url={v.website} />
+              <Card title={v.name} link={v.link} website={v.website} />
             </motion.div>
           ))}
         </div>
