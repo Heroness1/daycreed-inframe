@@ -54,7 +54,7 @@ export default function Home() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <p className="text-lg mb-8">My List on Web3.</p>
+          <p className="text-lg mb-8">Angga Fadillah.</p>
 
           <div className="flex space-x-6 justify-center">
             <a href="https://twitter.com/Daycreeed" target="_blank" rel="noopener noreferrer">
