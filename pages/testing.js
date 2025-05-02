@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { useState, useEffect } from 'react'
 import Card from '../components/Card'
 
-const Now Testing = [
+const Testing = [
   {
     name: 'Monad',
     website: 'https://testnet.monad.xyz/',
@@ -21,9 +21,9 @@ const Now Testing = [
   },
 ]
 
-export default function Validator() {
+export default function Testing() {
   const [typedText, setTypedText] = useState('')
-  const fullText = 'Validator Nodes'
+  const fullText = 'Testing Network'
 
   useEffect(() => {
     let i = 0
@@ -46,7 +46,7 @@ export default function Validator() {
         </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
-          {validators.map((v, index) => (
+          {testing.map((v, index) => (
             <Card key={index} title={v.name} url={v.website} />
           ))}
         </div>
