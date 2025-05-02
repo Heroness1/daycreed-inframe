@@ -1,29 +1,26 @@
 import Head from 'next/head'
-import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { FaTwitter, FaGithub } from 'react-icons/fa'
+import Typewriter from 'typewriter-effect'
 
 export default function Home() {
-  const [typedText, setTypedText] = useState('')
-  const fullText = 'Hi!'
-
-  useEffect(() => {
-    let i = 0
-    const interval = setInterval(() => {
-      setTypedText(fullText.slice(0, i + 1))
-      i++
-      if (i === fullText.length) clearInterval(interval)
-    }, 100)
-    return () => clearInterval(interval)
-  }, [])
-
   return (
     <>
       <Head>
         <title>Daycreed</title>
       </Head>
       <main className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-8">
-        <h1 className="text-4xl font-bold mb-4">{typedText}</h1>
+        <h1 className="text-4xl font-bold mb-4">
+          <Typewriter
+            options={{
+              strings: ['Yapper', 'Web3 Enthusiast', 'Node', 'Testnet', 'Validator'],
+              autoStart: true,
+              loop: true,
+              pauseFor: 2000,
+              deleteSpeed: 50,
+            }}
+          />
+        </h1>
 
         {/* AVATAR */}
         <img
