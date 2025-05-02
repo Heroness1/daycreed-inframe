@@ -1,54 +1,36 @@
 import Head from 'next/head'
-import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { FaTwitter, FaGithub, FaSun, FaMoon } from 'react-icons/fa'
+import { FaTwitter, FaGithub } from 'react-icons/fa'
 import Typewriter from 'typewriter-effect'
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(true)
-
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }, [darkMode])
-
   return (
     <>
       <Head>
         <title>Daycreed</title>
       </Head>
-      <main className="min-h-screen bg-white dark:bg-black text-black dark:text-white flex flex-col items-center justify-center p-8 relative overflow-hidden">
+      <main className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-8 relative overflow-hidden">
 
         {/* Animated Pirate Ship Background */}
         <motion.div
-          className="absolute inset-0 z-0 pointer-events-none"
+          className="absolute inset-0 z-0"
           initial={{ x: -30 }}
           animate={{ x: 30 }}
           transition={{
             repeat: Infinity,
             repeatType: 'reverse',
-            duration: 20,
+            duration: 12,
             ease: 'easeInOut',
           }}
         >
           <img
             src="/pirate-ship.png"
             alt="Pirate Ship Background"
-            className="w-full h-full object-cover opacity-20"
+            className="w-full h-full object-cover opacity-40 brightness-110"
           />
         </motion.div>
 
-        {/* Toggle Button */}
-        <button
-          onClick={() => setDarkMode(!darkMode)}
-          className="absolute top-6 right-6 text-xl z-20"
-        >
-          {darkMode ? <FaSun /> : <FaMoon />}
-        </button>
-
+        {/* Content */}
         <h1 className="text-4xl font-bold mb-4 z-10">
           <Typewriter
             options={{
@@ -86,7 +68,7 @@ export default function Home() {
 
           <div className="mt-10">
             <a href="/testing">
-              <button className="px-6 py-3 bg-black dark:bg-white text-white dark:text-black rounded hover:opacity-80 transition">
+              <button className="px-6 py-3 bg-white text-black rounded hover:opacity-80 transition">
                 Go to Testing
               </button>
             </a>
