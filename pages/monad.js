@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 
 const monadApps = [
   { name: 'Kuru Exchange', url: 'https://www.kuru.io/markets' },
@@ -26,28 +27,46 @@ export default function MonadPage() {
     return () => clearInterval(interval)
   }, [])
 
+  const fadeIn = (delay = 0) => ({
+    hidden: { opacity: 0, y: 20, filter: 'blur(4px)' },
+    visible: {
+      opacity: 1,
+      y: 0,
+      filter: 'blur(0px)',
+      transition: { delay, duration: 0.5 },
+    },
+  })
+
   return (
     <>
       <Head>
         <title>Monad Ecosystem</title>
       </Head>
       <main className="min-h-screen bg-black text-white p-8 flex flex-col items-center space-y-10">
-        <h1 className="text-3xl md:text-4xl font-bold border-b border-gray-600 pb-2">
+        <motion.h1
+          className="text-3xl md:text-4xl font-bold border-b border-gray-600 pb-2"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.5 }}
+        >
           {typedText}
-        </h1>
+        </motion.h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-3xl">
           {monadApps.map((app, idx) => (
-            <a
+            <motion.a
               key={idx}
               href={app.url}
               target="_blank"
               rel="noopener noreferrer"
+              variants={fadeIn(idx * 0.1)}
+              initial="hidden"
+              animate="visible"
               className="p-4 bg-zinc-800 hover:bg-zinc-700 rounded-xl transition shadow"
             >
               <h2 className="text-lg font-semibold">{app.name}</h2>
               <p className="text-sm text-zinc-400 mt-1">Visit →</p>
-            </a>
+            </motion.a>
           ))}
         </div>
 
