@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import Typewriter from 'typewriter-effect'
 import { FaTwitter, FaGithub } from 'react-icons/fa'
+import Typewriter from 'typewriter-effect'
 import ThemeToggle from '../components/ThemeToggle'
 
 export default function Home() {
@@ -9,10 +9,9 @@ export default function Home() {
       <Head>
         <title>Daycreed</title>
       </Head>
-      <main className="min-h-screen transition-colors duration-300 bg-white text-black dark:bg-black dark:text-white flex flex-col items-center justify-center p-8 relative">
-        <div className="absolute top-6 right-6">
-          <ThemeToggle />
-        </div>
+      <main className="min-h-screen flex flex-col items-center justify-center p-8 transition-colors duration-300 bg-white text-black dark:bg-black dark:text-white relative">
+
+        <ThemeToggle />
 
         <h1 className="text-4xl font-bold mb-4">
           <Typewriter
