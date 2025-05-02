@@ -1,15 +1,30 @@
 import Head from 'next/head'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { FaTwitter, FaGithub } from 'react-icons/fa'
 import Typewriter from 'typewriter-effect'
 
 export default function Home() {
+  const [darkMode, setDarkMode] = useState(true)
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', darkMode)
+  }, [darkMode])
+
   return (
     <>
       <Head>
         <title>Daycreed</title>
       </Head>
-      <main className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-8">
+      <main className={`min-h-screen ${darkMode ? 'bg-black text-white' : 'bg-white text-black'} flex flex-col items-center justify-center p-8 transition-colors`}>
+        {/* Toggle Button */}
+        <button
+          onClick={() => setDarkMode(!darkMode)}
+          className="absolute top-5 right-5 px-4 py-2 bg-gray-300 dark:bg-gray-800 text-black dark:text-white rounded transition"
+        >
+          {darkMode ? 'Light Mode' : 'Dark Mode'}
+        </button>
+
         <h1 className="text-4xl font-bold mb-4">
           <Typewriter
             options={{
@@ -22,7 +37,6 @@ export default function Home() {
           />
         </h1>
 
-        {/* AVATAR */}
         <img
           src="/avatar.png"
           alt="Avatar"
@@ -35,9 +49,7 @@ export default function Home() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <p className="text-lg mb-8">
-            My List on Web3.
-          </p>
+          <p className="text-lg mb-8">Angga Fadillah.</p>
 
           <div className="flex space-x-6 justify-center">
             <a href="https://twitter.com/Daycreeed" target="_blank" rel="noopener noreferrer">
