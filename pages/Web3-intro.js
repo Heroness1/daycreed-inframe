@@ -1,4 +1,4 @@
-import { Typewriter } from 'react-simple-typewriter';
+import { Typewriter } from 'typewriter-effect';
 
 export default function Web3Intro() {
   return (
