@@ -1,37 +1,31 @@
 import Head from 'next/head'
-import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
 import { FaTwitter, FaGithub } from 'react-icons/fa'
 import Typewriter from 'typewriter-effect'
 
 export default function Home() {
+  const [darkMode, setDarkMode] = useState(true)
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', darkMode)
+  }, [darkMode])
+
   return (
     <>
       <Head>
         <title>Daycreed</title>
       </Head>
-      <main className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-8 relative overflow-hidden">
-
-        {/* Animated Pirate Ship Background */}
-        <motion.div
-          className="absolute inset-0 z-0"
-          initial={{ x: -30 }}
-          animate={{ x: 30 }}
-          transition={{
-            repeat: Infinity,
-            repeatType: 'reverse',
-            duration: 12,
-            ease: 'easeInOut',
-          }}
+      <main className={`min-h-screen flex flex-col items-center justify-center p-8 transition-colors duration-300 ${darkMode ? 'bg-black text-white' : 'bg-white text-black'}`}>
+        {/* Toggle Theme Button */}
+        <button
+          onClick={() => setDarkMode(!darkMode)}
+          className="absolute top-6 right-6 px-4 py-2 rounded bg-gray-700 text-white hover:bg-gray-600 dark:bg-white dark:text-black dark:hover:bg-gray-200"
         >
-          <img
-            src="/pirate-ship.png"
-            alt="Pirate Ship Background"
-            className="w-full h-full object-cover opacity-40 brightness-110"
-          />
-        </motion.div>
+          Toggle {darkMode ? 'Light' : 'Dark'}
+        </button>
 
         {/* Content */}
-        <h1 className="text-4xl font-bold mb-4 z-10">
+        <h1 className="text-4xl font-bold mb-4">
           <Typewriter
             options={{
               strings: ['Yapper', 'Web3 Enthusiast', 'Node', 'Testnet', 'Validator'],
@@ -46,34 +40,25 @@ export default function Home() {
         <img
           src="/avatar.png"
           alt="Avatar"
-          className="w-32 h-32 rounded-full mx-auto mb-6 shadow-lg z-10"
+          className="w-32 h-32 rounded-full mx-auto mb-6 shadow-lg"
         />
 
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center z-10"
-        >
-          <p className="text-lg mb-8">Angga Fadillah</p>
+        <p className="text-lg mb-8">Angga Fadillah</p>
 
-          <div className="flex space-x-6 justify-center">
-            <a href="https://twitter.com/Daycreeed" target="_blank" rel="noopener noreferrer">
-              <FaTwitter className="text-2xl hover:text-blue-400 transition" />
-            </a>
-            <a href="https://github.com/Heroness1" target="_blank" rel="noopener noreferrer">
-              <FaGithub className="text-2xl hover:text-gray-400 transition" />
-            </a>
-          </div>
+        <div className="flex space-x-6 justify-center mb-10">
+          <a href="https://twitter.com/Daycreeed" target="_blank" rel="noopener noreferrer">
+            <FaTwitter className="text-2xl hover:text-blue-400 transition" />
+          </a>
+          <a href="https://github.com/Heroness1" target="_blank" rel="noopener noreferrer">
+            <FaGithub className="text-2xl hover:text-gray-400 transition" />
+          </a>
+        </div>
 
-          <div className="mt-10">
-            <a href="/testing">
-              <button className="px-6 py-3 bg-white text-black rounded hover:opacity-80 transition">
-                Go to Testing
-              </button>
-            </a>
-          </div>
-        </motion.div>
+        <a href="/testing">
+          <button className="px-6 py-3 bg-black text-white rounded hover:opacity-80 transition dark:bg-white dark:text-black">
+            Go to Testing
+          </button>
+        </a>
       </main>
     </>
   )
