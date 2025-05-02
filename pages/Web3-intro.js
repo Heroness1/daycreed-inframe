@@ -1,4 +1,4 @@
-import { Typewriter } from 'typewriter-effect';
+import Typewriter from 'typewriter-effect';
 
 export default function Web3Intro() {
   return (
