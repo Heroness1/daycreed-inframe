@@ -10,4 +10,11 @@ export default function ThemeToggle() {
       className="absolute top-6 right-6 text-2xl transition hover:scale-110"
       aria-label="Toggle Theme"
     >
-      {darkMode ? <
+      {darkMode ? (
+        <FaMoon className="text-white" />
+      ) : (
+        <FaSun className="text-yellow-500" />
+      )}
+    </button>
+  )
+}
