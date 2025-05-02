@@ -1,5 +1,5 @@
-import { FaSun, FaMoon } from 'react-icons/fa'
 import { useTheme } from '../context/ThemeContext'
+import { FaSun, FaMoon } from 'react-icons/fa'
 
 export default function ThemeToggle() {
   const { darkMode, setDarkMode } = useTheme()
@@ -7,10 +7,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={() => setDarkMode(!darkMode)}
-      className="absolute top-6 right-6 flex items-center gap-2 px-4 py-2 rounded bg-gray-200 text-black hover:bg-gray-300 dark:bg-zinc-700 dark:text-white dark:hover:bg-zinc-600 transition"
+      className="absolute top-6 right-6 text-2xl transition hover:scale-110"
+      aria-label="Toggle Theme"
     >
-      {darkMode ? <FaMoon /> : <FaSun />}
-      {darkMode ? 'Lights Off' : 'Lights On'}
-    </button>
-  )
-}
+      {darkMode ? <
