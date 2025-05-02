@@ -1,14 +1,18 @@
 import Head from 'next/head'
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { FaTwitter, FaGithub } from 'react-icons/fa'
+import { FaTwitter, FaGithub, FaSun, FaMoon } from 'react-icons/fa'
 import Typewriter from 'typewriter-effect'
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true)
 
   useEffect(() => {
-    document.documentElement.classList.toggle('dark', darkMode)
+    if (darkMode) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
   }, [darkMode])
 
   return (
@@ -16,13 +20,14 @@ export default function Home() {
       <Head>
         <title>Daycreed</title>
       </Head>
-      <main className={`min-h-screen ${darkMode ? 'bg-black text-white' : 'bg-white text-black'} flex flex-col items-center justify-center p-8 transition-colors`}>
+      <main className="min-h-screen bg-white dark:bg-black text-black dark:text-white flex flex-col items-center justify-center p-8 relative">
+
         {/* Toggle Button */}
         <button
           onClick={() => setDarkMode(!darkMode)}
-          className="absolute top-5 right-5 px-4 py-2 bg-gray-300 dark:bg-gray-800 text-black dark:text-white rounded transition"
+          className="absolute top-6 right-6 text-xl"
         >
-          {darkMode ? 'Light Mode' : 'Dark Mode'}
+          {darkMode ? <FaSun /> : <FaMoon />}
         </button>
 
         <h1 className="text-4xl font-bold mb-4">
@@ -49,7 +54,7 @@ export default function Home() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <p className="text-lg mb-8">Angga Fadillah.</p>
+          <p className="text-lg mb-8">My List on Web3.</p>
 
           <div className="flex space-x-6 justify-center">
             <a href="https://twitter.com/Daycreeed" target="_blank" rel="noopener noreferrer">
@@ -62,7 +67,7 @@ export default function Home() {
 
           <div className="mt-10">
             <a href="/testing">
-              <button className="px-6 py-3 bg-white text-black rounded hover:bg-gray-200 transition">
+              <button className="px-6 py-3 bg-black dark:bg-white text-white dark:text-black rounded hover:opacity-80 transition">
                 Go to Testing
               </button>
             </a>
