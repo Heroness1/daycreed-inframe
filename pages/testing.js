@@ -86,7 +86,7 @@ export default function Testing() {
           </a>
           <a href="/web3-intro">
             <button className="px-5 py-2 bg-white text-black rounded hover:bg-gray-200 transition flex items-center gap-2">
-              Next →
+              Guide →
             </button>
           </a>
         </div>
