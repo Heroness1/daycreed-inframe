@@ -37,7 +37,7 @@ export default function Home() {
         textDecoration: 'none',
         marginTop: '20px'
       }}>
-        Validator Info
+        Web3 Journey
       </Link>
     </main>
   );
