@@ -1,5 +1,19 @@
 import Typewriter from 'typewriter-effect';
 
+function TypedTitle({ text }) {
+  return (
+    <Typewriter
+      options={{
+        strings: [text],
+        autoStart: true,
+        loop: false,
+        delay: 50,
+        cursor: '_',
+      }}
+    />
+  );
+}
+
 export default function Web3Intro() {
   return (
     <div className="min-h-screen bg-black text-white px-6 py-12 space-y-12">
@@ -23,28 +37,36 @@ export default function Web3Intro() {
       </section>
 
       <section className="max-w-3xl mx-auto">
-        <h2 className="text-2xl font-bold mb-2">Kenapa Web3 penting?</h2>
+        <h2 className="text-2xl font-bold mb-2">
+          <TypedTitle text="Kenapa Web3 penting?" />
+        </h2>
         <p className="text-gray-300">
           Karena Web3 mengembalikan kontrol ke tangan pengguna, mendorong transparansi, dan menciptakan sistem keuangan baru yang terbuka lewat teknologi seperti smart contract dan crypto.
         </p>
       </section>
 
       <section className="max-w-3xl mx-auto">
-        <h2 className="text-2xl font-bold mb-2">Apa itu Blockchain dan Validator?</h2>
+        <h2 className="text-2xl font-bold mb-2">
+          <TypedTitle text="Apa itu Blockchain dan Validator?" />
+        </h2>
         <p className="text-gray-300">
           Blockchain adalah sistem pencatatan digital yang tidak bisa diubah, disimpan secara terdistribusi. Validator adalah node yang memastikan transaksi valid dan menjaga keamanan jaringan.
         </p>
       </section>
 
       <section className="max-w-3xl mx-auto">
-        <h2 className="text-2xl font-bold mb-2">Apa itu Testnet?</h2>
+        <h2 className="text-2xl font-bold mb-2">
+          <TypedTitle text="Apa itu Testnet?" />
+        </h2>
         <p className="text-gray-300">
           Testnet adalah jaringan uji coba dari blockchain utama (mainnet). Validator menggunakannya untuk menguji konfigurasi, menjalankan node, dan membuktikan kontribusi sebelum jaringan resmi diluncurkan.
         </p>
       </section>
 
       <section className="max-w-3xl mx-auto">
-        <h2 className="text-2xl font-bold mb-2">Kenapa ini relevan buat masa depan?</h2>
+        <h2 className="text-2xl font-bold mb-2">
+          <TypedTitle text="Kenapa ini relevan buat masa depan?" />
+        </h2>
         <p className="text-gray-300">
           Karena partisipasi di testnet dan Web3 bukan hanya tentang teknologi, tapi juga membentuk ekonomi digital baru—di mana kamu bisa jadi bagian dari infrastruktur awalnya.
         </p>
