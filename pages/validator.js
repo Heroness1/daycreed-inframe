@@ -44,10 +44,20 @@ export default function Validator() {
         <h1 className="text-4xl font-bold mb-8 border-b border-gray-600 pb-2">
           {typedText}
         </h1>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
           {validators.map((v, index) => (
             <Card key={index} title={v.name} url={v.website} />
           ))}
+        </div>
+
+        {/* Tombol Next */}
+        <div className="mt-10 flex space-x-4">
+          <a href="/web3-intro">
+            <button className="px-5 py-2 bg-white text-black rounded hover:bg-gray-200 transition">
+              Next
+            </button>
+          </a>
         </div>
       </main>
     </>
