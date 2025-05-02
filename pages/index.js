@@ -28,7 +28,7 @@ export default function Home() {
         />
       </h1>
 
-      <Link href="/validator" style={{
+      <Link href="/testing" style={{
         backgroundColor: 'white',
         color: 'black',
         padding: '10px 20px',
