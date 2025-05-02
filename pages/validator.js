@@ -2,22 +2,22 @@ import Head from 'next/head'
 import { useState, useEffect } from 'react'
 import Card from '../components/Card'
 
-const validators = [
+const Now Testing = [
   {
-    name: 'Akash',
-    website: 'https://akash.network',
+    name: 'Monad',
+    website: 'https://testnet.monad.xyz/',
   },
   {
-    name: 'Gitopia',
-    website: 'https://gitopia.com',
+    name: '0GLabs',
+    website: 'https://0g.ai/testnet-guide',
   },
   {
-    name: 'Q Blockchain',
-    website: 'https://q.org/',
+    name: 'Seismic',
+    website: 'https://www.seismic.systems/',
   },
   {
-    name: 'Avail',
-    website: 'https://availproject.org',
+    name: 'Aztec Protocol',
+    website: 'https://aztec.network/',
   },
 ]
 
@@ -51,11 +51,16 @@ export default function Validator() {
           ))}
         </div>
 
-        {/* Tombol Next */}
-        <div className="mt-10 flex space-x-4">
+        {/* Tombol Navigasi dengan Ikon Panah */}
+        <div className="mt-10 flex justify-between w-full max-w-xs">
+          <a href="/">
+            <button className="px-5 py-2 bg-gray-700 text-white rounded hover:bg-gray-600 transition flex items-center gap-2">
+              ← Back
+            </button>
+          </a>
           <a href="/web3-intro">
-            <button className="px-5 py-2 bg-white text-black rounded hover:bg-gray-200 transition">
-              Next
+            <button className="px-5 py-2 bg-white text-black rounded hover:bg-gray-200 transition flex items-center gap-2">
+              Next →
             </button>
           </a>
         </div>
