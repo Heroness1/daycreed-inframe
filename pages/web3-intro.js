@@ -6,13 +6,14 @@ export default function Web3Intro() {
       <section className="max-w-3xl mx-auto">
         <h1 className="text-4xl font-bold mb-4">
           <Typewriter
-            words={['Apa itu Web3?']}
-            loop={1}
-            cursor
-            cursorStyle="_"
-            typeSpeed={50}
-            deleteSpeed={0}
-            delaySpeed={1000}
+            options={{
+              strings: ['Apa itu Web3?'],
+              autoStart: true,
+              loop: true,
+              delay: 50,
+              deleteSpeed: 30,
+              cursor: '_',
+            }}
           />
         </h1>
         <p className="text-gray-300 text-lg">
