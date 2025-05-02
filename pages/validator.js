@@ -13,7 +13,7 @@ const validators = [
   },
   {
     name: 'Q Blockchain',
-    website: 'https://qblockchain.org',
+    website: 'https://q.org/',
   },
   {
     name: 'Avail',
