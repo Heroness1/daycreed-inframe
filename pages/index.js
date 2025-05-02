@@ -20,33 +20,34 @@ export default function Home() {
       <Head>
         <title>Daycreed</title>
       </Head>
-      <main className="min-h-screen bg-white dark:bg-black text-black dark:text-white flex flex-col items-center justify-center p-8 relative">
+      <main className="min-h-screen bg-white dark:bg-black text-black dark:text-white flex flex-col items-center justify-center p-8 relative overflow-hidden">
 
-        {/* Toggle Button */}
-        <button
-          onClick={() => setDarkMode(!darkMode)}
-          className="absolute top-6 right-6 text-xl"
-        >
-          {darkMode ? <FaSun /> : <FaMoon />}
-        </button>
-
+        {/* Animated Pirate Ship Background */}
         <motion.div
-          className="absolute inset-0 z-0"
-          initial={{ x: -20 }}
-          animate={{ x: 20 }}
+          className="absolute inset-0 z-0 pointer-events-none"
+          initial={{ x: -30 }}
+          animate={{ x: 30 }}
           transition={{
             repeat: Infinity,
             repeatType: 'reverse',
-            duration: 10,
+            duration: 20,
             ease: 'easeInOut',
           }}
         >
           <img
             src="/pirate-ship.png"
             alt="Pirate Ship Background"
-            className="w-full h-full object-cover opacity-10"
+            className="w-full h-full object-cover opacity-20"
           />
         </motion.div>
+
+        {/* Toggle Button */}
+        <button
+          onClick={() => setDarkMode(!darkMode)}
+          className="absolute top-6 right-6 text-xl z-20"
+        >
+          {darkMode ? <FaSun /> : <FaMoon />}
+        </button>
 
         <h1 className="text-4xl font-bold mb-4 z-10">
           <Typewriter
