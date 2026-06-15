@@ -15,7 +15,7 @@ export default function Home() {
 
             <div>
               <h2 className="font-bold leading-none">
-                Subur Jaya
+                Subur Maju Printing
               </h2>
 
               <p className="text-xs text-gray-500">
@@ -46,24 +46,24 @@ export default function Home() {
               </p>
 
               <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
+                Hardcover Skripsi
+                <br />
+                Termurah &
+                <br />
                 Digital Printing
-                <br />
-                Berkualitas
-                <br />
-                Untuk Semua
-                <br />
-                Kebutuhan Anda
               </h1>
 
               <p className="mt-6 text-xl text-white/90">
-                Hardcover Skripsi, Banner, Stiker,
-                Brosur, Undangan, dan berbagai
-                kebutuhan cetak lainnya.
+                Melayani hardcover skripsi,
+                banner, stiker, brosur,
+                undangan, dan berbagai
+                kebutuhan percetakan lainnya.
               </p>
 
               <a
                 href="https://wa.me/628123456789"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block mt-8 bg-red-500 hover:bg-red-600 transition text-white font-bold px-8 py-4 rounded-full text-lg"
               >
                 Konsultasi Gratis
@@ -137,11 +137,8 @@ export default function Home() {
           <div className="grid md:grid-cols-4 gap-6">
 
             <Feature text="Buka 24 Jam" />
-
             <Feature text="Pengerjaan Cepat" />
-
             <Feature text="Harga Terjangkau" />
-
             <Feature text="Respon WhatsApp Cepat" />
 
           </div>
@@ -167,6 +164,7 @@ export default function Home() {
           <a
             href="https://wa.me/628123456789"
             target="_blank"
+            rel="noopener noreferrer"
             className="inline-block mt-8 bg-green-500 hover:bg-green-600 text-white px-10 py-5 rounded-full text-xl font-bold"
           >
             Order Via WhatsApp
@@ -180,6 +178,7 @@ export default function Home() {
       <a
         href="https://wa.me/628123456789"
         target="_blank"
+        rel="noopener noreferrer"
         className="fixed bottom-6 right-6 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-xl"
       >
         💬
@@ -189,15 +188,9 @@ export default function Home() {
   );
 }
 
-function Card({
-  title,
-  icon,
-}: {
-  title: string;
-  icon: string;
-}) {
+function Card({ title, icon }) {
   return (
-    <div className="p-8 rounded-3xl border hover:shadow-lg transition text-center">
+    <div className="p-8 rounded-3xl border hover:shadow-lg transition text-center bg-white">
       <div className="text-5xl mb-4">
         {icon}
       </div>
@@ -209,11 +202,7 @@ function Card({
   );
 }
 
-function Feature({
-  text,
-}: {
-  text: string;
-}) {
+function Feature({ text }) {
   return (
     <div className="bg-white rounded-3xl p-8 text-center shadow">
       <h3 className="font-bold">
