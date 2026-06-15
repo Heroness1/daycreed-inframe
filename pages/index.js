@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Daycreed</title>
+        <title>Subur Jaya Printing</title>
       </Head>
       <main className="min-h-screen flex flex-col items-center justify-center p-8 transition-colors duration-300 bg-white text-black dark:bg-black dark:text-white relative">
 
@@ -16,7 +16,7 @@ export default function Home() {
         <h1 className="text-4xl font-bold mb-4">
           <Typewriter
             options={{
-              strings: ['Yapper', 'Web3 Enthusiast', 'Node', 'Testnet', 'Validator'],
+              strings: ['Percetakan 24 jam', 'Digital printing', 'Hardcover Skripsi Termurah'],
               autoStart: true,
               loop: true,
               pauseFor: 2000,
