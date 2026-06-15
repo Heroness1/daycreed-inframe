@@ -238,7 +238,7 @@ export default function Home() {
           </p>
 
           <a
-            href="https://wa.me/628123456789"
+            href="https://wa.me/6282246926544"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block mt-8 bg-green-500 hover:bg-green-600 text-white px-10 py-5 rounded-full text-xl font-bold"
@@ -252,7 +252,7 @@ export default function Home() {
 
       {/* FLOATING WA */}
       <a
-        href="https://wa.me/628123456789"
+        href="https://wa.me/6282246926544"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-xl"
