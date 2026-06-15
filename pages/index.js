@@ -31,7 +31,7 @@ export default function Home() {
           className="w-32 h-32 rounded-full mx-auto mb-6 shadow-lg"
         />
 
-        <p className="text-lg mb-8">Angga Fadillah</p>
+        <p className="text-lg mb-8">Subur Jaya Printing</p>
 
         <div className="flex space-x-6 justify-center mb-10">
           <a href="https://twitter.com/Daycreeed" target="_blank" rel="noopener noreferrer">
@@ -44,7 +44,7 @@ export default function Home() {
 
         <a href="/testing">
           <button className="px-6 py-3 bg-black text-white rounded hover:opacity-80 transition dark:bg-white dark:text-black">
-            Go to Testing
+            LANGSUNG ORDER
           </button>
         </a>
       </main>
