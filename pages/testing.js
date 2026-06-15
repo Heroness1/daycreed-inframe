@@ -61,7 +61,7 @@ export default function Home() {
               </p>
 
               <a
-                href="https://wa.me/628123456789"
+                href="https://wa.me/6282246926544"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block mt-8 bg-red-500 hover:bg-red-600 transition text-white font-bold px-8 py-4 rounded-full text-lg"
@@ -180,7 +180,7 @@ export default function Home() {
           </p>
 
           <p>
-            📞 <strong>WhatsApp:</strong> 0812-3456-7890
+            📞 <strong>WhatsApp:</strong> 0822-4692-6544
           </p>
 
         </div>
