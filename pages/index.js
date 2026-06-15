@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Subur Jaya Printing</title>
+        <title>Subur Maju Printing</title>
       </Head>
       <main className="min-h-screen flex flex-col items-center justify-center p-8 transition-colors duration-300 bg-white text-black dark:bg-black dark:text-white relative">
 
@@ -31,7 +31,7 @@ export default function Home() {
           className="w-32 h-32 rounded-full mx-auto mb-6 shadow-lg"
         />
 
-        <p className="text-lg mb-8">Subur Jaya Printing</p>
+        <p className="text-lg mb-8">Subur Maju Printing</p>
 
         <div className="flex space-x-6 justify-center mb-10">
           <a href="https://twitter.com/Daycreeed" target="_blank" rel="noopener noreferrer">
@@ -44,7 +44,7 @@ export default function Home() {
 
         <a href="/testing">
           <button className="px-6 py-3 bg-black text-white rounded hover:opacity-80 transition dark:bg-white dark:text-black">
-            LANGSUNG ORDER
+            ORDER VIA WHATSAPP
           </button>
         </a>
       </main>
