@@ -1,113 +1,53 @@
-import Head from "next/head";
-import Typewriter from "typewriter-effect";
+import Head from 'next/head'
+import { FaTwitter, FaGithub } from 'react-icons/fa'
+import Typewriter from 'typewriter-effect'
+import ThemeToggle from '../components/ThemeToggle'
 
 export default function Home() {
   return (
     <>
       <Head>
         <title>Subur Maju Printing</title>
-
-        <meta
-          name="description"
-          content="Percetakan 24 Jam, Digital Printing, Hardcover Skripsi Termurah."
-        />
       </Head>
+      <main className="min-h-screen flex flex-col items-center justify-center p-8 transition-colors duration-300 bg-white text-black dark:bg-black dark:text-white relative">
 
-      <main className="min-h-screen bg-white text-black">
+        <ThemeToggle />
 
-        {/* Navbar */}
-        <nav className="flex items-center justify-between px-6 py-4 border-b">
-          <div className="flex items-center gap-3">
-            <img
-              src="/avatar.png"
-              alt="Subur Maju Printing"
-              className="w-12 h-12 rounded-full"
-            />
+        <h1 className="text-4xl font-bold mb-4">
+          <Typewriter
+            options={{
+              strings: ['Percetakan 24 jam', 'Digital printing', 'Hardcover Skripsi Termurah'],
+              autoStart: true,
+              loop: true,
+              pauseFor: 2000,
+              deleteSpeed: 50,
+            }}
+          />
+        </h1>
 
-            <div>
-              <h2 className="font-bold">
-                Subur Maju Printing
-              </h2>
+        <img
+          src="/avatar.png"
+          alt="Avatar"
+          className="w-32 h-32 rounded-full mx-auto mb-6 shadow-lg"
+        />
 
-              <p className="text-xs text-gray-500">
-                Digital Printing
-              </p>
-            </div>
-          </div>
+        <p className="text-lg mb-8">Subur Maju Printing</p>
 
-          <button className="text-3xl">
-            ☰
+        <div className="flex space-x-6 justify-center mb-10">
+          <a href="https://twitter.com/Daycreeed" target="_blank" rel="noopener noreferrer">
+            <FaTwitter className="text-2xl hover:text-blue-400 transition" />
+          </a>
+          <a href="https://github.com/Heroness1" target="_blank" rel="noopener noreferrer">
+            <FaGithub className="text-2xl hover:text-gray-400 transition" />
+          </a>
+        </div>
+
+        <a href="/testing">
+          <button className="px-6 py-3 bg-black text-white rounded hover:opacity-80 transition dark:bg-white dark:text-black">
+            ORDER VIA WHATSAPP
           </button>
-        </nav>
-
-        {/* Hero */}
-        <section className="max-w-6xl mx-auto px-6 py-20">
-
-          <div className="grid md:grid-cols-2 gap-10 items-center">
-
-            {/* Left */}
-            <div>
-
-              <p className="text-green-600 font-semibold mb-3">
-                Buka 24 Jam
-              </p>
-
-              <h1 className="text-5xl font-bold leading-tight mb-6">
-                <Typewriter
-                  options={{
-                    strings: [
-                      "Percetakan 24 Jam",
-                      "Digital Printing",
-                      "Hardcover Skripsi Termurah",
-                    ],
-                    autoStart: true,
-                    loop: true,
-                  }}
-                />
-              </h1>
-
-              <p className="text-gray-600 text-lg">
-                Melayani cetak skripsi, banner,
-                stiker, brosur, undangan dan berbagai
-                kebutuhan percetakan lainnya.
-              </p>
-
-              <div className="mt-8 flex gap-4">
-
-                <a
-                  href="https://wa.me/628123456789"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <button className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
-                    Order Via WhatsApp
-                  </button>
-                </a>
-
-                <a href="/testing">
-                  <button className="px-6 py-3 border rounded-lg hover:bg-gray-100 transition">
-                    Lihat Layanan
-                  </button>
-                </a>
-
-              </div>
-
-            </div>
-
-            {/* Right */}
-            <div>
-              <img
-                src="/printer.png"
-                alt="Digital Printing"
-                className="w-full rounded-3xl shadow-xl"
-              />
-            </div>
-
-          </div>
-
-        </section>
-
+        </a>
       </main>
     </>
-  );
+  )
 }
