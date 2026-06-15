@@ -249,6 +249,126 @@ export default function Home() {
         </div>
 
       </section>
+{/* FOOTER */}
+<footer className="bg-gradient-to-r from-green-600 via-green-500 to-cyan-500 text-white">
+
+  <div className="max-w-7xl mx-auto px-6 py-14">
+
+    <div className="grid md:grid-cols-3 gap-10">
+
+      {/* COMPANY */}
+      <div>
+
+        <div className="flex items-center gap-3 mb-4">
+
+          <img
+            src="/avatar.png"
+            alt="Subur Maju Printing"
+            className="w-14 h-14 rounded-full object-cover"
+          />
+
+          <div>
+
+            <h3 className="font-bold text-2xl">
+              Subur Maju Printing
+            </h3>
+
+            <p className="text-white/80 text-sm">
+              Percetakan 24 Jam Jakarta Timur
+            </p>
+
+          </div>
+
+        </div>
+
+        <p className="text-white/90 leading-relaxed">
+          Melayani Digital Printing,
+          Hardcover Skripsi, Banner,
+          Spanduk, Stiker, Brosur,
+          Print Dokumen dan berbagai
+          kebutuhan percetakan dengan
+          pengerjaan cepat serta harga terjangkau.
+        </p>
+
+      </div>
+
+      {/* ALAMAT */}
+      <div>
+
+        <h3 className="font-bold text-xl mb-4">
+          Informasi Kontak
+        </h3>
+
+        <div className="space-y-3">
+
+          <p>
+            📍 Jl. Waru No.24A
+            <br />
+            Rawamangun, Pulo Gadung
+            <br />
+            Jakarta Timur 13220
+          </p>
+
+          <p>
+            📞 0822-4692-6544
+          </p>
+
+          <p>
+            🕒 Buka 24 Jam
+          </p>
+
+        </div>
+
+      </div>
+
+      {/* LAYANAN */}
+      <div>
+
+        <h3 className="font-bold text-xl mb-4">
+          Layanan Populer
+        </h3>
+
+        <ul className="space-y-2">
+
+          <li>✓ Hardcover Skripsi</li>
+
+          <li>✓ Digital Printing</li>
+
+          <li>✓ Cetak Banner</li>
+
+          <li>✓ Cetak Brosur</li>
+
+          <li>✓ Stiker & Label</li>
+
+          <li>✓ Print Dokumen</li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  {/* COPYRIGHT */}
+  <div className="border-t border-white/20">
+
+    <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-3">
+
+      <p className="text-sm text-white/80 text-center md:text-left">
+        © {new Date().getFullYear()} Subur Maju Printing.
+        All Rights Reserved.
+      </p>
+
+      <p className="text-sm text-white/80 text-center md:text-right">
+        Digital Presence by <span className="font-semibold text-white">Lure</span>
+      </p>
+
+    </div>
+
+  </div>
+
+</footer>
 
       {/* FLOATING WA */}
       <a
