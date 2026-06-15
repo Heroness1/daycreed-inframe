@@ -1,96 +1,224 @@
-import Head from 'next/head'
-import { useState, useEffect } from 'react'
-import Card from '../components/Card'
-import { motion } from 'framer-motion'
-
-const testingData = [
-  {
-    name: 'Monad',
-    link: '/monad',
-    website: 'https://testnet.monad.xyz/',
-  },
-  {
-    name: '0GLabs',
-    link: '/0glabs',
-    website: 'https://0g.ai/testnet-guide',
-  },
-  {
-    name: 'Seismic',
-    link: '/seismic',
-    website: 'https://www.seismic.systems/',
-  },
-  {
-    name: 'Aztec Protocol',
-    link: '/aztec',
-    website: 'https://aztec.network/',
-  },
-]
-
-export default function Testing() {
-  const [typedText, setTypedText] = useState('')
-  const fullText = 'Testing Network'
-
-  useEffect(() => {
-    let i = 0
-    const interval = setInterval(() => {
-      setTypedText(fullText.slice(0, i + 1))
-      i++
-      if (i === fullText.length) clearInterval(interval)
-    }, 100)
-    return () => clearInterval(interval)
-  }, [])
-
-  const fadeIn = (delay = 0) => ({
-    hidden: { opacity: 0, y: 20, filter: 'blur(4px)' },
-    visible: {
-      opacity: 1,
-      y: 0,
-      filter: 'blur(0px)',
-      transition: { delay, duration: 0.5 },
-    },
-  })
-
+export default function Home() {
   return (
-    <>
-      <Head>
-        <title>Testing</title>
-      </Head>
-      <main className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-8 space-y-12">
-        <motion.h1
-          className="text-4xl font-bold border-b border-gray-600 pb-2"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.5 }}
-        >
-          {typedText}
-        </motion.h1>
+    <main className="bg-white text-black">
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
-          {testingData.map((v, index) => (
-            <motion.div
-              key={index}
-              variants={fadeIn(index * 0.2)}
-              initial="hidden"
-              animate="visible"
-            >
-              <Card title={v.name} link={v.link} website={v.website} />
-            </motion.div>
-          ))}
+      {/* NAVBAR */}
+      <header className="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-4 h-16">
+
+          <div className="flex items-center gap-3">
+            <img
+              src="/avatar.png"
+              alt="Subur Maju Printing"
+              className="w-12 h-12 rounded-full object-cover"
+            />
+
+            <div>
+              <h2 className="font-bold leading-none">
+                Subur Jaya
+              </h2>
+
+              <p className="text-xs text-gray-500">
+                Digital Printing
+              </p>
+            </div>
+          </div>
+
+          <button className="text-3xl">
+            ☰
+          </button>
+
+        </div>
+      </header>
+
+      {/* HERO */}
+      <section className="pt-24 min-h-screen bg-gradient-to-r from-green-500 to-cyan-500">
+
+        <div className="max-w-7xl mx-auto px-6 py-20">
+
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+
+            {/* LEFT */}
+            <div>
+
+              <p className="text-white text-xl mb-4">
+                Percetakan 24 Jam
+              </p>
+
+              <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
+                Digital Printing
+                <br />
+                Berkualitas
+                <br />
+                Untuk Semua
+                <br />
+                Kebutuhan Anda
+              </h1>
+
+              <p className="mt-6 text-xl text-white/90">
+                Hardcover Skripsi, Banner, Stiker,
+                Brosur, Undangan, dan berbagai
+                kebutuhan cetak lainnya.
+              </p>
+
+              <a
+                href="https://wa.me/628123456789"
+                target="_blank"
+                className="inline-block mt-8 bg-red-500 hover:bg-red-600 transition text-white font-bold px-8 py-4 rounded-full text-lg"
+              >
+                Konsultasi Gratis
+              </a>
+
+            </div>
+
+            {/* RIGHT */}
+            <div>
+
+              <img
+                src="/printer.png"
+                alt="Digital Printing"
+                className="w-full rounded-3xl shadow-2xl"
+              />
+
+            </div>
+
+          </div>
+
         </div>
 
-        <div className="mt-10 flex justify-between w-full max-w-xs">
-          <a href="/">
-            <button className="px-5 py-2 bg-gray-700 text-white rounded hover:bg-gray-600 transition flex items-center gap-2">
-              ← Back
-            </button>
-          </a>
-          <a href="/web3-intro">
-            <button className="px-5 py-2 bg-white text-black rounded hover:bg-gray-200 transition flex items-center gap-2">
-              Guide →
-            </button>
-          </a>
+      </section>
+
+      {/* SERVICES */}
+      <section className="py-24 px-6">
+
+        <div className="max-w-7xl mx-auto">
+
+          <h2 className="text-center text-4xl font-bold mb-12">
+            Layanan Kami
+          </h2>
+
+          <div className="grid md:grid-cols-4 gap-6">
+
+            <Card
+              title="Hardcover Skripsi"
+              icon="📚"
+            />
+
+            <Card
+              title="Digital Printing"
+              icon="🖨️"
+            />
+
+            <Card
+              title="Banner & Spanduk"
+              icon="🎨"
+            />
+
+            <Card
+              title="Stiker & Label"
+              icon="🏷️"
+            />
+
+          </div>
+
         </div>
-      </main>
-    </>
-  )
+
+      </section>
+
+      {/* WHY US */}
+      <section className="bg-gray-100 py-24 px-6">
+
+        <div className="max-w-7xl mx-auto">
+
+          <h2 className="text-center text-4xl font-bold mb-12">
+            Kenapa Pilih Kami?
+          </h2>
+
+          <div className="grid md:grid-cols-4 gap-6">
+
+            <Feature text="Buka 24 Jam" />
+
+            <Feature text="Pengerjaan Cepat" />
+
+            <Feature text="Harga Terjangkau" />
+
+            <Feature text="Respon WhatsApp Cepat" />
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* CTA */}
+      <section className="py-24 px-6">
+
+        <div className="max-w-4xl mx-auto text-center">
+
+          <h2 className="text-5xl font-bold">
+            Siap Cetak Sekarang?
+          </h2>
+
+          <p className="mt-4 text-xl text-gray-500">
+            Kirim file Anda dan konsultasikan
+            kebutuhan cetak melalui WhatsApp.
+          </p>
+
+          <a
+            href="https://wa.me/628123456789"
+            target="_blank"
+            className="inline-block mt-8 bg-green-500 hover:bg-green-600 text-white px-10 py-5 rounded-full text-xl font-bold"
+          >
+            Order Via WhatsApp
+          </a>
+
+        </div>
+
+      </section>
+
+      {/* FLOATING WA */}
+      <a
+        href="https://wa.me/628123456789"
+        target="_blank"
+        className="fixed bottom-6 right-6 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-xl"
+      >
+        💬
+      </a>
+
+    </main>
+  );
+}
+
+function Card({
+  title,
+  icon,
+}: {
+  title: string;
+  icon: string;
+}) {
+  return (
+    <div className="p-8 rounded-3xl border hover:shadow-lg transition text-center">
+      <div className="text-5xl mb-4">
+        {icon}
+      </div>
+
+      <h3 className="font-bold text-xl">
+        {title}
+      </h3>
+    </div>
+  );
+}
+
+function Feature({
+  text,
+}: {
+  text: string;
+}) {
+  return (
+    <div className="bg-white rounded-3xl p-8 text-center shadow">
+      <h3 className="font-bold">
+        ✓ {text}
+      </h3>
+    </div>
+  );
 }
