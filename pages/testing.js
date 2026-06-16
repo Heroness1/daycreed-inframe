@@ -1,86 +1,57 @@
 export default function Home() {
   return (
     <main className="bg-white text-black font-inter">
+{/* NAVBAR */}
 
-      {/* NAVBAR */}
-      <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md border-b z-50">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 h-20">
-          <div className="flex items-center gap-4">
-            <img
-              src="/avatar.png"
-              alt="Subur Maju Printing"
-              className="w-14 h-14 rounded-2xl object-cover shadow"
-            />
-            <div>
-              <h1 className="font-bold text-2xl tracking-tighter font-playfair">Subur Maju Printing</h1>
-              <p className="text-sm text-gray-500 -mt-1">Digital Printing 24 Jam</p>
-            </div>
-          </div>
+<header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md border-b z-50">
+  <div className="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 min-h-[80px] py-3">{/* Logo */}
+<div className="flex items-center gap-3 min-w-0">
+  <img
+    src="/avatar.png"
+    alt="Subur Maju Printing"
+    className="w-12 h-12 md:w-14 md:h-14 rounded-2xl object-cover shadow"
+  />
 
-          <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
-            <a href="#layanan" className="hover:text-orange-600 transition">Layanan</a>
-            <a href="#kenapa-kami" className="hover:text-orange-600 transition">Kenapa Kami</a>
-            <a href="#lokasi" className="hover:text-orange-600 transition">Lokasi</a>
-          </nav>
+  <div className="flex flex-col justify-center">
+    <h1 className="font-bold text-lg md:text-2xl leading-tight font-playfair text-black">
+      Subur Maju Printing
+    </h1>
 
-          <a
-            href="https://wa.me/6282246926544"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-full font-semibold transition"
-          >
-            Hubungi WhatsApp
-          </a>
-        </div>
-      </header>
+    <p className="text-xs md:text-sm text-gray-500">
+      Digital Printing 24 Jam
+    </p>
+  </div>
+</div>
 
-      {/* HERO */}
-      <section className="pt-24 min-h-screen bg-gradient-to-br from-orange-600 via-amber-600 to-red-600 flex items-center">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center py-20">
-          <div className="text-white">
-            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur px-4 py-2 rounded-full text-sm mb-6">
-              Percetakan 24 Jam • Jakarta Timur
-            </div>
+{/* Menu Desktop */}
+<nav className="hidden md:flex items-center gap-8 text-sm font-medium">
+  <a href="#layanan" className="hover:text-orange-600 transition">
+    Layanan
+  </a>
 
-            <h1 className="text-6xl md:text-7xl font-bold leading-none tracking-tighter mb-6 font-playfair">
-              Hardcover Skripsi<br />
-              Termurah &<br />
-              Digital Printing
-            </h1>
+  <a href="#kenapa-kami" className="hover:text-orange-600 transition">
+    Kenapa Kami
+  </a>
 
-            <p className="text-xl text-white/90 max-w-lg">
-              Melayani hardcover skripsi, banner, stiker, label, brosur, undangan, dan segala kebutuhan cetak Anda dengan kualitas premium.
-            </p>
+  <a href="#lokasi" className="hover:text-orange-600 transition">
+    Lokasi
+  </a>
+</nav>
 
-            <div className="flex flex-wrap gap-4 mt-10">
-              <a
-                href="https://wa.me/6282246926544"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white text-orange-700 hover:bg-gray-100 font-bold px-10 py-4 rounded-2xl text-lg transition"
-              >
-                Konsultasi Gratis
-              </a>
-              <a
-                href="#layanan"
-                className="border border-white/70 hover:bg-white/10 font-semibold px-8 py-4 rounded-2xl text-lg transition"
-              >
-                Lihat Layanan
-              </a>
-            </div>
-          </div>
+{/* Tombol WA Desktop */}
+<a
+  href="https://wa.me/6282246926544"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="hidden md:inline-flex bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-full font-semibold transition"
+>
+  Hubungi WhatsApp
+</a>
 
-          <div>
-            <img
-              src="/printer.png"
-              alt="Digital Printing"
-              className="w-full rounded-3xl shadow-2xl"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* STATS */}
+  </div>
+</header>
+     
+  {/* STATS */}
       <section className="py-12 bg-white border-b">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div>
