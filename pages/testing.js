@@ -1,6 +1,6 @@
-          export default function Home() {
+export default function Home() {
   return (
-    <main className="bg-white text-black font-sans">
+    <main className="bg-white text-black font-inter">
 
       {/* NAVBAR */}
       <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md border-b z-50">
@@ -12,7 +12,7 @@
               className="w-14 h-14 rounded-2xl object-cover shadow"
             />
             <div>
-              <h1 className="font-bold text-2xl tracking-tight">Subur Maju Printing</h1>
+              <h1 className="font-bold text-2xl tracking-tighter font-playfair">Subur Maju Printing</h1>
               <p className="text-sm text-gray-500 -mt-1">Digital Printing 24 Jam</p>
             </div>
           </div>
@@ -42,7 +42,7 @@
               Percetakan 24 Jam • Jakarta Timur
             </div>
 
-            <h1 className="text-6xl md:text-7xl font-bold leading-none tracking-tighter mb-6">
+            <h1 className="text-6xl md:text-7xl font-bold leading-none tracking-tighter mb-6 font-playfair">
               Hardcover Skripsi<br />
               Termurah &<br />
               Digital Printing
@@ -105,7 +105,7 @@
       {/* SERVICES */}
       <section id="layanan" className="py-24 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-center text-5xl font-bold mb-4">Layanan Kami</h2>
+          <h2 className="text-center text-5xl font-bold mb-4 font-playfair tracking-tight">Layanan Kami</h2>
           <p className="text-center text-gray-600 mb-16 max-w-2xl mx-auto">
             Solusi percetakan lengkap untuk kebutuhan bisnis dan akademik Anda
           </p>
@@ -122,7 +122,7 @@
       {/* WHY US */}
       <section id="kenapa-kami" className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-center text-5xl font-bold mb-16">Kenapa Pilih Subur Maju?</h2>
+          <h2 className="text-center text-5xl font-bold mb-16 font-playfair tracking-tight">Kenapa Pilih Subur Maju?</h2>
           <div className="grid md:grid-cols-3 gap-10">
             <Feature title="Buka 24 Jam" desc="Siap melayani kapan saja Anda butuh" />
             <Feature title="Pengerjaan Cepat" desc="Order hari ini, besok jadi" />
@@ -137,7 +137,7 @@
       {/* LOKASI */}
       <section id="lokasi" className="bg-white py-24 px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-center text-4xl font-bold mb-12">Lokasi Kami</h2>
+          <h2 className="text-center text-4xl font-bold mb-12 font-playfair tracking-tight">Lokasi Kami</h2>
 
           <div className="grid md:grid-cols-2 gap-10">
             <div className="bg-gray-50 rounded-3xl p-8 shadow">
@@ -186,7 +186,7 @@
       {/* CTA */}
       <section className="py-24 px-6 bg-gray-50">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-5xl font-bold">Siap Cetak Sekarang?</h2>
+          <h2 className="text-5xl font-bold font-playfair tracking-tight">Siap Cetak Sekarang?</h2>
           <p className="mt-4 text-xl text-gray-500">
             Kirim file Anda dan konsultasikan kebutuhan cetak melalui WhatsApp.
           </p>
@@ -213,7 +213,7 @@
                   className="w-16 h-16 rounded-2xl object-cover"
                 />
                 <div>
-                  <h3 className="font-bold text-3xl">Subur Maju Printing</h3>
+                  <h3 className="font-bold text-3xl font-playfair">Subur Maju Printing</h3>
                   <p className="text-orange-200">Digital Printing 24 Jam</p>
                 </div>
               </div>
@@ -274,7 +274,7 @@
   );
 }
 
-// Komponen Pembantu
+// ==================== KOMPONEN ====================
 function Card({ title, icon, desc }) {
   return (
     <div className="group bg-white p-10 rounded-3xl border hover:border-orange-200 hover:shadow-xl transition-all duration-300 text-center">
