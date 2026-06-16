@@ -3,47 +3,36 @@ export default function Home() {
     <main className="bg-white text-black font-inter">
 
       {/* NAVBAR */}
-<header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md border-b z-50">
-  <div className="max-w-7xl mx-auto flex items-center justify-between px-6 h-20">
-    <div className="flex items-center gap-4">
-      <img
-        src="/avatar.png"
-        alt="Subur Maju Printing"
-        className="w-14 h-14 rounded-2xl object-cover shadow"
-      />
-      <div>
-        <h1 className="font-bold text-2xl tracking-tighter font-playfair">Subur Maju Printing</h1>
-        <p className="text-sm text-gray-500 -mt-1">Digital Printing 24 Jam</p>
-      </div>
-    </div>
+      <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md border-b z-50">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 h-20">
+          <div className="flex items-center gap-4">
+            <img
+              src="/avatar.png"
+              alt="Subur Maju Printing"
+              className="w-14 h-14 rounded-2xl object-cover shadow"
+            />
+            <div>
+              <h1 className="font-bold text-2xl tracking-tighter font-playfair">Subur Maju Printing</h1>
+              <p className="text-sm text-gray-500 -mt-1">Digital Printing 24 Jam</p>
+            </div>
+          </div>
 
-    <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
-      <a href="#layanan" className="hover:text-orange-600 transition">Layanan</a>
-      <a href="#kenapa-kami" className="hover:text-orange-600 transition">Kenapa Kami</a>
-      <a href="#lokasi" className="hover:text-orange-600 transition">Lokasi</a>
-    </nav>
+          <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
+            <a href="#layanan" className="hover:text-orange-600 transition">Layanan</a>
+            <a href="#kenapa-kami" className="hover:text-orange-600 transition">Kenapa Kami</a>
+            <a href="#lokasi" className="hover:text-orange-600 transition">Lokasi</a>
+          </nav>
 
-    {/* Tombol Hubungi WhatsApp Premium */}
-    <a
-      href="https://wa.me/6282246926544"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full font-semibold transition-all shadow-lg hover:shadow-xl active:scale-95"
-    >
-      <svg 
-        xmlns="http://www.w3.org/2000/svg" 
-        width="24" 
-        height="24" 
-        fill="currentColor" 
-        viewBox="0 0 24 24"
-        className="w-6 h-6"
-      >
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.966-.94 1.164-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.485-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.372-.05-.52-.099-.149-.67-.807-1.14-1.1-.47-.293-.99-.248-1.14-.124-.15.124-.595.595-.743.744-.148.149-.297.198-.496.05-.198-.149-1.02-.38-1.97-.45-.95-.07-1.71.15-2.31.45-.6.3-1.14 1.14-1.14 2.09 0 .95.4 1.9 1.14 2.6.74.7 1.71 1.14 2.66 1.14.95 0 1.9-.4 2.6-1.14.7-.74 1.14-1.71 1.14-2.66 0-.95-.4-1.9-1.14-2.6z"/>
-      </svg>
-      <span>Hubungi WhatsApp</span>
-    </a>
-  </div>
-</header>
+          <a
+            href="https://wa.me/6282246926544"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-full font-semibold transition"
+          >
+            Hubungi WhatsApp
+          </a>
+        </div>
+      </header>
 
       {/* HERO */}
       <section className="pt-24 min-h-screen bg-gradient-to-br from-orange-600 via-amber-600 to-red-600 flex items-center">
