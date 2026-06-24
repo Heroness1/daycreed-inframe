@@ -1,9 +1,9 @@
-          export default function Home() {
+export default function Home() {
   return (
     <main className="bg-white text-black font-sans">
 
       {/* NAVBAR */}
-      <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md border-b z-50">
+      <header className="fixed top-0 left-0 right-0 w-full bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm z-50">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 h-20">
           <div className="flex items-center gap-4">
             <img
@@ -18,9 +18,9 @@
           </div>
 
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
-            <a href="#layanan" className="hover:text-orange-600 transition">Layanan</a>
-            <a href="#kenapa-kami" className="hover:text-orange-600 transition">Kenapa Kami</a>
-            <a href="#lokasi" className="hover:text-orange-600 transition">Lokasi</a>
+            <a href="#layanan" className="text-gray-800 hover:text-orange-600 transition">Layanan</a>
+            <a href="#kenapa-kami" className="text-gray-800 hover:text-orange-600 transition">Kenapa Kami</a>
+            <a href="#lokasi" className="text-gray-800 hover:text-orange-600 transition">Lokasi</a>
           </nav>
 
           <a
@@ -111,10 +111,26 @@
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card title="Hardcover Skripsi" icon="📚" desc="Finishing premium, harga terbaik" />
-            <Card title="Digital Printing" icon="🖨️" desc="Brosur, flyer, dokumen, kartu nama" />
-            <Card title="Banner & Spanduk" icon="🎨" desc="Outdoor & indoor berkualitas" />
-            <Card title="Stiker & Label" icon="🏷️" desc="Custom label produk & kemasan" />
+            <div className="group bg-white p-10 rounded-3xl border hover:border-orange-200 hover:shadow-xl transition-all duration-300 text-center">
+              <div className="text-6xl mb-6 group-hover:scale-110 transition">📚</div>
+              <h3 className="font-bold text-2xl mb-3">Hardcover Skripsi</h3>
+              <p className="text-gray-600">Finishing premium, harga terbaik</p>
+            </div>
+            <div className="group bg-white p-10 rounded-3xl border hover:border-orange-200 hover:shadow-xl transition-all duration-300 text-center">
+              <div className="text-6xl mb-6 group-hover:scale-110 transition">🖨️</div>
+              <h3 className="font-bold text-2xl mb-3">Digital Printing</h3>
+              <p className="text-gray-600">Brosur, flyer, dokumen, kartu nama</p>
+            </div>
+            <div className="group bg-white p-10 rounded-3xl border hover:border-orange-200 hover:shadow-xl transition-all duration-300 text-center">
+              <div className="text-6xl mb-6 group-hover:scale-110 transition">🎨</div>
+              <h3 className="font-bold text-2xl mb-3">Banner & Spanduk</h3>
+              <p className="text-gray-600">Outdoor & indoor berkualitas</p>
+            </div>
+            <div className="group bg-white p-10 rounded-3xl border hover:border-orange-200 hover:shadow-xl transition-all duration-300 text-center">
+              <div className="text-6xl mb-6 group-hover:scale-110 transition">🏷️</div>
+              <h3 className="font-bold text-2xl mb-3">Stiker & Label</h3>
+              <p className="text-gray-600">Custom label produk & kemasan</p>
+            </div>
           </div>
         </div>
       </section>
@@ -124,12 +140,30 @@
         <div className="max-w-7xl mx-auto">
           <h2 className="text-center text-5xl font-bold mb-16">Kenapa Pilih Subur Maju?</h2>
           <div className="grid md:grid-cols-3 gap-10">
-            <Feature title="Buka 24 Jam" desc="Siap melayani kapan saja Anda butuh" />
-            <Feature title="Pengerjaan Cepat" desc="Order hari ini, besok jadi" />
-            <Feature title="Harga Termurah" desc="Kualitas tinggi dengan harga bersaing" />
-            <Feature title="Respon Instan" desc="Tim kami fast response via WhatsApp" />
-            <Feature title="Kualitas Terjamin" desc="Material premium + garansi" />
-            <Feature title="Pengalaman Bertahun-tahun" desc="Terpercaya di Jakarta" />
+            <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow transition">
+              <h3 className="font-bold text-xl mb-3 text-orange-600">✓ Buka 24 Jam</h3>
+              <p className="text-gray-600">Siap melayani kapan saja Anda butuh</p>
+            </div>
+            <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow transition">
+              <h3 className="font-bold text-xl mb-3 text-orange-600">✓ Pengerjaan Cepat</h3>
+              <p className="text-gray-600">Order hari ini, besok jadi</p>
+            </div>
+            <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow transition">
+              <h3 className="font-bold text-xl mb-3 text-orange-600">✓ Harga Termurah</h3>
+              <p className="text-gray-600">Kualitas tinggi dengan harga bersaing</p>
+            </div>
+            <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow transition">
+              <h3 className="font-bold text-xl mb-3 text-orange-600">✓ Respon Instan</h3>
+              <p className="text-gray-600">Tim kami fast response via WhatsApp</p>
+            </div>
+            <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow transition">
+              <h3 className="font-bold text-xl mb-3 text-orange-600">✓ Kualitas Terjamin</h3>
+              <p className="text-gray-600">Material premium + garansi</p>
+            </div>
+            <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow transition">
+              <h3 className="font-bold text-xl mb-3 text-orange-600">✓ Pengalaman Bertahun-tahun</h3>
+              <p className="text-gray-600">Terpercaya di Jakarta</p>
+            </div>
           </div>
         </div>
       </section>
@@ -264,32 +298,12 @@
         href="https://wa.me/6282246926544"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-8 right-8 bg-orange-600 hover:bg-orange-700 text-white w-16 h-16 rounded-2xl flex items-center justify-center text-4xl shadow-2xl z-50 transition-all duration-300 group"
+        className="fixed bottom-8 right-8 bg-orange-600 hover:bg-orange-700 text-white w-16 h-16 rounded-2xl flex items-center justify-center text-4xl shadow-2xl z-50 transition-all duration-300"
       >
         💬
         <span className="absolute inset-0 rounded-2xl border-4 border-orange-400 animate-ping opacity-75"></span>
         <span className="absolute -top-1 -right-1 w-5 h-5 bg-green-400 rounded-full border-2 border-white"></span>
       </a>
     </main>
-  );
-}
-
-// Komponen Pembantu
-function Card({ title, icon, desc }) {
-  return (
-    <div className="group bg-white p-10 rounded-3xl border hover:border-orange-200 hover:shadow-xl transition-all duration-300 text-center">
-      <div className="text-6xl mb-6 group-hover:scale-110 transition">{icon}</div>
-      <h3 className="font-bold text-2xl mb-3">{title}</h3>
-      <p className="text-gray-600">{desc}</p>
-    </div>
-  );
-}
-
-function Feature({ title, desc }) {
-  return (
-    <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow transition">
-      <h3 className="font-bold text-xl mb-3 text-orange-600">✓ {title}</h3>
-      <p className="text-gray-600">{desc}</p>
-    </div>
   );
 }
