@@ -39,7 +39,7 @@
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center py-20">
           <div className="text-white">
             <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur px-4 py-2 rounded-full text-sm mb-6">
-              Percetakan 24 Jam • Jakarta Timur
+              Subur Maju Printing • Jakarta Timur
             </div>
 
             <h1 className="text-6xl md:text-7xl font-bold leading-none tracking-tighter mb-6">
@@ -129,7 +129,7 @@
             <Feature title="Harga Termurah" desc="Kualitas tinggi dengan harga bersaing" />
             <Feature title="Respon Instan" desc="Tim kami fast response via WhatsApp" />
             <Feature title="Kualitas Terjamin" desc="Material premium + garansi" />
-            <Feature title="Pengalaman Bertahun-tahun" desc="Terpercaya di Jakarta Timur" />
+            <Feature title="Pengalaman Bertahun-tahun" desc="Terpercaya di Jakarta" />
           </div>
         </div>
       </section>
