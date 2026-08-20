@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import Heat from 'next/head'
 import { FaTwitter, FaGithub } from 'react-icons/fa'
 import Typewriter from 'typewriter-effect'
 import ThemeToggle from '../components/ThemeToggle'
