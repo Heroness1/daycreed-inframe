@@ -305,14 +305,21 @@ export default function Home() {
 
             <div className="flex flex-wrap gap-4 mt-10">
               <a
-                href="https://wa.me/6282246926544?text=Halo%20Kak%2C%20saya%20mau%20order%20dari%20website%20Subur%20Maju%20Printing.%0A%0AProduk%3A%0AJumlah%3A%0AUkuran%3A%0ADeadline%3A"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Konsultasi gratis melalui WhatsApp"
-                className="bg-white text-orange-700 hover:bg-gray-100 font-bold px-10 py-4 rounded-2xl text-lg transition"
-              >
-                Konsultasi Gratis
-              </a>
+  href={`https://wa.me/6282246926544?text=${encodeURIComponent(
+    `Halo Kak, saya mau konsultasi mengenai kebutuhan cetak di Subur Maju Printing.
+
+Produk:
+Jumlah:
+Ukuran:
+Deadline:`
+  )}`}
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Konsultasi kebutuhan cetak melalui WhatsApp"
+  className="bg-white text-orange-700 hover:bg-gray-100 font-bold px-10 py-4 rounded-2xl text-lg transition"
+>
+  Konsultasi Gratis
+</a>
 
               <a
                 href="#layanan"
