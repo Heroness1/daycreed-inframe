@@ -289,21 +289,19 @@ export default function Home() {
 
             {/* SATU-SATUNYA H1 */}
             <h1
-              id="hero-title"
-              className="text-6xl md:text-7xl font-bold leading-none tracking-tighter mb-6"
-            >
-              Hardcover Skripsi
-              <br />
-              Termurah &
-              <br />
-              Digital Printing
-            </h1>
+  id="hero-title"
+  className="text-6xl md:text-7xl font-bold leading-none tracking-tighter mb-6"
+>
+  Digital Printing Jakarta Timur 24 Jam
+  <br />
+  Hardcover Skripsi & Percetakan
+</h1>
 
             <p className="text-xl text-white/90 max-w-lg">
-              Melayani hardcover skripsi, banner, stiker, label, brosur,
-              undangan, dan segala kebutuhan cetak Anda dengan kualitas
-              premium.
-            </p>
+  Subur Maju Printing melayani digital printing 24 jam di Jakarta Timur,
+  termasuk hardcover skripsi, banner, spanduk, stiker, brosur, undangan,
+  dan berbagai kebutuhan percetakan dengan kualitas terbaik.
+</p>
 
             <div className="flex flex-wrap gap-4 mt-10">
               <a
