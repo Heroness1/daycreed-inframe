@@ -867,7 +867,8 @@ export default function Home() {
           aria-hidden="true"
           className="absolute -top-1 -right-1 w-5 h-5 bg-green-400 rounded-full border-2 border-white"
         />
-      </a>
+            </a>
     </main>
+  </>
   );
 }
