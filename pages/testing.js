@@ -282,61 +282,63 @@ export default function Home() {
         className="pt-24 min-h-screen bg-gradient-to-br from-orange-600 via-amber-600 to-red-600 flex items-center"
       >
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center py-20">
-          <div className="text-white">
-            <p className="inline-flex items-center gap-2 bg-white/20 backdrop-blur px-4 py-2 rounded-full text-sm mb-6">
-              Subur Maju Printing • Jakarta Timur
-            </p>
+<div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center py-20">
+  <div className="text-white">
+    <p className="inline-flex items-center gap-2 bg-white/20 backdrop-blur px-4 py-2 rounded-full text-sm mb-6">
+      Subur Maju Printing • Jakarta Timur
+    </p>
 
-            {/* SATU-SATUNYA H1 */}
-            <h1
-  id="hero-title"
-  className="text-6xl md:text-7xl font-bold leading-none tracking-tighter mb-6"
->
-  Digital Printing Jakarta Timur 24 Jam
-  <br />
-  Hardcover Skripsi & Percetakan
-</h1>
+    {/* SATU-SATUNYA H1 */}
+    <h1
+      id="hero-title"
+      className="text-6xl md:text-7xl font-bold leading-none tracking-tighter mb-6"
+    >
+      Digital Printing Jakarta Timur 24 Jam
+      <br />
+      Hardcover Skripsi & Percetakan
+    </h1>
 
-            <p className="text-xl text-white/90 max-w-lg">
-  Subur Maju Printing melayani digital printing 24 jam di Jakarta Timur,
-  termasuk hardcover skripsi, banner, spanduk, stiker, brosur, undangan,
-  dan berbagai kebutuhan percetakan dengan kualitas terbaik.
-</p>
+    <p className="text-xl text-white/90 max-w-lg">
+      Subur Maju Printing melayani digital printing 24 jam di Jakarta Timur,
+      termasuk hardcover skripsi, banner, spanduk, stiker, brosur, undangan,
+      dan berbagai kebutuhan percetakan dengan kualitas terbaik.
+    </p>
 
-            <div className="flex flex-wrap gap-4 mt-10">
-  <a
-    href={`https://wa.me/6282246926544?text=${encodeURIComponent(
-      `Halo Kak, saya mau konsultasi mengenai kebutuhan cetak di Subur Maju Printing.
+    <div className="flex flex-wrap gap-4 mt-10">
+      <a
+        href={`https://wa.me/6282246926544?text=${encodeURIComponent(
+          `Halo Kak, saya mau konsultasi mengenai kebutuhan cetak di Subur Maju Printing.
 
 Produk:
 Jumlah:
 Ukuran:
 Deadline:`
-    )}`}
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Konsultasi kebutuhan cetak melalui WhatsApp"
-    className="bg-white text-orange-700 hover:bg-gray-100 font-bold px-10 py-4 rounded-2xl text-lg transition"
-  >
-    Konsultasi Gratis
-  </a>
+        )}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Konsultasi kebutuhan cetak melalui WhatsApp"
+        className="bg-white text-orange-700 hover:bg-gray-100 font-bold px-10 py-4 rounded-2xl text-lg transition"
+      >
+        Konsultasi Gratis
+      </a>
 
-  <a
-    href="#katalog"
-    className="border border-white/70 hover:bg-white/10 font-semibold px-8 py-4 rounded-2xl text-lg transition"
-  >
-    Lihat Katalog
-  </a>
+      <a
+        href="#katalog"
+        className="border border-white/70 hover:bg-white/10 font-semibold px-8 py-4 rounded-2xl text-lg transition"
+      >
+        Lihat Katalog
+      </a>
+    </div>
+  </div>
+
+  <div>
+    <img
+      src="/printer.png"
+      alt="Mesin digital printing Subur Maju Printing"
+      className="w-full rounded-3xl shadow-2xl"
+    />
+  </div>
 </div>
-
-          <div>
-            <img
-              src="/printer.png"
-              alt="Mesin digital printing Subur Maju Printing"
-              className="w-full rounded-3xl shadow-2xl"
-            />
-          </div>
-        </div>
       </section>
 
       {/* STATS */}
