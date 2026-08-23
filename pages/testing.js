@@ -4,77 +4,209 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Subur Maju Printing | Digital Printing 24 Jam Jakarta Timur</title>
+  <title>
+    Digital Printing Jakarta Timur 24 Jam | Subur Maju Printing
+  </title>
 
-        <meta
-          name="description"
-          content="Subur Maju Printing melayani digital printing, hardcover skripsi, banner, spanduk, stiker, brosur, dan berbagai kebutuhan percetakan 24 jam di Jakarta Timur."
-        />
+  <meta
+    name="description"
+    content="Subur Maju Printing melayani digital printing 24 jam di Jakarta Timur. Hardcover skripsi, banner, spanduk, stiker, brosur, undangan, dan berbagai kebutuhan percetakan."
+  />
 
-        <meta
-          name="keywords"
-          content="digital printing Jakarta Timur, percetakan Jakarta Timur, hardcover skripsi, banner, spanduk, stiker, brosur, percetakan 24 jam"
-        />
+  <meta
+    name="keywords"
+    content="digital printing Jakarta Timur, percetakan Jakarta Timur, percetakan Rawamangun, digital printing Rawamangun, hardcover skripsi Jakarta Timur, hardcover skripsi Rawamangun, banner Jakarta Timur, cetak banner, cetak stiker, cetak brosur"
+  />
 
-        <meta
-          name="robots"
-          content="index, follow"
-        />
+  <meta name="robots" content="index, follow" />
 
-        <link
-          rel="canonical"
-          href="https://daycreed-inframe.vercel.app/testing"
-        />
+  <meta name="author" content="Subur Maju Printing" />
 
-        
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              "@id":
-                "https://daycreed-inframe.vercel.app/testing#business",
-              "name": "Subur Maju Printing",
-              "description":
-                "Percetakan 24 jam di Jakarta Timur yang melayani digital printing, hardcover skripsi, banner, spanduk, stiker, brosur dan berbagai kebutuhan cetak.",
-              "url":
-                "https://daycreed-inframe.vercel.app/testing",
-              "telephone": "+6282246926544",
-              "priceRange": "$$",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Jl. Waru No. 24A, RT.1/RW.8",
-                "addressLocality": "Rawamangun",
-                "addressRegion": "DKI Jakarta",
-                "postalCode": "13220",
-                "addressCountry": "ID"
-              },
-              "openingHoursSpecification": [
-                {
-                  "@type": "OpeningHoursSpecification",
-                  "dayOfWeek": [
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                    "Saturday",
-                    "Sunday"
-                  ],
-                  "opens": "00:00",
-                  "closes": "23:59"
-                }
-              ],
-              "areaServed": {
-                "@type": "City",
-                "name": "Jakarta Timur"
-              },
-              "sameAs": []
-            })
-          }}
-        />
-      </Head>
+  <link
+    rel="canonical"
+    href="https://daycreed-inframe.vercel.app/testing"
+  />
+
+  {/* Open Graph */}
+  <meta
+    property="og:title"
+    content="Digital Printing Jakarta Timur 24 Jam | Subur Maju Printing"
+  />
+
+  <meta
+    property="og:description"
+    content="Digital printing 24 jam di Jakarta Timur. Hardcover skripsi, banner, spanduk, stiker, brosur, dan berbagai kebutuhan percetakan."
+  />
+
+  <meta
+    property="og:type"
+    content="website"
+  />
+
+  <meta
+    property="og:url"
+    content="https://daycreed-inframe.vercel.app/testing"
+  />
+
+  <meta
+    property="og:site_name"
+    content="Subur Maju Printing"
+  />
+
+  <meta
+    property="og:image"
+    content="https://daycreed-inframe.vercel.app/avatar.png"
+  />
+
+  <meta
+    property="og:image:alt"
+    content="Subur Maju Printing - Digital Printing Jakarta Timur"
+  />
+
+  {/* Twitter Card */}
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  />
+
+  <meta
+    name="twitter:title"
+    content="Digital Printing Jakarta Timur 24 Jam | Subur Maju Printing"
+  />
+
+  <meta
+    name="twitter:description"
+    content="Digital printing 24 jam di Jakarta Timur. Hardcover skripsi, banner, stiker, brosur, dan berbagai kebutuhan cetak."
+  />
+
+  <meta
+    name="twitter:image"
+    content="https://daycreed-inframe.vercel.app/avatar.png"
+  />
+
+  {/* Local SEO */}
+  <meta
+    name="geo.region"
+    content="ID-JK"
+  />
+
+  <meta
+    name="geo.placename"
+    content="Jakarta Timur"
+  />
+
+  <meta
+    name="language"
+    content="id-ID"
+  />
+
+  {/* Hero image preload */}
+  <link
+    rel="preload"
+    as="image"
+    href="/printer.png"
+  />
+
+  {/* LocalBusiness Schema */}
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+
+        "@id":
+          "https://daycreed-inframe.vercel.app/testing#business",
+
+        "name": "Subur Maju Printing",
+
+        "description":
+          "Percetakan dan digital printing 24 jam di Jakarta Timur yang melayani hardcover skripsi, banner, spanduk, stiker, brosur, undangan, dan berbagai kebutuhan cetak.",
+
+        "url":
+          "https://daycreed-inframe.vercel.app/testing",
+
+        "telephone": "+6282246926544",
+
+        "priceRange": "$$",
+
+        "image": [
+          "https://daycreed-inframe.vercel.app/avatar.png",
+          "https://daycreed-inframe.vercel.app/printer.png"
+        ],
+
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Jl. Waru No. 24A, RT.1/RW.8",
+          "addressLocality": "Rawamangun",
+          "addressRegion": "DKI Jakarta",
+          "postalCode": "13220",
+          "addressCountry": "ID"
+        },
+
+        "areaServed": {
+          "@type": "City",
+          "name": "Jakarta Timur"
+        },
+
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday"
+            ],
+
+            "opens": "00:00",
+            "closes": "23:59"
+          }
+        ],
+
+        "sameAs": []
+      })
+    }}
+  />
+
+  {/* Website Schema */}
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify({
+        "@context": "https://schema.org",
+
+        "@type": "WebSite",
+
+        "@id":
+          "https://daycreed-inframe.vercel.app/testing#website",
+
+        "url":
+          "https://daycreed-inframe.vercel.app/testing",
+
+        "name": "Subur Maju Printing",
+
+        "description":
+          "Digital Printing 24 Jam di Jakarta Timur",
+
+        "publisher": {
+          "@type": "LocalBusiness",
+
+          "name": "Subur Maju Printing",
+
+          "@id":
+            "https://daycreed-inframe.vercel.app/testing#business"
+        },
+
+        "inLanguage": "id-ID"
+      })
+    }}
+  />
+</Head>
 
       <main className="bg-white text-black font-sans">
 
