@@ -1,6 +1,89 @@
+import Head from "next/head";
+
 export default function Home() {
   return (
-    <main className="bg-white text-black font-sans">
+    <>
+      <Head>
+        <title>Subur Maju Printing | Digital Printing 24 Jam Jakarta Timur</title>
+
+        <meta
+          name="description"
+          content="Subur Maju Printing melayani digital printing, hardcover skripsi, banner, spanduk, stiker, brosur, dan berbagai kebutuhan percetakan 24 jam di Jakarta Timur."
+        />
+
+        <meta
+          name="keywords"
+          content="digital printing Jakarta Timur, percetakan Jakarta Timur, hardcover skripsi, banner, spanduk, stiker, brosur, percetakan 24 jam"
+        />
+
+        <meta
+          name="robots"
+          content="index, follow"
+        />
+
+        <link
+          rel="canonical"
+          href="https://daycreed-inframe.vercel.app/testing"
+        />
+
+        
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "@id":
+                "https://daycreed-inframe.vercel.app/testing#business",
+              "name": "Subur Maju Printing",
+              "description":
+                "Percetakan 24 jam di Jakarta Timur yang melayani digital printing, hardcover skripsi, banner, spanduk, stiker, brosur dan berbagai kebutuhan cetak.",
+              "url":
+                "https://daycreed-inframe.vercel.app/testing",
+              "telephone": "+6282246926544",
+              "priceRange": "$$",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Jl. Waru No. 24A, RT.1/RW.8",
+                "addressLocality": "Rawamangun",
+                "addressRegion": "DKI Jakarta",
+                "postalCode": "13220",
+                "addressCountry": "ID"
+              },
+              "openingHoursSpecification": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                    "Sunday"
+                  ],
+                  "opens": "00:00",
+                  "closes": "23:59"
+                }
+              ],
+              "areaServed": {
+                "@type": "City",
+                "name": "Jakarta Timur"
+              },
+              "sameAs": []
+            })
+          }}
+        />
+      </Head>
+
+      <main className="bg-white text-black font-sans">
+
+        
+
+      </main>
+    </>
+  );
+}
       {/* NAVBAR */}
       <header className="fixed top-0 left-0 right-0 w-full bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm z-50">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 h-20">
