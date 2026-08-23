@@ -104,37 +104,167 @@ export default function Home() {
 
       {/* SERVICES */}
       <section id="layanan" className="py-24 px-6 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-center text-5xl font-bold mb-4">Layanan Kami</h2>
-          <p className="text-center text-gray-600 mb-16 max-w-2xl mx-auto">
-            Solusi percetakan lengkap untuk kebutuhan bisnis dan akademik Anda
+  <div className="max-w-7xl mx-auto">
+
+    {/* Heading */}
+    <h2 className="text-center text-5xl font-bold mb-4">
+      Layanan Kami
+    </h2>
+
+    <p className="text-center text-gray-600 mb-16 max-w-2xl mx-auto">
+      Berbagai kebutuhan percetakan untuk bisnis, akademik, dan keperluan
+      sehari-hari Anda
+    </p>
+
+    {/* Swipeable Cards */}
+    <div
+      className="
+        flex gap-6 overflow-x-auto
+        snap-x snap-mandatory
+        pb-6
+        scrollbar-hide
+      "
+    >
+
+      {/* Digital Printing */}
+      <div
+        className="
+          min-w-[85%] sm:min-w-[60%] lg:min-w-[31%]
+          snap-center
+          bg-white
+          rounded-3xl
+          overflow-hidden
+          border border-gray-100
+          shadow-sm
+          hover:shadow-xl
+          transition-all duration-300
+        "
+      >
+        <img
+          src="/digitalprinting.jpeg"
+          alt="Digital Printing"
+          className="w-full h-64 object-cover"
+        />
+
+        <div className="p-8">
+          <h3 className="font-bold text-2xl mb-3">
+            Digital Printing
+          </h3>
+
+          <p className="text-gray-600 leading-relaxed">
+            Melayani berbagai kebutuhan cetak untuk keperluan bisnis,
+            akademik, maupun sehari-hari.
           </p>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="group bg-white p-10 rounded-3xl border hover:border-orange-200 hover:shadow-xl transition-all duration-300 text-center">
-              <div className="text-6xl mb-6 group-hover:scale-110 transition">📚</div>
-              <h3 className="font-bold text-2xl mb-3">Hardcover Skripsi</h3>
-              <p className="text-gray-600">Finishing premium, harga terbaik</p>
-            </div>
-            <div className="group bg-white p-10 rounded-3xl border hover:border-orange-200 hover:shadow-xl transition-all duration-300 text-center">
-              <div className="text-6xl mb-6 group-hover:scale-110 transition">🖨️</div>
-              <h3 className="font-bold text-2xl mb-3">Digital Printing</h3>
-              <p className="text-gray-600">Brosur, flyer, dokumen, kartu nama</p>
-            </div>
-            <div className="group bg-white p-10 rounded-3xl border hover:border-orange-200 hover:shadow-xl transition-all duration-300 text-center">
-              <div className="text-6xl mb-6 group-hover:scale-110 transition">🎨</div>
-              <h3 className="font-bold text-2xl mb-3">Banner & Spanduk</h3>
-              <p className="text-gray-600">Outdoor & indoor berkualitas</p>
-            </div>
-            <div className="group bg-white p-10 rounded-3xl border hover:border-orange-200 hover:shadow-xl transition-all duration-300 text-center">
-              <div className="text-6xl mb-6 group-hover:scale-110 transition">🏷️</div>
-              <h3 className="font-bold text-2xl mb-3">Stiker & Label</h3>
-              <p className="text-gray-600">Custom label produk & kemasan</p>
-            </div>
-          </div>
         </div>
-      </section>
+      </div>
 
+      {/* Eyecolor */}
+      <div
+        className="
+          min-w-[85%] sm:min-w-[60%] lg:min-w-[31%]
+          snap-center
+          bg-white
+          rounded-3xl
+          overflow-hidden
+          border border-gray-100
+          shadow-sm
+          hover:shadow-xl
+          transition-all duration-300
+        "
+      >
+        <img
+          src="/eyecolor.jpeg"
+          alt="Eyecolor"
+          className="w-full h-64 object-cover"
+        />
+
+        <div className="p-8">
+          <h3 className="font-bold text-2xl mb-3">
+            Cetak Beragam Media
+          </h3>
+
+          <p className="text-gray-600 leading-relaxed">
+            Pilihan untuk berbagai kebutuhan cetak dengan media dan ukuran
+            yang beragam.
+          </p>
+        </div>
+      </div>
+
+      {/* Lempanas */}
+      <div
+        className="
+          min-w-[85%] sm:min-w-[60%] lg:min-w-[31%]
+          snap-center
+          bg-white
+          rounded-3xl
+          overflow-hidden
+          border border-gray-100
+          shadow-sm
+          hover:shadow-xl
+          transition-all duration-300
+        "
+      >
+        <img
+          src="/lempanas.jpeg"
+          alt="Lempanas"
+          className="w-full h-64 object-cover"
+        />
+
+        <div className="p-8">
+          <h3 className="font-bold text-2xl mb-3">
+            Banner & Spanduk
+          </h3>
+
+          <p className="text-gray-600 leading-relaxed">
+            Untuk kebutuhan promosi, informasi, acara, dan berbagai
+            keperluan lainnya.
+          </p>
+        </div>
+      </div>
+
+      {/* Owner */}
+      <div
+        className="
+          min-w-[85%] sm:min-w-[60%] lg:min-w-[31%]
+          snap-center
+          bg-white
+          rounded-3xl
+          overflow-hidden
+          border border-gray-100
+          shadow-sm
+          hover:shadow-xl
+          transition-all duration-300
+        "
+      >
+        <img
+          src="/owner.jpeg"
+          alt="Layanan Percetakan"
+          className="w-full h-64 object-cover"
+        />
+
+        <div className="p-8">
+          <h3 className="font-bold text-2xl mb-3">
+            Kebutuhan Percetakan
+          </h3>
+
+          <p className="text-gray-600 leading-relaxed">
+            Kami melayani berbagai kebutuhan percetakan sesuai kebutuhan
+            pelanggan.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    {/* Swipe indicator - mobile only */}
+    <div className="flex justify-center items-center gap-2 mt-4 md:hidden">
+      <span className="text-gray-400 text-sm">
+        ← Geser untuk melihat layanan lainnya →
+      </span>
+    </div>
+
+  </div>
+</section>
       {/* WHY US */}
       <section id="kenapa-kami" className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
