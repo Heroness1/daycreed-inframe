@@ -265,6 +265,187 @@ export default function Home() {
 
   </div>
 </section>
+  {/* KATALOG PRODUK */}
+<section id="katalog" className="py-24 px-6 bg-white">
+  <div className="max-w-7xl mx-auto">
+
+    {/* Heading */}
+    <div className="mb-12">
+      <h2 className="text-center text-5xl font-bold">
+        Katalog Produk
+      </h2>
+
+      <p className="text-center text-gray-600 mt-4 max-w-2xl mx-auto">
+        Temukan berbagai produk percetakan yang tersedia di
+        Subur Maju Printing.
+      </p>
+    </div>
+
+    {/* Product Grid */}
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+
+      {/* Produk 1 */}
+      <div className="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300">
+
+        <div className="aspect-square bg-gray-100 overflow-hidden">
+          <img
+            src="/amplop.jpeg"
+            alt="Amplop Custom"
+            className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+
+        <div className="p-5">
+          <h3 className="font-bold text-xl">
+            Amplop Custom
+          </h3>
+
+          <p className="text-sm text-gray-500 mt-1">
+            Amplop dengan desain custom
+          </p>
+
+          <p className="text-orange-600 font-bold text-xl mt-3">
+            Rp5.000
+          </p>
+
+          <button className="w-full mt-4 bg-black hover:bg-gray-800 text-white py-3 rounded-full text-xs font-bold transition">
+            TAMBAH KE KERANJANG
+          </button>
+
+          <a
+            href="https://wa.me/6282246926544"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full mt-2 flex justify-center items-center bg-green-500 hover:bg-green-600 text-white py-3 rounded-full text-xs font-bold transition"
+          >
+            CHAT WHATSAPP
+          </a>
+        </div>
+      </div>
+
+
+      {/* Produk 2 */}
+      <div className="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300">
+
+        <div className="aspect-square bg-gray-100 overflow-hidden">
+          <img
+            src="/bando.jpeg"
+            alt="Bando Tuing-Tuing"
+            className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+
+        <div className="p-5">
+          <h3 className="font-bold text-xl">
+            Bando Tuing-Tuing
+          </h3>
+
+          <p className="text-sm text-gray-500 mt-1">
+            Bando custom berbagai kebutuhan
+          </p>
+
+          <p className="text-orange-600 font-bold text-xl mt-3">
+            Rp7.000
+          </p>
+
+          <button className="w-full mt-4 bg-black hover:bg-gray-800 text-white py-3 rounded-full text-xs font-bold transition">
+            TAMBAH KE KERANJANG
+          </button>
+
+          <a
+            href="https://wa.me/6282246926544"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full mt-2 flex justify-center items-center bg-green-500 hover:bg-green-600 text-white py-3 rounded-full text-xs font-bold transition"
+          >
+            CHAT WHATSAPP
+          </a>
+        </div>
+      </div>
+
+
+      {/* Produk 3 */}
+      <div className="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300">
+
+        <div className="aspect-square bg-gray-100 overflow-hidden">
+          <img
+            src="/bloknot.jpeg"
+            alt="Bloknot"
+            className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+
+        <div className="p-5">
+          <h3 className="font-bold text-xl">
+            Bloknot
+          </h3>
+
+          <p className="text-sm text-gray-500 mt-1">
+            Bloknot custom
+          </p>
+
+          <p className="text-orange-600 font-bold text-xl mt-3">
+            Mulai Rp5.000
+          </p>
+
+          <button className="w-full mt-4 bg-black hover:bg-gray-800 text-white py-3 rounded-full text-xs font-bold transition">
+            TAMBAH KE KERANJANG
+          </button>
+
+          <a
+            href="https://wa.me/6282246926544"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full mt-2 flex justify-center items-center bg-green-500 hover:bg-green-600 text-white py-3 rounded-full text-xs font-bold transition"
+          >
+            CHAT WHATSAPP
+          </a>
+        </div>
+      </div>
+
+
+      {/* Produk 4 */}
+      <div className="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300">
+
+        <div className="aspect-square bg-gray-100 overflow-hidden">
+          <img
+            src="/brosur.jpeg"
+            alt="Brosur"
+            className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+
+        <div className="p-5">
+          <h3 className="font-bold text-xl">
+            Brosur
+          </h3>
+
+          <p className="text-sm text-gray-500 mt-1">
+            Brosur promosi dan informasi
+          </p>
+
+          <p className="text-orange-600 font-bold text-xl mt-3">
+            Rp1.000
+          </p>
+
+          <button className="w-full mt-4 bg-black hover:bg-gray-800 text-white py-3 rounded-full text-xs font-bold transition">
+            TAMBAH KE KERANJANG
+          </button>
+
+          <a
+            href="https://wa.me/6282246926544"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full mt-2 flex justify-center items-center bg-green-500 hover:bg-green-600 text-white py-3 rounded-full text-xs font-bold transition"
+          >
+            CHAT WHATSAPP
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
       {/* WHY US */}
       <section id="kenapa-kami" className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
