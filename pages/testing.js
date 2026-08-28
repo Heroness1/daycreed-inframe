@@ -517,9 +517,11 @@ export default function Home() {
 
                   <div>
                     <div className="flex items-start justify-between gap-3 mb-4">
-                      {/* Logo inisial SM */}
-                      <div className="w-12 h-12 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center font-bold text-base group-hover:bg-orange-600 group-hover:text-white transition-colors shadow-sm">
-                        SM
+                      {/* Ikon Cetak Dokumen */}
+                      <div className="w-12 h-12 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center group-hover:bg-orange-600 group-hover:text-white transition-colors shadow-sm">
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                        </svg>
                       </div>
                       
                       {/* Badge jika ada */}
@@ -539,10 +541,10 @@ export default function Home() {
                     </p>
                   </div>
 
-                  {/* Tombol aksi bawah */}
-                  <div className="pt-4 border-t border-gray-100 flex items-center justify-between text-sm font-semibold text-orange-600">
-                    <span className="group-hover:translate-x-1 transition-transform">Tanya & Pesan via WA</span>
-                    <div className="w-8 h-8 rounded-full bg-orange-50 group-hover:bg-orange-600 group-hover:text-white flex items-center justify-center transition-colors">
+                  {/* Tombol aksi bawah (Teks Hitam Nyaman Dibaca) */}
+                  <div className="pt-4 border-t border-gray-100 flex items-center justify-between text-sm font-semibold text-gray-900">
+                    <span className="group-hover:text-orange-600 group-hover:translate-x-1 transition-all">Tanya & Pesan via WA</span>
+                    <div className="w-8 h-8 rounded-full bg-orange-50 group-hover:bg-orange-600 group-hover:text-white text-orange-600 flex items-center justify-center transition-colors">
                       <svg
                         className="w-4 h-4"
                         fill="none"
