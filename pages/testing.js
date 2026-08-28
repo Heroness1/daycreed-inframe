@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-// --- DATA LAYANAN & PRODUK (DRY) ---
+// --- DATA LAYANAN, PRODUK, KENAPA KAMI, & KLIEN (DRY) ---
 
 const dataLayanan = [
   {
@@ -25,7 +25,6 @@ const dataLayanan = [
   }
 ];
 
-// Data Produk
 const dataProduk = [
   { nama: "Cetak Spanduk", deskripsi: "Max lebar 3 meter." },
   { nama: "Cetak Baliho", deskripsi: "Max lebar 6 meter." },
@@ -55,6 +54,25 @@ const dataKenapaKami = [
   { judul: "✓ Respon Instan", deskripsi: "Tim kami fast response via WhatsApp." },
   { judul: "✓ Kualitas Terjamin", deskripsi: "Material premium + garansi." },
   { judul: "✓ Pengalaman Bertahun-tahun", deskripsi: "Terpercaya di Jakarta." }
+];
+
+const dataKlien = [
+  {
+    nama: "Kementerian Pertahanan RI",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Lambang_Kementerian_Pertahanan_Republik_Indonesia.png/600px-Lambang_Kementerian_Pertahanan_Republik_Indonesia.png"
+  },
+  {
+    nama: "BSI (Bank Syariah Indonesia)",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/a/a0/Bank_Syariah_Indonesia.svg"
+  },
+  {
+    nama: "BNI Syariah",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/f/f0/BNI_Syariah_logo.svg"
+  },
+  {
+    nama: "McDonald's",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/3/36/McDonald%27s_Golden_Arches.svg"
+  }
 ];
 
 export default function Home() {
@@ -256,6 +274,35 @@ export default function Home() {
                   <h3 className="font-bold text-xl mb-3 text-orange-600">{item.judul}</h3>
                   <p className="text-gray-600">{item.deskripsi}</p>
                 </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* KLIEN / PARTNER KAMI (DENGAN LOGO) */}
+        <section className="py-16 bg-white border-y border-gray-100">
+          <div className="max-w-7xl mx-auto px-6 text-center">
+            <p className="text-xs md:text-sm font-semibold tracking-wider text-gray-400 uppercase mb-10">
+              Pernah Melayani Kebutuhan Cetak untuk Berbagai Perusahaan & Instansi
+            </p>
+            
+            <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6">
+              {dataKlien.map((klien, index) => (
+                <div 
+                  key={index} 
+                  className="flex items-center gap-3 px-5 py-3 bg-gray-50 border border-gray-200 rounded-2xl shadow-sm hover:border-orange-500 hover:shadow-md transition-all duration-300 group"
+                >
+                  <div className="w-8 h-8 flex items-center justify-center relative">
+                    <img 
+                      src={klien.logo} 
+                      alt={`Logo ${klien.nama}`}
+                      className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                    />
+                  </div>
+                  <span className="font-bold text-gray-800 text-sm md:text-base group-hover:text-orange-600 transition-colors">
+                    {klien.nama}
+                  </span>
+                </div>
               ))}
             </div>
           </div>
