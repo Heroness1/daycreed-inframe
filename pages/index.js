@@ -42,29 +42,24 @@ export default function Home() {
           </a>
         </div>
 
-        {/* Tombol digabung ke dalam flexbox agar rapi bersebelahan di layar besar & bertumpuk di HP */}
         <div className="flex flex-col sm:flex-row gap-4">
-          {/* Tombol Launch ke Web Vercel */}
-          <a href="https://daycreed-inframe.vercel.app/testing">
-            <button className="w-full px-6 py-3 bg-orange-600 text-white rounded hover:bg-orange-700 transition">
-              KUNJUNGI WEBSITE
+          {/* Tombol langsung meluncur ke bagian Katalog di testing.js */}
+          {/* Kalau cuma jalan di lokal/satu project, bisa pakai href="/testing#katalog" */}
+          <a href="https://daycreed-inframe.vercel.app/testing#katalog">
+            <button className="w-full px-6 py-3 bg-orange-600 text-white rounded hover:bg-orange-700 transition font-semibold">
+              LIHAT KATALOG
             </button>
           </a>
 
           {/* Tombol Order WhatsApp */}
           <a 
             href={`https://wa.me/6282246926544?text=${encodeURIComponent(
-              `Halo Kak, saya mau order dari website Subur Maju Printing.
-
-Produk:
-Jumlah:
-Ukuran:
-Deadline:`
+              `Halo Kak, saya mau order dari website Subur Maju Printing.\n\nProduk:\nJumlah:\nUkuran:\nDeadline:`
             )}`}
             target="_blank" 
             rel="noopener noreferrer"
           >
-            <button className="w-full px-6 py-3 bg-black text-white rounded hover:opacity-80 transition dark:bg-white dark:text-black border border-transparent">
+            <button className="w-full px-6 py-3 bg-black text-white rounded hover:opacity-80 transition dark:bg-white dark:text-black border border-transparent font-semibold">
               ORDER VIA WHATSAPP
             </button>
           </a>
