@@ -42,11 +42,34 @@ export default function Home() {
           </a>
         </div>
 
-        <a href="/testing">
-          <button className="px-6 py-3 bg-black text-white rounded hover:opacity-80 transition dark:bg-white dark:text-black">
-            ORDER VIA WHATSAPP
-          </button>
-        </a>
+        {/* Tombol digabung ke dalam flexbox agar rapi bersebelahan di layar besar & bertumpuk di HP */}
+        <div className="flex flex-col sm:flex-row gap-4">
+          {/* Tombol Launch ke Web Vercel */}
+          <a href="https://daycreed-inframe.vercel.app/testing">
+            <button className="w-full px-6 py-3 bg-orange-600 text-white rounded hover:bg-orange-700 transition">
+              KUNJUNGI WEBSITE
+            </button>
+          </a>
+
+          {/* Tombol Order WhatsApp */}
+          <a 
+            href={`https://wa.me/6282246926544?text=${encodeURIComponent(
+              `Halo Kak, saya mau order dari website Subur Maju Printing.
+
+Produk:
+Jumlah:
+Ukuran:
+Deadline:`
+            )}`}
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <button className="w-full px-6 py-3 bg-black text-white rounded hover:opacity-80 transition dark:bg-white dark:text-black border border-transparent">
+              ORDER VIA WHATSAPP
+            </button>
+          </a>
+        </div>
+
       </main>
     </>
   )
