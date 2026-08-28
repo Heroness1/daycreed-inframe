@@ -1,6 +1,6 @@
-import Head from "next/head";
+            import Head from "next/head";
 
-
+// --- DATA UNTUK DRY ---
 
 const dataLayanan = [
   {
@@ -25,31 +25,27 @@ const dataLayanan = [
   }
 ];
 
+// Data Produk 100% dari list bos (Tanpa Gambar)
 const dataProduk = [
-  {
-    nama: "Amplop Custom",
-    deskripsi: "Amplop dengan desain custom.",
-    harga: "Rp5.000",
-    gambar: "/amplop.jpeg"
-  },
-  {
-    nama: "Bando Tuing-Tuing",
-    deskripsi: "Bando custom berbagai kebutuhan.",
-    harga: "Rp7.000",
-    gambar: "/bando.jpeg"
-  },
-  {
-    nama: "Bloknot",
-    deskripsi: "Bloknot custom.",
-    harga: "Mulai Rp5.000",
-    gambar: "/bloknot.jpeg"
-  },
-  {
-    nama: "Brosur",
-    deskripsi: "Brosur promosi dan informasi.",
-    harga: "Rp1.000",
-    gambar: "/brosur.jpeg"
-  }
+  { nama: "Cetak Spanduk", deskripsi: "Max lebar 3 meter.", harga: "Tanya Admin" },
+  { nama: "Cetak Baliho", deskripsi: "Max lebar 6 meter.", harga: "Tanya Admin" },
+  { nama: "Cetak Booklet", deskripsi: "Cetak booklet berkualitas untuk berbagai keperluan.", harga: "Tanya Admin" },
+  { nama: "Cetak Signate", deskripsi: "Pembuatan papan nama atau signage custom.", harga: "Tanya Admin" },
+  { nama: "Cetak Sticker Cutting", deskripsi: "Sticker cutting custom berbagai ukuran dan bentuk.", harga: "Tanya Admin" },
+  { nama: "Cetak Poster Ukuran Besar", deskripsi: "Poster ukuran besar custom resolusi tinggi.", harga: "Tanya Admin" },
+  { nama: "Cetak Nota", deskripsi: "Buku nota / bon custom untuk usaha.", harga: "Tanya Admin" },
+  { nama: "Cetak Mockup Event", deskripsi: "Kebutuhan dekorasi dan mockup untuk event.", harga: "Tanya Admin" },
+  { nama: "Cetak Xbanner", deskripsi: "X-Banner lengkap dengan tiang penyangga.", harga: "Tanya Admin" },
+  { nama: "Cetak Roll Banner", deskripsi: "Roll Banner premium, praktis dan kokoh.", harga: "Tanya Admin" },
+  { nama: "Cetak Plakat", deskripsi: "Plakat custom untuk acara penghargaan/kenang-kenangan.", harga: "Tanya Admin" },
+  { nama: "Cetak Lanyard", deskripsi: "Tali ID Card / Lanyard custom printing.", harga: "Tanya Admin" },
+  { nama: "Cetak Gelang Event / Wristband", deskripsi: "Wristband / gelang tiket event anti luntur.", harga: "Tanya Admin" },
+  { nama: "Cetak Id Card", deskripsi: "ID Card bahan PVC berkualitas tinggi.", harga: "Tanya Admin" },
+  { nama: "Cetak Nametag", deskripsi: "Nametag dada custom profesional.", harga: "Tanya Admin" },
+  { nama: "Cetak Kop Surat", deskripsi: "Kop surat resmi instansi atau perusahaan.", harga: "Tanya Admin" },
+  { nama: "Cetak Photo Props Aksesoris Photoboot", deskripsi: "Aksesoris photobooth kekinian dan lucu.", harga: "Tanya Admin" },
+  { nama: "Cetak Package", deskripsi: "Packaging / kemasan box custom untuk produk.", harga: "Tanya Admin" },
+  { nama: "Cetak Gantungan Kunci", deskripsi: "Gantungan kunci akrilik/pin custom.", harga: "Tanya Admin" }
 ];
 
 const dataKenapaKami = [
@@ -94,69 +90,6 @@ export default function Home() {
 
         {/* Hero image preload */}
         <link rel="preload" as="image" href="/printer.png" />
-
-        {/* LocalBusiness Schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              "@id": "https://daycreed-inframe.vercel.app/testing#business",
-              "name": "Subur Maju Printing",
-              "description": "Percetakan dan digital printing 24 jam di Jakarta Timur yang melayani hardcover skripsi, banner, spanduk, stiker, brosur, undangan, dan berbagai kebutuhan cetak.",
-              "url": "https://daycreed-inframe.vercel.app/testing",
-              "telephone": "+6282246926544",
-              "priceRange": "$$",
-              "image": [
-                "https://daycreed-inframe.vercel.app/avatar.png",
-                "https://daycreed-inframe.vercel.app/printer.png"
-              ],
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Jl. Waru No. 24A, RT.1/RW.8",
-                "addressLocality": "Rawamangun",
-                "addressRegion": "DKI Jakarta",
-                "postalCode": "13220",
-                "addressCountry": "ID"
-              },
-              "areaServed": {
-                "@type": "City",
-                "name": "Jakarta Timur"
-              },
-              "openingHoursSpecification": [
-                {
-                  "@type": "OpeningHoursSpecification",
-                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-                  "opens": "00:00",
-                  "closes": "23:59"
-                }
-              ],
-              "sameAs": []
-            })
-          }}
-        />
-
-        {/* Website Schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              "@id": "https://daycreed-inframe.vercel.app/testing#website",
-              "url": "https://daycreed-inframe.vercel.app/testing",
-              "name": "Subur Maju Printing",
-              "description": "Digital Printing 24 Jam di Jakarta Timur",
-              "publisher": {
-                "@type": "LocalBusiness",
-                "name": "Subur Maju Printing",
-                "@id": "https://daycreed-inframe.vercel.app/testing#business"
-              },
-              "inLanguage": "id-ID"
-            })
-          }}
-        />
       </Head>
 
       <main className="bg-white text-black font-sans">
@@ -241,7 +174,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* SERVICES (Refactored with DRY) */}
+        {/* SERVICES */}
         <section id="layanan" aria-labelledby="layanan-title" className="py-24 px-6 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <h2 id="layanan-title" className="text-center text-5xl font-bold mb-4">Layanan Kami</h2>
@@ -270,38 +203,44 @@ export default function Home() {
           </div>
         </section>
 
-        {/* KATALOG PRODUK (Refactored with DRY) */}
+        {/* KATALOG PRODUK MINIMALIS (Tanpa Gambar) */}
         <section id="katalog" aria-labelledby="katalog-title" className="py-24 px-6 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="mb-12">
-              <h2 id="katalog-title" className="text-center text-5xl font-bold">Katalog Produk</h2>
+              <h2 id="katalog-title" className="text-center text-5xl font-bold">Katalog & Layanan Cetak</h2>
               <p className="text-center text-gray-600 mt-4 max-w-2xl mx-auto">
-                Temukan berbagai produk percetakan yang tersedia di Subur Maju Printing.
+                Daftar lengkap layanan cetak yang tersedia di Subur Maju Printing.
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {dataProduk.map((produk, index) => (
-                <article key={index} className="flex flex-col bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300">
-                  <div className="aspect-square bg-gray-100 overflow-hidden">
-                    <img src={produk.gambar} alt={produk.nama} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                <article 
+                  key={index} 
+                  className="flex flex-col bg-gray-50 rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300 relative overflow-hidden group"
+                >
+                  {/* Aksen garis orange di atas */}
+                  <div className="absolute top-0 left-0 w-full h-1 bg-orange-600 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+                  
+                  <div className="flex-grow">
+                    <h3 className="font-bold text-xl text-gray-900">{produk.nama}</h3>
+                    <p className="text-sm text-gray-600 mt-2 leading-relaxed">{produk.deskripsi}</p>
                   </div>
-                  <div className="p-5 flex flex-col flex-grow">
-                    <h3 className="font-bold text-xl">{produk.nama}</h3>
-                    <p className="text-sm text-gray-500 mt-1 flex-grow">{produk.deskripsi}</p>
-                    <p className="text-orange-600 font-bold text-xl mt-3">{produk.harga}</p>
+                  
+                  <div className="mt-6 flex items-center justify-between">
+                    <span className="text-orange-600 font-semibold">{produk.harga}</span>
                     
-                    {/* Tombol gabungan langsung pesan ke WA */}
+                    {/* Tombol langsung pesan ke WA */}
                     <a
                       href={`https://wa.me/6282246926544?text=${encodeURIComponent(
-                        `Halo Kak, saya mau pesan ${produk.nama} (${produk.harga}). Boleh minta info lebih lanjut?`
+                        `Halo Kak, saya mau tanya/pesan untuk layanan ${produk.nama}. Boleh minta info harganya?`
                       )}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label={`Pesan ${produk.nama} melalui WhatsApp`}
-                      className="w-full mt-4 flex justify-center items-center bg-black hover:bg-gray-800 text-white py-3 rounded-full text-xs font-bold transition"
+                      aria-label={`Tanya harga ${produk.nama} melalui WhatsApp`}
+                      className="bg-black hover:bg-gray-800 text-white px-5 py-2 rounded-full text-xs font-bold transition"
                     >
-                      PESAN SEKARANG
+                      TANYA ADMIN
                     </a>
                   </div>
                 </article>
@@ -310,7 +249,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* WHY US (Refactored with DRY) */}
+        {/* WHY US */}
         <section id="kenapa-kami" aria-labelledby="kenapa-title" className="py-24 px-6 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <h2 id="kenapa-title" className="text-center text-5xl font-bold mb-16">Kenapa Pilih Subur Maju?</h2>
@@ -444,3 +383,4 @@ export default function Home() {
     </>
   );
 }
+    
