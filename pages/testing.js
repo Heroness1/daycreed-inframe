@@ -279,27 +279,31 @@ export default function Home() {
           </div>
         </section>
 
-        {/* KLIEN / PARTNER KAMI (DENGAN LOGO) */}
-        <section className="py-16 bg-white border-y border-gray-100">
-          <div className="max-w-7xl mx-auto px-6 text-center">
-            <p className="text-xs md:text-sm font-semibold tracking-wider text-gray-400 uppercase mb-10">
+        {/* KLIEN / PARTNER KAMI (ANIMASI BERGERAK KANAN KE KIRI / MARQUEE) */}
+        <section className="py-20 bg-white border-y border-gray-100 overflow-hidden">
+          <div className="max-w-7xl mx-auto px-6 text-center mb-10">
+            <p className="text-xs md:text-sm font-bold tracking-widest text-gray-900 uppercase">
               Pernah Melayani Kebutuhan Cetak untuk Berbagai Perusahaan & Instansi
             </p>
-            
-            <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6">
-              {dataKlien.map((klien, index) => (
+          </div>
+
+          {/* Marquee Container */}
+          <div className="relative w-full overflow-hidden whitespace-nowrap py-4">
+            <div className="inline-flex animate-marquee items-center gap-16">
+              {/* Kita duplikat array-nya agar pergerakannya mulus tanpa jeda */}
+              {[...dataKlien, ...dataKlien, ...dataKlien].map((klien, index) => (
                 <div 
                   key={index} 
-                  className="flex items-center gap-3 px-5 py-3 bg-gray-50 border border-gray-200 rounded-2xl shadow-sm hover:border-orange-500 hover:shadow-md transition-all duration-300 group"
+                  className="flex items-center gap-4 px-6 group cursor-pointer inline-flex"
                 >
-                  <div className="w-8 h-8 flex items-center justify-center relative">
+                  <div className="h-16 w-36 flex items-center justify-center relative">
                     <img 
                       src={klien.logo} 
                       alt={`Logo ${klien.nama}`}
-                      className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                      className="max-h-14 max-w-[130px] object-contain filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
                     />
                   </div>
-                  <span className="font-bold text-gray-800 text-sm md:text-base group-hover:text-orange-600 transition-colors">
+                  <span className="text-sm md:text-base font-bold text-gray-700 group-hover:text-orange-600 transition-colors">
                     {klien.nama}
                   </span>
                 </div>
@@ -307,6 +311,22 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* CSS untuk Marquee Animation */}
+        <style jsx>{`
+          @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-33.333%); }
+          }
+          .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: marquee 25s linear infinite;
+          }
+          .animate-marquee:hover {
+            animation-play-state: paused;
+          }
+        `}</style>
 
         {/* LOKASI */}
         <section id="lokasi" aria-labelledby="lokasi-title" className="bg-white py-24 px-6">
