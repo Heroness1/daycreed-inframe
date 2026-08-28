@@ -133,21 +133,17 @@ const dataKenapaKami = [
 const dataKlien = [
   {
     nama: "Kementerian Pertahanan RI",
-    logo:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Logo_Kementerian_Pertahanan_Republik_Indonesia_%282022%29.png/496px-Logo_Kementerian_Pertahanan_Republik_Indonesia_%282022%29.png",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/9/9b/Seal_of_the_Ministry_of_Defense_of_the_Republic_of_Indonesia_%282022%29.svg",
   },
   {
     nama: "BSI (Bank Syariah Indonesia)",
-    logo:
-      "https://upload.wikimedia.org/wikipedia/commons/a/a0/Bank_Syariah_Indonesia.svg",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/a/a0/Bank_Syariah_Indonesia.svg",
   },
   {
     nama: "McDonald's",
-    logo:
-      "https://upload.wikimedia.org/wikipedia/commons/3/36/McDonald%27s_Golden_Arches.svg",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/3/36/McDonald%27s_Golden_Arches.svg",
   },
 ];
-
 export default function Home() {
   return (
     <>
@@ -279,6 +275,13 @@ export default function Home() {
               >
                 Kenapa Kami
               </a>
+
+                  <a
+  href="#klien"
+  className="text-gray-800 hover:text-orange-600 transition"
+>
+  Klien
+</a>
 
               <a
                 href="#lokasi"
