@@ -59,7 +59,7 @@ const dataKenapaKami = [
 const dataKlien = [
   {
     nama: "Kementerian Pertahanan RI",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Lambang_Kementerian_Pertahanan_Republik_Indonesia.png/600px-Lambang_Kementerian_Pertahanan_Republik_Indonesia.png"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/c/cd/Lambang_Kementerian_Pertahanan_Republik_Indonesia.png"
   },
   {
     nama: "BSI (Bank Syariah Indonesia)",
@@ -279,7 +279,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* KLIEN / PARTNER KAMI (ANIMASI BERGERAK KANAN KE KIRI / MARQUEE) */}
+        {/* KLIEN / PARTNER KAMI (MARQUEE BERGERAK, LOGO DI ATAS, TEXT DI BAWAH, LANGSUNG BERWARNA) */}
         <section className="py-20 bg-white border-y border-gray-100 overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 text-center mb-10">
             <p className="text-xs md:text-sm font-bold tracking-widest text-gray-900 uppercase">
@@ -290,20 +290,19 @@ export default function Home() {
           {/* Marquee Container */}
           <div className="relative w-full overflow-hidden whitespace-nowrap py-4">
             <div className="inline-flex animate-marquee items-center gap-16">
-              {/* Kita duplikat array-nya agar pergerakannya mulus tanpa jeda */}
               {[...dataKlien, ...dataKlien, ...dataKlien].map((klien, index) => (
                 <div 
                   key={index} 
-                  className="flex items-center gap-4 px-6 group cursor-pointer inline-flex"
+                  className="flex flex-col items-center justify-center gap-3 px-6 inline-flex"
                 >
-                  <div className="h-16 w-36 flex items-center justify-center relative">
+                  <div className="h-16 w-32 flex items-center justify-center relative">
                     <img 
                       src={klien.logo} 
                       alt={`Logo ${klien.nama}`}
-                      className="max-h-14 max-w-[130px] object-contain filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+                      className="max-h-16 max-w-[120px] object-contain"
                     />
                   </div>
-                  <span className="text-sm md:text-base font-bold text-gray-700 group-hover:text-orange-600 transition-colors">
+                  <span className="text-xs md:text-sm font-bold text-gray-800">
                     {klien.nama}
                   </span>
                 </div>
