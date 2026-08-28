@@ -33,21 +33,21 @@ const dataLayanan = [
 const dataProduk = [
   { 
     nama: "Cetak Spanduk", 
-    deskripsi: "Max lebar 3 meter, bahan tebal dan anti luntur.", 
-    badge: "🔥 Best Seller",
-    kategori: "Outdoor & Banner"
+    deskripsi: "Max lebar 3 meter.", 
+    kategori: "Outdoor & Banner",
+    badge: "🔥 Best Seller"
   },
   { 
     nama: "Cetak Baliho", 
-    deskripsi: "Max lebar 6 meter untuk promosi luar ruang skala besar.",
-    badge: "Big Size",
-    kategori: "Outdoor & Banner"
+    deskripsi: "Max lebar 6 meter.", 
+    kategori: "Outdoor & Banner",
+    badge: "Big Size"
   },
   {
     nama: "Cetak Booklet",
     deskripsi: "Cetak booklet berkualitas untuk berbagai keperluan.",
-    badge: "Populer",
-    kategori: "Packaging & Buku"
+    kategori: "Packaging & Buku",
+    badge: "Populer"
   },
   {
     nama: "Cetak Signate",
@@ -57,8 +57,8 @@ const dataProduk = [
   {
     nama: "Cetak Sticker Cutting",
     deskripsi: "Sticker cutting custom berbagai ukuran dan bentuk.",
-    badge: "⭐ Favorit",
-    kategori: "Merchandise & Event"
+    kategori: "Merchandise & Event",
+    badge: "⭐ Favorit"
   },
   {
     nama: "Cetak Poster Ukuran Besar",
@@ -68,8 +68,8 @@ const dataProduk = [
   {
     nama: "Cetak Nota",
     deskripsi: "Buku nota / bon custom untuk usaha.",
-    badge: "Bisnis",
-    kategori: "Atribut & Kantor"
+    kategori: "Atribut & Kantor",
+    badge: "Bisnis"
   },
   {
     nama: "Cetak Mockup Event",
@@ -94,8 +94,8 @@ const dataProduk = [
   {
     nama: "Cetak Lanyard",
     deskripsi: "Tali ID Card / Lanyard custom printing.",
-    badge: "⚡ Cepat",
-    kategori: "Atribut & Kantor"
+    kategori: "Atribut & Kantor",
+    badge: "⚡ Cepat"
   },
   {
     nama: "Cetak Gelang Event / Wristband",
@@ -105,8 +105,8 @@ const dataProduk = [
   {
     nama: "Cetak Id Card",
     deskripsi: "ID Card bahan PVC berkualitas tinggi.",
-    badge: "⚡ Cepat",
-    kategori: "Atribut & Kantor"
+    kategori: "Atribut & Kantor",
+    badge: "⚡ Cepat"
   },
   {
     nama: "Cetak Nametag",
@@ -126,8 +126,8 @@ const dataProduk = [
   {
     nama: "Cetak Package",
     deskripsi: "Packaging / kemasan box custom untuk produk.",
-    badge: "Custom",
-    kategori: "Packaging & Buku"
+    kategori: "Packaging & Buku",
+    badge: "Custom"
   },
   {
     nama: "Cetak Gantungan Kunci",
@@ -194,7 +194,7 @@ export default function Home() {
     return matchesSearch && matchesCategory;
   });
 
-  // Batasi 6 produk awal jika belum diklik expand, atau tampilkan semua jika sedang mencari/memilih kategori
+  // Tampilkan 6 produk di awal, atau semua jika sedang mencari/memilih kategori/diklik expand
   const displayedProduk = (searchQuery || selectedCategory !== "Semua" || showAll) 
     ? filteredProduk 
     : filteredProduk.slice(0, 6);
@@ -350,7 +350,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Hubungi Subur Maju Printing melalui WhatsApp"
-              className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-full font-semibold transition shadow-md shadow-orange-600/20"
+              className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-full font-semibold transition"
             >
               Hubungi WA
             </a>
@@ -366,20 +366,20 @@ export default function Home() {
 
             <div className="text-white">
 
-              <p className="inline-flex items-center gap-2 bg-white/20 backdrop-blur px-4 py-2 rounded-full text-sm mb-6 font-medium">
+              <p className="inline-flex items-center gap-2 bg-white/20 backdrop-blur px-4 py-2 rounded-full text-sm mb-6">
                 Subur Maju Printing • Jakarta Timur
               </p>
 
               <h1
                 id="hero-title"
-                className="text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6"
+                className="text-6xl md:text-7xl font-bold leading-none tracking-tighter mb-6"
               >
                 Digital Printing Jakarta Timur 24 Jam
                 <br />
-                <span className="text-amber-200">Hardcover Skripsi & Percetakan</span>
+                Hardcover Skripsi & Percetakan
               </h1>
 
-              <p className="text-xl text-white/90 max-w-lg leading-relaxed">
+              <p className="text-xl text-white/90 max-w-lg">
                 Subur Maju Printing melayani digital printing 24 jam di
                 Jakarta Timur, termasuk hardcover skripsi, banner, spanduk,
                 stiker, brosur, undangan, dan berbagai kebutuhan percetakan
@@ -395,7 +395,7 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Konsultasi kebutuhan cetak melalui WhatsApp"
-                  className="bg-white text-orange-700 hover:bg-gray-100 font-bold px-8 py-4 rounded-2xl text-lg transition shadow-lg"
+                  className="bg-white text-orange-700 hover:bg-gray-100 font-bold px-10 py-4 rounded-2xl text-lg transition"
                 >
                   Konsultasi Gratis
                 </a>
@@ -429,25 +429,25 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
 
             <div>
-              <div className="text-4xl font-extrabold text-orange-600">24</div>
-              <div className="text-gray-600 mt-1 font-medium">Jam Layanan</div>
+              <div className="text-4xl font-bold text-orange-600">24</div>
+              <div className="text-gray-600">Jam Layanan</div>
             </div>
 
             <div>
-              <div className="text-4xl font-extrabold text-orange-600">
+              <div className="text-4xl font-bold text-orange-600">
                 1000+
               </div>
-              <div className="text-gray-600 mt-1 font-medium">Proyek Selesai</div>
+              <div className="text-gray-600">Proyek Selesai</div>
             </div>
 
             <div>
-              <div className="text-4xl font-extrabold text-orange-600">100%</div>
-              <div className="text-gray-600 mt-1 font-medium">Garansi Puas</div>
+              <div className="text-4xl font-bold text-orange-600">100%</div>
+              <div className="text-gray-600">Garansi Puas</div>
             </div>
 
             <div>
-              <div className="text-4xl font-extrabold text-orange-600">Fast</div>
-              <div className="text-gray-600 mt-1 font-medium">Pengerjaan Cepat</div>
+              <div className="text-4xl font-bold text-orange-600">Fast</div>
+              <div className="text-gray-600">Pengerjaan Cepat</div>
             </div>
 
           </div>
@@ -463,7 +463,7 @@ export default function Home() {
 
             <h2
               id="layanan-title"
-              className="text-center text-4xl md:text-5xl font-bold mb-4"
+              className="text-center text-5xl font-bold mb-4"
             >
               Layanan Kami
             </h2>
@@ -515,7 +515,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ================= KATALOG (CLEAN WHITE CARDS ON WHITE BG) ================= */}
+        {/* ================= KATALOG (INTERACTIVE WHITE CARDS WITH SEARCH, FILTER & EXPAND) ================= */}
         <section
           id="katalog"
           aria-labelledby="katalog-title"
@@ -540,13 +540,9 @@ export default function Home() {
 
             {/* --- SEARCH BAR & FILTER TABS --- */}
             <div className="max-w-3xl mx-auto mb-12 space-y-6">
-              
-              {/* Input Search (Clean White Border) */}
               <div className="relative">
                 <span className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                  </svg>
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                 </span>
                 <input
                   type="text"
@@ -556,16 +552,12 @@ export default function Home() {
                   className="w-full pl-12 pr-4 py-4 bg-white border border-gray-300 rounded-2xl text-gray-900 placeholder-gray-400 focus:outline-none focus:border-gray-900 focus:ring-2 focus:ring-gray-100 transition shadow-sm"
                 />
                 {searchQuery && (
-                  <button
-                    onClick={() => setSearchQuery("")}
-                    className="absolute inset-y-0 right-0 pr-4 flex items-center text-sm text-gray-400 hover:text-gray-600"
-                  >
+                  <button onClick={() => setSearchQuery("")} className="absolute inset-y-0 right-0 pr-4 flex items-center text-sm text-gray-400 hover:text-gray-600">
                     Hapus
                   </button>
                 )}
               </div>
 
-              {/* Kategori Pills */}
               <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-hide justify-start md:justify-center">
                 {kategoriList.map((kategori, idx) => (
                   <button
@@ -581,10 +573,9 @@ export default function Home() {
                   </button>
                 ))}
               </div>
-
             </div>
 
-            {/* Grid Kartu Produk (Pure White + Soft Border & Shadow) */}
+            {/* Grid Kartu Produk */}
             {displayedProduk.length > 0 ? (
               <>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -598,60 +589,31 @@ export default function Home() {
                       rel="noopener noreferrer"
                       className="group relative flex flex-col justify-between bg-white rounded-3xl p-7 border border-gray-200 shadow-sm hover:shadow-md hover:border-gray-400 transition-all duration-300 overflow-hidden"
                     >
-                      {/* Aksen garis atas saat di-hover */}
                       <div className="absolute top-0 left-0 right-0 h-1.5 bg-gray-900 opacity-0 group-hover:opacity-100 transition-opacity" />
-
                       <div>
                         <div className="flex items-start justify-between gap-3 mb-4">
-                          {/* Ikon Cetak Dokumen */}
                           <div className="w-12 h-12 rounded-2xl bg-gray-50 border border-gray-200 text-gray-800 flex items-center justify-center group-hover:bg-gray-900 group-hover:text-white group-hover:border-gray-900 transition-colors shadow-sm">
-                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                            </svg>
+                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
                           </div>
-                          
-                          {/* Badge jika ada */}
                           {produk.badge && (
                             <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 border border-gray-200 text-gray-800">
                               {produk.badge}
                             </span>
                           )}
                         </div>
-
                         <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider block mb-1">
-                          {produk.kategori}
+                          {produk.kategori || "Lainnya"}
                         </span>
-
-                        <h3 className="text-xl font-bold text-gray-900 mb-2">
-                          {produk.nama}
-                        </h3>
-
-                        <p className="text-sm text-gray-600 leading-relaxed mb-6">
-                          {produk.deskripsi}
-                        </p>
+                        <h3 className="text-xl font-bold text-gray-900 mb-2">{produk.nama}</h3>
+                        <p className="text-sm text-gray-600 leading-relaxed mb-6">{produk.deskripsi}</p>
                       </div>
 
-                      {/* Tombol aksi bawah */}
                       <div className="pt-4 border-t border-gray-100 flex items-center justify-between text-sm font-semibold text-gray-900">
                         <span>Tanya & Pesan via WA</span>
                         <div className="w-8 h-8 rounded-full bg-gray-100 group-hover:bg-gray-900 group-hover:text-white text-gray-800 flex items-center justify-center transition-colors">
-                          <svg
-                            className="w-4 h-4"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M14 5l7 7m0 0l-7 7m7-7H3"
-                            />
-                          </svg>
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                         </div>
                       </div>
-
                     </a>
                   ))}
                 </div>
@@ -680,7 +642,6 @@ export default function Home() {
                 )}
               </>
             ) : (
-              /* State Kosong jika tidak ditemukan */
               <div className="text-center py-16 bg-white rounded-3xl border border-gray-200 shadow-sm">
                 <div className="text-4xl mb-2">🔍</div>
                 <h3 className="text-lg font-bold text-gray-900">Layanan tidak ditemukan</h3>
@@ -707,24 +668,24 @@ export default function Home() {
 
             <h2
               id="kenapa-title"
-              className="text-center text-4xl md:text-5xl font-bold mb-16"
+              className="text-center text-5xl font-bold mb-16"
             >
               Kenapa Pilih Subur Maju?
             </h2>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-10">
 
               {dataKenapaKami.map((item, index) => (
                 <article
                   key={index}
-                  className="bg-white rounded-3xl p-8 shadow-sm hover:shadow transition border border-gray-100"
+                  className="bg-white rounded-3xl p-8 shadow-sm hover:shadow transition"
                 >
 
                   <h3 className="font-bold text-xl mb-3 text-orange-600">
                     {item.judul}
                   </h3>
 
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600">
                     {item.deskripsi}
                   </p>
 
@@ -744,7 +705,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-6 text-center mb-10">
             <p
               id="klien-title"
-              className="text-xs md:text-sm font-bold tracking-widest text-gray-500 uppercase"
+              className="text-xs md:text-sm font-bold tracking-widest text-gray-900 uppercase"
             >
               Pernah Melayani Kebutuhan Cetak untuk Berbagai Perusahaan & Instansi
             </p>
@@ -764,7 +725,7 @@ export default function Home() {
                       <img
                         src={klien.logo}
                         alt={`Logo ${klien.nama}`}
-                        className="max-h-20 max-w-[140px] w-auto object-contain grayscale hover:grayscale-0 transition duration-300"
+                        className="max-h-20 max-w-[140px] w-auto object-contain"
                         loading="lazy"
                         decoding="async"
                       />
@@ -782,41 +743,274 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ================= FOOTER ================= */}
-        <footer className="bg-gray-900 text-white py-12 px-6">
-          <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-            <div>
-              <div className="font-bold text-xl mb-1">Subur Maju Printing</div>
-              <p className="text-gray-400 text-sm">Pusat Digital Printing & Percetakan 24 Jam di Jakarta Timur.</p>
+        {/* ================= MARQUEE CSS ================= */}
+        <style jsx>{`
+          @keyframes marquee {
+            0% {
+              transform: translateX(0);
+            }
+
+            100% {
+              transform: translateX(-33.333333%);
+            }
+          }
+
+          .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: marquee 25s linear infinite;
+            will-change: transform;
+          }
+
+          .animate-marquee:hover {
+            animation-play-state: paused;
+          }
+
+          @media (prefers-reduced-motion: reduce) {
+            .animate-marquee {
+              animation: none;
+            }
+          }
+        `}</style>
+
+        {/* ================= LOKASI ================= */}
+        <section
+          id="lokasi"
+          aria-labelledby="lokasi-title"
+          className="bg-white py-24 px-6"
+        >
+          <div className="max-w-6xl mx-auto">
+
+            <h2
+              id="lokasi-title"
+              className="text-center text-4xl font-bold mb-12"
+            >
+              Lokasi Kami
+            </h2>
+
+            <div className="grid md:grid-cols-2 gap-10">
+
+              <article className="bg-gray-50 rounded-3xl p-8 shadow">
+
+                <h3 className="text-2xl font-bold mb-6">
+                  📍 Subur Maju Printing
+                </h3>
+
+                <address className="not-italic text-gray-700 leading-relaxed">
+                  Jl. Waru No. 24A,
+                  <br />
+                  RT.1/RW.8, Rawamangun,
+                  <br />
+                  Kec. Pulo Gadung,
+                  <br />
+                  Kota Jakarta Timur 13220
+                </address>
+
+                <div className="mt-6 space-y-3">
+
+                  <p>
+                    <strong>🕒 Buka 24 Jam</strong>
+                  </p>
+
+                  <p>
+                    <strong>📞 WhatsApp:</strong> 0822-4692-6544
+                  </p>
+
+                </div>
+
+                <p className="mt-6 text-gray-600">
+                  Percetakan 24 Jam Jakarta Timur yang melayani hardcover
+                  skripsi, digital printing, banner, stiker, brosur, dan
+                  berbagai kebutuhan cetak.
+                </p>
+
+                <a
+                  href="https://maps.google.com/?q=Jl.+Waru+No.+24A+Rawamangun+Jakarta+Timur"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-8 bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-xl transition"
+                >
+                  Buka Google Maps
+                </a>
+
+              </article>
+
+              <div className="overflow-hidden rounded-3xl shadow">
+
+                <iframe
+                  title="Lokasi Subur Maju Printing di Google Maps"
+                  src="https://maps.google.com/maps?q=Jl.%20Waru%20No.%2024A%20Rawamangun%20Jakarta%20Timur&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  width="100%"
+                  height="450"
+                  style={{ border: 0 }}
+                  loading="lazy"
+                  allowFullScreen
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+
+              </div>
+
             </div>
-            <p className="text-gray-500 text-sm">© {new Date().getFullYear()} Subur Maju Printing. All rights reserved.</p>
+          </div>
+        </section>
+
+        {/* ================= CTA ================= */}
+        <section
+          aria-labelledby="cta-title"
+          className="py-24 px-6 bg-gray-50"
+        >
+          <div className="max-w-4xl mx-auto text-center">
+
+            <h2 id="cta-title" className="text-5xl font-bold">
+              Siap Cetak Sekarang?
+            </h2>
+
+            <p className="mt-4 text-xl text-gray-500">
+              Kirim file Anda dan konsultasikan kebutuhan cetak melalui
+              WhatsApp.
+            </p>
+
+            <a
+              href="https://wa.me/6282246926544"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-8 bg-orange-600 hover:bg-orange-700 text-white px-10 py-5 rounded-2xl text-xl font-bold transition"
+            >
+              Order Via WhatsApp
+            </a>
+
+          </div>
+        </section>
+
+        {/* ================= FOOTER ================= */}
+        <footer className="bg-gradient-to-br from-orange-700 via-orange-600 to-amber-600 text-white">
+
+          <div className="max-w-7xl mx-auto px-6 py-16">
+
+            <div className="grid md:grid-cols-3 gap-12">
+
+              <div>
+
+                <div className="flex items-center gap-4 mb-6">
+
+                  <img
+                    src="/avatar.png"
+                    alt="Logo Subur Maju Printing"
+                    className="w-16 h-16 rounded-2xl object-cover"
+                  />
+
+                  <div>
+
+                    <h3 className="font-bold text-3xl">
+                      Subur Maju Printing
+                    </h3>
+
+                    <p className="text-orange-200">
+                      Digital Printing 24 Jam
+                    </p>
+
+                  </div>
+
+                </div>
+
+                <p className="text-orange-100 leading-relaxed">
+                  Melayani Digital Printing, Hardcover Skripsi, Banner,
+                  Spanduk, Stiker, Brosur, dan berbagai kebutuhan percetakan
+                  dengan pengerjaan cepat dan harga terjangkau.
+                </p>
+
+              </div>
+
+              <div>
+
+                <h3 className="font-bold text-xl mb-6">
+                  Informasi Kontak
+                </h3>
+
+                <div className="space-y-4 text-orange-100">
+
+                  <address className="not-italic">
+                    📍 Jl. Waru No.24A
+                    <br />
+                    Rawamangun, Pulo Gadung
+                    <br />
+                    Jakarta Timur 13220
+                  </address>
+
+                  <p>📞 0822-4692-6544</p>
+
+                  <p>🕒 Buka 24 Jam</p>
+
+                </div>
+
+              </div>
+
+              <div>
+
+                <h3 className="font-bold text-xl mb-6">
+                  Layanan Populer
+                </h3>
+
+                <ul className="space-y-3 text-orange-100">
+
+                  <li>✓ Hardcover Skripsi</li>
+                  <li>✓ Digital Printing</li>
+                  <li>✓ Banner & Spanduk</li>
+                  <li>✓ Stiker & Label</li>
+                  <li>✓ Brosur & Flyer</li>
+                  <li>✓ Undangan & Kartu Nama</li>
+
+                </ul>
+
+              </div>
+
+            </div>
+          </div>
+
+          <div className="border-t border-white/20 py-6">
+
+            <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-3 text-sm text-orange-200">
+
+              <p>
+                © {new Date().getFullYear()} Subur Maju Printing. All Rights
+                Reserved.
+              </p>
+
+              <p>
+                Digital Presence by{" "}
+                <span className="font-semibold text-white">
+                  Lure
+                </span>
+              </p>
+
+            </div>
           </div>
         </footer>
 
+        {/* ================= FLOATING WHATSAPP ================= */}
+        <a
+          href="https://wa.me/6282246926544"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Hubungi Subur Maju Printing melalui WhatsApp"
+          className="fixed bottom-8 right-8 bg-orange-600 hover:bg-orange-700 text-white w-16 h-16 rounded-2xl flex items-center justify-center text-4xl shadow-2xl z-50 transition-all duration-300"
+        >
+
+          <span aria-hidden="true">💬</span>
+
+          <span
+            aria-hidden="true"
+            className="absolute inset-0 rounded-2xl border-4 border-orange-400 animate-ping opacity-75"
+          />
+
+          <span
+            aria-hidden="true"
+            className="absolute -top-1 -right-1 w-5 h-5 bg-green-400 rounded-full border-2 border-white"
+          />
+
+        </a>
+
       </main>
-
-      {/* ================= MARQUEE & UTILITY CSS ================= */}
-      <style jsx>{`
-        @keyframes marquee {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-33.333333%);
-          }
-        }
-
-        .animate-marquee {
-          display: flex;
-          width: max-content;
-          animation: marquee 25s linear infinite;
-          will-change: transform;
-        }
-
-        .animate-marquee:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
     </>
   );
 }
