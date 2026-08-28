@@ -1,6 +1,6 @@
-            import Head from "next/head";
+import Head from "next/head";
 
-// --- DATA UNTUK DRY ---
+// --- DATA LAYANAN & PRODUK (DRY) ---
 
 const dataLayanan = [
   {
@@ -25,27 +25,27 @@ const dataLayanan = [
   }
 ];
 
-// Data Produk 100% dari list bos (Tanpa Gambar)
+// Data Produk
 const dataProduk = [
-  { nama: "Cetak Spanduk", deskripsi: "Max lebar 3 meter.", harga: "Tanya Admin" },
-  { nama: "Cetak Baliho", deskripsi: "Max lebar 6 meter.", harga: "Tanya Admin" },
-  { nama: "Cetak Booklet", deskripsi: "Cetak booklet berkualitas untuk berbagai keperluan.", harga: "Tanya Admin" },
-  { nama: "Cetak Signate", deskripsi: "Pembuatan papan nama atau signage custom.", harga: "Tanya Admin" },
-  { nama: "Cetak Sticker Cutting", deskripsi: "Sticker cutting custom berbagai ukuran dan bentuk.", harga: "Tanya Admin" },
-  { nama: "Cetak Poster Ukuran Besar", deskripsi: "Poster ukuran besar custom resolusi tinggi.", harga: "Tanya Admin" },
-  { nama: "Cetak Nota", deskripsi: "Buku nota / bon custom untuk usaha.", harga: "Tanya Admin" },
-  { nama: "Cetak Mockup Event", deskripsi: "Kebutuhan dekorasi dan mockup untuk event.", harga: "Tanya Admin" },
-  { nama: "Cetak Xbanner", deskripsi: "X-Banner lengkap dengan tiang penyangga.", harga: "Tanya Admin" },
-  { nama: "Cetak Roll Banner", deskripsi: "Roll Banner premium, praktis dan kokoh.", harga: "Tanya Admin" },
-  { nama: "Cetak Plakat", deskripsi: "Plakat custom untuk acara penghargaan/kenang-kenangan.", harga: "Tanya Admin" },
-  { nama: "Cetak Lanyard", deskripsi: "Tali ID Card / Lanyard custom printing.", harga: "Tanya Admin" },
-  { nama: "Cetak Gelang Event / Wristband", deskripsi: "Wristband / gelang tiket event anti luntur.", harga: "Tanya Admin" },
-  { nama: "Cetak Id Card", deskripsi: "ID Card bahan PVC berkualitas tinggi.", harga: "Tanya Admin" },
-  { nama: "Cetak Nametag", deskripsi: "Nametag dada custom profesional.", harga: "Tanya Admin" },
-  { nama: "Cetak Kop Surat", deskripsi: "Kop surat resmi instansi atau perusahaan.", harga: "Tanya Admin" },
-  { nama: "Cetak Photo Props Aksesoris Photoboot", deskripsi: "Aksesoris photobooth kekinian dan lucu.", harga: "Tanya Admin" },
-  { nama: "Cetak Package", deskripsi: "Packaging / kemasan box custom untuk produk.", harga: "Tanya Admin" },
-  { nama: "Cetak Gantungan Kunci", deskripsi: "Gantungan kunci akrilik/pin custom.", harga: "Tanya Admin" }
+  { nama: "Cetak Spanduk", deskripsi: "Max lebar 3 meter." },
+  { nama: "Cetak Baliho", deskripsi: "Max lebar 6 meter." },
+  { nama: "Cetak Booklet", deskripsi: "Cetak booklet berkualitas untuk berbagai keperluan." },
+  { nama: "Cetak Signate", deskripsi: "Pembuatan papan nama atau signage custom." },
+  { nama: "Cetak Sticker Cutting", deskripsi: "Sticker cutting custom berbagai ukuran dan bentuk." },
+  { nama: "Cetak Poster Ukuran Besar", deskripsi: "Poster ukuran besar custom resolusi tinggi." },
+  { nama: "Cetak Nota", deskripsi: "Buku nota / bon custom untuk usaha." },
+  { nama: "Cetak Mockup Event", deskripsi: "Kebutuhan dekorasi dan mockup untuk event." },
+  { nama: "Cetak Xbanner", deskripsi: "X-Banner lengkap dengan tiang penyangga." },
+  { nama: "Cetak Roll Banner", deskripsi: "Roll Banner premium, praktis dan kokoh." },
+  { nama: "Cetak Plakat", deskripsi: "Plakat custom untuk acara penghargaan/kenang-kenangan." },
+  { nama: "Cetak Lanyard", deskripsi: "Tali ID Card / Lanyard custom printing." },
+  { nama: "Cetak Gelang Event / Wristband", deskripsi: "Wristband / gelang tiket event anti luntur." },
+  { nama: "Cetak Id Card", deskripsi: "ID Card bahan PVC berkualitas tinggi." },
+  { nama: "Cetak Nametag", deskripsi: "Nametag dada custom profesional." },
+  { nama: "Cetak Kop Surat", deskripsi: "Kop surat resmi instansi atau perusahaan." },
+  { nama: "Cetak Photo Props Aksesoris Photoboot", deskripsi: "Aksesoris photobooth kekinian dan lucu." },
+  { nama: "Cetak Package", deskripsi: "Packaging / kemasan box custom untuk produk." },
+  { nama: "Cetak Gantungan Kunci", deskripsi: "Gantungan kunci akrilik/pin custom." }
 ];
 
 const dataKenapaKami = [
@@ -203,47 +203,44 @@ export default function Home() {
           </div>
         </section>
 
-        {/* KATALOG PRODUK MINIMALIS (Tanpa Gambar) */}
-        <section id="katalog" aria-labelledby="katalog-title" className="py-24 px-6 bg-white">
+        {/* KATALOG PRODUK (COMPACT MENU STYLE) */}
+        <section id="katalog" aria-labelledby="katalog-title" className="py-20 px-6 bg-white">
           <div className="max-w-7xl mx-auto">
-            <div className="mb-12">
-              <h2 id="katalog-title" className="text-center text-5xl font-bold">Katalog & Layanan Cetak</h2>
-              <p className="text-center text-gray-600 mt-4 max-w-2xl mx-auto">
-                Daftar lengkap layanan cetak yang tersedia di Subur Maju Printing.
+            <div className="mb-10 text-center">
+              <h2 id="katalog-title" className="text-4xl md:text-5xl font-bold text-gray-900">Katalog & Layanan Cetak</h2>
+              <p className="text-gray-600 mt-3 max-w-2xl mx-auto text-sm md:text-base">
+                Daftar lengkap layanan cetak kami. Klik salah satu layanan untuk tanya harga & pesan via WhatsApp.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* List Menu Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
               {dataProduk.map((produk, index) => (
-                <article 
-                  key={index} 
-                  className="flex flex-col bg-gray-50 rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300 relative overflow-hidden group"
+                <a
+                  key={index}
+                  href={`https://wa.me/6282246926544?text=${encodeURIComponent(
+                    `Halo Kak, saya mau tanya/pesan untuk layanan ${produk.nama}. Boleh minta info harganya?`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center justify-between p-4 bg-gray-50 rounded-2xl border border-gray-100 hover:bg-orange-50 hover:border-orange-200 hover:shadow-sm transition-all duration-300"
                 >
-                  {/* Aksen garis orange di atas */}
-                  <div className="absolute top-0 left-0 w-full h-1 bg-orange-600 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
-                  
-                  <div className="flex-grow">
-                    <h3 className="font-bold text-xl text-gray-900">{produk.nama}</h3>
-                    <p className="text-sm text-gray-600 mt-2 leading-relaxed">{produk.deskripsi}</p>
+                  <div className="flex-grow pr-4">
+                    <h3 className="font-bold text-gray-900 group-hover:text-orange-700 transition-colors">
+                      {produk.nama}
+                    </h3>
+                    <p className="text-xs text-gray-500 mt-1 leading-relaxed">
+                      {produk.deskripsi}
+                    </p>
                   </div>
                   
-                  <div className="mt-6 flex items-center justify-between">
-                    <span className="text-orange-600 font-semibold">{produk.harga}</span>
-                    
-                    {/* Tombol langsung pesan ke WA */}
-                    <a
-                      href={`https://wa.me/6282246926544?text=${encodeURIComponent(
-                        `Halo Kak, saya mau tanya/pesan untuk layanan ${produk.nama}. Boleh minta info harganya?`
-                      )}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`Tanya harga ${produk.nama} melalui WhatsApp`}
-                      className="bg-black hover:bg-gray-800 text-white px-5 py-2 rounded-full text-xs font-bold transition"
-                    >
-                      TANYA ADMIN
-                    </a>
+                  {/* Icon Bulat Panah */}
+                  <div className="flex-shrink-0 bg-white p-2 rounded-full shadow-sm text-orange-600 group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
                   </div>
-                </article>
+                </a>
               ))}
             </div>
           </div>
@@ -383,4 +380,3 @@ export default function Home() {
     </>
   );
 }
-    
