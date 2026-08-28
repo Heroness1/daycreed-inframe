@@ -575,74 +575,82 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ================= KLIEN ================= */}
-        <section className="py-20 bg-white border-y border-gray-100 overflow-hidden">
+{/* ================= KLIEN / PARTNER KAMI ================= */}
+<section
+  id="klien"
+  aria-labelledby="klien-title"
+  className="py-20 bg-white border-y border-gray-100 overflow-hidden"
+>
+  <div className="max-w-7xl mx-auto px-6 text-center mb-10">
+    <p
+      id="klien-title"
+      className="text-xs md:text-sm font-bold tracking-widest text-gray-900 uppercase"
+    >
+      Pernah Melayani Kebutuhan Cetak untuk Berbagai Perusahaan & Instansi
+    </p>
+  </div>
 
-          <div className="max-w-7xl mx-auto px-6 text-center mb-10">
+  <div className="relative w-full overflow-hidden whitespace-nowrap py-4">
+    <div className="inline-flex animate-marquee items-center gap-16">
 
-            <p className="text-xs md:text-sm font-bold tracking-widest text-gray-900 uppercase">
-              Pernah Melayani Kebutuhan Cetak untuk Berbagai Perusahaan &
-              Instansi
-            </p>
-
-          </div>
-
-          <div className="relative w-full overflow-hidden whitespace-nowrap py-4">
-
-            <div className="inline-flex animate-marquee items-center gap-16">
-
-              {[...dataKlien, ...dataKlien, ...dataKlien].map(
-                (klien, index) => (
-                  <div
-                    key={index}
-                    className="flex flex-col items-center justify-center gap-3 px-6 inline-flex"
-                  >
-
-                    <div className="h-16 w-32 flex items-center justify-center relative">
-
-                      <img
-                        src={klien.logo}
-                        alt={`Logo ${klien.nama}`}
-                        className="max-h-16 max-w-[120px] object-contain"
-                      />
-
-                    </div>
-
-                    <span className="text-xs md:text-sm font-bold text-gray-800">
-                      {klien.nama}
-                    </span>
-
-                  </div>
-                )
-              )}
-
+      {[...dataKlien, ...dataKlien, ...dataKlien].map(
+        (klien, index) => (
+          <div
+            key={`${klien.nama}-${index}`}
+            className="flex flex-col items-center justify-center gap-3 px-6"
+          >
+            {/* LOGO */}
+            <div className="h-20 w-36 flex items-center justify-center">
+              <img
+                src={klien.logo}
+                alt={`Logo ${klien.nama}`}
+                className="max-h-20 max-w-[140px] w-auto object-contain"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
+
+            {/* NAMA KLIEN */}
+            <span className="text-xs md:text-sm font-bold text-gray-800 text-center whitespace-nowrap">
+              {klien.nama}
+            </span>
           </div>
-        </section>
+        )
+      )}
 
-        {/* ================= MARQUEE CSS ================= */}
-        <style jsx>{`
-          @keyframes marquee {
-            0% {
-              transform: translateX(0%);
-            }
+    </div>
+  </div>
+</section>
 
-            100% {
-              transform: translateX(-33.333%);
-            }
-          }
+{/* ================= MARQUEE CSS ================= */}
+<style jsx>{`
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
 
-          .animate-marquee {
-            display: flex;
-            width: max-content;
-            animation: marquee 25s linear infinite;
-          }
+    100% {
+      transform: translateX(-33.333333%);
+    }
+  }
 
-          .animate-marquee:hover {
-            animation-play-state: paused;
-          }
-        `}</style>
+  .animate-marquee {
+    display: flex;
+    width: max-content;
+    animation: marquee 25s linear infinite;
+    will-change: transform;
+  }
 
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-marquee {
+      animation: none;
+    }
+  }
+`}</style>
         {/* ================= LOKASI ================= */}
         <section
           id="lokasi"
