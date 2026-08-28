@@ -281,7 +281,7 @@ export default function Home() {
         <link rel="preload" as="image" href="/printer.png" />
       </Head>
 
-      <main className="bg-white text-black font-sans">
+      <main className="bg-white text-gray-800 font-sans">
 
         {/* ================= NAVBAR ================= */}
         <header className="fixed top-0 left-0 right-0 w-full bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm z-50">
@@ -295,7 +295,7 @@ export default function Home() {
               />
 
               <div>
-                <div className="font-bold text-2xl tracking-tight">
+                <div className="font-bold text-2xl tracking-tight text-gray-900">
                   Subur Maju Printing
                 </div>
 
@@ -311,35 +311,35 @@ export default function Home() {
             >
               <a
                 href="#layanan"
-                className="text-gray-800 hover:text-orange-600 transition"
+                className="text-gray-700 hover:text-orange-600 transition"
               >
                 Layanan
               </a>
 
               <a
                 href="#katalog"
-                className="text-gray-800 hover:text-orange-600 transition"
+                className="text-gray-700 hover:text-orange-600 transition"
               >
                 Katalog
               </a>
 
               <a
                 href="#kenapa-kami"
-                className="text-gray-800 hover:text-orange-600 transition"
+                className="text-gray-700 hover:text-orange-600 transition"
               >
                 Kenapa Kami
               </a>
 
               <a
                 href="#klien"
-                className="text-gray-800 hover:text-orange-600 transition"
+                className="text-gray-700 hover:text-orange-600 transition"
               >
                 Klien
               </a>
 
               <a
                 href="#lokasi"
-                className="text-gray-800 hover:text-orange-600 transition"
+                className="text-gray-700 hover:text-orange-600 transition"
               >
                 Lokasi
               </a>
@@ -372,14 +372,14 @@ export default function Home() {
 
               <h1
                 id="hero-title"
-                className="text-6xl md:text-7xl font-bold leading-none tracking-tighter mb-6"
+                className="text-6xl md:text-7xl font-bold leading-none tracking-tighter mb-6 text-white"
               >
                 Digital Printing Jakarta Timur 24 Jam
                 <br />
                 Hardcover Skripsi & Percetakan
               </h1>
 
-              <p className="text-xl text-white/90 max-w-lg">
+              <p className="text-xl text-white/95 max-w-lg">
                 Subur Maju Printing melayani digital printing 24 jam di
                 Jakarta Timur, termasuk hardcover skripsi, banner, spanduk,
                 stiker, brosur, undangan, dan berbagai kebutuhan percetakan
@@ -402,7 +402,7 @@ export default function Home() {
 
                 <a
                   href="#katalog"
-                  className="border border-white/70 hover:bg-white/10 font-semibold px-8 py-4 rounded-2xl text-lg transition"
+                  className="border border-white/70 hover:bg-white/10 font-semibold px-8 py-4 rounded-2xl text-lg transition text-white"
                 >
                   Lihat Katalog
                 </a>
@@ -463,7 +463,7 @@ export default function Home() {
 
             <h2
               id="layanan-title"
-              className="text-center text-5xl font-bold mb-4"
+              className="text-center text-5xl font-bold mb-4 text-gray-900"
             >
               Layanan Kami
             </h2>
@@ -489,7 +489,7 @@ export default function Home() {
 
                   <div className="p-8">
 
-                    <h3 className="font-bold text-2xl mb-3">
+                    <h3 className="font-bold text-2xl mb-3 text-gray-900">
                       {item.judul}
                     </h3>
 
@@ -668,7 +668,7 @@ export default function Home() {
 
             <h2
               id="kenapa-title"
-              className="text-center text-5xl font-bold mb-16"
+              className="text-center text-5xl font-bold mb-16 text-gray-900"
             >
               Kenapa Pilih Subur Maju?
             </h2>
@@ -783,7 +783,7 @@ export default function Home() {
 
             <h2
               id="lokasi-title"
-              className="text-center text-4xl font-bold mb-12"
+              className="text-center text-4xl font-bold mb-12 text-gray-900"
             >
               Lokasi Kami
             </h2>
@@ -792,7 +792,7 @@ export default function Home() {
 
               <article className="bg-gray-50 rounded-3xl p-8 shadow">
 
-                <h3 className="text-2xl font-bold mb-6">
+                <h3 className="text-2xl font-bold mb-6 text-gray-900">
                   📍 Subur Maju Printing
                 </h3>
 
@@ -806,7 +806,7 @@ export default function Home() {
                   Kota Jakarta Timur 13220
                 </address>
 
-                <div className="mt-6 space-y-3">
+                <div className="mt-6 space-y-3 text-gray-700">
 
                   <p>
                     <strong>🕒 Buka 24 Jam</strong>
@@ -861,11 +861,11 @@ export default function Home() {
         >
           <div className="max-w-4xl mx-auto text-center">
 
-            <h2 id="cta-title" className="text-5xl font-bold">
+            <h2 id="cta-title" className="text-5xl font-bold text-gray-900">
               Siap Cetak Sekarang?
             </h2>
 
-            <p className="mt-4 text-xl text-gray-500">
+            <p className="mt-4 text-xl text-gray-600">
               Kirim file Anda dan konsultasikan kebutuhan cetak melalui
               WhatsApp.
             </p>
