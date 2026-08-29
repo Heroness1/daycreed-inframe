@@ -11,31 +11,28 @@ const waLink = (text) =>
   `https://wa.me/${WA_NUMBER}${text ? `?text=${encodeURIComponent(text)}` : ""}`;
 
 export default function Home() {
-  // ================= LOGIKA SLIDER BACKGROUND (13 GAMBAR) =================
+  // ================= 10+ GAMBAR BERWARNA CERAH & VIBRANT =================
   const backgroundImages = [
-    "https://images.unsplash.com/photo-1591241880758-722003fdb0af?auto=format&fit=crop&q=80&w=1600",
-    "https://images.unsplash.com/photo-1531815288026?auto=format&fit=crop&q=80&w=1600",
-    "https://images.unsplash.com/photo-1592492135673-55966d3b541a?auto=format&fit=crop&q=80&w=1600",
-    "https://images.unsplash.com/photo-1563212628-d70314a4c165?auto=format&fit=crop&q=80&w=1600", // Sticker printing detail
-    "https://images.unsplash.com/photo-1582236952771-5582f342981d?auto=format&fit=crop&q=80&w=1600", // Large format banner print
-    "https://images.unsplash.com/photo-1591122676834-f85764d707c0?auto=format&fit=crop&q=80&w=1600", // Finished hardcover theses stack
-    "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1600", // Print media supply shelf
-    "https://images.unsplash.com/photo-1601614917637-29218d6e32d2?auto=format&fit=crop&q=80&w=1600", // Stack of colorful brochures
-    "https://images.unsplash.com/photo-1591241880758-722003fdb0af?auto=format&fit=crop&q=80&w=1600", // Merchandise print - mugs
-    "https://images.unsplash.com/photo-1593121921327-0243e8d2e61a?auto=format&fit=crop&q=80&w=1600", // Offset printing press operator
-    "https://images.unsplash.com/photo-1581093116521-3965582b13c7?auto=format&fit=crop&q=80&w=1600", // Graphic design workstation and prints
-    "https://images.unsplash.com/photo-1591122676834-f85764d707c0?auto=format&fit=crop&q=80&w=1600", // Sublimation jersey print fabric
-    "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1600", // Finished product display shelf
+    "https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?auto=format&fit=crop&q=80&w=1600", // Printing press colorful
+    "https://images.unsplash.com/photo-1572021335469-31706a17aaef?auto=format&fit=crop&q=80&w=1600", // Colorful CMYK inks
+    "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&q=80&w=1600", // Stationery & paper
+    "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=1600", // Graphic design colors
+    "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?auto=format&fit=crop&q=80&w=1600", // Vibrant art & print
+    "https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&q=80&w=1600", // Abstract liquid paint CMYK
+    "https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&q=80&w=1600", // Neon / Vibrant printer atmosphere
+    "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=1600", // Modern workshop & layout
+    "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1600", // Digital print machine
+    "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&q=80&w=1600", // Colorful posters stack
   ];
+
   const [currentBg, setCurrentBg] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentBg((prev) => (prev + 1) % backgroundImages.length);
-    }, 8000); 
+    }, 4500); // Ganti tiap 4.5 detik
     return () => clearInterval(interval);
   }, [backgroundImages.length]);
-  // =======================================================================
 
   return (
     <>
@@ -63,7 +60,6 @@ export default function Home() {
         <meta name="geo.region" content="ID-JK" />
         <meta name="geo.placename" content="Jakarta Timur" />
         <meta name="language" content="id-ID" />
-        <link rel="preload" as="image" href="/printer.png" />
       </Head>
 
       <main className="bg-white text-gray-800 font-sans">
@@ -89,18 +85,20 @@ export default function Home() {
           </div>
         </header>
 
-        {/* ================= HERO (SLIDER DENGAN 13 GAMBAR) ================= */}
+        {/* ================= HERO (SMOOTH SLIDER + VIBRANT OVERLAY) ================= */}
         <section
           aria-labelledby="hero-title"
-          className="relative pt-32 pb-24 flex items-center min-h-[90vh] overflow-hidden"
+          className="relative pt-32 pb-24 flex items-center min-h-[92vh] overflow-hidden bg-slate-900"
         >
-          {/* Slider Container - Z-Index 0 */}
+          {/* Slider Background */}
           <div className="absolute inset-0 z-0">
             {backgroundImages.map((src, index) => (
               <div
                 key={index}
-                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                  index === currentBg ? "opacity-100" : "opacity-0"
+                className={`absolute inset-0 transition-all duration-1000 ease-in-out transform ${
+                  index === currentBg
+                    ? "opacity-100 scale-105"
+                    : "opacity-0 scale-100 pointer-events-none"
                 }`}
                 style={{
                   backgroundImage: `url(${src})`,
@@ -109,28 +107,29 @@ export default function Home() {
                 }}
               />
             ))}
-            {/* Lapisan Gelap (Overlay) */}
-            <div className="absolute inset-0 bg-black/65"></div>
+            
+            {/* Overlay Gradasi Warm/Oranye-Hitam (Bikin Gambar Hidup & Teks Tetap Jelas) */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-orange-950/40 backdrop-contrast-125"></div>
           </div>
 
-          {/* Konten Teks - Z-Index 10 */}
+          {/* Konten Teks */}
           <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
             <div className="text-white max-w-3xl">
 
-              <p className="inline-flex items-center gap-2 bg-white/20 backdrop-blur px-4 py-2 rounded-full text-sm mb-6">
+              <p className="inline-flex items-center gap-2 bg-orange-600/30 border border-orange-400/40 backdrop-blur-md px-4 py-2 rounded-full text-sm font-medium mb-6 text-orange-200">
                 Subur Maju Printing • Jakarta Timur
               </p>
 
               <h1
                 id="hero-title"
-                className="text-5xl md:text-7xl font-bold leading-tight md:leading-none tracking-tighter mb-6 text-white"
+                className="text-5xl md:text-7xl font-extrabold leading-tight md:leading-none tracking-tight mb-6 text-white drop-shadow-md"
               >
                 Digital Printing Jakarta Timur 24 Jam
                 <br />
                 Hardcover Skripsi & Percetakan
               </h1>
 
-              <p className="text-lg md:text-xl text-gray-200 max-w-lg mb-10 leading-relaxed">
+              <p className="text-lg md:text-xl text-gray-200 max-w-xl mb-10 leading-relaxed drop-shadow-sm">
                 Subur Maju Printing melayani digital printing 24 jam di
                 Jakarta Timur, termasuk hardcover skripsi, banner, spanduk,
                 stiker, brosur, undangan, dan berbagai kebutuhan percetakan
@@ -143,14 +142,14 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Konsultasi kebutuhan cetak melalui WhatsApp"
-                  className="bg-white text-orange-700 hover:bg-gray-100 font-bold px-8 py-4 rounded-2xl text-lg transition shadow-lg"
+                  className="bg-orange-600 hover:bg-orange-500 text-white font-bold px-8 py-4 rounded-2xl text-lg transition-all duration-300 shadow-xl shadow-orange-900/40 hover:scale-105"
                 >
                   Konsultasi Gratis
                 </a>
 
                 <a
                   href="#katalog"
-                  className="border-2 border-white/70 hover:bg-white/20 font-semibold px-8 py-4 rounded-2xl text-lg transition text-white"
+                  className="border-2 border-white/80 bg-black/20 hover:bg-white/20 font-semibold px-8 py-4 rounded-2xl text-lg transition-all duration-300 text-white backdrop-blur-sm"
                 >
                   Lihat Katalog
                 </a>
@@ -159,14 +158,12 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ================= STATS (SUDAH DIHAPUS) ================= */}
-
         {/* ================= SERVICES ================= */}
         <section id="layanan" aria-labelledby="layanan-title" className="py-24 px-6 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <h2 id="layanan-title" className="text-center text-5xl font-bold mb-4 text-gray-900">Layanan Kami</h2>
             <p className="text-center text-gray-600 mb-16 max-w-2xl mx-auto">
-              Berbagai kebutuhan percetakan untuk bisnis, akademik, and keperluan sehari-hari Anda.
+              Berbagai kebutuhan percetakan untuk bisnis, akademik, dan keperluan sehari-hari Anda.
             </p>
             <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-6 scrollbar-hide">
               {dataLayanan.map((item, index) => (
@@ -283,7 +280,7 @@ export default function Home() {
         <section aria-labelledby="cta-title" className="py-24 px-6 bg-gray-50">
           <div className="max-w-4xl mx-auto text-center">
             <h2 id="cta-title" className="text-5xl font-bold text-gray-900">Siap Cetak Sekarang?</h2>
-            <p className="mt-4 text-xl text-gray-600">Kirim file Anda and konsultasikan kebutuhan cetak melalui WhatsApp.</p>
+            <p className="mt-4 text-xl text-gray-600">Kirim file Anda dan konsultasikan kebutuhan cetak melalui WhatsApp.</p>
             <a
               href={waLink()}
               target="_blank"
@@ -308,7 +305,7 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-orange-100 leading-relaxed">
-                  Melayani Digital Printing, Hardcover Skripsi, Banner, Spanduk, Stiker, Brosur, and berbagai kebutuhan percetakan dengan pengerjaan cepat and harga terjangkau.
+                  Melayani Digital Printing, Hardcover Skripsi, Banner, Spanduk, Stiker, Brosur, dan berbagai kebutuhan percetakan dengan pengerjaan cepat dan harga terjangkau.
                 </p>
               </div>
               <div>
