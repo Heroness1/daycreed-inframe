@@ -32,7 +32,7 @@ export default function Home() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentBg((prev) => (prev + 1) % backgroundImages.length);
-    }, 2000); 
+    }, 8000); 
     return () => clearInterval(interval);
   }, [backgroundImages.length]);
   // =======================================================================
