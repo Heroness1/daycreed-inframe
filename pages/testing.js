@@ -64,26 +64,24 @@ export default function Home() {
 
       <main className="bg-white text-gray-800 font-sans">
 
-        {/* ================= NAVBAR ================= */}
-        <header className="fixed top-0 left-0 right-0 w-full bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm z-50">
-          <div className="max-w-7xl mx-auto flex items-center justify-between px-6 h-20">
-            <div className="flex items-center gap-4">
-              <img src="/avatar.png" alt="Logo Subur Maju Printing" className="w-14 h-14 rounded-2xl object-cover shadow" />
-              <div>
-                <div className="font-bold text-2xl tracking-tight text-gray-900">Subur Maju Printing</div>
-                <p className="text-sm text-gray-500 -mt-1">Digital Printing 24 Jam</p>
-              </div>
-            </div>
+           {/* ================= NAVBAR (iOS DYNAMIC ISLAND) ================= */}
+<header className="fixed top-4 left-4 right-4 md:left-1/2 md:-translate-x-1/2 md:w-[800px] bg-black/40 backdrop-blur-2xl backdrop-saturate-200 border border-white/15 shadow-2xl z-50 rounded-full">
+  <div className="flex items-center justify-between px-5 h-16">
+    <div className="flex items-center gap-3">
+      <img src="/avatar.png" alt="Logo Subur Maju Printing" className="w-10 h-10 rounded-full object-cover border border-white/20" />
+      <div className="hidden sm:flex flex-col justify-center mt-1">
+        <div className="font-semibold text-[15px] tracking-tight text-white leading-none">Subur Maju Printing</div>
+      </div>
+    </div>
 
-            <nav aria-label="Navigasi utama" className="hidden md:flex items-center gap-8 text-sm font-medium">
-              <a href="#layanan" className="text-gray-700 hover:text-orange-600 transition">Layanan</a>
-              <a href="#katalog" className="text-gray-700 hover:text-orange-600 transition">Katalog</a>
-              <a href="#kenapa-kami" className="text-gray-700 hover:text-orange-600 transition">Kenapa Kami</a>
-              <a href="#klien" className="text-gray-700 hover:text-orange-600 transition">Klien</a>
-              <a href="#lokasi" className="text-gray-700 hover:text-orange-600 transition">Lokasi</a>
-            </nav>
-          </div>
-        </header>
+    <nav aria-label="Navigasi utama" className="flex items-center gap-6 text-[13px] font-medium text-gray-300">
+      <a href="#layanan" className="hover:text-white transition">Layanan</a>
+      <a href="#katalog" className="hover:text-white transition">Katalog</a>
+      <a href="#lokasi" className="hover:text-white transition">Lokasi</a>
+    </nav>
+  </div>
+</header>
+
 
         {/* ================= HERO (SMOOTH SLIDER + VIBRANT OVERLAY) ================= */}
         <section
