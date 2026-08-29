@@ -206,36 +206,26 @@ export default function Home() {
         <Catalog />
 
         {/* ================= WHY US ================= */}
-        <section id="kenapa-kami" aria-labelledby="kenapa-title" className="py-24 px-6 bg-white border-y border-gray-100">
-  <div className="max-w-7xl mx-auto">
-    
-    <div className="text-center mb-16">
-      <h2 id="kenapa-title" className="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-4">
-        Kenapa pilih kami?
-      </h2>
-      <div className="w-20 h-1 bg-orange-500 mx-auto rounded-full"></div>
-    </div>
-
-    <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
+        <section id="kenapa-kami" className="py-24 px-6 bg-white border-y border-gray-100">
+  <div className="max-w-4xl mx-auto">
+    <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-12">
+      Kenapa pilih kami?
+    </h2>
+    <div className="flex flex-col">
       {dataKenapaKami.map((item, index) => (
-        <article 
-          key={index} 
-          className="group relative bg-gray-50/50 rounded-3xl p-8 lg:p-10 border border-gray-100 hover:border-orange-200 hover:bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300"
-        >
-          {/* Garis Vertikal Indikator (Sebelah Kiri) */}
-          <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 bg-orange-500 rounded-r-full group-hover:h-1/2 transition-all duration-500"></div>
-
-          <h3 className="font-bold text-2xl mb-4 text-gray-900 group-hover:text-orange-600 transition-colors duration-300">
-            {item.judul}
-          </h3>
-          
-          <p className="text-gray-600 leading-relaxed">
-            {item.deskripsi}
-          </p>
+        <article key={index} className="group py-10 border-t border-gray-200 flex flex-col md:flex-row gap-4 md:gap-10 hover:pl-6 transition-all duration-300">
+          <div className="w-12 h-1 bg-orange-500 mt-3 md:group-hover:w-20 transition-all duration-300"></div>
+          <div>
+            <h3 className="font-bold text-2xl mb-3 text-gray-900 group-hover:text-orange-600 transition-colors">
+              {item.judul}
+            </h3>
+            <p className="text-gray-600 leading-relaxed text-lg">
+              {item.deskripsi}
+            </p>
+          </div>
         </article>
       ))}
     </div>
-
   </div>
 </section>
 
