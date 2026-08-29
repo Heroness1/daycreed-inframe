@@ -247,7 +247,7 @@ export default function Home() {
             </p>
           </div>
           <div className="relative w-full overflow-hidden whitespace-nowrap py-4">
-            <div className="inline-flex animate-marquee items-center gap-16">
+            <div className="relative w-full overflow-hidden whitespace-nowrap py-4 [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
               {[...dataKlien, ...dataKlien, ...dataKlien].map((klien, index) => (
                 <div key={`${klien.nama}-${index}`} className="flex flex-col items-center justify-center gap-3 px-6">
                   <div className="h-20 w-36 flex items-center justify-center">
