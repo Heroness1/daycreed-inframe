@@ -66,37 +66,67 @@ export default function Home() {
         </header>
 
         {/* ================= HERO ================= */}
-        <section aria-labelledby="hero-title" className="pt-24 min-h-screen bg-gradient-to-br from-orange-600 via-amber-600 to-red-600 flex items-center">
-          <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center py-20">
-            <div className="text-white">
-              <p className="inline-flex items-center gap-2 bg-white/20 backdrop-blur px-4 py-2 rounded-full text-sm mb-6">
-                Subur Maju Printing • Jakarta Timur
-              </p>
-              <h1 id="hero-title" className="text-6xl md:text-7xl font-bold leading-none tracking-tighter mb-6 text-white">
-                Digital Printing Jakarta Timur 24 Jam<br />Hardcover Skripsi & Percetakan
-              </h1>
-              <p className="text-xl text-white/95 max-w-lg">
-                Subur Maju Printing melayani digital printing 24 jam di Jakarta Timur, termasuk hardcover skripsi, banner, spanduk, stiker, brosur, undangan, dan berbagai kebutuhan percetakan dengan kualitas terbaik.
-              </p>
-              <div className="flex flex-wrap gap-4 mt-10">
-                <a
-                  href={`https://wa.me/6282246926544?text=${encodeURIComponent("Halo Kak, saya mau konsultasi mengenai kebutuhan cetak di Subur Maju Printing.\n\nProduk:\nJumlah:\nUkuran:\nDeadline:")}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-white text-orange-700 hover:bg-gray-100 font-bold px-10 py-4 rounded-2xl text-lg transition"
-                >
-                  Konsultasi Gratis
-                </a>
-                <a href="#katalog" className="border border-white/70 hover:bg-white/10 font-semibold px-8 py-4 rounded-2xl text-lg transition text-white">
-                  Lihat Katalog
-                </a>
-              </div>
-            </div>
-            <div>
-              <img src="/printer.png" alt="Mesin digital printing Subur Maju Printing" className="w-full rounded-3xl shadow-2xl" />
-            </div>
-          </div>
-        </section>
+        <section
+  aria-labelledby="hero-title"
+  className="pt-28 pb-16 bg-gradient-to-br from-orange-600 via-amber-600 to-red-600"
+>
+  <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center py-12">
+    <div className="text-white">
+
+      <p className="inline-flex items-center gap-2 bg-white/20 backdrop-blur px-4 py-2 rounded-full text-sm mb-6">
+        Subur Maju Printing • Jakarta Timur
+      </p>
+
+      <h1
+        id="hero-title"
+        className="text-6xl md:text-7xl font-bold leading-none tracking-tighter mb-6 text-white"
+      >
+        Digital Printing Jakarta Timur 24 Jam
+        <br />
+        Hardcover Skripsi & Percetakan
+      </h1>
+
+      <p className="text-xl text-white/95 max-w-lg">
+        Subur Maju Printing melayani digital printing 24 jam di
+        Jakarta Timur, termasuk hardcover skripsi, banner, spanduk,
+        stiker, brosur, undangan, dan berbagai kebutuhan percetakan
+        dengan kualitas terbaik.
+      </p>
+
+      <div className="flex flex-wrap gap-4 mt-10">
+
+        <a
+          href={`https://wa.me/6282246926544?text=${encodeURIComponent(
+            `Halo Kak, saya mau konsultasi mengenai kebutuhan cetak di Subur Maju Printing.\n\nProduk:\nJumlah:\nUkuran:\nDeadline:`
+          )}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Konsultasi kebutuhan cetak melalui WhatsApp"
+          className="bg-white text-orange-700 hover:bg-gray-100 font-bold px-10 py-4 rounded-2xl text-lg transition"
+        >
+          Konsultasi Gratis
+        </a>
+
+        <a
+          href="#katalog"
+          className="border border-white/70 hover:bg-white/10 font-semibold px-8 py-4 rounded-2xl text-lg transition text-white"
+        >
+          Lihat Katalog
+        </a>
+
+      </div>
+    </div>
+
+    <div>
+      <img
+        src="/printer.png"
+        alt="Mesin digital printing Subur Maju Printing"
+        className="w-full rounded-3xl shadow-2xl"
+      />
+    </div>
+
+  </div>
+</section>
 
         {/* ================= STATS ================= */}
         <section aria-label="Statistik Subur Maju Printing" className="py-12 bg-white border-b">
