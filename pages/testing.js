@@ -206,19 +206,69 @@ export default function Home() {
         <Catalog />
 
         {/* ================= WHY US ================= */}
-        <section id="kenapa-kami" aria-labelledby="kenapa-title" className="py-24 px-6 bg-gray-50">
-          <div className="max-w-7xl mx-auto">
-            <h2 id="kenapa-title" className="text-center text-5xl font-bold mb-16 text-gray-900">Kenapa Pilih Subur Maju?</h2>
-            <div className="grid md:grid-cols-3 gap-10">
-              {dataKenapaKami.map((item, index) => (
-                <article key={index} className="bg-white rounded-3xl p-8 shadow-sm hover:shadow transition">
-                  <h3 className="font-bold text-xl mb-3 text-orange-600">{item.judul}</h3>
-                  <p className="text-gray-600">{item.deskripsi}</p>
-                </article>
-              ))}
+        <section id="kenapa-kami" aria-labelledby="kenapa-title" className="relative py-24 px-6 bg-gray-50 overflow-hidden">
+  
+  {/* Dekorasi Background Blur (Kesan Mewah/Grandiose) */}
+  <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
+    <div className="absolute -top-[20%] -right-[10%] w-[50%] h-[50%] rounded-full bg-orange-600/5 blur-[120px]"></div>
+    <div className="absolute -bottom-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-orange-600/5 blur-[120px]"></div>
+  </div>
+
+  <div className="max-w-7xl mx-auto relative z-10">
+    <div className="text-center mb-16">
+      {/* Teks Subur Maju dibuat bergradasi */}
+      <h2 id="kenapa-title" className="text-5xl md:text-6xl font-extrabold mb-6 text-gray-900 tracking-tight">
+        Kenapa Pilih <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-500">Kami?</span>
+      </h2>
+      <p className="text-gray-500 max-w-2xl mx-auto text-lg">
+        Bukan sekadar tempat nge-print. Kami adalah partner andalan untuk setiap tenggat waktu dan kebutuhan cetak Anda.
+      </p>
+    </div>
+
+    <div className="grid md:grid-cols-3 gap-8">
+      {dataKenapaKami.map((item, index) => (
+        <article 
+          key={index} 
+          className="group relative bg-white rounded-3xl p-8 shadow-sm hover:shadow-2xl hover:shadow-orange-900/10 transition-all duration-500 overflow-hidden border border-gray-100 hover:border-orange-200 z-10"
+        >
+          {/* Overlay gradasi oranye tipis yang muncul saat di-hover */}
+          <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+
+          {/* Watermark Angka Raksasa */}
+          <div className="absolute -right-6 -bottom-8 text-[120px] font-black text-gray-50 group-hover:text-orange-500/10 transition-colors duration-500 z-0 pointer-events-none">
+            0{index + 1}
+          </div>
+
+          <div className="relative z-10 flex flex-col h-full">
+            {/* Icon Box yang membesar dan berubah warna saat di-hover */}
+            <div className="w-14 h-14 rounded-2xl bg-orange-100 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-orange-600 transition-all duration-500 shadow-inner">
+              <span className="text-2xl group-hover:text-white transition-colors duration-500">
+                {index === 0 ? '🚀' : index === 1 ? '💎' : '🤝'}
+              </span>
+            </div>
+
+            <h3 className="font-bold text-2xl mb-4 text-gray-900 group-hover:text-orange-600 transition-colors duration-300">
+              {item.judul}
+            </h3>
+            
+            <p className="text-gray-600 leading-relaxed mb-8 flex-grow">
+              {item.deskripsi}
+            </p>
+
+            {/* Animasi Panah Tersembunyi (Muncul menggeser dari kiri) */}
+            <div className="flex items-center gap-2 text-orange-600 font-semibold opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 mt-auto">
+              <span>Konsultasi Sekarang</span>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
             </div>
           </div>
-        </section>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
 
         {/* ================= KLIEN / PARTNER KAMI ================= */}
         <section id="klien" aria-labelledby="klien-title" className="py-20 bg-white border-y border-gray-100 overflow-hidden">
