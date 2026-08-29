@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Catalog from "../components/Catalog";
 import { dataLayanan, dataKenapaKami, dataKlien } from "../data/printData";
+import { useState, useEffect } from "react"; // <-- TAMBAHAN UNTUK SLIDER
 
 // nomor whatsapp
 const WA_NUMBER = "6282246926544";
@@ -10,6 +11,22 @@ const waLink = (text) =>
   `https://wa.me/${WA_NUMBER}${text ? `?text=${encodeURIComponent(text)}` : ""}`;
 
 export default function Home() {
+  
+  const backgroundImages = [
+    "https://images.unsplash.com/photo-1591241880758-722003fdb0af?auto=format&fit=crop&q=80&w=1600",
+    "https://images.unsplash.com/photo-1531815288026?auto=format&fit=crop&q=80&w=1600",
+    "https://images.unsplash.com/photo-1592492135673-55966d3b541a?auto=format&fit=crop&q=80&w=1600"
+  ];
+  const [currentBg, setCurrentBg] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentBg((prev) => (prev + 1) % backgroundImages.length);
+    }, 4000); 
+    return () => clearInterval(interval);
+  }, [backgroundImages.length]);
+  // ----------------------------------------
+
   return (
     <>
       <Head>
@@ -65,10 +82,30 @@ export default function Home() {
         {/* ================= HERO ================= */}
         <section
           aria-labelledby="hero-title"
-          className="pt-28 pb-16 bg-gradient-to-br from-orange-600 via-amber-600 to-red-600"
+          className="relative pt-32 pb-24 flex items-center min-h-[90vh] overflow-hidden"
         >
-          <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center py-12">
-            <div className="text-white">
+          {/* Slider Container - Z-Index 0 */}
+          <div className="absolute inset-0 z-0">
+            {backgroundImages.map((src, index) => (
+              <div
+                key={index}
+                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                  index === currentBg ? "opacity-100" : "opacity-0"
+                }`}
+                style={{
+                  backgroundImage: `url(${src})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              />
+            ))}
+            {/* Lapisan Gelap (Overlay) */}
+            <div className="absolute inset-0 bg-black/65"></div>
+          </div>
+
+          {/* Konten Teks - Z-Index 10 agar ada di atas gambar */}
+          <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
+            <div className="text-white max-w-3xl">
 
               <p className="inline-flex items-center gap-2 bg-white/20 backdrop-blur px-4 py-2 rounded-full text-sm mb-6">
                 Subur Maju Printing • Jakarta Timur
@@ -76,50 +113,40 @@ export default function Home() {
 
               <h1
                 id="hero-title"
-                className="text-6xl md:text-7xl font-bold leading-none tracking-tighter mb-6 text-white"
+                className="text-5xl md:text-7xl font-bold leading-tight md:leading-none tracking-tighter mb-6 text-white"
               >
                 Digital Printing Jakarta Timur 24 Jam
                 <br />
                 Hardcover Skripsi & Percetakan
               </h1>
 
-              <p className="text-xl text-white/95 max-w-lg">
+              <p className="text-lg md:text-xl text-gray-200 max-w-lg mb-10 leading-relaxed">
                 Subur Maju Printing melayani digital printing 24 jam di
                 Jakarta Timur, termasuk hardcover skripsi, banner, spanduk,
                 stiker, brosur, undangan, dan berbagai kebutuhan percetakan
                 dengan kualitas terbaik.
               </p>
 
-              <div className="flex flex-wrap gap-4 mt-10">
-
+              <div className="flex flex-wrap gap-4">
                 <a
                   href={waLink("Halo Kak, saya mau konsultasi mengenai kebutuhan cetak di Subur Maju Printing.\n\nProduk:\nJumlah:\nUkuran:\nDeadline:")}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Konsultasi kebutuhan cetak melalui WhatsApp"
-                  className="bg-white text-orange-700 hover:bg-gray-100 font-bold px-10 py-4 rounded-2xl text-lg transition"
+                  className="bg-white text-orange-700 hover:bg-gray-100 font-bold px-8 py-4 rounded-2xl text-lg transition shadow-lg"
                 >
                   Konsultasi Gratis
                 </a>
 
                 <a
                   href="#katalog"
-                  className="border border-white/70 hover:bg-white/10 font-semibold px-8 py-4 rounded-2xl text-lg transition text-white"
+                  className="border-2 border-white/70 hover:bg-white/20 font-semibold px-8 py-4 rounded-2xl text-lg transition text-white"
                 >
                   Lihat Katalog
                 </a>
-
               </div>
             </div>
-
-            <div>
-              <img
-                src="/printer.png"
-                alt="Mesin digital printing Subur Maju Printing"
-                className="w-full rounded-3xl shadow-2xl"
-              />
-            </div>
-
+            {/* Gambar "/printer.png" di sebelah kanan sudah dihapus dari sini */}
           </div>
         </section>
 
