@@ -33,6 +33,25 @@ export default function Home() {
     }, 4500); // Ganti tiap 4.5 detik
     return () => clearInterval(interval);
   }, [backgroundImages.length]);
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      // Navbar sembunyi kalau scroll turun lebih dari 50px, muncul kalau scroll naik
+      if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        setShowNavbar(false);
+      } else {
+        setShowNavbar(true);
+      }
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
   return (
     <>
@@ -64,8 +83,11 @@ export default function Home() {
 
       <main className="bg-white text-gray-800 font-sans">
 
-           {/* ================= NAVBAR (iOS DYNAMIC ISLAND) ================= */}
-<header className="fixed top-4 left-4 right-4 md:left-1/2 md:-translate-x-1/2 md:w-[800px] bg-black/40 backdrop-blur-2xl backdrop-saturate-200 border border-white/15 shadow-2xl z-50 rounded-full">
+           {/* ================= NAVBAR ================= */}
+
+<header 
+  className={`fixed ${showNavbar ? 'top-4' : '-top-24'} transition-all duration-500 ease-in-out left-4 right-4 md:left-1/2 md:-translate-x-1/2 md:w-[800px] bg-black/40 backdrop-blur-2xl backdrop-saturate-200 border border-white/15 shadow-2xl z-50 rounded-full`}
+>
   <div className="flex items-center justify-between px-5 h-16">
     <div className="flex items-center gap-3">
       <img src="/avatar.png" alt="Logo Subur Maju Printing" className="w-10 h-10 rounded-full object-cover border border-white/20" />
@@ -74,14 +96,14 @@ export default function Home() {
       </div>
     </div>
 
-    <nav aria-label="Navigasi utama" className="flex items-center gap-6 text-[13px] font-medium text-gray-300">
-      <a href="#layanan" className="hover:text-white transition">Layanan</a>
-      <a href="#katalog" className="hover:text-white transition">Katalog</a>
-      <a href="#lokasi" className="hover:text-white transition">Lokasi</a>
+    
+    <nav aria-label="Navigasi utama" className="flex items-center gap-1 md:gap-2 text-[13px] font-medium text-gray-300">
+      <a href="#layanan" className="px-4 py-2 rounded-full hover:bg-white/15 hover:text-white transition-all duration-300">Layanan</a>
+      <a href="#katalog" className="px-4 py-2 rounded-full hover:bg-white/15 hover:text-white transition-all duration-300">Katalog</a>
+      <a href="#lokasi" className="px-4 py-2 rounded-full hover:bg-white/15 hover:text-white transition-all duration-300">Lokasi</a>
     </nav>
   </div>
 </header>
-
 
         {/* ================= HERO (SMOOTH SLIDER + VIBRANT OVERLAY) ================= */}
         <section
