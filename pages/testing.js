@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Catalog from "../components/Catalog";
 import { dataLayanan, dataKenapaKami, dataKlien } from "../data/printData";
-import { useState, useEffect } from "react"; // <-- TAMBAHAN UNTUK SLIDER
+import { useState, useEffect } from "react";
 
 // nomor whatsapp
 const WA_NUMBER = "6282246926544";
@@ -11,21 +11,31 @@ const waLink = (text) =>
   `https://wa.me/${WA_NUMBER}${text ? `?text=${encodeURIComponent(text)}` : ""}`;
 
 export default function Home() {
-  
+  // ================= LOGIKA SLIDER BACKGROUND (13 GAMBAR) =================
   const backgroundImages = [
     "https://images.unsplash.com/photo-1591241880758-722003fdb0af?auto=format&fit=crop&q=80&w=1600",
     "https://images.unsplash.com/photo-1531815288026?auto=format&fit=crop&q=80&w=1600",
-    "https://images.unsplash.com/photo-1592492135673-55966d3b541a?auto=format&fit=crop&q=80&w=1600"
+    "https://images.unsplash.com/photo-1592492135673-55966d3b541a?auto=format&fit=crop&q=80&w=1600",
+    "https://images.unsplash.com/photo-1563212628-d70314a4c165?auto=format&fit=crop&q=80&w=1600", // Sticker printing detail
+    "https://images.unsplash.com/photo-1582236952771-5582f342981d?auto=format&fit=crop&q=80&w=1600", // Large format banner print
+    "https://images.unsplash.com/photo-1591122676834-f85764d707c0?auto=format&fit=crop&q=80&w=1600", // Finished hardcover theses stack
+    "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1600", // Print media supply shelf
+    "https://images.unsplash.com/photo-1601614917637-29218d6e32d2?auto=format&fit=crop&q=80&w=1600", // Stack of colorful brochures
+    "https://images.unsplash.com/photo-1591241880758-722003fdb0af?auto=format&fit=crop&q=80&w=1600", // Merchandise print - mugs
+    "https://images.unsplash.com/photo-1593121921327-0243e8d2e61a?auto=format&fit=crop&q=80&w=1600", // Offset printing press operator
+    "https://images.unsplash.com/photo-1581093116521-3965582b13c7?auto=format&fit=crop&q=80&w=1600", // Graphic design workstation and prints
+    "https://images.unsplash.com/photo-1591122676834-f85764d707c0?auto=format&fit=crop&q=80&w=1600", // Sublimation jersey print fabric
+    "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1600", // Finished product display shelf
   ];
   const [currentBg, setCurrentBg] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentBg((prev) => (prev + 1) % backgroundImages.length);
-    }, 4000); 
+    }, 2000); 
     return () => clearInterval(interval);
   }, [backgroundImages.length]);
-  // ----------------------------------------
+  // =======================================================================
 
   return (
     <>
@@ -79,7 +89,7 @@ export default function Home() {
           </div>
         </header>
 
-        {/* ================= HERO ================= */}
+        {/* ================= HERO (SLIDER DENGAN 13 GAMBAR) ================= */}
         <section
           aria-labelledby="hero-title"
           className="relative pt-32 pb-24 flex items-center min-h-[90vh] overflow-hidden"
@@ -103,7 +113,7 @@ export default function Home() {
             <div className="absolute inset-0 bg-black/65"></div>
           </div>
 
-          {/* Konten Teks - Z-Index 10 agar ada di atas gambar */}
+          {/* Konten Teks - Z-Index 10 */}
           <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
             <div className="text-white max-w-3xl">
 
@@ -146,26 +156,17 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            {/* Gambar "/printer.png" di sebelah kanan sudah dihapus dari sini */}
           </div>
         </section>
 
-        {/* ================= STATS ================= */}
-        <section aria-label="Statistik Subur Maju Printing" className="py-12 bg-white border-b">
-          <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div><div className="text-4xl font-bold text-orange-600">24</div><div className="text-gray-600">Jam Layanan</div></div>
-            <div><div className="text-4xl font-bold text-orange-600">1000+</div><div className="text-gray-600">Proyek Selesai</div></div>
-            <div><div className="text-4xl font-bold text-orange-600">100%</div><div className="text-gray-600">Garansi Puas</div></div>
-            <div><div className="text-4xl font-bold text-orange-600">Fast</div><div className="text-gray-600">Pengerjaan Cepat</div></div>
-          </div>
-        </section>
+        {/* ================= STATS (SUDAH DIHAPUS) ================= */}
 
         {/* ================= SERVICES ================= */}
         <section id="layanan" aria-labelledby="layanan-title" className="py-24 px-6 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <h2 id="layanan-title" className="text-center text-5xl font-bold mb-4 text-gray-900">Layanan Kami</h2>
             <p className="text-center text-gray-600 mb-16 max-w-2xl mx-auto">
-              Berbagai kebutuhan percetakan untuk bisnis, akademik, dan keperluan sehari-hari Anda.
+              Berbagai kebutuhan percetakan untuk bisnis, akademik, and keperluan sehari-hari Anda.
             </p>
             <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-6 scrollbar-hide">
               {dataLayanan.map((item, index) => (
@@ -282,7 +283,7 @@ export default function Home() {
         <section aria-labelledby="cta-title" className="py-24 px-6 bg-gray-50">
           <div className="max-w-4xl mx-auto text-center">
             <h2 id="cta-title" className="text-5xl font-bold text-gray-900">Siap Cetak Sekarang?</h2>
-            <p className="mt-4 text-xl text-gray-600">Kirim file Anda dan konsultasikan kebutuhan cetak melalui WhatsApp.</p>
+            <p className="mt-4 text-xl text-gray-600">Kirim file Anda and konsultasikan kebutuhan cetak melalui WhatsApp.</p>
             <a
               href={waLink()}
               target="_blank"
@@ -307,7 +308,7 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-orange-100 leading-relaxed">
-                  Melayani Digital Printing, Hardcover Skripsi, Banner, Spanduk, Stiker, Brosur, dan berbagai kebutuhan percetakan dengan pengerjaan cepat dan harga terjangkau.
+                  Melayani Digital Printing, Hardcover Skripsi, Banner, Spanduk, Stiker, Brosur, and berbagai kebutuhan percetakan dengan pengerjaan cepat and harga terjangkau.
                 </p>
               </div>
               <div>
