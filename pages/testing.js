@@ -179,28 +179,74 @@ export default function Home() {
         </section>
 
         {/* ================= SERVICES ================= */}
-        <section id="layanan" aria-labelledby="layanan-title" className="py-24 px-6 bg-gray-50">
-          <div className="max-w-7xl mx-auto">
-            <h2 id="layanan-title" className="text-center text-5xl font-bold mb-4 text-gray-900">Layanan Kami</h2>
-            <p className="text-center text-gray-600 mb-16 max-w-2xl mx-auto">
-              Berbagai kebutuhan percetakan untuk bisnis, akademik, dan keperluan sehari-hari Anda.
+        <section id="layanan" aria-labelledby="layanan-title" className="py-24 px-6 bg-gray-50/50">
+  <div className="max-w-7xl mx-auto">
+    
+    {/* Header Section dengan Spacing & Garis Aksen yang Konsisten */}
+    <div className="text-center mb-16">
+      <h2 id="layanan-title" className="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-4">
+        Layanan Kami
+      </h2>
+      <div className="w-20 h-1 bg-orange-500 mx-auto rounded-full mb-6"></div>
+      <p className="text-gray-500 max-w-2xl mx-auto text-[17px] font-medium leading-relaxed tracking-tight">
+        Berbagai kebutuhan percetakan untuk bisnis, akademik, dan keperluan sehari-hari Anda.
+      </p>
+    </div>
+
+    {/* Wadah Carousel (Geser ke Samping) */}
+    <div className="flex gap-6 lg:gap-8 overflow-x-auto snap-x snap-mandatory pb-10 pt-4 scrollbar-hide px-4 -mx-4 md:px-0 md:mx-0">
+      {dataLayanan.map((item, index) => (
+        <article 
+          key={index} 
+          // Struktur Card Premium: Border radius diperbesar (rounded-[2rem]), hover shadow elegan
+          className="group min-w-[85%] sm:min-w-[60%] lg:min-w-[31.333%] snap-center bg-white rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] hover:border-orange-200 hover:-translate-y-1 transition-all duration-500 flex flex-col overflow-hidden"
+        >
+          {/* Bagian Gambar dengan Efek Cinematic Zoom */}
+          <div className="relative h-64 md:h-72 w-full overflow-hidden">
+            <img 
+              src={item.gambar} 
+              alt={`Layanan ${item.judul} Subur Maju Printing`} 
+              className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out" 
+            />
+            {/* Gradasi hitam tipis dari bawah (Muncul saat di-hover biar gambar nggak flat) */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          </div>
+
+          {/* Bagian Teks & Konten */}
+          <div className="p-8 lg:p-10 flex flex-col flex-grow relative bg-white z-10">
+            <h3 className="font-bold text-2xl mb-3 text-gray-900 group-hover:text-orange-600 transition-colors duration-300 tracking-tight">
+              {item.judul}
+            </h3>
+            <p className="text-gray-500 leading-relaxed font-medium mb-8 flex-grow">
+              {item.deskripsi}
             </p>
-            <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-6 scrollbar-hide">
-              {dataLayanan.map((item, index) => (
-                <article key={index} className="min-w-[85%] sm:min-w-[60%] lg:min-w-[31%] snap-center bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300">
-                  <img src={item.gambar} alt={`Layanan ${item.judul} Subur Maju Printing`} className="w-full h-64 object-cover" />
-                  <div className="p-8">
-                    <h3 className="font-bold text-2xl mb-3 text-gray-900">{item.judul}</h3>
-                    <p className="text-gray-600 leading-relaxed">{item.deskripsi}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-            <div className="flex justify-center items-center gap-2 mt-4 md:hidden" aria-hidden="true">
-              <span className="text-gray-400 text-sm">← Geser untuk melihat layanan lainnya →</span>
+
+            {/* Indikator "Lihat Detail" dengan Animasi Geser */}
+            <div className="mt-auto flex items-center text-sm font-bold text-orange-500 tracking-wider uppercase overflow-hidden">
+              <span className="opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">
+                Pesan Sekarang
+              </span>
+              <svg 
+                className="w-5 h-5 ml-2 transform -translate-x-8 group-hover:translate-x-0 transition-all duration-500" 
+                fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
             </div>
           </div>
-        </section>
+        </article>
+      ))}
+    </div>
+
+    {/* Indikator Geser untuk Mobile (Lebih Estetik) */}
+    <div className="flex justify-center items-center gap-3 mt-2 md:hidden opacity-60" aria-hidden="true">
+      <div className="w-10 h-[1px] bg-gray-400"></div>
+      <span className="text-gray-500 text-xs font-semibold uppercase tracking-widest">Geser</span>
+      <div className="w-10 h-[1px] bg-gray-400"></div>
+    </div>
+
+  </div>
+</section>
 
         {/* ================= KATALOG (COMPONENT) ================= */}
         <Catalog />
