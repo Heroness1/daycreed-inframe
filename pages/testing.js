@@ -464,32 +464,31 @@ export default function Home() {
 
 
 
-                {/* ================= FOOTER ================= */}
-        <footer className="bg-slate-950 text-slate-300 border-t border-slate-900 relative overflow-hidden mt-[-2px]">
+                        {/* ================= FOOTER ================= */}
+        <footer className="bg-gradient-to-b from-slate-900 to-orange-950 text-orange-100/80 border-t border-orange-900/50 relative overflow-hidden mt-[-2px]">
           {/* Efek Glow Halus di Batas Atas Footer */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-orange-500/30 to-transparent"></div>
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-orange-500/40 to-transparent"></div>
           
           {/* Ambient Background Blur */}
-          <div className="absolute top-0 right-0 w-96 h-96 bg-orange-600/5 rounded-full blur-[120px] pointer-events-none"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-600/5 rounded-full blur-[120px] pointer-events-none"></div>
+          <div className="absolute top-0 right-0 w-96 h-96 bg-orange-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-amber-600/5 rounded-full blur-[120px] pointer-events-none"></div>
 
           <div className="max-w-7xl mx-auto px-6 py-20 relative z-10">
             <div className="grid md:grid-cols-12 gap-12 lg:gap-8">
               
-              {/* Kolom 1: Brand (Lebih Lebar) */}
+              {/* Kolom 1: Brand */}
               <div className="md:col-span-5 lg:col-span-4">
                 <div className="flex items-center gap-4 mb-6">
-                  <img src="/avatar.png" alt="Logo Subur Maju Printing" className="w-14 h-14 rounded-2xl object-cover ring-2 ring-white/10 shadow-xl" />
+                  <img src="/avatar.png" alt="Logo Subur Maju Printing" className="w-14 h-14 rounded-2xl object-cover ring-2 ring-orange-500/20 shadow-xl shadow-orange-900/30" />
                   <div>
                     <h3 className="font-bold text-2xl text-white tracking-tight">Subur Maju<span className="text-orange-500">.</span></h3>
-                    <p className="text-orange-400/90 text-xs font-bold tracking-widest uppercase mt-1">Digital Printing 24 Jam</p>
+                    <p className="text-orange-400 text-xs font-bold tracking-widest uppercase mt-1">Digital Printing 24 Jam</p>
                   </div>
                 </div>
-                <p className="text-slate-400 text-sm leading-relaxed mb-8 pr-4">
+                <p className="text-orange-200/70 text-sm leading-relaxed mb-8 pr-4">
                   Spesialis percetakan modern di Jakarta Timur. Melayani kebutuhan akademik, bisnis, dan personal dengan teknologi cetak terbaru, pengerjaan kilat, dan hasil premium.
                 </p>
-                {/* Social Proof / Trust Badge mini */}
-                <div className="flex items-center gap-3 text-sm text-slate-500 font-medium">
+                <div className="flex items-center gap-3 text-sm text-orange-300/80 font-medium">
                   <span className="flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> 
                     Online 24/7
@@ -501,29 +500,29 @@ export default function Home() {
 
               {/* Kolom 2: Kontak */}
               <div className="md:col-span-4 lg:col-span-4 lg:pl-8">
-                <h3 className="font-semibold text-lg text-white mb-6">Hubungi Kami</h3>
+                <h3 className="font-semibold text-lg text-orange-50 mb-6">Hubungi Kami</h3>
                 <ul className="space-y-5">
                   <li className="flex items-start gap-4">
-                    <div className="mt-1 w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0 text-orange-400">
+                    <div className="mt-1 w-9 h-9 rounded-full bg-orange-500/10 border border-orange-500/20 flex items-center justify-center flex-shrink-0 text-orange-400">
                       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
                     </div>
-                    <address className="not-italic text-slate-400 text-sm leading-relaxed">
-                      <strong className="text-slate-200 font-medium block mb-1">Workshop Rawamangun</strong>
+                    <address className="not-italic text-orange-200/70 text-sm leading-relaxed">
+                      <strong className="text-orange-100 font-medium block mb-1">Workshop Rawamangun</strong>
                       Jl. Waru No.24A, RT.1/RW.8,<br />Pulo Gadung, Jakarta Timur 13220
                     </address>
                   </li>
                   <li className="flex items-center gap-4">
-                    <div className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0 text-orange-400">
+                    <div className="w-9 h-9 rounded-full bg-orange-500/10 border border-orange-500/20 flex items-center justify-center flex-shrink-0 text-orange-400">
                       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                       </svg>
                     </div>
                     <div>
-                      <strong className="text-slate-200 font-medium block text-sm mb-0.5">WhatsApp / Telepon</strong>
-                      <p className="text-slate-400 text-sm">0822-4692-6544</p>
+                      <strong className="text-orange-100 font-medium block text-sm mb-0.5">WhatsApp / Telepon</strong>
+                      <p className="text-orange-200/70 text-sm">0822-4692-6544</p>
                     </div>
                   </li>
                 </ul>
@@ -531,11 +530,11 @@ export default function Home() {
 
               {/* Kolom 3: Layanan Pintas */}
               <div className="md:col-span-3 lg:col-span-4">
-                <h3 className="font-semibold text-lg text-white mb-6">Layanan Populer</h3>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-4 text-sm text-slate-400">
+                <h3 className="font-semibold text-lg text-orange-50 mb-6">Layanan Populer</h3>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-4 text-sm text-orange-200/70">
                   {['Hardcover Skripsi', 'Digital Printing', 'Banner & Spanduk', 'Stiker & Label', 'Brosur & Flyer', 'Kartu Nama'].map((item, i) => (
                     <li key={i} className="flex items-center gap-2.5 group cursor-pointer hover:text-orange-400 transition-colors">
-                      <span className="w-1.5 h-1.5 rounded-full bg-orange-500/50 group-hover:bg-orange-400 group-hover:scale-150 transition-all"></span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-orange-600/50 group-hover:bg-orange-400 group-hover:scale-150 transition-all"></span>
                       {item}
                     </li>
                   ))}
@@ -546,11 +545,11 @@ export default function Home() {
           </div>
 
           {/* Bottom Bar: Copyright & Credit */}
-          <div className="border-t border-white/5 bg-black/20">
-            <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+          <div className="border-t border-orange-950/80 bg-black/40">
+            <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-orange-200/50">
               <p>© {new Date().getFullYear()} Subur Maju Printing. All Rights Reserved.</p>
               <p className="flex items-center gap-1.5 tracking-wide">
-                Digital Presence by <span className="font-semibold text-white ml-1 hover:text-orange-400 transition-colors cursor-pointer">LURE</span>
+                Digital Presence by <span className="font-semibold text-orange-300 ml-1 hover:text-orange-400 transition-colors cursor-pointer">LURE</span>
               </p>
             </div>
           </div>
