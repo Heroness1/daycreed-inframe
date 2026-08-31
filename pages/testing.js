@@ -13,16 +13,16 @@ const waLink = (text) =>
 export default function Home() {
   // ================= gambar =================
   const backgroundImages = [
-    "https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?auto=format&fit=crop&q=80&w=1600", // Printing press colorful
-    "https://images.unsplash.com/photo-1572021335469-31706a17aaef?auto=format&fit=crop&q=80&w=1600", // Colorful CMYK inks
-    "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&q=80&w=1600", // Stationery & paper
-    "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=1600", // Graphic design colors
-    "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?auto=format&fit=crop&q=80&w=1600", // Vibrant art & print
-    "https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&q=80&w=1600", // Abstract liquid paint CMYK
-    "https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&q=80&w=1600", // Neon / Vibrant printer atmosphere
-    "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=1600", // Modern workshop & layout
-    "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1600", // Digital print machine
-    "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&q=80&w=1600", // Colorful posters stack
+    "https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?auto=format&fit=crop&q=80&w=1600",
+    "https://images.unsplash.com/photo-1572021335469-31706a17aaef?auto=format&fit=crop&q=80&w=1600",
+    "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&q=80&w=1600",
+    "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=1600",
+    "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?auto=format&fit=crop&q=80&w=1600",
+    "https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&q=80&w=1600",
+    "https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&q=80&w=1600",
+    "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=1600",
+    "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1600",
+    "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&q=80&w=1600",
   ];
 
   const [currentBg, setCurrentBg] = useState(0);
@@ -33,6 +33,7 @@ export default function Home() {
     }, 4500); // Ganti tiap 4.5 detik
     return () => clearInterval(interval);
   }, [backgroundImages.length]);
+
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -83,27 +84,25 @@ export default function Home() {
 
       <main className="bg-white text-gray-800 font-sans">
 
-           {/* ================= NAVBAR ================= */}
+        {/* ================= NAVBAR ================= */}
+        <header 
+          className={`fixed ${showNavbar ? 'top-4' : '-top-24'} transition-all duration-500 ease-in-out left-4 right-4 md:left-1/2 md:-translate-x-1/2 md:w-[800px] bg-black/40 backdrop-blur-2xl backdrop-saturate-200 border border-white/15 shadow-2xl z-50 rounded-full`}
+        >
+          <div className="flex items-center justify-between px-5 h-16">
+            <div className="flex items-center gap-3">
+              <img src="/avatar.png" alt="Logo Subur Maju Printing" className="w-10 h-10 rounded-full object-cover border border-white/20" />
+              <div className="hidden sm:flex flex-col justify-center mt-1">
+                <div className="font-semibold text-[15px] tracking-tight text-white leading-none">Subur Maju Printing</div>
+              </div>
+            </div>
 
-<header 
-  className={`fixed ${showNavbar ? 'top-4' : '-top-24'} transition-all duration-500 ease-in-out left-4 right-4 md:left-1/2 md:-translate-x-1/2 md:w-[800px] bg-black/40 backdrop-blur-2xl backdrop-saturate-200 border border-white/15 shadow-2xl z-50 rounded-full`}
->
-  <div className="flex items-center justify-between px-5 h-16">
-    <div className="flex items-center gap-3">
-      <img src="/avatar.png" alt="Logo Subur Maju Printing" className="w-10 h-10 rounded-full object-cover border border-white/20" />
-      <div className="hidden sm:flex flex-col justify-center mt-1">
-        <div className="font-semibold text-[15px] tracking-tight text-white leading-none">Subur Maju Printing</div>
-      </div>
-    </div>
-
-    
-    <nav aria-label="Navigasi utama" className="flex items-center gap-1 md:gap-2 text-[13px] font-medium text-gray-300">
-      <a href="#layanan" className="px-4 py-2 rounded-full hover:bg-white/15 hover:text-white transition-all duration-300">Layanan</a>
-      <a href="#katalog" className="px-4 py-2 rounded-full hover:bg-white/15 hover:text-white transition-all duration-300">Katalog</a>
-      <a href="#lokasi" className="px-4 py-2 rounded-full hover:bg-white/15 hover:text-white transition-all duration-300">Lokasi</a>
-    </nav>
-  </div>
-</header>
+            <nav aria-label="Navigasi utama" className="flex items-center gap-1 md:gap-2 text-[13px] font-medium text-gray-300">
+              <a href="#layanan" className="px-4 py-2 rounded-full hover:bg-white/15 hover:text-white transition-all duration-300">Layanan</a>
+              <a href="#katalog" className="px-4 py-2 rounded-full hover:bg-white/15 hover:text-white transition-all duration-300">Katalog</a>
+              <a href="#lokasi" className="px-4 py-2 rounded-full hover:bg-white/15 hover:text-white transition-all duration-300">Lokasi</a>
+            </nav>
+          </div>
+        </header>
 
         {/* ================= HERO ================= */}
         <section
@@ -128,7 +127,7 @@ export default function Home() {
               />
             ))}
             
-            {/* Overlay Gradasi Warm/Oranye-Hitam (Bikin Gambar Hidup & Teks Tetap Jelas) */}
+            {/* Overlay Gradasi Warm/Oranye-Hitam */}
             <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-orange-950/40 backdrop-contrast-125"></div>
           </div>
 
@@ -180,127 +179,112 @@ export default function Home() {
 
         {/* ================= SERVICES ================= */}
         <section id="layanan" aria-labelledby="layanan-title" className="py-24 px-6 bg-gray-50/50">
-  <div className="max-w-7xl mx-auto">
-    
-    {/* Header Section dengan Spacing & Garis Aksen yang Konsisten */}
-    <div className="text-center mb-16">
-      <h2 id="layanan-title" className="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-4">
-        Layanan Kami
-      </h2>
-      <div className="w-20 h-1 bg-orange-500 mx-auto rounded-full mb-6"></div>
-      <p className="text-gray-500 max-w-2xl mx-auto text-[17px] font-medium leading-relaxed tracking-tight">
-        Berbagai kebutuhan percetakan untuk bisnis, akademik, dan keperluan sehari-hari Anda.
-      </p>
-    </div>
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 id="layanan-title" className="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-4">
+                Layanan Kami
+              </h2>
+              <div className="w-20 h-1 bg-orange-500 mx-auto rounded-full mb-6"></div>
+              <p className="text-gray-500 max-w-2xl mx-auto text-[17px] font-medium leading-relaxed tracking-tight">
+                Berbagai kebutuhan percetakan untuk bisnis, akademik, dan keperluan sehari-hari Anda.
+              </p>
+            </div>
 
-    {/* Wadah Carousel (Geser ke Samping) */}
-    <div className="flex gap-6 lg:gap-8 overflow-x-auto snap-x snap-mandatory pb-10 pt-4 scrollbar-hide px-4 -mx-4 md:px-0 md:mx-0">
-      {dataLayanan.map((item, index) => (
-        <article 
-          key={index} 
-          // Struktur Card Premium: Border radius diperbesar (rounded-[2rem]), hover shadow elegan
-          className="group min-w-[85%] sm:min-w-[60%] lg:min-w-[31.333%] snap-center bg-white rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] hover:border-orange-200 hover:-translate-y-1 transition-all duration-500 flex flex-col overflow-hidden"
-        >
-          {/* Bagian Gambar dengan Efek Cinematic Zoom */}
-          <div className="relative h-64 md:h-72 w-full overflow-hidden">
-            <img 
-              src={item.gambar} 
-              alt={`Layanan ${item.judul} Subur Maju Printing`} 
-              className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out" 
-            />
-            {/* Gradasi hitam tipis dari bawah (Muncul saat di-hover biar gambar nggak flat) */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          </div>
+            <div className="flex gap-6 lg:gap-8 overflow-x-auto snap-x snap-mandatory pb-10 pt-4 scrollbar-hide px-4 -mx-4 md:px-0 md:mx-0">
+              {dataLayanan.map((item, index) => (
+                <article 
+                  key={index} 
+                  className="group min-w-[85%] sm:min-w-[60%] lg:min-w-[31.333%] snap-center bg-white rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] hover:border-orange-200 hover:-translate-y-1 transition-all duration-500 flex flex-col overflow-hidden"
+                >
+                  <div className="relative h-64 md:h-72 w-full overflow-hidden">
+                    <img 
+                      src={item.gambar} 
+                      alt={`Layanan ${item.judul} Subur Maju Printing`} 
+                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out" 
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  </div>
 
-          {/* Bagian Teks & Konten */}
-          <div className="p-8 lg:p-10 flex flex-col flex-grow relative bg-white z-10">
-            <h3 className="font-bold text-2xl mb-3 text-gray-900 group-hover:text-orange-600 transition-colors duration-300 tracking-tight">
-              {item.judul}
-            </h3>
-            <p className="text-gray-500 leading-relaxed font-medium mb-8 flex-grow">
-              {item.deskripsi}
-            </p>
+                  <div className="p-8 lg:p-10 flex flex-col flex-grow relative bg-white z-10">
+                    <h3 className="font-bold text-2xl mb-3 text-gray-900 group-hover:text-orange-600 transition-colors duration-300 tracking-tight">
+                      {item.judul}
+                    </h3>
+                    <p className="text-gray-500 leading-relaxed font-medium mb-8 flex-grow">
+                      {item.deskripsi}
+                    </p>
 
-            {/* Indikator "Lihat Detail" dengan Animasi Geser */}
-            <div className="mt-auto flex items-center text-sm font-bold text-orange-500 tracking-wider uppercase overflow-hidden">
-              <span className="opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">
-                Pesan Sekarang
-              </span>
-              <svg 
-                className="w-5 h-5 ml-2 transform -translate-x-8 group-hover:translate-x-0 transition-all duration-500" 
-                fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+                    <div className="mt-auto flex items-center text-sm font-bold text-orange-500 tracking-wider uppercase overflow-hidden">
+                      <span className="opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">
+                        Pesan Sekarang
+                      </span>
+                      <svg 
+                        className="w-5 h-5 ml-2 transform -translate-x-8 group-hover:translate-x-0 transition-all duration-500" 
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            <div className="flex justify-center items-center gap-3 mt-2 md:hidden opacity-60" aria-hidden="true">
+              <div className="w-10 h-[1px] bg-gray-400"></div>
+              <span className="text-gray-500 text-xs font-semibold uppercase tracking-widest">Geser</span>
+              <div className="w-10 h-[1px] bg-gray-400"></div>
             </div>
           </div>
-        </article>
-      ))}
-    </div>
-
-    {/* Indikator Geser untuk Mobile (Lebih Estetik) */}
-    <div className="flex justify-center items-center gap-3 mt-2 md:hidden opacity-60" aria-hidden="true">
-      <div className="w-10 h-[1px] bg-gray-400"></div>
-      <span className="text-gray-500 text-xs font-semibold uppercase tracking-widest">Geser</span>
-      <div className="w-10 h-[1px] bg-gray-400"></div>
-    </div>
-
-  </div>
-</section>
+        </section>
 
         {/* ================= KATALOG (COMPONENT) ================= */}
         <Catalog />
 
         {/* ================= WHY US ================= */}
-        <section id="kenapa-kami" aria-labelledby="kenapa-title" className="py-24 px-6 bg-white border-y border-gray-100">
-  <div className="max-w-7xl mx-auto">
-    
-    <div className="text-center mb-16">
-      <h2 id="kenapa-title" className="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-4">
-        Kenapa pilih kami?
-      </h2>
-      <div className="w-20 h-1 bg-orange-500 mx-auto rounded-full"></div>
-    </div>
+        {/* Hapus class border-y dan border-gray-100 */}
+        <section id="kenapa-kami" aria-labelledby="kenapa-title" className="py-24 px-6 bg-white">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 id="kenapa-title" className="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-4">
+                Kenapa pilih kami?
+              </h2>
+              <div className="w-20 h-1 bg-orange-500 mx-auto rounded-full"></div>
+            </div>
 
-    <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
-      {dataKenapaKami.map((item, index) => (
-        <article 
-          key={index} 
-          // 1. Geometri asimetris: ujung kanan bawah ditekuk ekstrem (rounded-br-[80px])
-          className="group relative bg-gray-50/40 rounded-3xl rounded-br-[80px] p-8 lg:p-10 border border-gray-100 hover:border-orange-200 hover:bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-500 overflow-hidden"
-        >
-          {/* 2. Ambient Glow: Efek pencahayaan studio tipis di dalam kartu */}
-          <div className="absolute -top-10 -right-10 w-40 h-40 bg-orange-400/0 rounded-full blur-3xl group-hover:bg-orange-500/10 transition-colors duration-500 pointer-events-none"></div>
+            <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
+              {dataKenapaKami.map((item, index) => (
+                <article 
+                  key={index} 
+                  className="group relative bg-gray-50/40 rounded-3xl rounded-br-[80px] p-8 lg:p-10 border border-gray-100 hover:border-orange-200 hover:bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-500 overflow-hidden"
+                >
+                  <div className="absolute -top-10 -right-10 w-40 h-40 bg-orange-400/0 rounded-full blur-3xl group-hover:bg-orange-500/10 transition-colors duration-500 pointer-events-none"></div>
 
-          {/* 3. Ornamen 'Plus' ala UI premium di pojok kanan atas (berputar saat di-hover) */}
-          <div className="absolute top-8 right-8 text-gray-300 group-hover:text-orange-400 group-hover:rotate-180 transition-all duration-700">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M12 5v14M5 12h14" />
-            </svg>
+                  <div className="absolute top-8 right-8 text-gray-300 group-hover:text-orange-400 group-hover:rotate-180 transition-all duration-700">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 5v14M5 12h14" />
+                    </svg>
+                  </div>
+
+                  <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-0 bg-orange-500 rounded-r-full group-hover:h-1/2 transition-all duration-500"></div>
+
+                  <div className="relative z-10">
+                    <h3 className="font-bold text-2xl mb-4 text-gray-900 group-hover:text-orange-600 transition-colors duration-300 pr-8">
+                      {item.judul}
+                    </h3>
+                    
+                    <p className="text-gray-600 leading-relaxed">
+                      {item.deskripsi}
+                    </p>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
-
-          {/* 4. Garis Vertikal (Dipertahankan dan ditebalkan sedikit jadi w-1.5) */}
-          <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-0 bg-orange-500 rounded-r-full group-hover:h-1/2 transition-all duration-500"></div>
-
-          <div className="relative z-10">
-            <h3 className="font-bold text-2xl mb-4 text-gray-900 group-hover:text-orange-600 transition-colors duration-300 pr-8">
-              {item.judul}
-            </h3>
-            
-            <p className="text-gray-600 leading-relaxed">
-              {item.deskripsi}
-            </p>
-          </div>
-        </article>
-      ))}
-    </div>
-
-  </div>
-</section>
-
+        </section>
 
         {/* ================= KLIEN / PARTNER KAMI ================= */}
-        <section id="klien" aria-labelledby="klien-title" className="py-20 bg-white border-y border-gray-100 overflow-hidden">
+        {/* Hapus class border-y dan border-gray-100 */}
+        <section id="klien" aria-labelledby="klien-title" className="py-20 bg-white overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 text-center mb-10">
             <p id="klien-title" className="text-xs md:text-sm font-bold tracking-widest text-gray-900 uppercase">
               Pernah Melayani Kebutuhan Cetak untuk Berbagai Perusahaan & Instansi
@@ -330,105 +314,105 @@ export default function Home() {
           .animate-marquee:hover { animation-play-state: paused; }
           @media (prefers-reduced-motion: reduce) { .animate-marquee { animation: none; } }
         `}</style>
-{/* ================= LOKASI ================= */}
-<section id="lokasi" aria-labelledby="lokasi-title" className="py-24 px-6 bg-white">
-  <div className="max-w-6xl mx-auto">
-    
-    {/* Heading dengan Gradien */}
-    <div className="text-center mb-16">
-      <h2 id="lokasi-title" className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight mb-4">
-        Temukan <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-500">Lokasi Kami</span>
-      </h2>
-      <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-        Kunjungi toko kami atau hubungi secara online. Kami siap melayani kebutuhan cetak Anda kapan saja.
-      </p>
-    </div>
 
-    <div className="grid lg:grid-cols-2 gap-12 items-center">
-      
-      {/* Kartu Informasi Lokasi */}
-      <article className="bg-white rounded-[2.5rem] p-8 md:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-gray-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
-        <div className="flex items-center justify-between mb-8">
-          <h3 className="text-2xl font-bold text-gray-900">
-            Subur Maju Printing
-          </h3>
-          {/* Badge 24 Jam */}
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-50 text-green-700 text-sm font-semibold tracking-wide border border-green-200">
-            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-            Buka 24 Jam
-          </span>
-        </div>
-
-        <ul className="space-y-6">
-          <li className="flex gap-4">
-            <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-2xl bg-orange-50 text-orange-600">
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
+        {/* ================= LOKASI ================= */}
+        <section id="lokasi" aria-labelledby="lokasi-title" className="py-24 px-6 bg-white">
+          <div className="max-w-6xl mx-auto">
+            
+            {/* Heading dengan Gradien */}
+            <div className="text-center mb-16">
+              <h2 id="lokasi-title" className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight mb-4">
+                Temukan <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-500">Lokasi Kami</span>
+              </h2>
+              <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+                Kunjungi toko kami atau hubungi secara online. Kami siap melayani kebutuhan cetak Anda kapan saja.
+              </p>
             </div>
-            <div>
-              <h4 className="text-sm font-semibold text-gray-900 mb-1">Alamat Toko</h4>
-              <address className="not-italic text-gray-600 leading-relaxed text-sm">
-                Jl. Waru No. 24A, RT.1/RW.8,<br />
-                Rawamangun, Kec. Pulo Gadung,<br />
-                Kota Jakarta Timur 13220
-              </address>
-            </div>
-          </li>
-          
-          <li className="flex gap-4">
-            <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-2xl bg-orange-50 text-orange-600">
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-            </div>
-            <div>
-              <h4 className="text-sm font-semibold text-gray-900 mb-1">WhatsApp / Telepon</h4>
-              <p className="text-gray-600 text-sm">0822-4692-6544</p>
-            </div>
-          </li>
-        </ul>
 
-        <div className="mt-8 pt-8 border-t border-gray-100">
-          <p className="text-gray-500 text-sm mb-6 leading-relaxed">
-            Spesialis percetakan Jakarta Timur. Melayani <strong>hardcover skripsi, digital printing, banner, stiker, dan brosur</strong> dengan kualitas premium.
-          </p>
-          <a
-            href="https://maps.google.com/?q=Jl.+Waru+No.+24A+Rawamangun+Jakarta+Timur"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex items-center justify-center gap-2 w-full bg-gradient-to-r from-orange-600 to-amber-500 hover:from-orange-700 hover:to-amber-600 text-white font-semibold px-6 py-4 rounded-2xl transition-all duration-300 shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50"
-          >
-            Buka di Google Maps
-            <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </a>
-        </div>
-      </article>
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              
+              {/* Kartu Informasi Lokasi */}
+              <article className="bg-white rounded-[2.5rem] p-8 md:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-gray-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
+                <div className="flex items-center justify-between mb-8">
+                  <h3 className="text-2xl font-bold text-gray-900">
+                    Subur Maju Printing
+                  </h3>
+                  {/* Badge 24 Jam */}
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-50 text-green-700 text-sm font-semibold tracking-wide border border-green-200">
+                    <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                    Buka 24 Jam
+                  </span>
+                </div>
 
-      {/* Kontainer Map dengan Efek Glow */}
-      <div className="relative group h-full min-h-[400px]">
-        {/* Glow Effect di belakang map */}
-        <div className="absolute -inset-3 bg-gradient-to-tr from-orange-500 to-amber-300 rounded-[3rem] blur-2xl opacity-10 group-hover:opacity-30 transition duration-500"></div>
-        
-        <div className="relative h-full w-full overflow-hidden rounded-[2.5rem] shadow-xl ring-1 ring-gray-100 bg-gray-50">
-          <iframe
-            title="Lokasi Subur Maju Printing di Google Maps"
-            src="https://maps.google.com/maps?q=Jl.%20Waru%20No.%2024A%20Rawamangun%20Jakarta%20Timur&t=&z=16&ie=UTF8&iwloc=&output=embed"
-            className="w-full h-full min-h-[450px]"
-            style={{ border: 0 }}
-            loading="lazy"
-            allowFullScreen
-            referrerPolicy="no-referrer-when-downgrade"
-          />
-        </div>
-      </div>
+                <ul className="space-y-6">
+                  <li className="flex gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-2xl bg-orange-50 text-orange-600">
+                      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-semibold text-gray-900 mb-1">Alamat Toko</h4>
+                      <address className="not-italic text-gray-600 leading-relaxed text-sm">
+                        Jl. Waru No. 24A, RT.1/RW.8,<br />
+                        Rawamangun, Kec. Pulo Gadung,<br />
+                        Kota Jakarta Timur 13220
+                      </address>
+                    </div>
+                  </li>
+                  
+                  <li className="flex gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-2xl bg-orange-50 text-orange-600">
+                      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-semibold text-gray-900 mb-1">WhatsApp / Telepon</h4>
+                      <p className="text-gray-600 text-sm">0822-4692-6544</p>
+                    </div>
+                  </li>
+                </ul>
 
-    </div>
-  </div>
-</section>
+                <div className="mt-8 pt-8 border-t border-gray-100">
+                  <p className="text-gray-500 text-sm mb-6 leading-relaxed">
+                    Spesialis percetakan Jakarta Timur. Melayani <strong>hardcover skripsi, digital printing, banner, stiker, dan brosur</strong> dengan kualitas premium.
+                  </p>
+                  <a
+                    href="https://maps.google.com/?q=Jl.+Waru+No.+24A+Rawamangun+Jakarta+Timur"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center justify-center gap-2 w-full bg-gradient-to-r from-orange-600 to-amber-500 hover:from-orange-700 hover:to-amber-600 text-white font-semibold px-6 py-4 rounded-2xl transition-all duration-300 shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50"
+                  >
+                    Buka di Google Maps
+                    <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </a>
+                </div>
+              </article>
+
+              {/* Kontainer Map dengan Efek Glow */}
+              <div className="relative group h-full min-h-[400px]">
+                <div className="absolute -inset-3 bg-gradient-to-tr from-orange-500 to-amber-300 rounded-[3rem] blur-2xl opacity-10 group-hover:opacity-30 transition duration-500"></div>
+                
+                <div className="relative h-full w-full overflow-hidden rounded-[2.5rem] shadow-xl ring-1 ring-gray-100 bg-gray-50">
+                  <iframe
+                    title="Lokasi Subur Maju Printing di Google Maps"
+                    src="https://maps.google.com/maps?q=Jl.%20Waru%20No.%2024A%20Rawamangun%20Jakarta%20Timur&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                    className="w-full h-full min-h-[450px]"
+                    style={{ border: 0 }}
+                    loading="lazy"
+                    allowFullScreen
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
 
         {/* ================= CTA ================= */}
         <section aria-labelledby="cta-title" className="py-24 px-6 bg-gray-50">
