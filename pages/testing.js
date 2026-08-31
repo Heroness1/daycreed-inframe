@@ -330,37 +330,30 @@ export default function Home() {
           .animate-marquee:hover { animation-play-state: paused; }
           @media (prefers-reduced-motion: reduce) { .animate-marquee { animation: none; } }
         `}</style>
-
 {/* ================= LOKASI ================= */}
-<section id="lokasi" aria-labelledby="lokasi-title" className="relative py-24 px-6 bg-slate-50 overflow-hidden">
-  
-  {/* Dekorasi Background */}
-  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none -z-10">
-    <div className="absolute top-20 -left-20 w-72 h-72 bg-orange-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
-    <div className="absolute top-40 -right-20 w-72 h-72 bg-amber-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
-  </div>
-
-  <div className="max-w-6xl mx-auto relative">
+<section id="lokasi" aria-labelledby="lokasi-title" className="py-24 px-6 bg-white">
+  <div className="max-w-6xl mx-auto">
+    
     {/* Heading dengan Gradien */}
     <div className="text-center mb-16">
-      <h2 id="lokasi-title" className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
+      <h2 id="lokasi-title" className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight mb-4">
         Temukan <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-500">Lokasi Kami</span>
       </h2>
-      <p className="text-slate-600 max-w-2xl mx-auto text-lg">
-        Kunjungi workshop kami atau hubungi secara online. Kami siap melayani kebutuhan cetak Anda kapan saja.
+      <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+        Kunjungi toko kami atau hubungi secara online. Kami siap melayani kebutuhan cetak Anda kapan saja.
       </p>
     </div>
 
     <div className="grid lg:grid-cols-2 gap-12 items-center">
       
       {/* Kartu Informasi Lokasi */}
-      <article className="bg-white/80 backdrop-blur-xl rounded-[2.5rem] p-8 md:p-10 shadow-xl shadow-slate-200/50 border border-slate-100 transition-all duration-300 hover:-translate-y-2">
+      <article className="bg-white rounded-[2.5rem] p-8 md:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-gray-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
         <div className="flex items-center justify-between mb-8">
-          <h3 className="text-2xl font-bold text-slate-900">
+          <h3 className="text-2xl font-bold text-gray-900">
             Subur Maju Printing
           </h3>
           {/* Badge 24 Jam */}
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-100 text-green-700 text-sm font-semibold tracking-wide border border-green-200">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-50 text-green-700 text-sm font-semibold tracking-wide border border-green-200">
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
             Buka 24 Jam
           </span>
@@ -375,8 +368,8 @@ export default function Home() {
               </svg>
             </div>
             <div>
-              <h4 className="text-sm font-semibold text-slate-900 mb-1">Alamat Workshop</h4>
-              <address className="not-italic text-slate-600 leading-relaxed text-sm">
+              <h4 className="text-sm font-semibold text-gray-900 mb-1">Alamat Toko</h4>
+              <address className="not-italic text-gray-600 leading-relaxed text-sm">
                 Jl. Waru No. 24A, RT.1/RW.8,<br />
                 Rawamangun, Kec. Pulo Gadung,<br />
                 Kota Jakarta Timur 13220
@@ -391,14 +384,14 @@ export default function Home() {
               </svg>
             </div>
             <div>
-              <h4 className="text-sm font-semibold text-slate-900 mb-1">WhatsApp / Telepon</h4>
-              <p className="text-slate-600 text-sm">0822-4692-6544</p>
+              <h4 className="text-sm font-semibold text-gray-900 mb-1">WhatsApp / Telepon</h4>
+              <p className="text-gray-600 text-sm">0822-4692-6544</p>
             </div>
           </li>
         </ul>
 
-        <div className="mt-8 pt-8 border-t border-slate-100">
-          <p className="text-slate-500 text-sm mb-6 leading-relaxed">
+        <div className="mt-8 pt-8 border-t border-gray-100">
+          <p className="text-gray-500 text-sm mb-6 leading-relaxed">
             Spesialis percetakan Jakarta Timur. Melayani <strong>hardcover skripsi, digital printing, banner, stiker, dan brosur</strong> dengan kualitas premium.
           </p>
           <a
@@ -418,9 +411,9 @@ export default function Home() {
       {/* Kontainer Map dengan Efek Glow */}
       <div className="relative group h-full min-h-[400px]">
         {/* Glow Effect di belakang map */}
-        <div className="absolute -inset-3 bg-gradient-to-tr from-orange-500 to-amber-300 rounded-[3rem] blur-2xl opacity-20 group-hover:opacity-40 transition duration-500"></div>
+        <div className="absolute -inset-3 bg-gradient-to-tr from-orange-500 to-amber-300 rounded-[3rem] blur-2xl opacity-10 group-hover:opacity-30 transition duration-500"></div>
         
-        <div className="relative h-full w-full overflow-hidden rounded-[2.5rem] shadow-2xl ring-1 ring-slate-200/50 bg-slate-100">
+        <div className="relative h-full w-full overflow-hidden rounded-[2.5rem] shadow-xl ring-1 ring-gray-100 bg-gray-50">
           <iframe
             title="Lokasi Subur Maju Printing di Google Maps"
             src="https://maps.google.com/maps?q=Jl.%20Waru%20No.%2024A%20Rawamangun%20Jakarta%20Timur&t=&z=16&ie=UTF8&iwloc=&output=embed"
