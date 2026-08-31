@@ -11,7 +11,7 @@ const waLink = (text) =>
   `https://wa.me/${WA_NUMBER}${text ? `?text=${encodeURIComponent(text)}` : ""}`;
 
 export default function Home() {
-  // ================= 10+ GAMBAR BERWARNA CERAH & VIBRANT =================
+  // ================= gambar =================
   const backgroundImages = [
     "https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?auto=format&fit=crop&q=80&w=1600", // Printing press colorful
     "https://images.unsplash.com/photo-1572021335469-31706a17aaef?auto=format&fit=crop&q=80&w=1600", // Colorful CMYK inks
@@ -40,7 +40,7 @@ export default function Home() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       
-      // Navbar sembunyi kalau scroll turun lebih dari 50px, muncul kalau scroll naik
+      // Animasi Navbar
       if (currentScrollY > lastScrollY && currentScrollY > 50) {
         setShowNavbar(false);
       } else {
@@ -105,7 +105,7 @@ export default function Home() {
   </div>
 </header>
 
-        {/* ================= HERO (SMOOTH SLIDER + VIBRANT OVERLAY) ================= */}
+        {/* ================= HERO ================= */}
         <section
           aria-labelledby="hero-title"
           className="relative pt-32 pb-24 flex items-center min-h-[92vh] overflow-hidden bg-slate-900"
