@@ -331,49 +331,111 @@ export default function Home() {
           @media (prefers-reduced-motion: reduce) { .animate-marquee { animation: none; } }
         `}</style>
 
-        {/* ================= LOKASI ================= */}
-        <section id="lokasi" aria-labelledby="lokasi-title" className="bg-white py-24 px-6">
-          <div className="max-w-6xl mx-auto">
-            <h2 id="lokasi-title" className="text-center text-4xl font-bold mb-12 text-gray-900">Lokasi Kami</h2>
-            <div className="grid md:grid-cols-2 gap-10">
-              <article className="bg-gray-50 rounded-3xl p-8 shadow">
-                <h3 className="text-2xl font-bold mb-6 text-gray-900">
-                  <span aria-hidden="true">📍</span> Subur Maju Printing
-                </h3>
-                <address className="not-italic text-gray-700 leading-relaxed">
-                  Jl. Waru No. 24A,<br />RT.1/RW.8, Rawamangun,<br />Kec. Pulo Gadung,<br />Kota Jakarta Timur 13220
-                </address>
-                <div className="mt-6 space-y-3 text-gray-700">
-                  <p><strong><span aria-hidden="true">🕒</span> Buka 24 Jam</strong></p>
-                  <p><strong><span aria-hidden="true">📞</span> WhatsApp:</strong> 0822-4692-6544</p>
-                </div>
-                <p className="mt-6 text-gray-600">
-                  Percetakan 24 Jam Jakarta Timur yang melayani hardcover skripsi, digital printing, banner, stiker, brosur, dan berbagai kebutuhan cetak.
-                </p>
-                <a
-                  href="https://maps.google.com/?q=Jl.+Waru+No.+24A+Rawamangun+Jakarta+Timur"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block mt-8 bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-xl transition"
-                >
-                  Buka Google Maps
-                </a>
-              </article>
-              <div className="overflow-hidden rounded-3xl shadow">
-                <iframe
-                  title="Lokasi Subur Maju Printing di Google Maps"
-                  src="https://maps.google.com/maps?q=Jl.%20Waru%20No.%2024A%20Rawamangun%20Jakarta%20Timur&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                  width="100%"
-                  height="450"
-                  style={{ border: 0 }}
-                  loading="lazy"
-                  allowFullScreen
-                  referrerPolicy="no-referrer-when-downgrade"
-                />
-              </div>
+{/* ================= LOKASI ================= */}
+<section id="lokasi" aria-labelledby="lokasi-title" className="relative py-24 px-6 bg-slate-50 overflow-hidden">
+  
+  {/* Dekorasi Background */}
+  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none -z-10">
+    <div className="absolute top-20 -left-20 w-72 h-72 bg-orange-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+    <div className="absolute top-40 -right-20 w-72 h-72 bg-amber-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+  </div>
+
+  <div className="max-w-6xl mx-auto relative">
+    {/* Heading dengan Gradien */}
+    <div className="text-center mb-16">
+      <h2 id="lokasi-title" className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
+        Temukan <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-500">Lokasi Kami</span>
+      </h2>
+      <p className="text-slate-600 max-w-2xl mx-auto text-lg">
+        Kunjungi workshop kami atau hubungi secara online. Kami siap melayani kebutuhan cetak Anda kapan saja.
+      </p>
+    </div>
+
+    <div className="grid lg:grid-cols-2 gap-12 items-center">
+      
+      {/* Kartu Informasi Lokasi */}
+      <article className="bg-white/80 backdrop-blur-xl rounded-[2.5rem] p-8 md:p-10 shadow-xl shadow-slate-200/50 border border-slate-100 transition-all duration-300 hover:-translate-y-2">
+        <div className="flex items-center justify-between mb-8">
+          <h3 className="text-2xl font-bold text-slate-900">
+            Subur Maju Printing
+          </h3>
+          {/* Badge 24 Jam */}
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-100 text-green-700 text-sm font-semibold tracking-wide border border-green-200">
+            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+            Buka 24 Jam
+          </span>
+        </div>
+
+        <ul className="space-y-6">
+          <li className="flex gap-4">
+            <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-2xl bg-orange-50 text-orange-600">
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
             </div>
-          </div>
-        </section>
+            <div>
+              <h4 className="text-sm font-semibold text-slate-900 mb-1">Alamat Workshop</h4>
+              <address className="not-italic text-slate-600 leading-relaxed text-sm">
+                Jl. Waru No. 24A, RT.1/RW.8,<br />
+                Rawamangun, Kec. Pulo Gadung,<br />
+                Kota Jakarta Timur 13220
+              </address>
+            </div>
+          </li>
+          
+          <li className="flex gap-4">
+            <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-2xl bg-orange-50 text-orange-600">
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+            </div>
+            <div>
+              <h4 className="text-sm font-semibold text-slate-900 mb-1">WhatsApp / Telepon</h4>
+              <p className="text-slate-600 text-sm">0822-4692-6544</p>
+            </div>
+          </li>
+        </ul>
+
+        <div className="mt-8 pt-8 border-t border-slate-100">
+          <p className="text-slate-500 text-sm mb-6 leading-relaxed">
+            Spesialis percetakan Jakarta Timur. Melayani <strong>hardcover skripsi, digital printing, banner, stiker, dan brosur</strong> dengan kualitas premium.
+          </p>
+          <a
+            href="https://maps.google.com/?q=Jl.+Waru+No.+24A+Rawamangun+Jakarta+Timur"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center justify-center gap-2 w-full bg-gradient-to-r from-orange-600 to-amber-500 hover:from-orange-700 hover:to-amber-600 text-white font-semibold px-6 py-4 rounded-2xl transition-all duration-300 shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50"
+          >
+            Buka di Google Maps
+            <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      {/* Kontainer Map dengan Efek Glow */}
+      <div className="relative group h-full min-h-[400px]">
+        {/* Glow Effect di belakang map */}
+        <div className="absolute -inset-3 bg-gradient-to-tr from-orange-500 to-amber-300 rounded-[3rem] blur-2xl opacity-20 group-hover:opacity-40 transition duration-500"></div>
+        
+        <div className="relative h-full w-full overflow-hidden rounded-[2.5rem] shadow-2xl ring-1 ring-slate-200/50 bg-slate-100">
+          <iframe
+            title="Lokasi Subur Maju Printing di Google Maps"
+            src="https://maps.google.com/maps?q=Jl.%20Waru%20No.%2024A%20Rawamangun%20Jakarta%20Timur&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            className="w-full h-full min-h-[450px]"
+            style={{ border: 0 }}
+            loading="lazy"
+            allowFullScreen
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
         {/* ================= CTA ================= */}
         <section aria-labelledby="cta-title" className="py-24 px-6 bg-gray-50">
