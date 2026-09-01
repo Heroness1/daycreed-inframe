@@ -571,7 +571,7 @@ export default function Home() {
           <span aria-hidden="true" className="absolute -top-1 -right-1 w-5 h-5 bg-green-400 rounded-full border-2 border-white" />
         </button>
 
-        {/* ================= SMART ORDER MODAL (UKURAN BESAR) ================= */}
+        {/* ================= SMART ORDER  ================= */}
         <div 
           className={`fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 transition-all duration-500 ${
             isSmartOrderOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
