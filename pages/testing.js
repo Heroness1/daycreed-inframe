@@ -68,7 +68,7 @@ export default function Home() {
         <link rel="canonical" href={SITE_URL} />
       </Head>
 
-      {/* Perubahan Tema Global Utama di Sini */}
+      {/* Tema Global Base: Slate-950 dengan Teks Orange */}
       <main className="bg-slate-950 text-orange-100/80 font-sans selection:bg-orange-500/30 selection:text-orange-100">
 
         {/* ================= NAVBAR ================= */}
@@ -390,18 +390,28 @@ export default function Home() {
         </section>
 
         {/* ================= CTA ================= */}
-        <section aria-labelledby="cta-title" className="py-24 px-6 bg-slate-950">
+        <section aria-labelledby="cta-title" className="py-24 px-6 bg-slate-950 relative z-10">
           <div className="max-w-5xl mx-auto relative group">
+            
+            {/* Efek Glow di Belakang Kartu (Glow Luar) */}
             <div className="absolute -inset-1 bg-gradient-to-r from-orange-600 to-amber-500 rounded-[3rem] blur-xl opacity-20 group-hover:opacity-35 transition duration-1000 group-hover:duration-200"></div>
 
-            <div className="relative bg-gradient-to-b from-slate-900 to-orange-950/40 rounded-[3rem] px-8 py-20 overflow-hidden shadow-2xl border border-orange-900/50 flex flex-col items-center text-center">
+            {/* Card Utama - Gradasi Senada dengan Footer */}
+            <div className="relative bg-gradient-to-b from-slate-900 to-orange-950 border border-orange-900/50 rounded-[3rem] px-8 py-20 overflow-hidden shadow-2xl flex flex-col items-center text-center">
               
-              <div className="absolute top-0 -left-20 w-72 h-72 bg-orange-500 rounded-full mix-blend-screen filter blur-[120px] opacity-20 pointer-events-none"></div>
-              <div className="absolute bottom-0 -right-20 w-72 h-72 bg-amber-600 rounded-full mix-blend-screen filter blur-[120px] opacity-10 pointer-events-none"></div>
+              {/* Efek Glow Halus di Batas Atas Card */}
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-orange-500/40 to-transparent"></div>
+
+              {/* Ambient Blur di Dalam Card */}
+              <div className="absolute top-0 -left-20 w-72 h-72 bg-orange-500 rounded-full mix-blend-screen filter blur-[100px] opacity-20 pointer-events-none"></div>
+              <div className="absolute bottom-0 -right-20 w-72 h-72 bg-amber-600 rounded-full mix-blend-screen filter blur-[100px] opacity-10 pointer-events-none"></div>
               
+              {/* Konten */}
               <div className="relative z-10 max-w-2xl mx-auto">
+                
+                {/* Badge Status */}
                 <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/10 text-orange-400 text-sm font-semibold tracking-wide border border-orange-500/20 mb-8">
-                  <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
+                  <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
                   Respon Cepat 24 Jam
                 </span>
                 
@@ -409,10 +419,12 @@ export default function Home() {
                   Siap Cetak <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-300">Sekarang?</span>
                 </h2>
                 
+                {/* Paragraf */}
                 <p className="mt-4 text-lg md:text-xl text-orange-200/70 mb-10 leading-relaxed">
                   Tidak perlu repot datang ke toko. Kirim file Anda dan konsultasikan kebutuhan cetak langsung melalui WhatsApp.
                 </p>
                 
+                {/* Interaktif Tombol WA */}
                 <a
                   href={waLink()}
                   target="_blank"
