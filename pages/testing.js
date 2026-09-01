@@ -15,7 +15,6 @@ export default function Home() {
   
   const [isSmartOrderOpen, setIsSmartOrderOpen] = useState(false);
 
-  export default function Home() {
   // ================= gambar =================
   const backgroundImages = [
     "https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?auto=format&fit=crop&q=80&w=1600",
