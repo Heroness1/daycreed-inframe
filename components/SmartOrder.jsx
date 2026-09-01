@@ -65,15 +65,10 @@ export default function SmartOrder({ onClose }) {
             ))}
           </div>
           {(orderPreview.product === 'Belum disebutkan' || orderPreview.size === 'Belum disebutkan' || orderPreview.quantity === 'Belum disebutkan') && (
-            <div className="mt-5">
-              <div className="inline-block -rotate-2 border-2 border-red-400/70 text-red-500 dark:text-red-400 px-3 py-1.5 rounded text-xs font-bold tracking-wide">
-                ⚠ Perlu dilengkapi bersama admin
-              </div>
-            </div>
+            <div className="mt-5 p-3 rounded-xl bg-yellow-50 border border-yellow-200 text-yellow-800 text-xs">⚠️ Beberapa detail belum disebutkan. Silakan lengkapi nanti dengan admin.</div>
           )}
-          <button onClick={handleWhatsApp} className="w-full mt-5 flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl font-semibold shadow-md">
-            <WhatsAppIcon className="w-4 h-4" />
-            Kirim Pesanan ke WhatsApp
+          <button onClick={handleWhatsApp} className="w-full mt-5 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl font-semibold shadow-md">
+            📱 Kirim Pesanan ke WhatsApp
           </button>
         </div>
       )}
@@ -81,4 +76,3 @@ export default function SmartOrder({ onClose }) {
     </div>
   );
 }
- 
