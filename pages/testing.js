@@ -2,6 +2,7 @@ import Head from "next/head";
 import Catalog from "../components/Catalog";
 import { dataLayanan, dataKenapaKami, dataKlien } from "../data/printData";
 import { useState, useEffect } from "react";
+import SmartOrder from "../components/SmartOrder";
 
 // nomor whatsapp
 const WA_NUMBER = "6282246926544";
@@ -11,6 +12,10 @@ const waLink = (text) =>
   `https://wa.me/${WA_NUMBER}${text ? `?text=${encodeURIComponent(text)}` : ""}`;
 
 export default function Home() {
+  
+  const [isSmartOrderOpen, setIsSmartOrderOpen] = useState(false);
+
+  export default function Home() {
   // ================= gambar =================
   const backgroundImages = [
     "https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?auto=format&fit=crop&q=80&w=1600",
@@ -556,18 +561,53 @@ export default function Home() {
         </footer>
 
 
-        {/* ================= FLOATING WHATSAPP ================= */}
-        <a
-          href={waLink()}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Hubungi Subur Maju Printing melalui WhatsApp"
-          className="fixed bottom-8 right-8 bg-orange-600 hover:bg-orange-700 text-white w-16 h-16 rounded-2xl flex items-center justify-center text-4xl shadow-2xl z-50 transition-all duration-300"
+                {/* ================= FLOATING WHATSAPP BUTTON (TOGGLE SMART ORDER) ================= */}
+        <button
+          onClick={() => setIsSmartOrderOpen(true)}
+          aria-label="Buka form pesanan pintar"
+          className="fixed bottom-8 right-8 bg-orange-600 hover:bg-orange-700 text-white w-16 h-16 rounded-2xl flex items-center justify-center text-4xl shadow-[0_10px_40px_-10px_rgba(234,88,12,0.8)] z-40 transition-all duration-300 hover:-translate-y-1 group"
         >
-          <span aria-hidden="true">💬</span>
+          <span aria-hidden="true" className="group-hover:scale-110 transition-transform">💬</span>
           <span aria-hidden="true" className="absolute inset-0 rounded-2xl border-4 border-orange-400 animate-ping opacity-75" />
           <span aria-hidden="true" className="absolute -top-1 -right-1 w-5 h-5 bg-green-400 rounded-full border-2 border-white" />
-        </a>
+        </button>
+
+        {/* ================= SMART ORDER MODAL (UKURAN BESAR) ================= */}
+        <div 
+          className={`fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 transition-all duration-500 ${
+            isSmartOrderOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+          }`}
+        >
+          {/* Backdrop Blur Gelap */}
+          <div 
+            className={`absolute inset-0 bg-slate-950/60 backdrop-blur-sm transition-opacity duration-500 ${
+              isSmartOrderOpen ? 'opacity-100' : 'opacity-0'
+            }`}
+            onClick={() => setIsSmartOrderOpen(false)}
+            aria-hidden="true"
+          ></div>
+
+          {/* Kontainer Modal Smart Order */}
+          <div 
+            className={`relative w-full max-w-2xl transform transition-all duration-500 ease-out ${
+              isSmartOrderOpen ? 'scale-100 translate-y-0 opacity-100' : 'scale-95 translate-y-10 opacity-0'
+            }`}
+          >
+            {/* Tombol Tutup (X) Melayang di Luar Kartu */}
+            <button 
+              onClick={() => setIsSmartOrderOpen(false)}
+              className="absolute -top-12 right-0 md:-right-12 text-white/70 hover:text-white transition-colors"
+              aria-label="Tutup form"
+            >
+              <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            {/* Panggil Komponen SmartOrder */}
+            <SmartOrder onClose={() => setIsSmartOrderOpen(false)} />
+          </div>
+        </div>
 
       </main>
     </>
