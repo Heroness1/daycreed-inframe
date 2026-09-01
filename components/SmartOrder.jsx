@@ -23,7 +23,7 @@ export default function SmartOrder({ onClose }) {
         <span className="text-3xl">✨</span>
         <div>
           <h2 className="font-bold text-lg text-gray-900 dark:text-white">Pesan Lebih Mudah</h2>
-          <p className="text-xs text-gray-600 dark:text-gray-400">Tulis kebutuhan cetakmu dengan bahasa biasa.</p>
+          <p className="text-xs text-gray-600 dark:text-gray-400">Tulis kebutuhan cetakmu dengan admin.</p>
         </div>
       </div>
 
