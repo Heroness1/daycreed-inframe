@@ -42,7 +42,7 @@ export const dataKlien = [
     logo: "https://upload.wikimedia.org/wikipedia/commons/9/9b/Seal_of_the_Ministry_of_Defense_of_the_Republic_of_Indonesia_%282022%29.svg" 
   },
   { 
-    nama: "BSI (Bank Syariah Indonesia)", 
+    nama: "BSI", 
     logo: "https://upload.wikimedia.org/wikipedia/commons/a/a0/Bank_Syariah_Indonesia.svg" 
   },
   { 
@@ -51,15 +51,15 @@ export const dataKlien = [
   },
   { 
     nama: "Nindya Karya", 
-    logo: "https://commons.wikimedia.org/wiki/Special:FilePath/Logo_Nindya_Karya.svg" 
+    logo: "https://upload.wikimedia.org/wikipedia/id/b/b1/Logo_Nindya_HR_MOD-01.png" 
   },
   { 
     nama: "Adhi Karya", 
-    logo: "https://commons.wikimedia.org/wiki/Special:FilePath/Adhi_Karya_logo.svg" 
+    logo: "https://upload.wikimedia.org/wikipedia/id/7/79/Adhi_Karya.svg" 
   },
   { 
     nama: "Jasa Marga", 
-    logo: "https://commons.wikimedia.org/wiki/Special:FilePath/Jasa_Marga_logo.svg" 
+    logo: "https://upload.wikimedia.org/wikipedia/id/2/2b/Logo_Jasamarga_Related_Business.png" 
   }
 ];
 
