@@ -37,9 +37,30 @@ export const dataKenapaKami = [
 ];
 
 export const dataKlien = [
-  { nama: "Kementerian Pertahanan RI", logo: "https://upload.wikimedia.org/wikipedia/commons/9/9b/Seal_of_the_Ministry_of_Defense_of_the_Republic_of_Indonesia_%282022%29.svg" },
-  { nama: "BSI (Bank Syariah Indonesia)", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a0/Bank_Syariah_Indonesia.svg" },
-  { nama: "McDonald's", logo: "https://upload.wikimedia.org/wikipedia/commons/3/36/McDonald%27s_Golden_Arches.svg" },
+  { 
+    nama: "Kementerian Pertahanan RI", 
+    logo: "https://upload.wikimedia.org/wikipedia/commons/9/9b/Seal_of_the_Ministry_of_Defense_of_the_Republic_of_Indonesia_%282022%29.svg" 
+  },
+  { 
+    nama: "BSI (Bank Syariah Indonesia)", 
+    logo: "https://upload.wikimedia.org/wikipedia/commons/a/a0/Bank_Syariah_Indonesia.svg" 
+  },
+  { 
+    nama: "McDonald's", 
+    logo: "https://upload.wikimedia.org/wikipedia/commons/3/36/McDonald%27s_Golden_Arches.svg" 
+  },
+  { 
+    nama: "Nindya Karya", 
+    logo: "https://commons.wikimedia.org/wiki/Special:FilePath/Logo_Nindya_Karya.svg" 
+  },
+  { 
+    nama: "Adhi Karya", 
+    logo: "https://commons.wikimedia.org/wiki/Special:FilePath/Adhi_Karya_logo.svg" 
+  },
+  { 
+    nama: "Jasa Marga", 
+    logo: "https://commons.wikimedia.org/wiki/Special:FilePath/Jasa_Marga_logo.svg" 
+  }
 ];
 
 export const kategoriList = ["Semua", "Outdoor & Banner", "Atribut & Kantor", "Merchandise & Event", "Packaging & Buku"];
