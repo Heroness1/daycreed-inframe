@@ -6,7 +6,7 @@ import SmartOrder from "../components/SmartOrder";
 
 // nomor whatsapp
 const WA_NUMBER = "6282246926544";
-const SITE_URL = "https://daycreed-inframe.vercel.app/testing";
+const SITE_URL = "https://www.suburmajuprinting.com/";
 
 const waLink = (text) =>
   `https://wa.me/${WA_NUMBER}${text ? `?text=${encodeURIComponent(text)}` : ""}`;
