@@ -106,7 +106,7 @@ export default function Home() {
               </div>
             </div>
 
-            <nav aria-label="Navigasi utama" className="flex items-center gap-1 md:gap-2 text-[13px] font-medium text-slate-400">
+            <nav aria-label="Navigasi utama" className="flex items-center gap-1 md:gap-2 text-[13px] font-medium text-slate-300">
               <a href="#layanan" className="px-4 py-2 rounded-full hover:bg-orange-500/10 hover:text-orange-400 transition-all duration-300">
                 Layanan
               </a>
@@ -259,7 +259,7 @@ export default function Home() {
         {/* ================= KLIEN ================= */}
         <section id="klien" aria-labelledby="klien-title" className="py-20 bg-slate-950 overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 text-center mb-10">
-            <p id="klien-title" className="text-xs md:text-sm font-bold tracking-widest text-orange-500/80 uppercase">
+            <p id="klien-title" className="text-xs md:text-sm font-bold tracking-widest text-orange-400 uppercase">
               Pernah Melayani Kebutuhan Cetak untuk Berbagai Instansi
             </p>
           </div>
@@ -275,7 +275,7 @@ export default function Home() {
                       loading="lazy"
                     />
                   </div>
-                  <span className="text-xs md:text-sm font-medium text-slate-500 group-hover:text-slate-300 transition-colors text-center whitespace-nowrap">
+                  <span className="text-xs md:text-sm font-medium text-slate-400 group-hover:text-slate-300 transition-colors text-center whitespace-nowrap">
                     {klien.nama}
                   </span>
                 </div>
@@ -360,7 +360,7 @@ export default function Home() {
                   </li>
                 </ul>
                 <div className="mt-8 pt-8 border-t border-slate-800">
-                  <p className="text-slate-500 text-sm mb-6 leading-relaxed">
+                  <p className="text-slate-400 text-sm mb-6 leading-relaxed">
                     Spesialis percetakan Jakarta Timur. Melayani <strong className="text-slate-300 font-medium">hardcover skripsi, digital printing, banner, stiker, dan brosur</strong> dengan kualitas premium.
                   </p>
                   <a href="https://maps.google.com/?q=Jl.+Waru+No.+24A+Rawamangun+Jakarta+Timur" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center gap-2 w-full bg-gradient-to-r from-orange-600 to-amber-500 hover:from-orange-500 hover:to-amber-400 text-white font-semibold px-6 py-4 rounded-2xl transition-all duration-300 shadow-[0_0_20px_-5px_rgba(234,88,12,0.4)] hover:shadow-[0_0_30px_-5px_rgba(234,88,12,0.6)]">
@@ -520,7 +520,7 @@ export default function Home() {
 
           {/* FOOTER BOTTOM */}
           <div className="border-t border-slate-800 bg-slate-950/50">
-            <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+            <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
               <p>© {new Date().getFullYear()} Subur Maju Printing. All Rights Reserved.</p>
               <p className="flex items-center gap-1.5 tracking-wide">
                 Digital Presence by <span className="font-semibold text-orange-400 ml-1 hover:text-orange-300 transition-colors cursor-pointer">LURE</span>
