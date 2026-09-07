@@ -2,9 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --font-sans: var(--font-sora), system-ui, sans-serif;
+}
+
 body {
   margin: 0;
-  font-family: 'Sora', sans-serif;
+  font-family: var(--font-sans);
   background-color: #0F0F0F;
   color: white;
 }
@@ -21,13 +25,12 @@ body {
   transform: translateY(0);
 }
 
-/* Stagger effect (biar munculnya bertahap) */
+/* Stagger effect */
 section .scroll-reveal:nth-child(1) { transition-delay: 0.1s; }
 section .scroll-reveal:nth-child(2) { transition-delay: 0.2s; }
 section .scroll-reveal:nth-child(3) { transition-delay: 0.3s; }
 section .scroll-reveal:nth-child(4) { transition-delay: 0.4s; }
 
-/* Untuk Card & Feature */
 .group.scroll-reveal,
 .scroll-reveal .group {
   transition-delay: 0.2s;
