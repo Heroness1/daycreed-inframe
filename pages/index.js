@@ -201,50 +201,66 @@ export default function Home() {
 
         {/* ================= SERVICES ================= */}
         <section id="layanan" aria-labelledby="layanan-title" className="py-24 px-6 bg-slate-900 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-orange-500/5 rounded-full blur-[100px] pointer-events-none" />
-          <div className="max-w-7xl mx-auto relative z-10">
-            <div className="text-center mb-16">
-              <h2 id="layanan-title" className="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4">
-                Layanan Kami
-              </h2>
-              <div className="w-20 h-1 bg-gradient-to-r from-orange-600 to-amber-400 mx-auto rounded-full mb-6" />
-              <p className="text-slate-400 max-w-2xl mx-auto text-[17px] font-medium leading-relaxed tracking-tight">
-                Berbagai kebutuhan percetakan untuk bisnis, akademik, dan keperluan sehari-hari Anda.
-              </p>
-            </div>
-            <div className="flex gap-6 lg:gap-8 overflow-x-auto snap-x snap-mandatory pb-10 pt-4 scrollbar-hide px-4 -mx-4 md:px-0 md:mx-0">
-              {dataLayanan.map((item, index) => (
-                <article key={index} className="group min-w-[85%] sm:min-w-[60%] lg:min-w-[31.333%] snap-center bg-slate-950/70 backdrop-blur-sm rounded-[2rem] border border-slate-800 hover:border-orange-500/40 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(234,88,12,0.15)] transition-all duration-500 flex flex-col overflow-hidden">
-                  <div className="relative h-64 md:h-72 w-full overflow-hidden">
-                    <img
-                      src={item.gambar}
-                      loading="lazy"
-                      alt={`Layanan ${item.judul} Subur Maju Printing`}
-                      className="w-full h-full object-cover transform group-hover:scale-110 opacity-80 group-hover:opacity-100 transition-all duration-700 ease-out"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
-                  </div>
-                  <div className="p-8 lg:p-10 flex flex-col flex-grow relative bg-transparent z-10 -mt-10">
-                    <h3 className="font-bold text-2xl mb-3 text-white group-hover:text-orange-400 transition-colors duration-300 tracking-tight drop-shadow-md">
-                      {item.judul}
-                    </h3>
-                    <p className="text-slate-400 leading-relaxed font-medium mb-8 flex-grow">
-                      {item.deskripsi}
-                    </p>
-                    <div className="mt-auto flex items-center text-sm font-bold text-orange-500 tracking-wider uppercase overflow-hidden">
-                      <span className="opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">
-                        Pesan Sekarang
-                      </span>
-                      <svg className="w-5 h-5 ml-2 transform -translate-x-8 group-hover:translate-x-0 transition-all duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
-                    </div>
-                  </div>
-                </article>
-              ))}
+  <div className="absolute top-0 right-0 w-96 h-96 bg-orange-500/5 rounded-full blur-[100px] pointer-events-none" />
+  
+  <div className="max-w-7xl mx-auto relative z-10">
+    <div className="text-center mb-16">
+      <h2 id="layanan-title" className="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4">
+        Layanan Kami
+      </h2>
+      <div className="w-20 h-1 bg-gradient-to-r from-orange-600 to-amber-400 mx-auto rounded-full mb-6" />
+      <p className="text-slate-400 max-w-2xl mx-auto text-[17px] font-medium leading-relaxed tracking-tight">
+        Berbagai kebutuhan percetakan untuk bisnis, akademik, dan keperluan sehari-hari Anda.
+      </p>
+    </div>
+
+    <div className="flex gap-6 lg:gap-8 overflow-x-auto snap-x snap-mandatory pb-10 pt-4 scrollbar-hide px-4 -mx-4 md:px-0 md:mx-0">
+      {dataLayanan.map((item, index) => (
+        <article
+          key={index}
+          className="group min-w-[85%] sm:min-w-[60%] lg:min-w-[31.333%] snap-center bg-slate-950/70 backdrop-blur-sm rounded-[2rem] border border-slate-800 hover:border-orange-500/40 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(234,88,12,0.15)] transition-all duration-500 flex flex-col overflow-hidden"
+        >
+          {/* ===== GAMBAR ===== */}
+          <div className="relative h-64 md:h-72 w-full overflow-hidden">
+            <Image
+              src={item.gambar}
+              alt={`Layanan ${item.judul} Subur Maju Printing`}
+              fill
+              sizes="(max-width: 640px) 85vw, (max-width: 1024px) 60vw, 31vw"
+              quality={80}
+              className="object-cover transform group-hover:scale-110 opacity-80 group-hover:opacity-100 transition-all duration-700 ease-out"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
+          </div>
+
+          {/* ===== KONTEN ===== */}
+          <div className="p-8 lg:p-10 flex flex-col flex-grow relative bg-transparent z-10 -mt-10">
+            <h3 className="font-bold text-2xl mb-3 text-white group-hover:text-orange-400 transition-colors duration-300 tracking-tight drop-shadow-md">
+              {item.judul}
+            </h3>
+            <p className="text-slate-400 leading-relaxed font-medium mb-8 flex-grow">
+              {item.deskripsi}
+            </p>
+            <div className="mt-auto flex items-center text-sm font-bold text-orange-500 tracking-wider uppercase overflow-hidden">
+              <span className="opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">
+                Pesan Sekarang
+              </span>
+              <svg
+                className="w-5 h-5 ml-2 transform -translate-x-8 group-hover:translate-x-0 transition-all duration-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth="2.5"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
             </div>
           </div>
-        </section>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
 
         {/* ================= KATALOG ================= */}
         <div className="bg-slate-950">
