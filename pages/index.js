@@ -120,56 +120,84 @@ export default function Home() {
           </div>
         </header>
 
-        {/* ================= HERO ================= */}
-        <section aria-labelledby="hero-title" className="relative pt-32 pb-24 flex items-center min-h-[92vh] overflow-hidden bg-slate-950">
-          <div className="absolute inset-0 z-0">
-            {backgroundImages.map((src, index) => (
-              <div
-                key={index}
-                className={`absolute inset-0 transition-all duration-1000 ease-in-out transform ${
-                  index === currentBg ? "opacity-100 scale-105" : "opacity-0 scale-100 pointer-events-none"
-                }`}
-                style={{
-                  backgroundImage: `url(${src})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
-              />
-            ))}
-            <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/70 to-slate-900/50 backdrop-contrast-125" />
-          </div>
+{/* ================= HERO ================= */}
+<section
+  aria-labelledby="hero-title"
+  className="relative pt-32 pb-24 flex items-center min-h-[92vh] overflow-hidden bg-slate-950"
+>
+  {/* Background Images */}
+  <div className="absolute inset-0 z-0">
+    {backgroundImages.map((src, index) => (
+      <div
+        key={index}
+        className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
+          index === currentBg
+            ? "opacity-100 scale-105"
+            : "opacity-0 scale-100 pointer-events-none"
+        }`}
+      >
+        <Image
+          src={src}
+          alt=""
+          fill
+          priority={index === 0}         
+          quality={75}
+          sizes="100vw"
+          className="object-cover"
+        />
+      </div>
+    ))}
 
-          <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
-            <div className="text-white max-w-3xl">
-              <p className="inline-flex items-center gap-2 bg-orange-500/10 border border-orange-500/20 backdrop-blur-md px-4 py-2 rounded-full text-sm font-medium mb-6 text-orange-300">
-                Subur Maju Printing • Jakarta Timur
-              </p>
-              <h1 id="hero-title" className="text-5xl md:text-7xl font-extrabold leading-tight md:leading-none tracking-tight mb-6 text-white drop-shadow-md">
-                Digital Printing Jakarta Timur 24 Jam
-                <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-200">
-                  Hardcover Skripsi & Percetakan
-                </span>
-              </h1>
-              <p className="text-lg md:text-xl text-slate-300 max-w-xl mb-10 leading-relaxed drop-shadow-sm">
-                Subur Maju Printing melayani digital printing 24 jam di Jakarta Timur, termasuk hardcover skripsi, banner, spanduk, stiker, brosur, undangan, dan berbagai kebutuhan percetakan dengan kualitas terbaik.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <a
-                  href={waLink("Halo Kak, saya mau konsultasi mengenai kebutuhan cetak di Subur Maju Printing.\n\nProduk:\nJumlah:\nUkuran:\nDeadline:")}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-500 hover:to-amber-500 text-white font-bold px-8 py-4 rounded-2xl text-lg transition-all duration-300 shadow-[0_0_30px_-5px_rgba(234,88,12,0.4)] hover:shadow-[0_0_40px_-5px_rgba(234,88,12,0.6)] hover:-translate-y-1"
-                >
-                  Konsultasi Gratis
-                </a>
-                <a href="#katalog" className="border border-slate-700 bg-slate-900/70 hover:bg-slate-800/80 hover:border-orange-500/30 font-semibold px-8 py-4 rounded-2xl text-lg transition-all duration-300 text-slate-200 backdrop-blur-sm">
-                  Lihat Katalog
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
+    {/* Overlay gelap */}
+    <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/70 to-slate-900/50 backdrop-contrast-125" />
+  </div>
+
+  {/* Content */}
+  <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
+    <div className="text-white max-w-3xl">
+      <p className="inline-flex items-center gap-2 bg-orange-500/10 border border-orange-500/20 backdrop-blur-md px-4 py-2 rounded-full text-sm font-medium mb-6 text-orange-300">
+        Subur Maju Printing • Jakarta Timur
+      </p>
+
+      <h1
+        id="hero-title"
+        className="text-5xl md:text-7xl font-extrabold leading-tight md:leading-none tracking-tight mb-6 text-white drop-shadow-md"
+      >
+        Digital Printing Jakarta Timur 24 Jam
+        <br />
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-200">
+          Hardcover Skripsi & Percetakan
+        </span>
+      </h1>
+
+      <p className="text-lg md:text-xl text-slate-300 max-w-xl mb-10 leading-relaxed drop-shadow-sm">
+        Subur Maju Printing melayani digital printing 24 jam di Jakarta Timur,
+        termasuk hardcover skripsi, banner, spanduk, stiker, brosur, undangan,
+        dan berbagai kebutuhan percetakan dengan kualitas terbaik.
+      </p>
+
+      <div className="flex flex-wrap gap-4">
+        <a
+          href={waLink(
+            "Halo Kak, saya mau konsultasi mengenai kebutuhan cetak di Subur Maju Printing.\n\nProduk:\nJumlah:\nUkuran:\nDeadline:"
+          )}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-500 hover:to-amber-500 text-white font-bold px-8 py-4 rounded-2xl text-lg transition-all duration-300 shadow-[0_0_30px_-5px_rgba(234,88,12,0.4)] hover:shadow-[0_0_40px_-5px_rgba(234,88,12,0.6)] hover:-translate-y-1"
+        >
+          Konsultasi Gratis
+        </a>
+
+        <a
+          href="#katalog"
+          className="border border-slate-700 bg-slate-900/70 hover:bg-slate-800/80 hover:border-orange-500/30 font-semibold px-8 py-4 rounded-2xl text-lg transition-all duration-300 text-slate-200 backdrop-blur-sm"
+        >
+          Lihat Katalog
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* ================= SERVICES ================= */}
         <section id="layanan" aria-labelledby="layanan-title" className="py-24 px-6 bg-slate-900 relative overflow-hidden">
