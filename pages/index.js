@@ -3,6 +3,7 @@ import Image from "next/image"; //
 import Catalog from "../components/Catalog";
 import { dataLayanan, dataKenapaKami, dataKlien } from "../data/printData";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import SmartOrder from "../components/SmartOrder";
 
 // nomor whatsapp
