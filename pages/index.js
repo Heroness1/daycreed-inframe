@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Image from "next/image"; //
+import Image from "next/image";
 import Catalog from "../components/Catalog";
 import { dataLayanan, dataKenapaKami, dataKlien } from "../data/printData";
 import { useState, useEffect } from "react";
@@ -17,7 +17,6 @@ export default function Home() {
   const [isSmartOrderOpen, setIsSmartOrderOpen] = useState(false);
 
   // ================= GAMBAR =================
-  
   const backgroundImages = [
     "https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?auto=format&fit=crop&q=80&w=1600",
     "https://images.unsplash.com/photo-1572021335469-31706a17aaef?auto=format&fit=crop&q=80&w=1600",
@@ -78,6 +77,53 @@ export default function Home() {
         <meta property="og:url" content={SITE_URL} />
         <meta property="og:image" content={`${SITE_URL}avatar.png`} />
         <meta property="og:site_name" content="Subur Maju Printing" />
+
+        {/* ================= SCHEMA (JSON-LD) ================= */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Subur Maju Printing",
+              "image": `${SITE_URL}avatar.png`,
+              "@id": SITE_URL,
+              "url": SITE_URL,
+              "telephone": "+6282246926544",
+              "priceRange": "Rp",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Jl. Waru No. 24A, RT.1/RW.8, Rawamangun, Kec. Pulo Gadung",
+                "addressLocality": "Kota Jakarta Timur",
+                "addressRegion": "DKI Jakarta",
+                "postalCode": "13220",
+                "addressCountry": "ID"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": -6.1923,
+                "longitude": 106.8834
+              },
+              "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday",
+                  "Sunday"
+                ],
+                "opens": "00:00",
+                "closes": "23:59"
+              },
+              "sameAs": [
+                SITE_URL
+              ]
+            })
+          }}
+        />
       </Head>
 
       {/* ================= GLOBAL ================= */}
@@ -91,7 +137,6 @@ export default function Home() {
         >
           <div className="flex items-center justify-between px-5 h-16">
             <div className="flex items-center gap-3">
-              {/* Image Next.js untuk Navbar */}
               <Image
                 src="/avatar.png"
                 alt="Logo Subur Maju Printing"
@@ -120,147 +165,141 @@ export default function Home() {
           </div>
         </header>
 
-{/* ================= HERO ================= */}
-<section
-  aria-labelledby="hero-title"
-  className="relative pt-32 pb-24 flex items-center min-h-[92vh] overflow-hidden bg-slate-950"
->
-  {/* Background Images */}
-  <div className="absolute inset-0 z-0">
-    {backgroundImages.map((src, index) => (
-      <div
-        key={index}
-        className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
-          index === currentBg
-            ? "opacity-100 scale-105"
-            : "opacity-0 scale-100 pointer-events-none"
-        }`}
-      >
-        <Image
-          src={src}
-          alt=""
-          fill
-          priority={index === 0}         
-          quality={75}
-          sizes="100vw"
-          className="object-cover"
-        />
-      </div>
-    ))}
-
-    {/* Overlay gelap */}
-    <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/70 to-slate-900/50 backdrop-contrast-125" />
-  </div>
-
-  {/* Content */}
-  <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
-    <div className="text-white max-w-3xl">
-      <p className="inline-flex items-center gap-2 bg-orange-500/10 border border-orange-500/20 backdrop-blur-md px-4 py-2 rounded-full text-sm font-medium mb-6 text-orange-300">
-        Subur Maju Printing • Jakarta Timur
-      </p>
-
-      <h1
-        id="hero-title"
-        className="text-5xl md:text-7xl font-extrabold leading-tight md:leading-none tracking-tight mb-6 text-white drop-shadow-md"
-      >
-        Digital Printing Jakarta Timur 24 Jam
-        <br />
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-200">
-          Hardcover Skripsi & Percetakan
-        </span>
-      </h1>
-
-      <p className="text-lg md:text-xl text-slate-300 max-w-xl mb-10 leading-relaxed drop-shadow-sm">
-        Subur Maju Printing melayani digital printing 24 jam di Jakarta Timur,
-        termasuk hardcover skripsi, banner, spanduk, stiker, brosur, undangan,
-        dan berbagai kebutuhan percetakan dengan kualitas terbaik.
-      </p>
-
-      <div className="flex flex-wrap gap-4">
-        <a
-          href={waLink(
-            "Halo Kak, saya mau konsultasi mengenai kebutuhan cetak di Subur Maju Printing.\n\nProduk:\nJumlah:\nUkuran:\nDeadline:"
-          )}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-500 hover:to-amber-500 text-white font-bold px-8 py-4 rounded-2xl text-lg transition-all duration-300 shadow-[0_0_30px_-5px_rgba(234,88,12,0.4)] hover:shadow-[0_0_40px_-5px_rgba(234,88,12,0.6)] hover:-translate-y-1"
+        {/* ================= HERO ================= */}
+        <section
+          aria-labelledby="hero-title"
+          className="relative pt-32 pb-24 flex items-center min-h-[92vh] overflow-hidden bg-slate-950"
         >
-          Konsultasi Gratis
-        </a>
+          <div className="absolute inset-0 z-0">
+            {backgroundImages.map((src, index) => (
+              <div
+                key={index}
+                className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
+                  index === currentBg
+                    ? "opacity-100 scale-105"
+                    : "opacity-0 scale-100 pointer-events-none"
+                }`}
+              >
+                <Image
+                  src={src}
+                  alt=""
+                  fill
+                  priority={index === 0}         
+                  quality={75}
+                  sizes="100vw"
+                  className="object-cover"
+                />
+              </div>
+            ))}
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/70 to-slate-900/50 backdrop-contrast-125" />
+          </div>
 
-        <a
-          href="#katalog"
-          className="border border-slate-700 bg-slate-900/70 hover:bg-slate-800/80 hover:border-orange-500/30 font-semibold px-8 py-4 rounded-2xl text-lg transition-all duration-300 text-slate-200 backdrop-blur-sm"
-        >
-          Lihat Katalog
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
+          <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
+            <div className="text-white max-w-3xl">
+              <p className="inline-flex items-center gap-2 bg-orange-500/10 border border-orange-500/20 backdrop-blur-md px-4 py-2 rounded-full text-sm font-medium mb-6 text-orange-300">
+                Subur Maju Printing • Jakarta Timur
+              </p>
+
+              <h1
+                id="hero-title"
+                className="text-5xl md:text-7xl font-extrabold leading-tight md:leading-none tracking-tight mb-6 text-white drop-shadow-md"
+              >
+                Digital Printing Jakarta Timur 24 Jam
+                <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-200">
+                  Hardcover Skripsi & Percetakan
+                </span>
+              </h1>
+
+              <p className="text-lg md:text-xl text-slate-300 max-w-xl mb-10 leading-relaxed drop-shadow-sm">
+                Subur Maju Printing melayani digital printing 24 jam di Jakarta Timur,
+                termasuk hardcover skripsi, banner, spanduk, stiker, brosur, undangan,
+                dan berbagai kebutuhan percetakan dengan kualitas terbaik.
+              </p>
+
+              <div className="flex flex-wrap gap-4">
+                <a
+                  href={waLink(
+                    "Halo Kak, saya mau konsultasi mengenai kebutuhan cetak di Subur Maju Printing.\n\nProduk:\nJumlah:\nUkuran:\nDeadline:"
+                  )}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-500 hover:to-amber-500 text-white font-bold px-8 py-4 rounded-2xl text-lg transition-all duration-300 shadow-[0_0_30px_-5px_rgba(234,88,12,0.4)] hover:shadow-[0_0_40px_-5px_rgba(234,88,12,0.6)] hover:-translate-y-1"
+                >
+                  Konsultasi Gratis
+                </a>
+
+                <a
+                  href="#katalog"
+                  className="border border-slate-700 bg-slate-900/70 hover:bg-slate-800/80 hover:border-orange-500/30 font-semibold px-8 py-4 rounded-2xl text-lg transition-all duration-300 text-slate-200 backdrop-blur-sm"
+                >
+                  Lihat Katalog
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* ================= SERVICES ================= */}
         <section id="layanan" aria-labelledby="layanan-title" className="py-24 px-6 bg-slate-900 relative overflow-hidden">
-  <div className="absolute top-0 right-0 w-96 h-96 bg-orange-500/5 rounded-full blur-[100px] pointer-events-none" />
-  
-  <div className="max-w-7xl mx-auto relative z-10">
-    <div className="text-center mb-16">
-      <h2 id="layanan-title" className="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4">
-        Layanan Kami
-      </h2>
-      <div className="w-20 h-1 bg-gradient-to-r from-orange-600 to-amber-400 mx-auto rounded-full mb-6" />
-      <p className="text-slate-400 max-w-2xl mx-auto text-[17px] font-medium leading-relaxed tracking-tight">
-        Berbagai kebutuhan percetakan untuk bisnis, akademik, dan keperluan sehari-hari Anda.
-      </p>
-    </div>
+          <div className="absolute top-0 right-0 w-96 h-96 bg-orange-500/5 rounded-full blur-[100px] pointer-events-none" />
+          
+          <div className="max-w-7xl mx-auto relative z-10">
+            <div className="text-center mb-16">
+              <h2 id="layanan-title" className="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4">
+                Layanan Kami
+              </h2>
+              <div className="w-20 h-1 bg-gradient-to-r from-orange-600 to-amber-400 mx-auto rounded-full mb-6" />
+              <p className="text-slate-400 max-w-2xl mx-auto text-[17px] font-medium leading-relaxed tracking-tight">
+                Berbagai kebutuhan percetakan untuk bisnis, akademik, dan keperluan sehari-hari Anda.
+              </p>
+            </div>
 
-    <div className="flex gap-6 lg:gap-8 overflow-x-auto snap-x snap-mandatory pb-10 pt-4 scrollbar-hide px-4 -mx-4 md:px-0 md:mx-0">
-      {dataLayanan.map((item, index) => (
-        <article
-          key={index}
-          className="group min-w-[85%] sm:min-w-[60%] lg:min-w-[31.333%] snap-center bg-slate-950/70 backdrop-blur-sm rounded-[2rem] border border-slate-800 hover:border-orange-500/40 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(234,88,12,0.15)] transition-all duration-500 flex flex-col overflow-hidden"
-        >
-          {/* ===== GAMBAR ===== */}
-          <div className="relative h-64 md:h-72 w-full overflow-hidden">
-            <Image
-              src={item.gambar}
-              alt={`Layanan ${item.judul} Subur Maju Printing`}
-              fill
-              sizes="(max-width: 640px) 85vw, (max-width: 1024px) 60vw, 31vw"
-              quality={80}
-              className="object-cover transform group-hover:scale-110 opacity-80 group-hover:opacity-100 transition-all duration-700 ease-out"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
-          </div>
+            <div className="flex gap-6 lg:gap-8 overflow-x-auto snap-x snap-mandatory pb-10 pt-4 scrollbar-hide px-4 -mx-4 md:px-0 md:mx-0">
+              {dataLayanan.map((item, index) => (
+                <article
+                  key={index}
+                  className="group min-w-[85%] sm:min-w-[60%] lg:min-w-[31.333%] snap-center bg-slate-950/70 backdrop-blur-sm rounded-[2rem] border border-slate-800 hover:border-orange-500/40 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(234,88,12,0.15)] transition-all duration-500 flex flex-col overflow-hidden"
+                >
+                  <div className="relative h-64 md:h-72 w-full overflow-hidden">
+                    <Image
+                      src={item.gambar}
+                      alt={`Layanan ${item.judul} Subur Maju Printing`}
+                      fill
+                      sizes="(max-width: 640px) 85vw, (max-width: 1024px) 60vw, 31vw"
+                      quality={80}
+                      className="object-cover transform group-hover:scale-110 opacity-80 group-hover:opacity-100 transition-all duration-700 ease-out"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
+                  </div>
 
-          {/* ===== KONTEN ===== */}
-          <div className="p-8 lg:p-10 flex flex-col flex-grow relative bg-transparent z-10 -mt-10">
-            <h3 className="font-bold text-2xl mb-3 text-white group-hover:text-orange-400 transition-colors duration-300 tracking-tight drop-shadow-md">
-              {item.judul}
-            </h3>
-            <p className="text-slate-400 leading-relaxed font-medium mb-8 flex-grow">
-              {item.deskripsi}
-            </p>
-            <div className="mt-auto flex items-center text-sm font-bold text-orange-500 tracking-wider uppercase overflow-hidden">
-              <span className="opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">
-                Pesan Sekarang
-              </span>
-              <svg
-                className="w-5 h-5 ml-2 transform -translate-x-8 group-hover:translate-x-0 transition-all duration-500"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="2.5"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+                  <div className="p-8 lg:p-10 flex flex-col flex-grow relative bg-transparent z-10 -mt-10">
+                    <h3 className="font-bold text-2xl mb-3 text-white group-hover:text-orange-400 transition-colors duration-300 tracking-tight drop-shadow-md">
+                      {item.judul}
+                    </h3>
+                    <p className="text-slate-400 leading-relaxed font-medium mb-8 flex-grow">
+                      {item.deskripsi}
+                    </p>
+                    <div className="mt-auto flex items-center text-sm font-bold text-orange-500 tracking-wider uppercase overflow-hidden">
+                      <span className="opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">
+                        Pesan Sekarang
+                      </span>
+                      <svg
+                        className="w-5 h-5 ml-2 transform -translate-x-8 group-hover:translate-x-0 transition-all duration-500"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </div>
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
-        </article>
-      ))}
-    </div>
-  </div>
-</section>
+        </section>
 
         {/* ================= KATALOG ================= */}
         <div className="bg-slate-950">
@@ -454,22 +493,15 @@ export default function Home() {
                 <p className="mt-4 text-lg md:text-xl text-slate-400 mb-10 leading-relaxed">
                   Tidak perlu repot datang ke toko. Kirim file Anda dan konsultasikan kebutuhan cetak langsung melalui WhatsApp.
                 </p>
-                   <Link
-              href="/pesan"
-              className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-orange-600 to-amber-500 hover:from-orange-500 hover:to-amber-400 text-white px-8 py-5 rounded-2xl text-lg font-bold transition-all duration-300 shadow-[0_0_40px_-10px_rgba(249,115,22,0.4)] hover:shadow-[0_0_60px_-15px_rgba(249,115,22,0.6)] hover:-translate-y-1"
-            >
-              {/* WhatsApp Icon */}
-              <svg
-                className="w-6 h-6"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-              </svg>
-
-              Konsultasi & Order Sekarang
-            </Link> 
+                <Link
+                  href="/pesan"
+                  className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-orange-600 to-amber-500 hover:from-orange-500 hover:to-amber-400 text-white px-8 py-5 rounded-2xl text-lg font-bold transition-all duration-300 shadow-[0_0_40px_-10px_rgba(249,115,22,0.4)] hover:shadow-[0_0_60px_-15px_rgba(249,115,22,0.6)] hover:-translate-y-1"
+                >
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                  </svg>
+                  Konsultasi & Order Sekarang
+                </Link>
               </div>
             </div>
           </div>
@@ -482,10 +514,8 @@ export default function Home() {
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-amber-600/5 rounded-full blur-[120px] pointer-events-none" />
           <div className="max-w-7xl mx-auto px-6 py-20 relative z-10">
             <div className="grid md:grid-cols-12 gap-12 lg:gap-8">
-              {/* BRAND */}
               <div className="md:col-span-5 lg:col-span-4">
                 <div className="flex items-center gap-4 mb-6">
-                  {/* Image Next.js untuk Footer */}
                   <div className="relative w-14 h-14 rounded-2xl overflow-hidden ring-2 ring-orange-500/20 shadow-xl shadow-black/30">
                     <Image
                       src="/avatar.png"
@@ -516,7 +546,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* CONTACT */}
               <div className="md:col-span-4 lg:col-span-4 lg:pl-8">
                 <h3 className="font-semibold text-lg text-white mb-6">Hubungi Kami</h3>
                 <ul className="space-y-5">
@@ -547,7 +576,6 @@ export default function Home() {
                 </ul>
               </div>
 
-              {/* POPULAR SERVICES */}
               <div className="md:col-span-3 lg:col-span-4">
                 <h3 className="font-semibold text-lg text-white mb-6">Layanan Populer</h3>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-4 text-sm text-slate-400">
@@ -562,7 +590,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* FOOTER BOTTOM */}
           <div className="border-t border-slate-800 bg-slate-950/50">
             <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
               <p>© {new Date().getFullYear()} Subur Maju Printing. All Rights Reserved.</p>
