@@ -6,10 +6,11 @@ export default function ThemeToggle() {
 
   return (
     <button
-      onClick={() => setDarkMode(!darkMode)}
-      className="absolute top-6 right-6 text-2xl transition hover:scale-110"
-      aria-label="Toggle Theme"
-    >
+  onClick={() => setDarkMode(!darkMode)}
+  className="absolute top-6 right-6 text-2xl transition-transform duration-200 hover:scale-110"
+  aria-label="Toggle Theme"
+>
+
       {darkMode ? (
         <FaMoon className="text-white" />
       ) : (
