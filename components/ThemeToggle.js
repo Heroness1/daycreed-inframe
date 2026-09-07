@@ -1,20 +1,48 @@
-import { useTheme } from '../context/ThemeContext'
-import { FaSun, FaMoon } from 'react-icons/fa'
+import { createContext, useContext, useState, useEffect } from 'react';
 
-export default function ThemeToggle() {
-  const { darkMode, setDarkMode } = useTheme()
+const ThemeContext = createContext({
+  darkMode: true,        // default value (penting!)
+  setDarkMode: () => {}, // dummy function
+});
+
+export function ThemeProvider({ children }) {
+  const [darkMode, setDarkMode] = useState(true); // default dark
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    
+    // Ambil dari localStorage (opsional)
+    const saved = localStorage.getItem('theme');
+    if (saved) {
+      setDarkMode(saved === 'dark');
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+    
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  }, [darkMode, mounted]);
+
+  // Hindari hydration mismatch
+  if (!mounted) {
+    return <>{children}</>;
+  }
 
   return (
-    <button
-      onClick={() => setDarkMode(!darkMode)}
-      className="absolute top-6 right-6 text-2xl transition hover:scale-110"
-      aria-label="Toggle Theme"
-    >
-      {darkMode ? (
-        <FaMoon className="text-white" />
-      ) : (
-        <FaSun className="text-yellow-500" />
-      )}
-    </button>
-  )
+    <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+}
+
+export function useTheme() {
+  return useContext(ThemeContext);
 }
