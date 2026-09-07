@@ -66,7 +66,7 @@ export default function Catalog() {
 
           <div className="relative">
 
-            <span className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-500">
+            <span className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
               <svg
                 className="w-5 h-5"
                 fill="none"
@@ -87,13 +87,13 @@ export default function Catalog() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Cari layanan cetak (misal: Spanduk, Nota, Lanyard)..."
-              className="w-full pl-12 pr-16 py-4 bg-slate-900/80 border border-slate-800 rounded-2xl text-white placeholder-slate-500 focus:outline-none focus:border-orange-500/60 focus:ring-2 focus:ring-orange-500/10 transition-all shadow-lg shadow-black/10"
+              className="w-full pl-12 pr-16 py-4 bg-slate-900/80 border border-slate-800 rounded-2xl text-white placeholder-slate-400 focus:outline-none focus:border-orange-500/60 focus:ring-2 focus:ring-orange-500/10 transition-all shadow-lg shadow-black/10"
             />
 
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery("")}
-                className="absolute inset-y-0 right-0 pr-4 flex items-center text-xs font-semibold text-slate-500 hover:text-orange-400 transition-colors"
+                className="absolute inset-y-0 right-0 pr-4 flex items-center text-xs font-semibold text-slate-400 hover:text-orange-400 transition-colors"
               >
                 Hapus
               </button>
@@ -111,8 +111,8 @@ export default function Catalog() {
                 onClick={() => setSelectedCategory(kategori)}
                 className={`whitespace-nowrap px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 border ${
                   selectedCategory === kategori
-                    ? "bg-orange-600 text-white border-orange-500 shadow-lg shadow-orange-600/20"
-                    : "bg-slate-900 text-slate-400 border-slate-800 hover:bg-slate-800 hover:text-slate-200 hover:border-slate-700"
+                    ? "bg-orange-500 text-slate-950 border-orange-500 shadow-[0_0_15px_-3px_rgba(249,115,22,0.4)]"
+                    : "bg-slate-800/80 text-slate-300 border-slate-700 hover:bg-slate-700 hover:text-white"
                 }`}
               >
                 {kategori}
