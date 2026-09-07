@@ -33,12 +33,12 @@ export default function Home() {
         <p className="text-lg mb-8">Subur Maju Printing</p>
 
         <div className="flex space-x-6 justify-center mb-10">
-          <a href="https://twitter.com/Daycreeed" target="_blank" rel="noopener noreferrer"><FaTwitter className="text-2xl hover:text-blue-400 transition" /></a>
-          <a href="https://github.com/Heroness1" target="_blank" rel="noopener noreferrer"><FaGithub className="text-2xl hover:text-gray-400 transition" /></a>
+          <a href="" target="_blank" rel="noopener noreferrer"><FaTwitter className="text-2xl hover:text-blue-400 transition" /></a>
+          <a href="" target="_blank" rel="noopener noreferrer"><FaGithub className="text-2xl hover:text-gray-400 transition" /></a>
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 w-full max-w-xl">
-          <a href="https://daycreed-inframe.vercel.app/testing#katalog" className="w-full">
+          <a href="https://www.suburmajuprinting.com/#katalog" className="w-full">
             <button className="w-full px-6 py-3 bg-orange-600 text-white rounded-xl hover:bg-orange-700 transition font-semibold">LIHAT KATALOG</button>
           </a>
           <button onClick={() => setShowAssistant(true)} className="w-full px-6 py-3 bg-black text-white rounded-xl hover:opacity-80 transition dark:bg-white dark:text-black font-semibold">
