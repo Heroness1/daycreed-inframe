@@ -11,7 +11,7 @@ const sora = Sora({
 
 export default function App({ Component, pageProps }) {
   return (
-    <div className={sora.variable}>
+    <div className={`${sora.variable} font-sans`}>
       <ThemeProvider>
         <Component {...pageProps} />
       </ThemeProvider>
