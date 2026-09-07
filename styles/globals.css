@@ -17,7 +17,11 @@ body {
 .scroll-reveal {
   opacity: 0;
   transform: translateY(40px);
-  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* Ubah 'all' menjadi properti spesifik yang dianimasikan */
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* Tambahkan will-change untuk memberi tahu browser elemen ini akan berubah */
+  will-change: opacity, transform;
 }
 
 .scroll-reveal.visible {
