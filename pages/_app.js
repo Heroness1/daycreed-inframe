@@ -1,9 +1,10 @@
 import { Sora } from "next/font/google";
-import "../styles/globals.css"; // sesuaikan path-nya
+import { ThemeProvider } from "../context/ThemeContext";
+import "../styles/globals.css";
 
 const sora = Sora({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"], // sesuaikan weight yang kamu butuhkan
+  weight: ["400", "500", "600", "700"],
   display: "swap",
   variable: "--font-sora",
 });
@@ -11,7 +12,9 @@ const sora = Sora({
 export default function App({ Component, pageProps }) {
   return (
     <div className={sora.variable}>
-      <Component {...pageProps} />
+      <ThemeProvider>
+        <Component {...pageProps} />
+      </ThemeProvider>
     </div>
   );
 }
