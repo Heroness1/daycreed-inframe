@@ -6,6 +6,19 @@ export default function Catalog() {
   const [selectedCategory, setSelectedCategory] = useState("Semua");
   const [showAll, setShowAll] = useState(false);
 
+  // Fungsi untuk mengirim laporan klik ke backend API Vercel
+  const handleWhatsAppClick = async (produkNama) => {
+    try {
+      await fetch('/api/notif', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ produkNama })
+      });
+    } catch (error) {
+      console.error("Gagal mengirim notif", error);
+    }
+  };
+
   const filteredProduk = dataProduk.filter((produk) => {
     const query = searchQuery.toLowerCase();
 
@@ -138,6 +151,7 @@ export default function Catalog() {
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => handleWhatsAppClick(produk.nama)}
                   className="group relative flex flex-col justify-between bg-slate-900/70 backdrop-blur-sm rounded-3xl rounded-br-[60px] p-8 border border-slate-800 hover:border-orange-500/40 hover:bg-slate-900 hover:-translate-y-1 hover:shadow-[0_20px_40px_-20px_rgba(234,88,12,0.2)] transition-all duration-500 overflow-hidden"
                 >
 
