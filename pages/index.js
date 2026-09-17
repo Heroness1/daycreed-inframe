@@ -92,13 +92,14 @@ export default function Home() {
               "telephone": "+6282246926544",
               "priceRange": "Rp",
               "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Jl. Waru No. 24A, RT.1/RW.8, Rawamangun, Kec. Pulo Gadung",
-                "addressLocality": "Kota Jakarta Timur",
-                "addressRegion": "DKI Jakarta",
-                "postalCode": "13220",
-                "addressCountry": "ID"
-              },
+  "@type": "PostalAddress",
+  "streetAddress": "Jl. Waru No.15C, RT.2/RW.9, Rawamangun, Kec. Pulo Gadung",
+  "addressLocality": "Kota Jakarta Timur",
+  "addressRegion": "DKI Jakarta",
+  "postalCode": "13220",
+  "addressCountry": "ID"
+},
+
               "geo": {
                 "@type": "GeoCoordinates",
                 "latitude": -6.1923,
@@ -424,10 +425,11 @@ export default function Home() {
                     <div>
                       <h4 className="text-sm font-semibold text-white mb-1">Alamat Toko</h4>
                       <address className="not-italic text-slate-400 leading-relaxed text-sm">
-                        Jl. Waru No. 24A, RT.1/RW.8,<br />
-                        Rawamangun, Kec. Pulo Gadung,<br />
-                        Kota Jakarta Timur 13220
-                      </address>
+  Jl. Waru No.15C, RT.2/RW.9,<br />
+  Rawamangun, Kec. Pulo Gadung,<br />
+  Kota Jakarta Timur 13220
+</address>
+
                     </div>
                   </li>
                   <li className="flex gap-4">
@@ -446,7 +448,8 @@ export default function Home() {
                   <p className="text-slate-400 text-sm mb-6 leading-relaxed">
                     Spesialis percetakan Jakarta Timur. Melayani <strong className="text-slate-300 font-medium">hardcover skripsi, digital printing, banner, stiker, dan brosur</strong> dengan kualitas premium.
                   </p>
-                  <a href="https://maps.google.com/?q=Jl.+Waru+No.+24A+Rawamangun+Jakarta+Timur" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center gap-2 w-full bg-gradient-to-r from-orange-600 to-amber-500 hover:from-orange-500 hover:to-amber-400 text-white font-semibold px-6 py-4 rounded-2xl transition-all duration-300 shadow-[0_0_20px_-5px_rgba(234,88,12,0.4)] hover:shadow-[0_0_30px_-5px_rgba(234,88,12,0.6)]">
+                  <a href="https://maps.google.com/?q=Jl.+Waru+No.+15C+Rawamangun+Jakarta+Timur" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center gap-2 w-full bg-gradient-to-r from-orange-600 to-amber-500 hover:from-orange-500 hover:to-amber-400 text-white font-semibold px-6 py-4 rounded-2xl transition-all duration-300 shadow-[0_0_20px_-5px_rgba(234,88,12,0.4)] hover:shadow-[0_0_30px_-5px_rgba(234,88,12,0.6)]">
+
                     Buka di Google Maps
                     <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -458,14 +461,15 @@ export default function Home() {
                 <div className="absolute -inset-3 bg-gradient-to-tr from-orange-600 to-amber-400 rounded-[3rem] blur-2xl opacity-10 group-hover:opacity-25 transition duration-500" />
                 <div className="relative h-full w-full overflow-hidden rounded-[2.5rem] shadow-2xl ring-1 ring-slate-700 bg-slate-900">
                   <iframe
-                    title="Lokasi Subur Maju Printing di Google Maps"
-                    src="https://maps.google.com/maps?q=Jl.%20Waru%20No.%2024A%20Rawamangun%20Jakarta%20Timur&t=&z=16&ie=UTF8&iwloc=&output=embed"
-                    className="w-full h-full min-h-[450px] opacity-90 group-hover:opacity-100 transition-opacity"
-                    style={{ border: 0, filter: "contrast(1.1) opacity(0.9)" }}
-                    loading="lazy"
-                    allowFullScreen
-                    referrerPolicy="no-referrer-when-downgrade"
-                  />
+  title="Lokasi Subur Maju Printing di Google Maps"
+  src="https://maps.google.com/maps?q=Jl.%20Waru%20No.%2015C%20Rawamangun%20Jakarta%20Timur&t=&z=16&ie=UTF8&iwloc=&output=embed"
+  className="w-full h-full min-h-[450px] opacity-90 group-hover:opacity-100 transition-opacity"
+  style={{ border: 0, filter: "contrast(1.1) opacity(0.9)" }}
+  loading="lazy"
+  allowFullScreen
+  referrerPolicy="no-referrer-when-downgrade"
+/>
+
                 </div>
               </div>
             </div>
@@ -557,10 +561,11 @@ export default function Home() {
                       </svg>
                     </div>
                     <address className="not-italic text-slate-400 text-sm leading-relaxed">
-                      <strong className="text-slate-200 font-medium block mb-1">Workshop Rawamangun</strong>
-                      Jl. Waru No.24A, RT.1/RW.8,<br />
-                      Pulo Gadung, Jakarta Timur 13220
-                    </address>
+  <strong className="text-slate-200 font-medium block mb-1">Workshop Rawamangun</strong>
+  Jl. Waru No.15C, RT.2/RW.9,<br />
+  Pulo Gadung, Jakarta Timur 13220
+</address>
+
                   </li>
                   <li className="flex items-center gap-4">
                     <div className="w-9 h-9 rounded-full bg-orange-500/10 border border-orange-500/20 flex items-center justify-center flex-shrink-0 text-orange-400">
