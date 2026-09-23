@@ -447,6 +447,10 @@ export default function Home() {
                   </div>
                 </Link>
               </div>
+</div>
+          </div>
+        </section>
+
 
         {/* ================= WHY US ================= */}
         <section id="kenapa-kami" aria-labelledby="kenapa-title" className="py-24 px-6 bg-slate-900 border-y border-slate-800">
