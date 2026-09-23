@@ -336,11 +336,11 @@ export default function Home() {
               
               {/* Dummy Mockup Visual Hape */}
               <div className="md:w-1/3 w-full relative z-10 flex justify-center">
-                <Link href="/undangan/raffi-nagita">
+                <Link href="/undangan/Lure-Annabey">
                   <div className="w-56 h-96 bg-stone-100 border-8 border-slate-800 rounded-[2.5rem] overflow-hidden relative shadow-2xl rotate-6 hover:rotate-0 transition-transform duration-500 cursor-pointer group">
                     <div className="absolute inset-0 bg-gradient-to-b from-stone-200 to-stone-100 flex flex-col items-center justify-center p-6 text-center">
                       <p className="text-[10px] uppercase tracking-widest text-stone-500 mb-4">The Wedding Of</p>
-                      <h3 className="text-3xl font-serif text-stone-800 leading-tight mb-2">Raffi<br/>&<br/>Nagita</h3>
+                      <h3 className="text-3xl font-serif text-stone-800 leading-tight mb-2">Lure<br/>&<br/>Annabey</h3>
                       <p className="text-[10px] italic text-stone-600 mb-6">Minggu, 24 Desember 2026</p>
                       <div className="px-5 py-2 bg-stone-800 text-white text-xs rounded-full group-hover:bg-orange-500 transition-colors">Buka Undangan</div>
                     </div>
