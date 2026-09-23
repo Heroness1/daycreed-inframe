@@ -316,10 +316,10 @@ export default function Home() {
               
               <div className="md:w-2/3 relative z-10">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-pink-500/10 text-pink-400 text-xs font-bold tracking-widest uppercase border border-pink-500/20 mb-5">
-                  ✨ Layanan Baru
+                  Layanan Baru
                 </span>
                 <h2 id="undangan-promo" className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-5 leading-tight">
-                  Buat Undangan Pernikahan <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-pink-400">Berbasis Website</span>
+                  Buat Undangan Pernikahan <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-pink-400">Berbasis Web</span>
                 </h2>
                 <p className="text-slate-400 text-lg mb-8 max-w-xl leading-relaxed">
                   Tinggalkan cara lama. Bagikan momen bahagiamu dengan undangan digital elegan yang bisa diakses dari mana saja. Dilengkapi fitur buku tamu, countdown acara, dan integrasi Google Maps otomatis.
