@@ -17,7 +17,7 @@ export default function UndanganKlien() {
   const dataMempelai = {
     tanggal: "Minggu, 24 Desember 2026",
     waktu: "10:00 WIB - Selesai",
-    lokasi: "Gedung Serbaguna Subur Maju, Bekasi Raya",
+    lokasi: "Gedung Velodrome, Jakarta Timur",
     pesan: "Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir memberikan doa restu."
   };
 
