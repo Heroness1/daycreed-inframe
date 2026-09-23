@@ -7,20 +7,19 @@ export default function UndanganKlien() {
 
   if (!slug) return <div className="min-h-screen flex items-center justify-center bg-[#FCFAF8] text-stone-600">Memuat Undangan...</div>;
 
-  // Ubah slug "Lure-Annabey" jadi "Lure & Annabey"
   const namaMempelai = slug
     .split('-')
     .map(kata => kata.charAt(0).toUpperCase() + kata.slice(1))
     .join(' & ');
 
   return (
-    <div className="min-h-screen bg-[#FCFAF8] font-sans text-stone-700 flex justify-center py-6 px-4">
+    <div className="min-h-screen bg-[#FCFAF8] font-sans text-stone-700 flex justify-center py-10 px-4">
       <Head>
         <title>Undangan Pernikahan | {namaMempelai}</title>
       </Head>
 
-      {/* Kartu Utama Undangan (Ukuran Desktop/Mobile yang Elegan) */}
-      <div className="w-full max-w-md bg-[#FCFAF8] border border-stone-200/80 shadow-2xl rounded-[2.5rem] overflow-hidden relative flex flex-col items-center pt-10 pb-16 px-6 text-center">
+      {/* Kartu Utama Undangan */}
+      <div className="w-full max-w-md bg-[#FCFAF8] border border-stone-200/80 shadow-2xl rounded-[2.5rem] overflow-hidden relative flex flex-col items-center pt-12 pb-16 px-6 text-center">
 
         {/* Ornamen Daun Kering / Pampas di Pojok-Pojok */}
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0 overflow-hidden">
@@ -41,14 +40,14 @@ export default function UndanganKlien() {
           />
         </div>
 
-        {/* Teks Pembuka */}
+        {/* Teks Sambutan (Bersih dari vibes covid) */}
         <p className="text-xs font-medium leading-relaxed mb-6 px-4 text-stone-600 z-10">
-          Dengan memohon rasa hormat, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara pernikahan putra - putri kami:
+          Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i sekalian untuk berkenan hadir dan memberikan doa restu pada acara pernikahan kami:
         </p>
 
         {/* Mempelai Wanita */}
         <h1 className="text-3xl font-serif italic text-[#A47E45] mt-1 mb-1" style={{ textShadow: '0 1px 2px rgba(164, 126, 69, 0.2)' }}>
-          Lure, SE
+          Lure, S.Kom.
         </h1>
         <p className="text-xs font-medium text-stone-600 mb-3 z-10">Putri dari Bapak H. Fulan & Ibu Hj. Fulanah</p>
 
@@ -56,7 +55,7 @@ export default function UndanganKlien() {
 
         {/* Mempelai Pria */}
         <h1 className="text-3xl font-serif italic text-[#A47E45] mt-1 mb-1" style={{ textShadow: '0 1px 2px rgba(164, 126, 69, 0.2)' }}>
-          Annabey, SE
+          Annabey, S.M.
         </h1>
         <p className="text-xs font-medium text-stone-600 mb-6 z-10">Putra dari Bapak Fulan & Ibu Fulanah</p>
 
@@ -67,39 +66,39 @@ export default function UndanganKlien() {
            <div className="h-px w-full bg-gradient-to-l from-transparent to-[#8BA087]"></div>
         </div>
 
-        {/* Protokol Kesehatan */}
-        <p className="text-[11px] font-medium leading-relaxed px-6 mb-8 text-stone-500 z-10">
-          Untuk menjaga kesehatan semua, acara akan dilaksanakan sesuai protokol. Kami sekeluarga memohon maaf karena tidak bisa mengundang banyak tamu, melainkan hanya sanak keluarga dan kerabat terdekat.
+        {/* Quote Pernikahan Pengganti */}
+        <p className="text-[11px] font-serif italic leading-relaxed px-6 mb-8 text-stone-500 z-10">
+          "Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tentram kepada-Nya..." (QS. Ar-Rum: 21)
         </p>
 
         {/* Kotak Jadwal Acara */}
-        <div className="w-full flex justify-between px-4 mb-8 z-10 bg-white/60 backdrop-blur-sm py-5 rounded-2xl border border-stone-200/50 shadow-sm">
+        <div className="w-full flex justify-between px-4 mb-8 z-10 bg-white/70 backdrop-blur-sm py-5 rounded-2xl border border-stone-200/50 shadow-sm">
           <div className="text-center w-1/2 pr-2">
             <h3 className="text-sm font-serif italic text-[#A47E45] mb-2 font-bold">Akad Nikah</h3>
             <p className="text-[10px] font-bold text-stone-700 mb-1">JUM'AT, 09 OKTOBER 2026</p>
-            <p className="text-[10px] text-stone-600">10.00 WIB</p>
+            <p className="text-[10px] text-stone-600">Pukul 09.00 WIB</p>
           </div>
           <div className="text-center w-1/2 pl-2 border-l border-stone-300">
-            <h3 className="text-sm font-serif italic text-[#A47E45] mb-2 font-bold">Intimate Wedding</h3>
+            <h3 className="text-sm font-serif italic text-[#A47E45] mb-2 font-bold">Resepsi</h3>
             <p className="text-[10px] font-bold text-stone-700 mb-1">SABTU, 10 OKTOBER 2026</p>
-            <p className="text-[10px] text-stone-600">13.00 WIB - Selesai</p>
+            <p className="text-[10px] text-stone-600">Pukul 11.00 WIB - Selesai</p>
           </div>
         </div>
 
         {/* QR Code */}
         <div className="flex flex-col items-center mb-6 z-10">
-          <p className="text-[10px] font-bold tracking-widest text-stone-500 mb-2">SCAN THIS</p>
+          <p className="text-[10px] font-bold tracking-widest text-stone-500 mb-2">SCAN KEHADIRAN</p>
           <div className="p-2 bg-white border border-stone-300 shadow-sm rounded-xl">
             <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://suburmaju.com/undangan/Lure-Annabey" alt="QR Code" className="w-16 h-16" />
           </div>
         </div>
 
-        {/* Alamat & NB */}
+        {/* Alamat Venue Mewah & Penutup */}
         <p className="text-xs font-bold text-stone-700 mb-2 px-6 leading-relaxed z-10">
-          Jl Raya Kediri No 77 Ds Pagu Kec. Wates Kab Kediri
+          The Tribrata Darmawangsa, Grand Ballroom<br />Jl. Darmawangsa Raya No.23, Jakarta Selatan
         </p>
         <p className="text-[11px] text-stone-500 font-medium px-6 leading-relaxed z-10">
-          NB: Diharapkan Untuk Semua Tamu Undangan Agar Menggunakan Masker
+          Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir memberikan doa restu.
         </p>
 
       </div>
