@@ -308,87 +308,93 @@ export default function Home() {
 
         {/* ================= PROMO UNDANGAN DIGITAL (NEW) ================= */}
         <section aria-labelledby="undangan-promo" className="py-16 px-6 bg-slate-950 relative overflow-hidden border-t border-slate-800/50">
-          <div className="absolute top-0 right-1/4 w-72 h-72 bg-pink-600/10 rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute top-0 right-1/4 w-72 h-72 bg-amber-600/10 rounded-full blur-[100px] pointer-events-none" />
           <div className="max-w-7xl mx-auto">
             <div className="bg-gradient-to-br from-slate-900 to-slate-900/50 border border-slate-800 rounded-[2.5rem] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-10 relative overflow-hidden">
+              
               {/* Efek kilau di background */}
               <div className="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-orange-500/10 to-transparent pointer-events-none" />
               
               <div className="md:w-2/3 relative z-10">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-pink-500/10 text-pink-400 text-xs font-bold tracking-widest uppercase border border-pink-500/20 mb-5">
-                  Layanan Baru
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-bold tracking-widest uppercase border border-amber-500/20 mb-5">
+                  ✨ Layanan Baru
                 </span>
                 <h2 id="undangan-promo" className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-5 leading-tight">
-                  Buat Undangan Pernikahan <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-pink-400">Berbasis Web</span>
+                  Buat Undangan Pernikahan <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-400">Berbasis Web</span>
                 </h2>
                 <p className="text-slate-400 text-lg mb-8 max-w-xl leading-relaxed">
                   Tinggalkan cara lama. Bagikan momen bahagiamu dengan undangan digital elegan yang bisa diakses dari mana saja. Dilengkapi fitur buku tamu, countdown acara, dan integrasi Google Maps otomatis.
                 </p>
                 <div className="flex flex-wrap gap-4">
-                  <Link href="/undangan/raffi-nagita" className="bg-white/10 hover:bg-white/20 border border-white/20 text-white px-8 py-4 rounded-full font-semibold transition-all">
+                  {/* Link demo sudah disesuaikan ke Lure-Annabey */}
+                  <Link href="/undangan/Lure-Annabey" className="bg-white/10 hover:bg-white/20 border border-white/20 text-white px-8 py-4 rounded-full font-semibold transition-all">
                     Lihat Demo Desain
                   </Link>
-                  <a href={waLink("Halo Kak, saya mau konsultasi pembuatan Undangan Pernikahan Digital Website.")} target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-orange-600 to-pink-600 hover:from-orange-500 hover:to-pink-500 text-white px-8 py-4 rounded-full font-bold transition-all shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40">
+                  <a href={waLink("Halo Kak, saya mau konsultasi pembuatan Undangan Pernikahan Digital Website.")} target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-500 hover:to-amber-500 text-white px-8 py-4 rounded-full font-bold transition-all shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40">
                     Pesan Sekarang
                   </a>
                 </div>
               </div>
               
-              {/* Dummy Mockup Visual Hape */}
+              {/* Dummy Mockup Visual Hape Nusantara Premium */}
               <div className="md:w-1/3 w-full relative z-10 flex justify-center mt-12 md:mt-0">
-  <Link href="/undangan/Lure-Annabey" className="block relative group">
-    
-    {/* Efek Cahaya Glowing (Maroon & Emas) */}
-    <div className="absolute -inset-1 bg-gradient-to-r from-red-900 via-amber-700 to-yellow-600 rounded-[3.5rem] blur-2xl opacity-40 group-hover:opacity-80 transition duration-700"></div>
+                <Link href="/undangan/Lure-Annabey" className="block relative group">
+                  
+                  {/* Efek Cahaya Glowing (Maroon & Emas) */}
+                  <div className="absolute -inset-1 bg-gradient-to-r from-red-900 via-amber-700 to-yellow-600 rounded-[3.5rem] blur-2xl opacity-40 group-hover:opacity-80 transition duration-700"></div>
 
-    {/* Frame HP */}
-    <div className="w-[280px] h-[560px] bg-stone-950 border-[8px] border-stone-900 rounded-[3rem] overflow-hidden relative shadow-2xl transform transition-all duration-700 ease-out group-hover:-translate-y-4 group-hover:rotate-0 rotate-3 ring-1 ring-amber-900/50">
+                  {/* Frame HP */}
+                  <div className="w-[280px] h-[560px] bg-stone-950 border-[8px] border-stone-900 rounded-[3rem] overflow-hidden relative shadow-2xl transform transition-all duration-700 ease-out group-hover:-translate-y-4 group-hover:rotate-0 rotate-3 ring-1 ring-amber-900/50">
 
-      {/* Notch / Poni Kamera HP */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-7 bg-stone-900 rounded-b-2xl z-30 flex items-center justify-center gap-3 shadow-inner">
-        <div className="w-2.5 h-2.5 rounded-full bg-stone-950 shadow-inner"></div>
-        <div className="w-2.5 h-2.5 rounded-full bg-indigo-900/80 shadow-inner"></div>
-      </div>
+                    {/* Notch / Poni Kamera HP */}
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-7 bg-stone-900 rounded-b-2xl z-30 flex items-center justify-center gap-3 shadow-inner">
+                      <div className="w-2.5 h-2.5 rounded-full bg-stone-950 shadow-inner"></div>
+                      <div className="w-2.5 h-2.5 rounded-full bg-indigo-900/80 shadow-inner"></div>
+                    </div>
 
-      {/* Background Foto (Tekstur Gelap/Elegan) */}
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1590725141018-b0a3fd7eb3b8?auto=format&fit=crop&q=80&w=800')] bg-cover bg-center transform group-hover:scale-110 transition-transform duration-1000 z-0 opacity-80"></div>
-      
-      {/* Overlay Gelap Elegan */}
-      <div className="absolute inset-0 bg-gradient-to-b from-stone-950/90 via-red-950/70 to-stone-950/95 z-0"></div>
+                    {/* Background Foto (Tekstur Gelap/Elegan) */}
+                    <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1590725141018-b0a3fd7eb3b8?auto=format&fit=crop&q=80&w=800')] bg-cover bg-center transform group-hover:scale-110 transition-transform duration-1000 z-0 opacity-80"></div>
+                    
+                    {/* Overlay Gelap Elegan */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-stone-950/90 via-red-950/70 to-stone-950/95 z-0"></div>
 
-      {/* Ornamen Lengkung Nusantara Premium */}
-      <div className="absolute inset-4 border-2 border-amber-600/40 rounded-t-[100px] rounded-b-2xl z-0 pointer-events-none group-hover:border-amber-400/60 transition-colors duration-700 shadow-[inset_0_0_20px_rgba(217,119,6,0.1)]"></div>
-      <div className="absolute inset-[22px] border border-amber-500/20 rounded-t-[90px] rounded-b-xl z-0 pointer-events-none"></div>
+                    {/* Ornamen Lengkung Nusantara Premium */}
+                    <div className="absolute inset-4 border-2 border-amber-600/40 rounded-t-[100px] rounded-b-2xl z-0 pointer-events-none group-hover:border-amber-400/60 transition-colors duration-700 shadow-[inset_0_0_20px_rgba(217,119,6,0.1)]"></div>
+                    <div className="absolute inset-[22px] border border-amber-500/20 rounded-t-[90px] rounded-b-xl z-0 pointer-events-none"></div>
 
-      {/* Konten Undangan Universal */}
-      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center p-6 text-center">
+                    {/* Konten Undangan Universal */}
+                    <div className="absolute inset-0 z-10 flex flex-col items-center justify-center p-6 text-center">
 
-        <div className="mt-16">
-          <p className="text-[10px] tracking-[0.3em] uppercase text-amber-500 mb-6 font-medium drop-shadow-md">
-            Undangan Pernikahan
-          </p>
-          <h3 className="text-4xl md:text-5xl font-serif text-white leading-tight mb-2 drop-shadow-[0_2px_10px_rgba(0,0,0,1)]">
-            Lure<br/>
-            <span className="text-amber-500 text-3xl font-light italic leading-loose">&</span><br/>
-            Annabey
-          </h3>
-        </div>
+                      <div className="mt-16">
+                        <p className="text-[10px] tracking-[0.3em] uppercase text-amber-500 mb-6 font-medium drop-shadow-md">
+                          Undangan Pernikahan
+                        </p>
+                        <h3 className="text-4xl md:text-5xl font-serif text-white leading-tight mb-2 drop-shadow-[0_2px_10px_rgba(0,0,0,1)]">
+                          Lure<br/>
+                          <span className="text-amber-500 text-3xl font-light italic leading-loose">&</span><br/>
+                          Annabey
+                        </h3>
+                      </div>
 
-        <div className="w-full flex flex-col items-center mt-auto mb-8">
-          <div className="w-20 h-px bg-gradient-to-r from-transparent via-amber-500 to-transparent mb-5"></div>
-          <p className="text-xs font-light tracking-[0.2em] text-amber-100/70 mb-8 drop-shadow-md">
-            24 . 12 . 2026
-          </p>
+                      <div className="w-full flex flex-col items-center mt-auto mb-8">
+                        <div className="w-20 h-px bg-gradient-to-r from-transparent via-amber-500 to-transparent mb-5"></div>
+                        <p className="text-xs font-light tracking-[0.2em] text-amber-100/70 mb-8 drop-shadow-md">
+                          24 . 12 . 2026
+                        </p>
 
-          <div className="px-8 py-3.5 bg-gradient-to-r from-amber-700 to-yellow-600 hover:from-amber-600 hover:to-yellow-500 text-stone-950 text-[11px] font-bold tracking-widest uppercase rounded-full shadow-[0_0_20px_rgba(217,119,6,0.4)] transition-all duration-300 group-hover:scale-105 border border-amber-400">
-            Buka Undangan
+                        <div className="px-8 py-3.5 bg-gradient-to-r from-amber-700 to-yellow-600 hover:from-amber-600 hover:to-yellow-500 text-stone-950 text-[11px] font-bold tracking-widest uppercase rounded-full shadow-[0_0_20px_rgba(217,119,6,0.4)] transition-all duration-300 group-hover:scale-105 border border-amber-400">
+                          Buka Undangan
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </Link>
+              </div>
+
+            </div>
           </div>
-        </div>
-
-      </div>
-    </div>
-  </Link>
-</div>
+        </section>
 
         {/* ================= WHY US ================= */}
         <section id="kenapa-kami" aria-labelledby="kenapa-title" className="py-24 px-6 bg-slate-900 border-y border-slate-800">
