@@ -5,58 +5,104 @@ export default function UndanganKlien() {
   const router = useRouter();
   const { slug } = router.query;
 
-  if (!slug) return <div className="min-h-screen flex items-center justify-center">Loading...</div>;
+  if (!slug) return <div className="min-h-screen flex items-center justify-center bg-[#FCFAF8] text-stone-600">Memuat Undangan...</div>;
 
-  // FORMATTER NAMA: Mengubah "romeo-juliet" jadi "Romeo & Juliet"
-  const namaDariLink = slug
+  // Ubah slug "Lure-Annabey" jadi "Lure & Annabey"
+  const namaMempelai = slug
     .split('-')
     .map(kata => kata.charAt(0).toUpperCase() + kata.slice(1))
     .join(' & ');
 
-  // DUMMY DATA: Nanti data ini akan otomatis ketarik dari Google Sheets / CMS
-  const dataMempelai = {
-    tanggal: "Minggu, 24 Desember 2026",
-    waktu: "10:00 WIB - Selesai",
-    lokasi: "Gedung Velodrome, Jakarta Timur",
-    pesan: "Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir memberikan doa restu."
-  };
-
   return (
-    <div className="min-h-screen bg-stone-50 font-sans text-stone-800">
+    <div className="min-h-screen bg-[#FCFAF8] font-sans text-stone-700 flex justify-center py-6 px-4">
       <Head>
-        <title>Undangan Pernikahan | {namaDariLink}</title>
+        <title>Undangan Pernikahan | {namaMempelai}</title>
       </Head>
 
-      {/* SECTION 1: Cover Depan */}
-      <section className="min-h-screen flex flex-col items-center justify-center text-center p-6 bg-gradient-to-b from-stone-200 to-stone-50">
-        <p className="text-sm tracking-widest uppercase mb-4 text-stone-500">The Wedding Of</p>
-        <h1 className="text-5xl md:text-7xl font-serif text-stone-800 mb-6">
-          {namaDariLink}
-        </h1>
-        <p className="text-lg italic text-stone-600 mb-10">{dataMempelai.tanggal}</p>
-        <button className="px-8 py-3 bg-stone-800 text-white rounded-full hover:bg-stone-700 transition shadow-lg">
-          Buka Undangan
-        </button>
-      </section>
+      {/* Kartu Utama Undangan (Ukuran Desktop/Mobile yang Elegan) */}
+      <div className="w-full max-w-md bg-[#FCFAF8] border border-stone-200/80 shadow-2xl rounded-[2.5rem] overflow-hidden relative flex flex-col items-center pt-10 pb-16 px-6 text-center">
 
-      {/* SECTION 2: Detail Acara */}
-      <section className="py-20 px-6 text-center max-w-2xl mx-auto">
-        <h2 className="text-3xl font-serif text-stone-800 mb-6">Save The Date</h2>
-        <p className="text-stone-600 mb-10 leading-relaxed">
-          {dataMempelai.pesan}
-        </p>
-        
-        <div className="bg-white p-8 rounded-3xl shadow-sm border border-stone-200">
-          <h3 className="font-bold text-2xl text-stone-800 mb-2">Resepsi Pernikahan</h3>
-          <p className="text-stone-600 mb-2">{dataMempelai.tanggal}</p>
-          <p className="text-stone-600 mb-6">{dataMempelai.waktu}</p>
-          <hr className="w-16 border-stone-300 mx-auto mb-6" />
-          <p className="text-stone-800 font-medium mb-4">{dataMempelai.lokasi}</p>
-          <button className="text-sm px-6 py-2 border border-stone-800 rounded-full hover:bg-stone-800 hover:text-white transition">
-            Lihat Google Maps
-          </button>
+        {/* Ornamen Daun Kering / Pampas di Pojok-Pojok */}
+        <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0 overflow-hidden">
+          <div className="absolute -top-6 -left-8 w-32 h-32 bg-[url('https://images.unsplash.com/photo-1603893641258-0051cb7e5ac5?q=80&w=300')] bg-cover opacity-25 mix-blend-multiply rotate-45 rounded-full blur-[1px]"></div>
+          <div className="absolute -top-6 -right-8 w-32 h-32 bg-[url('https://images.unsplash.com/photo-1603893641258-0051cb7e5ac5?q=80&w=300')] bg-cover opacity-25 mix-blend-multiply -rotate-90 rounded-full blur-[1px]"></div>
+          <div className="absolute -bottom-8 -left-8 w-36 h-36 bg-[url('https://images.unsplash.com/photo-1603893641258-0051cb7e5ac5?q=80&w=300')] bg-cover opacity-25 mix-blend-multiply -rotate-45 rounded-full blur-[1px]"></div>
+          <div className="absolute -bottom-8 -right-8 w-36 h-36 bg-[url('https://images.unsplash.com/photo-1603893641258-0051cb7e5ac5?q=80&w=300')] bg-cover opacity-25 mix-blend-multiply rotate-180 rounded-full blur-[1px]"></div>
         </div>
-      </section>
+
+        {/* Foto Ilustrasi Couple 2D / Kartun Estetik */}
+        <div className="relative w-36 h-36 my-4 z-10">
+          <div className="absolute inset-0 bg-[#F2E8D9] rounded-full opacity-60 blur-lg transform scale-110"></div>
+          <img
+            src="https://images.unsplash.com/photo-1659095141570-be8b9aff59ce?auto=format&fit=crop&q=80&w=400" 
+            alt="Ilustrasi Pasangan"
+            className="w-full h-full object-cover p-1 bg-white shadow-md relative z-10"
+            style={{ clipPath: 'polygon(50% 0%, 85% 10%, 100% 50%, 85% 90%, 50% 100%, 15% 90%, 0% 50%, 15% 10%)', borderRadius: '40% 60% 70% 30% / 40% 50% 60% 50%' }}
+          />
+        </div>
+
+        {/* Teks Pembuka */}
+        <p className="text-xs font-medium leading-relaxed mb-6 px-4 text-stone-600 z-10">
+          Dengan memohon rasa hormat, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara pernikahan putra - putri kami:
+        </p>
+
+        {/* Mempelai Wanita */}
+        <h1 className="text-3xl font-serif italic text-[#A47E45] mt-1 mb-1" style={{ textShadow: '0 1px 2px rgba(164, 126, 69, 0.2)' }}>
+          Lure, SE
+        </h1>
+        <p className="text-xs font-medium text-stone-600 mb-3 z-10">Putri dari Bapak H. Fulan & Ibu Hj. Fulanah</p>
+
+        <span className="text-lg font-serif italic text-stone-400 my-1 z-10">&</span>
+
+        {/* Mempelai Pria */}
+        <h1 className="text-3xl font-serif italic text-[#A47E45] mt-1 mb-1" style={{ textShadow: '0 1px 2px rgba(164, 126, 69, 0.2)' }}>
+          Annabey, SE
+        </h1>
+        <p className="text-xs font-medium text-stone-600 mb-6 z-10">Putra dari Bapak Fulan & Ibu Fulanah</p>
+
+        {/* Ornamen Pemisah */}
+        <div className="flex items-center justify-center gap-2 mb-6 w-3/4 z-10 opacity-80">
+           <div className="h-px w-full bg-gradient-to-r from-transparent to-[#8BA087]"></div>
+           <span className="text-xs text-[#8BA087]">🌿</span>
+           <div className="h-px w-full bg-gradient-to-l from-transparent to-[#8BA087]"></div>
+        </div>
+
+        {/* Protokol Kesehatan */}
+        <p className="text-[11px] font-medium leading-relaxed px-6 mb-8 text-stone-500 z-10">
+          Untuk menjaga kesehatan semua, acara akan dilaksanakan sesuai protokol. Kami sekeluarga memohon maaf karena tidak bisa mengundang banyak tamu, melainkan hanya sanak keluarga dan kerabat terdekat.
+        </p>
+
+        {/* Kotak Jadwal Acara */}
+        <div className="w-full flex justify-between px-4 mb-8 z-10 bg-white/60 backdrop-blur-sm py-5 rounded-2xl border border-stone-200/50 shadow-sm">
+          <div className="text-center w-1/2 pr-2">
+            <h3 className="text-sm font-serif italic text-[#A47E45] mb-2 font-bold">Akad Nikah</h3>
+            <p className="text-[10px] font-bold text-stone-700 mb-1">JUM'AT, 09 OKTOBER 2026</p>
+            <p className="text-[10px] text-stone-600">10.00 WIB</p>
+          </div>
+          <div className="text-center w-1/2 pl-2 border-l border-stone-300">
+            <h3 className="text-sm font-serif italic text-[#A47E45] mb-2 font-bold">Intimate Wedding</h3>
+            <p className="text-[10px] font-bold text-stone-700 mb-1">SABTU, 10 OKTOBER 2026</p>
+            <p className="text-[10px] text-stone-600">13.00 WIB - Selesai</p>
+          </div>
+        </div>
+
+        {/* QR Code */}
+        <div className="flex flex-col items-center mb-6 z-10">
+          <p className="text-[10px] font-bold tracking-widest text-stone-500 mb-2">SCAN THIS</p>
+          <div className="p-2 bg-white border border-stone-300 shadow-sm rounded-xl">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://suburmaju.com/undangan/Lure-Annabey" alt="QR Code" className="w-16 h-16" />
+          </div>
+        </div>
+
+        {/* Alamat & NB */}
+        <p className="text-xs font-bold text-stone-700 mb-2 px-6 leading-relaxed z-10">
+          Jl Raya Kediri No 77 Ds Pagu Kec. Wates Kab Kediri
+        </p>
+        <p className="text-[11px] text-stone-500 font-medium px-6 leading-relaxed z-10">
+          NB: Diharapkan Untuk Semua Tamu Undangan Agar Menggunakan Masker
+        </p>
+
+      </div>
     </div>
   );
 }
