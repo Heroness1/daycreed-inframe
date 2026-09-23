@@ -60,11 +60,11 @@ export default function Home() {
         <title>Digital Printing Jakarta Timur 24 Jam | Subur Maju Printing</title>
         <meta
           name="description"
-          content="Subur Maju Printing melayani digital printing 24 jam di Jakarta Timur. Hardcover skripsi, banner, spanduk, stiker, brosur, undangan, dan berbagai kebutuhan percetakan."
+          content="Subur Maju Printing melayani digital printing 24 jam di Jakarta Timur. Hardcover skripsi, banner, spanduk, stiker, brosur, undangan digital website, dan berbagai kebutuhan percetakan."
         />
         <meta
           name="keywords"
-          content="digital printing Jakarta Timur, percetakan Jakarta Timur, percetakan Rawamangun, digital printing Rawamangun, hardcover skripsi Jakarta Timur, hardcover skripsi Rawamangun, banner Jakarta Timur, cetak banner, cetak stiker, cetak brosur"
+          content="digital printing Jakarta Timur, percetakan Jakarta Timur, percetakan Rawamangun, digital printing Rawamangun, hardcover skripsi Jakarta Timur, banner Jakarta Timur, cetak stiker, undangan digital web, jasa undangan website"
         />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Subur Maju Printing" />
@@ -72,7 +72,7 @@ export default function Home() {
 
         {/* ================= OPEN GRAPH TAGS ================= */}
         <meta property="og:title" content="Digital Printing Jakarta Timur 24 Jam | Subur Maju Printing" />
-        <meta property="og:description" content="Subur Maju Printing melayani digital printing 24 jam di Jakarta Timur. Hardcover skripsi, banner, spanduk, stiker, dan brosur." />
+        <meta property="og:description" content="Subur Maju Printing melayani digital printing 24 jam di Jakarta Timur. Hardcover skripsi, banner, spanduk, stiker, brosur, dan undangan digital." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={SITE_URL} />
         <meta property="og:image" content={`${SITE_URL}avatar.png`} />
@@ -92,14 +92,13 @@ export default function Home() {
               "telephone": "+6282246926544",
               "priceRange": "Rp",
               "address": {
-  "@type": "PostalAddress",
-  "streetAddress": "Jl. Waru No.15C, RT.2/RW.9, Rawamangun, Kec. Pulo Gadung",
-  "addressLocality": "Kota Jakarta Timur",
-  "addressRegion": "DKI Jakarta",
-  "postalCode": "13220",
-  "addressCountry": "ID"
-},
-
+                "@type": "PostalAddress",
+                "streetAddress": "Jl. Waru No.15C, RT.2/RW.9, Rawamangun, Kec. Pulo Gadung",
+                "addressLocality": "Kota Jakarta Timur",
+                "addressRegion": "DKI Jakarta",
+                "postalCode": "13220",
+                "addressCountry": "ID"
+              },
               "geo": {
                 "@type": "GeoCoordinates",
                 "latitude": -6.1923,
@@ -214,7 +213,7 @@ export default function Home() {
 
               <p className="text-lg md:text-xl text-slate-300 max-w-xl mb-10 leading-relaxed drop-shadow-sm">
                 Subur Maju Printing melayani digital printing 24 jam di Jakarta Timur,
-                termasuk hardcover skripsi, banner, spanduk, stiker, brosur, undangan,
+                termasuk hardcover skripsi, banner, spanduk, stiker, brosur, <strong>undangan digital berbasis web</strong>,
                 dan berbagai kebutuhan percetakan dengan kualitas terbaik.
               </p>
 
@@ -306,6 +305,51 @@ export default function Home() {
         <div className="bg-slate-950">
           <Catalog />
         </div>
+
+        {/* ================= PROMO UNDANGAN DIGITAL (NEW) ================= */}
+        <section aria-labelledby="undangan-promo" className="py-16 px-6 bg-slate-950 relative overflow-hidden border-t border-slate-800/50">
+          <div className="absolute top-0 right-1/4 w-72 h-72 bg-pink-600/10 rounded-full blur-[100px] pointer-events-none" />
+          <div className="max-w-7xl mx-auto">
+            <div className="bg-gradient-to-br from-slate-900 to-slate-900/50 border border-slate-800 rounded-[2.5rem] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-10 relative overflow-hidden">
+              {/* Efek kilau di background */}
+              <div className="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-orange-500/10 to-transparent pointer-events-none" />
+              
+              <div className="md:w-2/3 relative z-10">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-pink-500/10 text-pink-400 text-xs font-bold tracking-widest uppercase border border-pink-500/20 mb-5">
+                  ✨ Layanan Baru
+                </span>
+                <h2 id="undangan-promo" className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-5 leading-tight">
+                  Buat Undangan Pernikahan <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-pink-400">Berbasis Website</span>
+                </h2>
+                <p className="text-slate-400 text-lg mb-8 max-w-xl leading-relaxed">
+                  Tinggalkan cara lama. Bagikan momen bahagiamu dengan undangan digital elegan yang bisa diakses dari mana saja. Dilengkapi fitur buku tamu, countdown acara, dan integrasi Google Maps otomatis.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <Link href="/undangan/raffi-nagita" className="bg-white/10 hover:bg-white/20 border border-white/20 text-white px-8 py-4 rounded-full font-semibold transition-all">
+                    Lihat Demo Desain
+                  </Link>
+                  <a href={waLink("Halo Kak, saya mau konsultasi pembuatan Undangan Pernikahan Digital Website.")} target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-orange-600 to-pink-600 hover:from-orange-500 hover:to-pink-500 text-white px-8 py-4 rounded-full font-bold transition-all shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40">
+                    Pesan Sekarang
+                  </a>
+                </div>
+              </div>
+              
+              {/* Dummy Mockup Visual Hape */}
+              <div className="md:w-1/3 w-full relative z-10 flex justify-center">
+                <Link href="/undangan/raffi-nagita">
+                  <div className="w-56 h-96 bg-stone-100 border-8 border-slate-800 rounded-[2.5rem] overflow-hidden relative shadow-2xl rotate-6 hover:rotate-0 transition-transform duration-500 cursor-pointer group">
+                    <div className="absolute inset-0 bg-gradient-to-b from-stone-200 to-stone-100 flex flex-col items-center justify-center p-6 text-center">
+                      <p className="text-[10px] uppercase tracking-widest text-stone-500 mb-4">The Wedding Of</p>
+                      <h3 className="text-3xl font-serif text-stone-800 leading-tight mb-2">Raffi<br/>&<br/>Nagita</h3>
+                      <p className="text-[10px] italic text-stone-600 mb-6">Minggu, 24 Desember 2026</p>
+                      <div className="px-5 py-2 bg-stone-800 text-white text-xs rounded-full group-hover:bg-orange-500 transition-colors">Buka Undangan</div>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* ================= WHY US ================= */}
         <section id="kenapa-kami" aria-labelledby="kenapa-title" className="py-24 px-6 bg-slate-900 border-y border-slate-800">
@@ -425,11 +469,10 @@ export default function Home() {
                     <div>
                       <h4 className="text-sm font-semibold text-white mb-1">Alamat Toko</h4>
                       <address className="not-italic text-slate-400 leading-relaxed text-sm">
-  Jl. Waru No.15C, RT.2/RW.9,<br />
-  Rawamangun, Kec. Pulo Gadung,<br />
-  Kota Jakarta Timur 13220
-</address>
-
+                        Jl. Waru No.15C, RT.2/RW.9,<br />
+                        Rawamangun, Kec. Pulo Gadung,<br />
+                        Kota Jakarta Timur 13220
+                      </address>
                     </div>
                   </li>
                   <li className="flex gap-4">
@@ -446,10 +489,9 @@ export default function Home() {
                 </ul>
                 <div className="mt-8 pt-8 border-t border-slate-800">
                   <p className="text-slate-400 text-sm mb-6 leading-relaxed">
-                    Spesialis percetakan Jakarta Timur. Melayani <strong className="text-slate-300 font-medium">hardcover skripsi, digital printing, banner, stiker, dan brosur</strong> dengan kualitas premium.
+                    Spesialis percetakan Jakarta Timur. Melayani <strong className="text-slate-300 font-medium">hardcover skripsi, digital printing, banner, stiker, undangan, dan brosur</strong> dengan kualitas premium.
                   </p>
                   <a href="https://maps.google.com/?q=Jl.+Waru+No.+15C+Rawamangun+Jakarta+Timur" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center gap-2 w-full bg-gradient-to-r from-orange-600 to-amber-500 hover:from-orange-500 hover:to-amber-400 text-white font-semibold px-6 py-4 rounded-2xl transition-all duration-300 shadow-[0_0_20px_-5px_rgba(234,88,12,0.4)] hover:shadow-[0_0_30px_-5px_rgba(234,88,12,0.6)]">
-
                     Buka di Google Maps
                     <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -461,15 +503,14 @@ export default function Home() {
                 <div className="absolute -inset-3 bg-gradient-to-tr from-orange-600 to-amber-400 rounded-[3rem] blur-2xl opacity-10 group-hover:opacity-25 transition duration-500" />
                 <div className="relative h-full w-full overflow-hidden rounded-[2.5rem] shadow-2xl ring-1 ring-slate-700 bg-slate-900">
                   <iframe
-  title="Lokasi Subur Maju Printing di Google Maps"
-  src="https://maps.google.com/maps?q=Jl.%20Waru%20No.%2015C%20Rawamangun%20Jakarta%20Timur&t=&z=16&ie=UTF8&iwloc=&output=embed"
-  className="w-full h-full min-h-[450px] opacity-90 group-hover:opacity-100 transition-opacity"
-  style={{ border: 0, filter: "contrast(1.1) opacity(0.9)" }}
-  loading="lazy"
-  allowFullScreen
-  referrerPolicy="no-referrer-when-downgrade"
-/>
-
+                    title="Lokasi Subur Maju Printing di Google Maps"
+                    src="https://maps.google.com/maps?q=Jl.%20Waru%20No.%2015C%20Rawamangun%20Jakarta%20Timur&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                    className="w-full h-full min-h-[450px] opacity-90 group-hover:opacity-100 transition-opacity"
+                    style={{ border: 0, filter: "contrast(1.1) opacity(0.9)" }}
+                    loading="lazy"
+                    allowFullScreen
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
                 </div>
               </div>
             </div>
@@ -538,7 +579,7 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-slate-400 text-sm leading-relaxed mb-8 pr-4">
-                  Spesialis percetakan modern di Jakarta Timur. Melayani kebutuhan akademik, bisnis, dan personal dengan teknologi cetak terbaru, pengerjaan kilat, dan hasil premium.
+                  Spesialis percetakan modern di Jakarta Timur. Melayani kebutuhan akademik, bisnis, personal, dan pembuatan undangan website dengan teknologi terbaru dan hasil premium.
                 </p>
                 <div className="flex items-center gap-3 text-sm text-slate-400 font-medium">
                   <span className="flex items-center gap-1.5">
@@ -561,11 +602,10 @@ export default function Home() {
                       </svg>
                     </div>
                     <address className="not-italic text-slate-400 text-sm leading-relaxed">
-  <strong className="text-slate-200 font-medium block mb-1">Workshop Rawamangun</strong>
-  Jl. Waru No.15C, RT.2/RW.9,<br />
-  Pulo Gadung, Jakarta Timur 13220
-</address>
-
+                      <strong className="text-slate-200 font-medium block mb-1">Workshop Rawamangun</strong>
+                      Jl. Waru No.15C, RT.2/RW.9,<br />
+                      Pulo Gadung, Jakarta Timur 13220
+                    </address>
                   </li>
                   <li className="flex items-center gap-4">
                     <div className="w-9 h-9 rounded-full bg-orange-500/10 border border-orange-500/20 flex items-center justify-center flex-shrink-0 text-orange-400">
@@ -584,7 +624,7 @@ export default function Home() {
               <div className="md:col-span-3 lg:col-span-4">
                 <h3 className="font-semibold text-lg text-white mb-6">Layanan Populer</h3>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-4 text-sm text-slate-400">
-                  {["Hardcover Skripsi", "Digital Printing", "Banner & Spanduk", "Stiker & Label", "Brosur & Flyer", "Kartu Nama"].map((item, i) => (
+                  {["Hardcover Skripsi", "Digital Printing", "Banner & Spanduk", "Stiker & Label", "Brosur & Flyer", "Undangan Digital Web"].map((item, i) => (
                     <li key={i} className="flex items-center gap-2.5 group cursor-pointer hover:text-orange-400 transition-colors">
                       <span className="w-1.5 h-1.5 rounded-full bg-orange-600/50 group-hover:bg-orange-400 group-hover:scale-150 transition-all" />
                       {item}
