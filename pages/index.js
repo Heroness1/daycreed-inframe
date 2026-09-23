@@ -336,65 +336,117 @@ export default function Home() {
                 </div>
               </div>
               
-              {/* Dummy Mockup Visual Hape Nusantara Premium */}
+        
+                            {/* Mockup Visual Hape - Tema Floral Gold (Sesuai Referensi) */}
               <div className="md:w-1/3 w-full relative z-10 flex justify-center mt-12 md:mt-0">
                 <Link href="/undangan/Lure-Annabey" className="block relative group">
                   
-                  {/* Efek Cahaya Glowing (Maroon & Emas) */}
-                  <div className="absolute -inset-1 bg-gradient-to-r from-red-900 via-amber-700 to-yellow-600 rounded-[3.5rem] blur-2xl opacity-40 group-hover:opacity-80 transition duration-700"></div>
+                  {/* Efek Cahaya Background Luar */}
+                  <div className="absolute -inset-2 bg-gradient-to-r from-amber-200/50 to-orange-100/50 rounded-[3.5rem] blur-2xl opacity-50 group-hover:opacity-100 transition duration-700"></div>
 
                   {/* Frame HP */}
-                  <div className="w-[280px] h-[560px] bg-stone-950 border-[8px] border-stone-900 rounded-[3rem] overflow-hidden relative shadow-2xl transform transition-all duration-700 ease-out group-hover:-translate-y-4 group-hover:rotate-0 rotate-3 ring-1 ring-amber-900/50">
+                  <div className="w-[280px] h-[560px] bg-[#FCFAF8] border-[6px] border-slate-800 rounded-[3rem] overflow-hidden relative shadow-2xl transform transition-all duration-700 ease-out group-hover:-translate-y-2 group-hover:rotate-0 rotate-2 ring-4 ring-slate-900/30">
 
                     {/* Notch / Poni Kamera HP */}
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-7 bg-stone-900 rounded-b-2xl z-30 flex items-center justify-center gap-3 shadow-inner">
-                      <div className="w-2.5 h-2.5 rounded-full bg-stone-950 shadow-inner"></div>
-                      <div className="w-2.5 h-2.5 rounded-full bg-indigo-900/80 shadow-inner"></div>
+                    <div className="absolute top-2 left-1/2 -translate-x-1/2 w-20 h-5 bg-black rounded-full z-40 flex items-center justify-end px-2 shadow-sm">
+                       <div className="w-2 h-2 bg-indigo-900/80 rounded-full"></div>
                     </div>
 
-                    {/* Background Foto (Tekstur Gelap/Elegan) */}
-                    <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1590725141018-b0a3fd7eb3b8?auto=format&fit=crop&q=80&w=800')] bg-cover bg-center transform group-hover:scale-110 transition-transform duration-1000 z-0 opacity-80"></div>
-                    
-                    {/* Overlay Gelap Elegan */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-stone-950/90 via-red-950/70 to-stone-950/95 z-0"></div>
+                    {/* Ornamen Daun Kering (Pojok Atas & Bawah) */}
+                    <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0 overflow-hidden">
+                      <div className="absolute -top-4 -left-6 w-24 h-24 bg-[url('https://images.unsplash.com/photo-1603893641258-0051cb7e5ac5?q=80&w=200')] bg-cover opacity-20 mix-blend-multiply rotate-45 rounded-full blur-[1px]"></div>
+                      <div className="absolute -top-4 -right-6 w-24 h-24 bg-[url('https://images.unsplash.com/photo-1603893641258-0051cb7e5ac5?q=80&w=200')] bg-cover opacity-20 mix-blend-multiply -rotate-90 rounded-full blur-[1px]"></div>
+                      <div className="absolute -bottom-6 -left-6 w-28 h-28 bg-[url('https://images.unsplash.com/photo-1603893641258-0051cb7e5ac5?q=80&w=200')] bg-cover opacity-20 mix-blend-multiply -rotate-45 rounded-full blur-[1px]"></div>
+                      <div className="absolute -bottom-6 -right-6 w-28 h-28 bg-[url('https://images.unsplash.com/photo-1603893641258-0051cb7e5ac5?q=80&w=200')] bg-cover opacity-20 mix-blend-multiply rotate-180 rounded-full blur-[1px]"></div>
+                    </div>
 
-                    {/* Ornamen Lengkung Nusantara Premium */}
-                    <div className="absolute inset-4 border-2 border-amber-600/40 rounded-t-[100px] rounded-b-2xl z-0 pointer-events-none group-hover:border-amber-400/60 transition-colors duration-700 shadow-[inset_0_0_20px_rgba(217,119,6,0.1)]"></div>
-                    <div className="absolute inset-[22px] border border-amber-500/20 rounded-t-[90px] rounded-b-xl z-0 pointer-events-none"></div>
+                    {/* Konten Undangan dalam Layar HP */}
+                    <div className="absolute inset-0 z-10 flex flex-col items-center pt-8 pb-12 px-5 text-center overflow-y-auto scrollbar-hide text-stone-700">
 
-                    {/* Konten Undangan Universal */}
-                    <div className="absolute inset-0 z-10 flex flex-col items-center justify-center p-6 text-center">
-
-                      <div className="mt-16">
-                        <p className="text-[10px] tracking-[0.3em] uppercase text-amber-500 mb-6 font-medium drop-shadow-md">
-                          Undangan Pernikahan
-                        </p>
-                        <h3 className="text-4xl md:text-5xl font-serif text-white leading-tight mb-2 drop-shadow-[0_2px_10px_rgba(0,0,0,1)]">
-                          Lure<br/>
-                          <span className="text-amber-500 text-3xl font-light italic leading-loose">&</span><br/>
-                          Annabey
-                        </h3>
+                      {/* Foto Couple Kartun/Animasi 2D dengan Masking Awan */}
+                      <div className="relative w-28 h-28 mt-2 mb-3">
+                        <div className="absolute inset-0 bg-[#F2E8D9] rounded-full opacity-50 blur-md transform scale-110"></div>
+                        <img
+                          src="https://images.unsplash.com/photo-1659095141570-be8b9aff59ce?auto=format&fit=crop&q=80&w=300" 
+                          alt="Ilustrasi Pasangan"
+                          className="w-full h-full object-cover p-1 bg-white shadow-sm"
+                          style={{ clipPath: 'polygon(50% 0%, 85% 10%, 100% 50%, 85% 90%, 50% 100%, 15% 90%, 0% 50%, 15% 10%)', borderRadius: '40% 60% 70% 30% / 40% 50% 60% 50%' }}
+                        />
                       </div>
 
-                      <div className="w-full flex flex-col items-center mt-auto mb-8">
-                        <div className="w-20 h-px bg-gradient-to-r from-transparent via-amber-500 to-transparent mb-5"></div>
-                        <p className="text-xs font-light tracking-[0.2em] text-amber-100/70 mb-8 drop-shadow-md">
-                          24 . 12 . 2026
-                        </p>
+                      {/* Teks Pembuka */}
+                      <p className="text-[5.5px] font-medium leading-[1.4] mb-3 px-1 text-stone-600">
+                        Dengan memohon rasa hormat, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara pernikahan putra - putri kami:
+                      </p>
 
-                        <div className="px-8 py-3.5 bg-gradient-to-r from-amber-700 to-yellow-600 hover:from-amber-600 hover:to-yellow-500 text-stone-950 text-[11px] font-bold tracking-widest uppercase rounded-full shadow-[0_0_20px_rgba(217,119,6,0.4)] transition-all duration-300 group-hover:scale-105 border border-amber-400">
-                          Buka Undangan
+                      {/* Nama Lure */}
+                      <h3 className="text-xl font-serif italic text-[#A47E45] mt-1 mb-0.5" style={{ textShadow: '0 1px 1px rgba(164, 126, 69, 0.2)' }}>
+                        Lure, SE
+                      </h3>
+                      <p className="text-[5.5px] font-medium text-stone-600 mb-1.5">Putri dari Bapak H. Fulan & Ibu Hj. Fulanah</p>
+
+                      <span className="text-[10px] font-serif italic text-stone-500 my-0.5">&</span>
+
+                      {/* Nama Annabey */}
+                      <h3 className="text-xl font-serif italic text-[#A47E45] mt-1 mb-0.5" style={{ textShadow: '0 1px 1px rgba(164, 126, 69, 0.2)' }}>
+                        Annabey, SE
+                      </h3>
+                      <p className="text-[5.5px] font-medium text-stone-600 mb-3">Putra dari Bapak Fulan & Ibu Fulanah</p>
+
+                      {/* Ornamen Pemisah Bunga Kecil */}
+                      <div className="flex items-center justify-center gap-1 mb-3 opacity-80">
+                         <div className="h-px w-6 bg-gradient-to-r from-transparent to-[#8BA087]"></div>
+                         <span className="text-[6px] text-[#8BA087]">🌿</span>
+                         <div className="h-px w-6 bg-gradient-to-l from-transparent to-[#8BA087]"></div>
+                      </div>
+
+                      {/* Teks Protokol Kesehatan */}
+                      <p className="text-[5px] font-medium leading-[1.4] px-1 mb-4 text-stone-600">
+                        Untuk menjaga kesehatan semua, acara akan dilaksanakan sesuai protokol Kami sekeluarga memohon maaf karena tidak bisa mengundang banyak tamu Melainkan hanya sanak keluarga dan kerabat terdekat
+                      </p>
+
+                      {/* Jadwal Acara */}
+                      <div className="w-full flex justify-between px-2 mb-4">
+                        <div className="text-center w-1/2 pr-1">
+                          <h4 className="text-[11px] font-serif italic text-[#A47E45] mb-1.5">Akad Nikah</h4>
+                          <p className="text-[5px] font-bold text-stone-700 mb-0.5">JUM'AT, 09 OKTOBER 2026</p>
+                          <p className="text-[5px] text-stone-700">10.00 WIB</p>
+                        </div>
+                        <div className="text-center w-1/2 pl-1 border-l border-stone-300/50">
+                          <h4 className="text-[11px] font-serif italic text-[#A47E45] mb-1.5">Intimate Wedding</h4>
+                          <p className="text-[5px] font-bold text-stone-700 mb-0.5">SABTU, 10 OKTOBER 2026</p>
+                          <p className="text-[5px] text-stone-700">13.00 WIB - Selesai</p>
                         </div>
                       </div>
 
+                      {/* QR Code */}
+                      <div className="flex flex-col items-center mb-3">
+                        <p className="text-[4px] font-bold tracking-widest text-stone-500 mb-1">SCAN THIS</p>
+                        <div className="p-0.5 bg-white border border-stone-300 shadow-sm">
+                          <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://suburmaju.com/undangan/Lure-Annabey" alt="QR Code" className="w-9 h-9" />
+                        </div>
+                      </div>
+
+                      {/* Alamat & NB */}
+                      <p className="text-[5.5px] font-bold text-stone-700 mb-1.5 px-2 leading-[1.3]">
+                        Jl Raya Kediri No 77 Ds Pagu Kec. Wates Kab Kediri
+                      </p>
+                      <p className="text-[5px] text-stone-500 font-medium px-2 leading-[1.3]">
+                        NB: Diharapkan Untuk Semua Tamu Undangan Agar Menggunakan Masker
+                      </p>
+
                     </div>
+
+                    {/* Tombol Aksi Melayang di Bawah HP */}
+                    <div className="absolute bottom-3 left-0 w-full flex justify-center z-20">
+                      <div className="px-5 py-2 bg-gradient-to-r from-[#B49157] to-[#CBA365] text-white text-[8px] font-bold tracking-widest uppercase rounded-full shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 border border-[#F2E8D9]/50">
+                        Buka Undangan
+                      </div>
+                    </div>
+
                   </div>
                 </Link>
               </div>
-
-            </div>
-          </div>
-        </section>
 
         {/* ================= WHY US ================= */}
         <section id="kenapa-kami" aria-labelledby="kenapa-title" className="py-24 px-6 bg-slate-900 border-y border-slate-800">
