@@ -730,14 +730,18 @@ export default function UndanganKlien({ wedding, gallery }) {
 // =====================================================
 export async function getServerSideProps(context) {
   const { slug } = context.params;
+  
+  // Ubah slug dari URL jadi huruf kecil semua paksa, biar cocok sama database
+  const slugKecil = slug.toLowerCase();
 
   const { data: wedding, error: weddingError } = await supabase
     .from('weddings')
     .select('*')
-    .eq('slug', slug)
+    .eq('slug', slugKecil) // Sekarang nyari di databasenya pakai huruf kecil
     .single();
 
   if (weddingError || !wedding) {
+    console.log("Error Supabase:", weddingError); // Biar lu bisa liat errornya di log Vercel kalau masih gagal
     return { notFound: true };
   }
 
