@@ -306,7 +306,7 @@ export default function Home() {
           <Catalog />
         </div>
 
-        {/* ================= PROMO UNDANGAN DIGITAL (NEW) ================= */}
+                   {/* ================= PROMO UNDANGAN DIGITAL (NEW) ================= */}
         <section aria-labelledby="undangan-promo" className="py-16 px-6 bg-slate-950 relative overflow-hidden border-t border-slate-800/50">
           <div className="absolute top-0 right-1/4 w-72 h-72 bg-amber-600/10 rounded-full blur-[100px] pointer-events-none" />
           <div className="max-w-7xl mx-auto">
@@ -336,8 +336,7 @@ export default function Home() {
                 </div>
               </div>
               
-        
-                            {/* Mockup Visual Hape - Tema Floral Gold (Sesuai Referensi) */}
+              {/* Mockup Visual Hape - Tema Floral Gold (Sesuai Referensi) */}
               <div className="md:w-1/3 w-full relative z-10 flex justify-center mt-12 md:mt-0">
                 <Link href="/undangan/Lure-Annabey" className="block relative group">
                   
@@ -374,14 +373,14 @@ export default function Home() {
                         />
                       </div>
 
-                      {/* Teks Pembuka */}
-                      <p className="text-[5.5px] font-medium leading-[1.4] mb-3 px-1 text-stone-600">
-                        Dengan memohon rasa hormat, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara pernikahan putra - putri kami:
+                      {/* Teks Pembuka Baru */}
+                      <p className="text-[5px] font-medium leading-[1.4] mb-3 px-1 text-stone-600">
+                        Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i sekalian untuk berkenan hadir dan memberikan doa restu pada acara pernikahan kami:
                       </p>
 
                       {/* Nama Lure */}
                       <h3 className="text-xl font-serif italic text-[#A47E45] mt-1 mb-0.5" style={{ textShadow: '0 1px 1px rgba(164, 126, 69, 0.2)' }}>
-                        Lure, SE
+                        Lure, S.Kom.
                       </h3>
                       <p className="text-[5.5px] font-medium text-stone-600 mb-1.5">Putri dari Bapak H. Fulan & Ibu Hj. Fulanah</p>
 
@@ -389,7 +388,7 @@ export default function Home() {
 
                       {/* Nama Annabey */}
                       <h3 className="text-xl font-serif italic text-[#A47E45] mt-1 mb-0.5" style={{ textShadow: '0 1px 1px rgba(164, 126, 69, 0.2)' }}>
-                        Annabey, SE
+                        Annabey, S.M.
                       </h3>
                       <p className="text-[5.5px] font-medium text-stone-600 mb-3">Putra dari Bapak Fulan & Ibu Fulanah</p>
 
@@ -400,39 +399,39 @@ export default function Home() {
                          <div className="h-px w-6 bg-gradient-to-l from-transparent to-[#8BA087]"></div>
                       </div>
 
-                      {/* Teks Protokol Kesehatan */}
-                      <p className="text-[5px] font-medium leading-[1.4] px-1 mb-4 text-stone-600">
-                        Untuk menjaga kesehatan semua, acara akan dilaksanakan sesuai protokol Kami sekeluarga memohon maaf karena tidak bisa mengundang banyak tamu Melainkan hanya sanak keluarga dan kerabat terdekat
+                      {/* Kutipan Pengganti Protokol */}
+                      <p className="text-[4.5px] font-medium leading-[1.4] px-1 mb-4 text-stone-600 italic">
+                        "Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan untukmu..." (QS. Ar-Rum: 21)
                       </p>
 
-                      {/* Jadwal Acara */}
+                      {/* Jadwal Acara Baru */}
                       <div className="w-full flex justify-between px-2 mb-4">
                         <div className="text-center w-1/2 pr-1">
                           <h4 className="text-[11px] font-serif italic text-[#A47E45] mb-1.5">Akad Nikah</h4>
-                          <p className="text-[5px] font-bold text-stone-700 mb-0.5">JUM'AT, 09 OKTOBER 2026</p>
-                          <p className="text-[5px] text-stone-700">10.00 WIB</p>
+                          <p className="text-[4.5px] font-bold text-stone-700 mb-0.5">JUM'AT, 09 OKTOBER 2026</p>
+                          <p className="text-[4.5px] text-stone-700">Pukul 09.00 WIB</p>
                         </div>
                         <div className="text-center w-1/2 pl-1 border-l border-stone-300/50">
-                          <h4 className="text-[11px] font-serif italic text-[#A47E45] mb-1.5">Intimate Wedding</h4>
-                          <p className="text-[5px] font-bold text-stone-700 mb-0.5">SABTU, 10 OKTOBER 2026</p>
-                          <p className="text-[5px] text-stone-700">13.00 WIB - Selesai</p>
+                          <h4 className="text-[11px] font-serif italic text-[#A47E45] mb-1.5">Resepsi</h4>
+                          <p className="text-[4.5px] font-bold text-stone-700 mb-0.5">SABTU, 10 OKTOBER 2026</p>
+                          <p className="text-[4.5px] text-stone-700">Pukul 11.00 WIB - Selesai</p>
                         </div>
                       </div>
 
                       {/* QR Code */}
                       <div className="flex flex-col items-center mb-3">
-                        <p className="text-[4px] font-bold tracking-widest text-stone-500 mb-1">SCAN THIS</p>
+                        <p className="text-[4px] font-bold tracking-widest text-stone-500 mb-1">SCAN KEHADIRAN</p>
                         <div className="p-0.5 bg-white border border-stone-300 shadow-sm">
                           <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://suburmaju.com/undangan/Lure-Annabey" alt="QR Code" className="w-9 h-9" />
                         </div>
                       </div>
 
-                      {/* Alamat & NB */}
-                      <p className="text-[5.5px] font-bold text-stone-700 mb-1.5 px-2 leading-[1.3]">
-                        Jl Raya Kediri No 77 Ds Pagu Kec. Wates Kab Kediri
+                      {/* Alamat Mewah */}
+                      <p className="text-[4.5px] font-bold text-stone-700 mb-1.5 px-2 leading-[1.3]">
+                        The Tribrata Darmawangsa, Grand Ballroom<br />Jakarta Selatan
                       </p>
-                      <p className="text-[5px] text-stone-500 font-medium px-2 leading-[1.3]">
-                        NB: Diharapkan Untuk Semua Tamu Undangan Agar Menggunakan Masker
+                      <p className="text-[4.5px] text-stone-500 font-medium px-2 leading-[1.3]">
+                        Merupakan suatu kehormatan apabila Bapak/Ibu/Saudara/i berkenan hadir.
                       </p>
 
                     </div>
@@ -447,9 +446,10 @@ export default function Home() {
                   </div>
                 </Link>
               </div>
-</div>
+            </div>
           </div>
         </section>
+                       
 
 
         {/* ================= WHY US ================= */}
