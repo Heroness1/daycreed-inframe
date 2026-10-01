@@ -1,22 +1,31 @@
-export async function getServerSideProps({ res }) {
-  const baseUrl = "https://daycreed-inframe.vercel.app";
+const baseUrl = "https://www.suburmajuprinting.com";
 
+const urls = [
+  { path: "/", priority: "1.0", changefreq: "weekly" },
+  { path: "/pesan", priority: "0.9", changefreq: "weekly" },
+  { path: "/undangan/Lure-Annabey", priority: "0.7", changefreq: "monthly" },
+];
+
+export async function getServerSideProps({ res }) {
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>${baseUrl}/testing</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+${urls
+  .map(
+    ({ path, priority, changefreq }) => `  <url>
+    <loc>${baseUrl}${path}</loc>
+    <changefreq>${changefreq}</changefreq>
+    <priority>${priority}</priority>
+  </url>`
+  )
+  .join("\n")}
 </urlset>`;
 
   res.setHeader("Content-Type", "text/xml");
+  res.setHeader("Cache-Control", "public, s-maxage=3600, stale-while-revalidate=86400");
   res.write(sitemap);
   res.end();
 
-  return {
-    props: {},
-  };
+  return { props: {} };
 }
 
 export default function Sitemap() {
