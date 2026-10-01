@@ -2,26 +2,19 @@ import Head from "next/head";
 import Image from "next/image";
 import Catalog from "../components/Catalog";
 import { dataLayanan, dataKenapaKami, dataKlien } from "../data/printData";
-import { useState, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import SmartOrder from "../components/SmartOrder";
+import { SITE_URL, waLink } from "../utils/site";
 
-// nomor whatsapp
-const WA_NUMBER = "6282246926544";
-const SITE_URL = "https://www.suburmajuprinting.com/";
-
-const waLink = (text) =>
-  `https://wa.me/${WA_NUMBER}${text ? `?text=${encodeURIComponent(text)}` : ""}`;
+const backgroundImages = [
+  "https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?auto=format&fit=crop&q=80&w=1600",
+  "https://images.unsplash.com/photo-1572021335469-31706a17aaef?auto=format&fit=crop&q=80&w=1600",
+  "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&q=80&w=1600",
+];
 
 export default function Home() {
   const [isSmartOrderOpen, setIsSmartOrderOpen] = useState(false);
-
-  // ================= GAMBAR =================
-  const backgroundImages = [
-    "https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?auto=format&fit=crop&q=80&w=1600",
-    "https://images.unsplash.com/photo-1572021335469-31706a17aaef?auto=format&fit=crop&q=80&w=1600",
-    "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&q=80&w=1600",
-  ];
 
   const [currentBg, setCurrentBg] = useState(0);
 
@@ -34,25 +27,31 @@ export default function Home() {
   }, [backgroundImages.length]);
 
   const [showNavbar, setShowNavbar] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
+      if (ticking) return;
 
-      if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        setShowNavbar(false);
-      } else {
-        setShowNavbar(true);
-      }
+      ticking = true;
+      window.requestAnimationFrame(() => {
+        const currentScrollY = window.scrollY;
+        const previousScrollY = lastScrollY.current;
 
-      setLastScrollY(currentScrollY);
+        setShowNavbar(currentScrollY <= previousScrollY || currentScrollY <= 50);
+        lastScrollY.current = currentScrollY;
+        ticking = false;
+      });
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
