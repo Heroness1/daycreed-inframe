@@ -25,6 +25,8 @@ export const dataProduk = [
   { nama: "Cetak Photo Props Aksesoris Photoboot", deskripsi: "Aksesoris photobooth kekinian dan lucu.", kategori: "Merchandise & Event" },
   { nama: "Cetak Package", deskripsi: "Packaging / kemasan box custom untuk produk.", kategori: "Packaging & Buku", badge: "Custom" },
   { nama: "Cetak Gantungan Kunci", deskripsi: "Gantungan kunci akrilik/pin custom.", kategori: "Merchandise & Event" },
+  { nama: "Cetak Kalender Meja", deskripsi: "Kalender meja custom untuk kebutuhan promosi, kantor, dan souvenir.", kategori: "Atribut & Kantor", badge: "🗓️ Favorit" },
+  { nama: "Cetak Kalender Dinding", deskripsi: "Kalender dinding custom dengan desain dan branding sesuai kebutuhan.", kategori: "Atribut & Kantor", badge: "🗓️ Custom" },
 ];
 
 export const dataKenapaKami = [
