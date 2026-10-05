@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { dataProduk, kategoriList } from "../data/printData";
+import { trackConversion } from "./Analytics";
 
 export default function Catalog() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -8,6 +9,11 @@ export default function Catalog() {
 
   // Fungsi untuk mengirim laporan klik ke backend API Vercel
   const handleWhatsAppClick = async (produkNama) => {
+    trackConversion("whatsapp_click", {
+      event_category: "lead_generation",
+      event_label: produkNama,
+      product_name: produkNama,
+    });
     try {
       await fetch('/api/notif', {
         method: 'POST',
