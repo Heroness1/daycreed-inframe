@@ -1,6 +1,7 @@
 import { Sora } from "next/font/google";
 import { ThemeProvider } from "../context/ThemeContext";
 import "../styles/globals.css";
+import Analytics from "../components/Analytics";
 
 const sora = Sora({
   subsets: ["latin"],
@@ -11,10 +12,13 @@ const sora = Sora({
 
 export default function App({ Component, pageProps }) {
   return (
+    <>
+      <Analytics />
     <div className={`${sora.variable} font-sans`}>
       <ThemeProvider>
         <Component {...pageProps} />
       </ThemeProvider>
     </div>
+    </>
   );
 }
