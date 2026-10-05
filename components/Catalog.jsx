@@ -331,5 +331,30 @@ export default function Catalog() {
 
       </div>
     </section>
+
+    {/* Mobile conversion CTA */}
+    <a
+      href="https://wa.me/6282246926544?text=Halo%20Kak%2C%20saya%20mau%20tanya%20harga%20dan%20katalog%20produk%20printing."
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={() => handleWhatsAppClick("Sticky CTA - Konsultasi")}
+      aria-label="Tanya harga via WhatsApp"
+      className="fixed bottom-4 left-4 right-4 z-50 md:hidden flex items-center justify-between gap-3 rounded-2xl border border-emerald-400/20 bg-slate-950/95 px-4 py-3.5 text-white shadow-2xl shadow-black/40 backdrop-blur-xl"
+    >
+      <span className="flex items-center gap-3 min-w-0">
+        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-500 text-white">
+          <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.16 1.6 5.97L.06 24l6.27-1.64a11.86 11.86 0 0 0 5.73 1.47h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.16-3.45-8.45Z"/>
+          </svg>
+        </span>
+        <span className="min-w-0">
+          <span className="block text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">Butuh harga?</span>
+          <span className="block truncate text-sm font-bold">Tanya via WhatsApp</span>
+        </span>
+      </span>
+      <span className="shrink-0 rounded-xl bg-emerald-500 px-3.5 py-2 text-xs font-bold text-white">
+        Chat
+      </span>
+    </a>
   );
 }
