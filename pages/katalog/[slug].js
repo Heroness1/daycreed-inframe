@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { dataProduk } from "../../data/printData";
+import { trackConversion } from "../../components/Analytics";
 
 const slugify = (text) =>
   text
@@ -23,6 +24,13 @@ export async function getStaticProps({ params }) {
 export default function ProdukLanding({ produk }) {
   const whatsappText = `Halo Kak, saya mau tanya harga untuk ${produk.nama}. Mohon info harga, pilihan bahan/ukuran, minimal order, dan estimasi pengerjaannya ya.`;
   const whatsappUrl = `https://wa.me/6282246926544?text=${encodeURIComponent(whatsappText)}`;
+  const handleWhatsAppClick = () => {
+    trackConversion("whatsapp_click", {
+      event_category: "lead_generation",
+      event_label: produk.nama,
+      product_name: produk.nama,
+    });
+  };
 
   return (
     <>
@@ -77,6 +85,7 @@ export default function ProdukLanding({ produk }) {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={handleWhatsAppClick}
                   className="inline-flex items-center justify-center gap-2 rounded-2xl bg-orange-500 hover:bg-orange-400 px-6 py-4 text-slate-950 font-extrabold shadow-lg shadow-orange-500/20 transition-all hover:-translate-y-0.5"
                 >
                   Tanya Harga via WhatsApp <span aria-hidden="true">↗</span>
@@ -126,6 +135,7 @@ export default function ProdukLanding({ produk }) {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={handleWhatsAppClick}
                 className="mt-6 inline-flex items-center gap-2 text-orange-400 font-bold hover:text-orange-300 transition-colors"
               >
                 Konsultasi sekarang <span aria-hidden="true">→</span>
@@ -138,6 +148,7 @@ export default function ProdukLanding({ produk }) {
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={handleWhatsAppClick}
           className="fixed bottom-4 left-4 right-4 z-50 md:hidden flex items-center justify-between rounded-2xl border border-emerald-400/20 bg-slate-950/95 px-4 py-3.5 shadow-2xl backdrop-blur-xl"
         >
           <span>
