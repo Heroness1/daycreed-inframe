@@ -196,11 +196,28 @@ export default function Catalog() {
 
                   <div className="relative z-10 mt-auto pt-4 border-t border-slate-800 flex items-center justify-between text-sm font-bold">
 
-                    <span className="text-slate-300 group-hover:text-orange-400 transition-colors">
-                      Tanya & Pesan via WA
+                    <span className="inline-flex items-center gap-2 text-slate-300 group-hover:text-orange-400 transition-colors">
+                      <span className="w-8 h-8 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500/15 transition-colors">
+                        <svg
+                          className="w-4 h-4"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          aria-hidden="true"
+                        >
+                          <path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.16 1.6 5.97L.06 24l6.27-1.64a11.86 11.86 0 0 0 5.73 1.47h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.16-3.45-8.45ZM12.07 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.72.97.99-3.63-.23-.37a9.86 9.86 0 1 1 8.36 4.62Zm5.41-7.39c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.74-1.65-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.09 4.5.71.31 1.26.49 1.69.63.71.23 1.35.2 1.86.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/>
+                        </svg>
+                      </span>
+                      <span className="leading-tight">
+                        <span className="block text-[10px] font-medium uppercase tracking-[0.14em] text-slate-500 group-hover:text-slate-400">
+                          Konsultasi
+                        </span>
+                        <span className="block text-sm font-bold">
+                          Tanya & Pesan
+                        </span>
+                      </span>
                     </span>
 
-                    <div className="w-9 h-9 rounded-full bg-slate-950 border border-slate-800 group-hover:bg-orange-600 group-hover:text-white group-hover:border-orange-500 text-slate-400 flex items-center justify-center transition-all shadow-sm">
+                    <div className="w-10 h-10 rounded-xl bg-slate-950 border border-slate-800 group-hover:bg-orange-600 group-hover:text-white group-hover:border-orange-500 text-slate-400 flex items-center justify-center transition-all shadow-sm shrink-0">
 
                       <svg
                         className="w-4 h-4 transform group-hover:translate-x-0.5 transition-transform"
