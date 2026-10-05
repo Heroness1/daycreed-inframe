@@ -152,44 +152,25 @@ export default function Catalog() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => handleWhatsAppClick(produk.nama)}
-                  className="group relative flex flex-col justify-between bg-slate-900/70 backdrop-blur-sm rounded-3xl rounded-br-[60px] p-8 border border-slate-800 hover:border-orange-500/40 hover:bg-slate-900 hover:-translate-y-1 hover:shadow-[0_20px_40px_-20px_rgba(234,88,12,0.2)] transition-all duration-500 overflow-hidden"
+                  className="group relative flex flex-col justify-between bg-slate-900/70 backdrop-blur-sm rounded-3xl overflow-hidden border border-slate-800 hover:border-orange-500/40 hover:-translate-y-1 hover:shadow-[0_24px_50px_-24px_rgba(234,88,12,0.3)] transition-all duration-500"
                 >
+                  {/* Product visual */}
+                  <div className="relative aspect-[16/10] overflow-hidden bg-slate-950">
+                    <img
+                      src={produk.gambar || "/katalog/default.svg"}
+                      alt={produk.nama}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent pointer-events-none" />
+                    {produk.badge && (
+                      <span className="absolute top-4 right-4 inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-950/80 backdrop-blur border border-white/10 text-orange-300">
+                        {produk.badge}
+                      </span>
+                    )}
+                  </div>
 
-                  {/* Ambient glow */}
-
-                  <div className="absolute -top-10 -right-10 w-40 h-40 bg-orange-500/0 rounded-full blur-3xl group-hover:bg-orange-500/10 transition-colors duration-500 pointer-events-none" />
-
-                  <div className="relative z-10">
-
-                    {/* Icon + Badge */}
-
-                    <div className="flex items-start justify-between gap-3 mb-6">
-
-                      <div className="w-12 h-12 rounded-2xl bg-slate-950 border border-slate-800 text-orange-400 flex items-center justify-center group-hover:bg-orange-600 group-hover:text-white group-hover:border-orange-500 transition-all duration-300 shadow-sm">
-
-                        <svg
-                          className="w-6 h-6"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-                          />
-                        </svg>
-
-                      </div>
-
-                      {produk.badge && (
-                        <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-orange-500/10 border border-orange-500/20 text-orange-400">
-                          {produk.badge}
-                        </span>
-                      )}
-
-                    </div>
+                  <div className="relative z-10 flex flex-1 flex-col p-6 md:p-7">
 
                     {/* Category */}
 
@@ -205,7 +186,7 @@ export default function Catalog() {
 
                     {/* Description */}
 
-                    <p className="text-sm text-slate-400 leading-relaxed mb-8 font-medium">
+                    <p className="text-sm text-slate-400 leading-relaxed mb-7 font-medium">
                       {produk.deskripsi}
                     </p>
 
@@ -213,7 +194,7 @@ export default function Catalog() {
 
                   {/* ================= CARD ACTION ================= */}
 
-                  <div className="relative z-10 pt-4 border-t border-slate-800 flex items-center justify-between text-sm font-bold">
+                  <div className="relative z-10 mt-auto pt-4 border-t border-slate-800 flex items-center justify-between text-sm font-bold">
 
                     <span className="text-slate-300 group-hover:text-orange-400 transition-colors">
                       Tanya & Pesan via WA
