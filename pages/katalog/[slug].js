@@ -80,6 +80,22 @@ export default function ProdukLanding({ produk }) {
                 {produk.deskripsi}
               </p>
 
+              {produk.highlights?.length > 0 && (
+                <div className="mt-7 grid gap-3 sm:grid-cols-3">
+                  {produk.highlights.map((item) => (
+                    <div
+                      key={item}
+                      className="rounded-2xl border border-slate-800 bg-slate-900/60 px-4 py-3"
+                    >
+                      <div className="flex items-start gap-2 text-sm font-semibold text-slate-200">
+                        <span className="mt-0.5 text-orange-400">✓</span>
+                        <span>{item}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <a
                   href={whatsappUrl}
