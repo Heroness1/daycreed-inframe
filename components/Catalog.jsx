@@ -45,7 +45,8 @@ export default function Catalog() {
       : filteredProduk.slice(0, 6);
 
   return (
-    <section
+    <>
+      <section
       id="katalog"
       aria-labelledby="katalog-title"
       className="relative py-24 px-6 bg-slate-950 overflow-hidden"
@@ -336,9 +337,9 @@ export default function Catalog() {
         )}
 
       </div>
-    </section>
+      </section>
 
-    {/* Mobile conversion CTA */}
+      {/* Mobile conversion CTA */}
     <a
       href="https://wa.me/6282246926544?text=Halo%20Kak%2C%20saya%20mau%20tanya%20harga%20dan%20katalog%20produk%20printing."
       target="_blank"
@@ -361,6 +362,7 @@ export default function Catalog() {
       <span className="shrink-0 rounded-xl bg-emerald-500 px-3.5 py-2 text-xs font-bold text-white">
         Chat
       </span>
-    </a>
+      </a>
+    </>
   );
 }
