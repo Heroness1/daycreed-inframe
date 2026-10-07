@@ -6,35 +6,26 @@ import {
   AnimatePresence,
   MotionConfig,
   motion,
+  useMotionTemplate,
   useMotionValue,
   useMotionValueEvent,
   useScroll,
   useSpring,
   useTransform,
 } from "framer-motion";
-import { Instrument_Sans, Newsreader } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import Catalog from "../components/Catalog";
 import SmartOrder from "../components/SmartOrder";
 import { dataLayanan, dataKenapaKami, dataKlien } from "../data/printData";
 
 /* ============================================================
    FONT
-   Newsreader (serif, warisan dunia cetak/penerbitan) untuk judul,
-   Instrument Sans untuk teks biasa.
    ============================================================ */
-const display = Newsreader({
-  subsets: ["latin"],
-  style: ["normal", "italic"],
-  variable: "--font-display",
-  display: "swap",
-});
-const sans = Instrument_Sans({
+const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
 });
-const D = "font-[family-name:var(--font-display)]";
-const SANS = "font-[family-name:var(--font-sans)]";
 
 /* ============================================================
    DATA BISNIS (satu sumber untuk semua tempat)
@@ -52,34 +43,48 @@ const BUSINESS = {
 };
 
 const SITE_URL = "https://www.suburmajuprinting.com/";
-// Ganti dengan gambar khusus 1200x630 kalau sudah ada, mis. `${SITE_URL}og-image.jpg`
+// Ganti dengan gambar 1200x630 khusus kalau sudah ada, mis. `${SITE_URL}og-image.jpg`
 const OG_IMAGE = `${SITE_URL}avatar.png`;
 // Pastikan route ini ada di folder pages/
 const DEMO_HREF = "/undangan-digital";
-const INVITATION_THEMES = [
-  "Nusantara Islamic",
-  "Japanese Minimal",
-  "Wedding Editorial",
-  "Pawiwahan Jawa",
-  "Royal Jawa",
-  "Sunda Romance",
-];
 
-const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?auto=format&fit=crop&q=80&w=1200";
+const HERO_IMAGES = [
+  "https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?auto=format&fit=crop&q=80&w=800",
+  "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&q=80&w=800",
+];
 const COUPLE_IMAGE =
   "https://images.unsplash.com/photo-1659095141570-be8b9aff59ce?auto=format&fit=crop&q=80&w=300";
 
 const waLink = (text) =>
   `https://wa.me/${BUSINESS.wa}${text ? `?text=${encodeURIComponent(text)}` : ""}`;
-
 const mapsHref = `https://maps.google.com/?q=${encodeURIComponent(BUSINESS.mapsQuery)}`;
 const mapsEmbed = `https://maps.google.com/maps?q=${encodeURIComponent(
   BUSINESS.mapsQuery
 )}&t=&z=16&ie=UTF8&iwloc=&output=embed`;
 
+/* ============================================================
+   VARIAN ANIMASI
+   ============================================================ */
 const EASE = [0.16, 1, 0.3, 1];
-const PRESS = [0.65, 0, 0.35, 1];
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 36 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: EASE } },
+};
+const blurUp = {
+  hidden: { opacity: 0, y: 48, filter: "blur(10px)" },
+  visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 1, ease: EASE } },
+};
+const scaleUp = {
+  hidden: { opacity: 0, scale: 0.94, y: 20 },
+  visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.9, ease: EASE } },
+};
+const stagger = (gap = 0.12, delay = 0) => ({
+  hidden: {},
+  visible: { transition: { staggerChildren: gap, delayChildren: delay } },
+});
+
+const inView = { once: true, margin: "-80px" };
 
 /* ============================================================
    IKON
@@ -90,33 +95,28 @@ const WhatsAppIcon = ({ className = "h-5 w-5" }) => (
   </svg>
 );
 
-const ArrowUpRight = ({ className = "h-4 w-4" }) => (
-  <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.2" aria-hidden="true">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M9 7h8v8" />
-  </svg>
-);
-
 const CheckIcon = ({ className = "h-5 w-5" }) => (
   <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.4" aria-hidden="true">
     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
   </svg>
 );
 
-const ChatIcon = ({ className = "h-6 w-6" }) => (
-  <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M8 10h8M8 14h5m-9 6l1.6-4.2A8 8 0 1112 20a8 8 0 01-3.6-.9L4 20z" />
-  </svg>
-);
-
 const CloseIcon = ({ className = "h-6 w-6" }) => (
-  <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.2" aria-hidden="true">
+  <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
   </svg>
 );
 
-const MenuIcon = ({ className = "h-5 w-5" }) => (
+const PinIcon = ({ className = "h-6 w-6" }) => (
   <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M4 8h16M4 16h16" />
+    <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z" />
+    <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+  </svg>
+);
+
+const PhoneIcon = ({ className = "h-6 w-6" }) => (
+  <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
   </svg>
 );
 
@@ -137,7 +137,8 @@ function GlobalStyles() {
       .sm-marquee-track {
         display: flex;
         width: max-content;
-        animation: sm-marquee 45s linear infinite;
+        animation: sm-marquee 40s linear infinite;
+        will-change: transform;
       }
       .sm-marquee:hover .sm-marquee-track {
         animation-play-state: paused;
@@ -195,7 +196,6 @@ function SeoHead() {
       <meta name="description" content={desc} />
       <meta name="robots" content="index, follow" />
       <meta name="author" content={BUSINESS.name} />
-      <meta name="theme-color" content="#ffffff" />
       <link rel="canonical" href={SITE_URL} />
 
       <meta property="og:title" content={title} />
@@ -220,37 +220,39 @@ function SeoHead() {
 }
 
 /* ============================================================
-   NAVBAR
+   PROGRESS SCROLL + NAVBAR
    ============================================================ */
-const NAV_LINKS = [
-  { href: "#layanan", label: "Layanan" },
-  { href: "#undangan", label: "Undangan web" },
-  { href: "#katalog", label: "Katalog" },
-  { href: "#lokasi", label: "Lokasi" },
-];
+function ScrollProgress() {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 30, restDelta: 0.001 });
+  return (
+    <motion.div
+      aria-hidden="true"
+      style={{ scaleX }}
+      className="fixed inset-x-0 top-0 z-[60] h-[3px] origin-left bg-gradient-to-r from-amber-500 via-orange-500 to-amber-400"
+    />
+  );
+}
+
+const NAV_LINK =
+  "rounded-full px-3 py-2 transition-colors hover:bg-neutral-100 hover:text-neutral-900 md:px-4";
 
 function Navbar() {
   const { scrollY } = useScroll();
   const [hidden, setHidden] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
 
   useMotionValueEvent(scrollY, "change", (y) => {
     const prev = scrollY.getPrevious() ?? 0;
-    setHidden(y > prev && y > 160 && !menuOpen);
-    setScrolled(y > 12);
+    setHidden(y > prev && y > 80);
   });
 
   return (
-    <div className="pointer-events-none fixed inset-x-0 top-4 z-50 flex justify-center px-4">
+    <div className="pointer-events-none fixed inset-x-0 top-5 z-50 flex justify-center px-4">
       <motion.header
-        animate={{ y: hidden ? "-160%" : 0 }}
-        transition={{ duration: 0.45, ease: EASE }}
-        className={`pointer-events-auto w-full max-w-3xl rounded-3xl border bg-white/75 backdrop-blur-xl transition-[box-shadow,border-color] duration-500 ${
-          scrolled
-            ? "border-slate-200 shadow-[0_10px_40px_-12px_rgba(15,23,42,0.18)]"
-            : "border-slate-200/60 shadow-none"
-        }`}
+        initial={{ y: -80, opacity: 0 }}
+        animate={{ y: hidden ? -120 : 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: EASE }}
+        className="pointer-events-auto w-full max-w-[760px] rounded-full border border-neutral-200/60 bg-white/70 shadow-[0_8px_30px_rgb(0,0,0,0.05)] backdrop-blur-xl backdrop-saturate-150"
       >
         <div className="flex h-14 items-center justify-between pl-4 pr-2 md:h-16 md:pl-5">
           <Link href="/" className="flex items-center gap-3" aria-label="Subur Maju Printing, ke beranda">
@@ -259,67 +261,31 @@ function Navbar() {
               alt=""
               width={36}
               height={36}
-              className="rounded-full border border-slate-200 object-cover"
+              className="rounded-full border border-neutral-200 object-cover"
             />
-            <span className={`${D} text-lg font-semibold tracking-tight text-slate-950`}>Subur Maju</span>
+            <span className="hidden text-[15px] font-bold leading-none tracking-tight text-neutral-900 sm:block">
+              Subur Maju<span className="text-amber-600">.</span>
+            </span>
           </Link>
 
-          <nav aria-label="Navigasi utama" className="hidden items-center gap-1 text-sm font-medium text-slate-600 md:flex">
-            {NAV_LINKS.map((l) => (
-              <a key={l.href} href={l.href} className="rounded-full px-4 py-2 transition-colors hover:bg-slate-100 hover:text-slate-950">
-                {l.label}
-              </a>
-            ))}
+          <nav aria-label="Navigasi utama" className="flex items-center text-[13px] font-semibold text-neutral-600">
+            <a href="#layanan" className={NAV_LINK}>Layanan</a>
+            <a href="#undangan" className={`${NAV_LINK} hidden md:inline-flex`}>Undangan</a>
+            <a href="#katalog" className={NAV_LINK}>Katalog</a>
+            <a href="#lokasi" className={NAV_LINK}>Lokasi</a>
           </nav>
 
-          <div className="flex items-center gap-1">
-            <a
-              href={waLink("Halo Kak, saya mau tanya kebutuhan cetak di Subur Maju Printing.")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-slate-950 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-orange-700"
-            >
-              <WhatsAppIcon className="h-4 w-4" />
-              Pesan
-            </a>
-            <button
-              type="button"
-              onClick={() => setMenuOpen((v) => !v)}
-              aria-expanded={menuOpen}
-              aria-label={menuOpen ? "Tutup menu" : "Buka menu"}
-              className="grid h-10 w-10 place-items-center rounded-full text-slate-700 hover:bg-slate-100 md:hidden"
-            >
-              {menuOpen ? <CloseIcon className="h-5 w-5" /> : <MenuIcon />}
-            </button>
-          </div>
+          <a
+            href={waLink("Halo Kak, saya mau tanya kebutuhan cetak di Subur Maju Printing.")}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Chat WhatsApp"
+            className="ml-1 hidden h-10 items-center gap-2 rounded-full bg-neutral-900 px-5 text-[13px] font-semibold text-white transition-colors hover:bg-amber-600 md:inline-flex"
+          >
+            <WhatsAppIcon className="h-4 w-4" />
+            Pesan
+          </a>
         </div>
-
-        <AnimatePresence initial={false}>
-          {menuOpen && (
-            <motion.nav
-              aria-label="Menu seluler"
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.35, ease: EASE }}
-              className="overflow-hidden md:hidden"
-            >
-              <ul className="border-t border-slate-200 p-2">
-                {NAV_LINKS.map((l) => (
-                  <li key={l.href}>
-                    <a
-                      href={l.href}
-                      onClick={() => setMenuOpen(false)}
-                      className="block rounded-2xl px-4 py-3 text-base font-medium text-slate-800 hover:bg-slate-100"
-                    >
-                      {l.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </motion.nav>
-          )}
-        </AnimatePresence>
       </motion.header>
     </div>
   );
@@ -327,188 +293,182 @@ function Navbar() {
 
 /* ============================================================
    HERO
-   Satu momen utama: kertas "keluar" dari mesin cetak, ditandai garis
-   print-head oranye, lalu judul muncul baris demi baris.
    ============================================================ */
-function CropMarks() {
-  const base = "pointer-events-none absolute h-4 w-4 border-slate-900/60";
-  return (
-    <>
-      <span aria-hidden="true" className={`${base} -left-4 -top-4 border-b border-r`} />
-      <span aria-hidden="true" className={`${base} -right-4 -top-4 border-b border-l`} />
-      <span aria-hidden="true" className={`${base} -bottom-4 -left-4 border-r border-t`} />
-      <span aria-hidden="true" className={`${base} -bottom-4 -right-4 border-l border-t`} />
-    </>
-  );
-}
-
-function CmykBar() {
-  const colors = ["#00AEEF", "#EC008C", "#FFF200", "#0F172A"];
-  return (
-    <div className="flex items-center gap-1.5" aria-hidden="true">
-      {colors.map((c, i) => (
-        <motion.span
-          key={c}
-          className="h-3 w-3 rounded-[2px] border border-slate-900/10"
-          style={{ backgroundColor: c }}
-          initial={{ scale: 0, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 1.7 + i * 0.1, duration: 0.4, ease: EASE }}
-        />
-      ))}
-    </div>
-  );
-}
-
 function Hero() {
-  const lines = ["Digital printing", "Jakarta Timur,", "buka 24 jam."];
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  const yA = useTransform(scrollYProgress, [0, 1], [0, -70]);
+  const yB = useTransform(scrollYProgress, [0, 1], [0, 50]);
 
   return (
-    <section aria-labelledby="hero-title" className="relative overflow-hidden pb-20 pt-32 md:pb-28 md:pt-40">
-      <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-12">
-        <div className="lg:col-span-7">
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-            className="mb-8 inline-flex items-center gap-2.5 text-sm font-medium text-slate-600"
+    <section
+      ref={ref}
+      aria-labelledby="hero-title"
+      className="relative flex min-h-[90svh] items-center overflow-hidden px-6 pb-20 pt-32 md:pt-40"
+    >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute right-0 top-0 h-[800px] w-[800px] -translate-y-1/2 translate-x-1/3 rounded-full bg-gradient-to-bl from-amber-100/60 to-transparent blur-3xl"
+      />
+
+      <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-14 lg:grid-cols-12">
+        {/* Teks */}
+        <motion.div
+          className="flex flex-col items-start lg:col-span-6"
+          initial="hidden"
+          animate="visible"
+          variants={stagger(0.12, 0.1)}
+        >
+          <motion.span
+            variants={fadeUp}
+            className="mb-8 inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2 text-xs font-bold uppercase tracking-widest text-neutral-500 shadow-sm"
           >
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-60" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
             </span>
-            Workshop Rawamangun, buka setiap hari
-          </motion.p>
+            Buka 24 Jam • Jakarta Timur
+          </motion.span>
 
           <h1
             id="hero-title"
-            aria-label="Digital printing Jakarta Timur, buka 24 jam."
-            className={`${D} text-[2.9rem] font-medium leading-[1.02] tracking-tight text-slate-950 sm:text-6xl lg:text-[5.25rem]`}
+            className="mb-6 text-[2.75rem] font-extrabold leading-[1.05] tracking-tighter text-neutral-900 sm:text-6xl md:text-7xl"
           >
-            {lines.map((line, i) => (
-              <span key={line} aria-hidden="true" className="block overflow-hidden pb-[0.12em]">
-                <motion.span
-                  className="block"
-                  initial={{ y: "105%" }}
-                  animate={{ y: 0 }}
-                  transition={{ duration: 1, ease: EASE, delay: 0.55 + i * 0.12 }}
-                >
-                  {line}
-                </motion.span>
-              </span>
-            ))}
+            <motion.span variants={blurUp} className="block">
+              Digital Printing
+            </motion.span>
+            <motion.span variants={blurUp} className="block pb-2">
+              <motion.span
+                className="bg-gradient-to-r from-amber-600 via-orange-400 to-amber-600 bg-[length:200%_auto] bg-clip-text text-transparent"
+                animate={{ backgroundPosition: ["0% 50%", "200% 50%"] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+              >
+                Jakarta Timur.
+              </motion.span>
+            </motion.span>
           </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.05, duration: 0.8, ease: EASE }}
-            className="mt-8 max-w-xl text-lg leading-relaxed text-slate-600"
-          >
-            Hardcover skripsi, banner dan spanduk, stiker, brosur, hingga undangan pernikahan berbasis web. Kirim
-            file lewat WhatsApp, kami cetak kapan saja Anda butuh.
+          <motion.p variants={fadeUp} className="mb-10 max-w-lg text-lg font-medium leading-relaxed text-neutral-600">
+            Cetak cepat, kualitas premium. Dari hardcover skripsi, banner, hingga{" "}
+            <strong className="font-bold text-neutral-900">undangan pernikahan digital</strong> bergaya eksklusif.
           </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2, duration: 0.8, ease: EASE }}
-            className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3"
-          >
+          <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-4">
             <a
               href={waLink(
                 "Halo Kak, saya mau konsultasi mengenai kebutuhan cetak di Subur Maju Printing.\n\nProduk:\nJumlah:\nUkuran:\nDeadline:"
               )}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 rounded-full bg-slate-950 px-7 py-4 text-[15px] font-semibold text-white shadow-lg shadow-slate-900/15 transition-all hover:-translate-y-0.5 hover:bg-orange-700 hover:shadow-orange-900/20"
+              className="inline-flex items-center gap-2.5 rounded-full bg-neutral-900 px-8 py-4 text-[15px] font-semibold text-white shadow-xl shadow-neutral-900/20 transition-all hover:-translate-y-0.5 hover:bg-neutral-800 hover:shadow-2xl hover:shadow-neutral-900/30"
             >
               <WhatsAppIcon />
-              Konsultasi lewat WhatsApp
+              Mulai Konsultasi
             </a>
             <a
               href="#layanan"
-              className="py-4 text-[15px] font-semibold text-slate-900 underline decoration-slate-300 decoration-2 underline-offset-8 transition-colors hover:decoration-orange-600"
+              className="rounded-full border border-neutral-200 bg-white px-8 py-4 text-[15px] font-semibold text-neutral-900 transition-all hover:-translate-y-0.5 hover:bg-neutral-50"
             >
-              Lihat layanan
+              Lihat Layanan
             </a>
           </motion.div>
-        </div>
+        </motion.div>
 
-        {/* Lembar cetak */}
-        <div className="relative mx-auto w-full max-w-md lg:col-span-5 lg:max-w-none">
-          <div className="relative">
-            <CropMarks />
+        {/* Gambar */}
+        <motion.div
+          className="relative grid grid-cols-2 gap-4 lg:col-span-6"
+          initial="hidden"
+          animate="visible"
+          variants={stagger(0.2, 0.35)}
+        >
+          <motion.div variants={scaleUp} className="pt-12">
             <motion.div
-              className="relative aspect-[4/5] overflow-hidden rounded-sm bg-slate-100 shadow-2xl shadow-slate-900/15"
-              initial={{ clipPath: "inset(0 0 100% 0)" }}
-              animate={{ clipPath: "inset(0 0 0% 0)" }}
-              transition={{ duration: 1.5, ease: PRESS, delay: 0.2 }}
+              style={{ y: yA }}
+              className="relative h-64 overflow-hidden rounded-[2rem] shadow-2xl shadow-neutral-300/50 md:h-80"
             >
               <Image
-                src={HERO_IMAGE}
-                alt="Hasil digital printing di Subur Maju Printing"
+                src={HERO_IMAGES[0]}
+                alt="Hasil digital printing Subur Maju Printing"
                 fill
                 priority
-                sizes="(min-width: 1024px) 40vw, 90vw"
+                sizes="(min-width: 1024px) 25vw, 45vw"
                 className="object-cover"
               />
             </motion.div>
-            <motion.span
-              aria-hidden="true"
-              className="pointer-events-none absolute -inset-x-5 h-0.5 bg-orange-600 shadow-[0_0_14px_2px_rgba(234,88,12,0.5)]"
-              initial={{ top: "0%", opacity: 1 }}
-              animate={{ top: "100%", opacity: 0 }}
-              transition={{
-                top: { duration: 1.5, ease: PRESS, delay: 0.2 },
-                opacity: { duration: 0.3, delay: 1.7 },
-              }}
-            />
-          </div>
-          <div className="mt-8">
-            <CmykBar />
-          </div>
-        </div>
+          </motion.div>
+
+          <motion.div variants={scaleUp} className="space-y-4">
+            <motion.div
+              style={{ y: yB }}
+              className="relative h-64 overflow-hidden rounded-[2rem] shadow-2xl shadow-neutral-300/50 md:h-80"
+            >
+              <Image
+                src={HERO_IMAGES[1]}
+                alt="Contoh palet warna cetak"
+                fill
+                sizes="(min-width: 1024px) 25vw, 45vw"
+                className="object-cover"
+              />
+            </motion.div>
+            <motion.div
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              className="flex flex-col items-center justify-center rounded-[2rem] border border-neutral-100 bg-white p-6 text-center shadow-xl shadow-neutral-200/60"
+            >
+              <p className="mb-1 text-4xl font-extrabold text-neutral-900">24/7</p>
+              <p className="text-sm font-semibold text-neutral-500">Siap Melayani</p>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
 }
 
 /* ============================================================
-   LAYANAN (bento; kartu = link WhatsApp per produk)
+   LAYANAN (bento, kartu = link WhatsApp, efek spotlight kursor)
    ============================================================ */
 function ServiceCard({ item, featured }) {
+  const x = useMotionValue(-400);
+  const y = useMotionValue(-400);
+  const spotlight = useMotionTemplate`radial-gradient(340px circle at ${x}px ${y}px, rgba(251,191,36,0.18), transparent 70%)`;
+
   return (
     <motion.a
       href={waLink(`Halo Kak, saya mau pesan ${item.judul}.\n\nJumlah:\nUkuran:\nDeadline:`)}
       target="_blank"
       rel="noopener noreferrer"
+      variants={scaleUp}
       whileHover={{ y: -6, transition: { duration: 0.35, ease: EASE } }}
-      className={`group flex flex-col overflow-hidden border border-slate-200 bg-white transition-shadow duration-500 hover:shadow-2xl hover:shadow-slate-900/10 ${
-        featured ? "rounded-3xl lg:col-span-2 lg:row-span-2" : "rounded-xl"
+      onMouseMove={(e) => {
+        const r = e.currentTarget.getBoundingClientRect();
+        x.set(e.clientX - r.left);
+        y.set(e.clientY - r.top);
+      }}
+      className={`group relative flex flex-col overflow-hidden rounded-[2rem] border border-neutral-200 bg-[#FBFBFB] transition-[border-color,box-shadow] duration-500 hover:border-amber-300 hover:shadow-2xl hover:shadow-amber-900/10 ${
+        featured ? "md:col-span-2 md:row-span-2" : ""
       }`}
     >
-      <div className={`relative overflow-hidden bg-slate-100 ${featured ? "h-72 lg:h-[26rem]" : "h-52"}`}>
+      <motion.div
+        aria-hidden="true"
+        style={{ background: spotlight }}
+        className="pointer-events-none absolute inset-0 z-10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+      />
+      <div className={`relative w-full overflow-hidden bg-neutral-100 ${featured ? "h-80 md:h-[400px]" : "h-56"}`}>
         <Image
           src={item.gambar}
           alt={`Layanan ${item.judul} Subur Maju Printing`}
           fill
-          sizes={featured ? "(min-width: 1024px) 66vw, 100vw" : "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"}
-          className="object-cover transition-transform duration-[900ms] ease-out group-hover:scale-105"
+          sizes={featured ? "(min-width: 768px) 66vw, 100vw" : "(min-width: 768px) 33vw, 100vw"}
+          className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
       </div>
-      <div className={`flex flex-1 flex-col ${featured ? "p-8 lg:p-10" : "p-6"}`}>
-        <h3 className={`${D} font-medium tracking-tight text-slate-950 ${featured ? "text-4xl" : "text-2xl"}`}>
-          {item.judul}
-        </h3>
-        <p className={`mt-3 leading-relaxed text-slate-600 ${featured ? "max-w-xl text-base" : "text-[15px]"}`}>
-          {item.deskripsi}
-        </p>
-        <div className="mt-auto flex items-center justify-between pt-8">
-          <span className="text-sm font-semibold text-slate-900">Pesan lewat WhatsApp</span>
-          <span className="grid h-10 w-10 place-items-center rounded-full bg-slate-950 text-white transition-colors duration-300 group-hover:bg-orange-600">
-            <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-          </span>
+      <div className="relative z-20 flex flex-grow flex-col bg-white p-8">
+        <h3 className="mb-2 text-2xl font-bold tracking-tight text-neutral-900">{item.judul}</h3>
+        <p className="mb-6 text-sm font-medium leading-relaxed text-neutral-500">{item.deskripsi}</p>
+        <div className="mt-auto flex items-center text-sm font-bold uppercase tracking-widest text-amber-700">
+          Pesan
+          <span className="ml-2 transition-transform duration-300 group-hover:translate-x-2">→</span>
         </div>
       </div>
     </motion.a>
@@ -516,43 +476,44 @@ function ServiceCard({ item, featured }) {
 }
 
 function Services() {
-  // Kartu pertama dibuat besar hanya kalau jumlah layanan kelipatan 3,
-  // supaya grid tidak berlubang.
+  // Kartu pertama dibuat besar hanya kalau jumlah layanan kelipatan 3 agar grid tidak berlubang.
   const useFeatured = dataLayanan.length % 3 === 0;
 
   return (
-    <section id="layanan" aria-labelledby="layanan-title" className="scroll-mt-24 bg-slate-50 py-24 md:py-32">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-14 grid gap-6 md:grid-cols-12 md:items-end">
-          <h2
-            id="layanan-title"
-            className={`${D} text-4xl font-medium leading-[1.05] tracking-tight text-slate-950 md:col-span-7 md:text-6xl`}
-          >
-            Percetakan untuk kampus, bisnis, dan acara
+    <section id="layanan" aria-labelledby="layanan-title" className="scroll-mt-24 bg-white px-6 py-24">
+      <motion.div
+        className="mx-auto max-w-7xl"
+        initial="hidden"
+        whileInView="visible"
+        viewport={inView}
+        variants={stagger(0.12)}
+      >
+        <motion.div variants={fadeUp} className="mb-16">
+          <h2 id="layanan-title" className="mb-4 text-4xl font-extrabold tracking-tight text-neutral-900 md:text-5xl">
+            Layanan Kami.
           </h2>
-          <p className="max-w-md text-lg leading-relaxed text-slate-600 md:col-span-4 md:col-start-9">
-            Mesin presisi tinggi untuk hasil yang tajam dan akurat. Pilih layanan, lalu kirim kebutuhan Anda lewat
-            WhatsApp.
+          <p className="max-w-xl text-lg font-medium text-neutral-500">
+            Spesialisasi percetakan dengan mesin presisi tinggi untuk hasil yang tajam dan akurat.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {dataLayanan.map((item, i) => (
             <ServiceCard key={item.judul} item={item} featured={useFeatured && i === 0} />
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
 
 /* ============================================================
-   UNDANGAN WEB + MOCKUP HP (miring mengikuti kursor, countdown hidup)
+   UNDANGAN WEB + MOCKUP HP
    ============================================================ */
 function useDemoDate() {
   const [date, setDate] = useState(null);
   useEffect(() => {
-    // Tanggal demo selalu Sabtu, ±45 hari ke depan, jadi tidak pernah basi.
+    // Selalu hari Sabtu sekitar 45 hari ke depan, jadi tanggal demo tidak pernah basi.
     const d = new Date();
     d.setDate(d.getDate() + 45);
     d.setDate(d.getDate() + ((6 - d.getDay() + 7) % 7));
@@ -609,48 +570,65 @@ function PhoneMock({ date }) {
       onMouseLeave={onLeave}
       className="relative flex justify-center py-6 [perspective:1100px] lg:justify-end"
     >
-      <motion.div style={{ rotateX, rotateY, transformStyle: "preserve-3d" }} className="relative">
+      <div
+        aria-hidden="true"
+        className="absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-amber-500/25 blur-[100px]"
+      />
+      <motion.div
+        style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+        animate={{ y: [0, -10, 0] }}
+        transition={{ y: { duration: 6, repeat: Infinity, ease: "easeInOut" } }}
+        className="relative"
+      >
         <Link href={DEMO_HREF} aria-label="Lihat demo undangan pernikahan digital" className="block">
           <div
             aria-hidden="true"
-            className="relative h-[580px] w-[286px] overflow-hidden rounded-[3rem] border-[7px] border-slate-800 bg-white shadow-[0_40px_90px_-20px_rgba(0,0,0,0.7)]"
+            className="relative h-[580px] w-[286px] rounded-[3.5rem] border border-neutral-700/50 bg-neutral-50 p-2 shadow-2xl shadow-black/60"
           >
-            <div className="absolute left-1/2 top-2.5 z-20 h-5 w-20 -translate-x-1/2 rounded-full bg-black" />
-            <div className="flex h-full flex-col items-center px-6 pb-7 pt-12 text-center text-slate-700">
-              <div className="h-20 w-20 overflow-hidden rounded-full border-4 border-white shadow-md ring-1 ring-slate-200">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={COUPLE_IMAGE} alt="" className="h-full w-full object-cover" />
+            <div className="relative h-full w-full overflow-hidden rounded-[3rem] border border-neutral-200 bg-[#FAFAFA] shadow-inner">
+              <div className="absolute left-1/2 top-0 z-40 flex h-6 w-32 -translate-x-1/2 items-center justify-center rounded-b-3xl bg-neutral-50 shadow-sm">
+                <div className="h-1.5 w-16 rounded-full bg-neutral-200" />
               </div>
-              <p className="mt-4 text-[11px] text-slate-500">The Wedding Of</p>
-              <p className={`${D} mt-1 text-[34px] italic leading-none text-orange-800`}>Lure</p>
-              <p className={`${D} my-1 text-base italic text-slate-400`}>&amp;</p>
-              <p className={`${D} text-[34px] italic leading-none text-orange-800`}>Annabey</p>
 
-              <div className="mt-5 h-px w-10 bg-slate-300" />
-              <p className="mt-4 text-[11px] font-semibold text-slate-800">{dateLabel}</p>
+              <div className="flex h-full flex-col items-center px-5 pb-6 pt-11 text-center">
+                <div className="h-20 w-20 overflow-hidden rounded-full border-4 border-white shadow-md">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={COUPLE_IMAGE} alt="" className="h-full w-full object-cover" />
+                </div>
+                <p className="mb-1 mt-4 text-[10px] font-bold uppercase tracking-widest text-neutral-500">
+                  The Wedding Of
+                </p>
+                <p className="font-serif text-[34px] leading-none text-amber-800">Lure</p>
+                <p className="my-1 font-serif text-sm italic text-amber-800/60">&amp;</p>
+                <p className="font-serif text-[34px] leading-none text-amber-800">Annabey</p>
 
-              <div className="mt-3 grid w-full grid-cols-4 gap-1.5">
-                {[
-                  ["Hari", cd.d],
-                  ["Jam", cd.h],
-                  ["Menit", cd.m],
-                  ["Detik", cd.s],
-                ].map(([label, val]) => (
-                  <div key={label} className="rounded-lg bg-slate-100 py-2">
-                    <p className="text-[15px] font-semibold tabular-nums leading-none text-slate-900">{val}</p>
-                    <p className="mt-1 text-[9px] text-slate-500">{label}</p>
+                <div className="my-4 h-px w-8 bg-amber-800/20" />
+
+                <div className="w-full rounded-2xl border border-neutral-100 bg-white p-3.5 shadow-sm">
+                  <p className="text-[11px] font-bold tracking-wide text-neutral-800">{dateLabel}</p>
+                  <div className="mt-2.5 grid grid-cols-4 gap-1.5">
+                    {[
+                      ["Hari", cd.d],
+                      ["Jam", cd.h],
+                      ["Menit", cd.m],
+                      ["Detik", cd.s],
+                    ].map(([label, val]) => (
+                      <div key={label} className="rounded-lg bg-neutral-100 py-1.5">
+                        <p className="text-[14px] font-bold tabular-nums leading-none text-neutral-900">{val}</p>
+                        <p className="mt-1 text-[8px] font-medium text-neutral-500">{label}</p>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
+                  <p className="mt-3 text-[10px] leading-relaxed text-neutral-500">
+                    The Tribrata Darmawangsa
+                    <br />
+                    Grand Ballroom, Jakarta Selatan
+                  </p>
+                </div>
 
-              <p className="mt-4 text-[10px] leading-relaxed text-slate-500">
-                The Tribrata Darmawangsa
-                <br />
-                Grand Ballroom, Jakarta Selatan
-              </p>
-
-              <div className="mt-auto w-full rounded-full bg-slate-900 py-2.5 text-[11px] font-semibold text-white">
-                Buka undangan
+                <div className="mt-auto w-full rounded-full bg-neutral-900 py-2.5 text-[10px] font-bold uppercase tracking-widest text-white shadow-lg">
+                  Buka Undangan
+                </div>
               </div>
             </div>
           </div>
@@ -665,126 +643,139 @@ function Invitation() {
   const features = [
     "Hitung mundur acara otomatis",
     "Buku tamu interaktif",
-    "Navigasi Google Maps ke lokasi acara",
-    "Tampil rapi di semua ukuran layar",
+    "Navigasi Google Maps cerdas",
+    "Responsif di semua layar",
   ];
 
   return (
-    <section id="undangan" aria-labelledby="undangan-title" className="scroll-mt-24 overflow-hidden bg-slate-950 py-24 text-white md:py-32">
-      <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-12">
-        <div className="lg:col-span-7">
-          <p className="mb-6 inline-block rounded-full border border-white/15 px-3.5 py-1.5 text-sm text-slate-300">
-            Ruang Hati, undangan digital dari Subur Maju
-          </p>
+    <section
+      id="undangan"
+      aria-labelledby="undangan-title"
+      className="relative scroll-mt-24 overflow-hidden bg-neutral-900 px-6 py-24"
+    >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-amber-900/40 via-neutral-900 to-neutral-900"
+      />
+      <motion.div
+        className="relative z-10 mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-12"
+        initial="hidden"
+        whileInView="visible"
+        viewport={inView}
+        variants={stagger(0.15)}
+      >
+        <motion.div variants={fadeUp} className="lg:col-span-7">
+          <span className="mb-6 inline-block rounded-md border border-amber-500/20 bg-amber-500/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-amber-400">
+            Eksklusif Digital
+          </span>
           <h2
             id="undangan-title"
-            className={`${D} max-w-2xl text-4xl font-medium leading-[1.05] tracking-tight md:text-6xl`}
+            className="mb-6 text-4xl font-extrabold leading-[1.1] tracking-tight text-white md:text-5xl lg:text-6xl"
           >
-            Undangan pernikahan berbasis web
+            Undangan Web
+            <br />
+            <span className="bg-gradient-to-r from-amber-200 to-amber-500 bg-clip-text font-serif font-normal italic text-transparent">
+              Sangat Berkelas.
+            </span>
           </h2>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-400">
-            Satu tautan yang bisa dibagikan lewat WhatsApp, dengan desain yang menyesuaikan tema acara Anda.
+          <p className="mb-8 max-w-lg text-lg leading-relaxed text-neutral-400">
+            Tingkatkan gengsi acaramu. Undangan digital responsif dengan desain premium, mudah dibagikan lewat
+            WhatsApp.
           </p>
 
-          <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+          <ul className="mb-10 grid gap-3 sm:grid-cols-2">
             {features.map((f) => (
-              <li key={f} className="flex items-start gap-3 text-slate-200">
-                <CheckIcon className="mt-0.5 h-5 w-5 shrink-0 text-orange-500" />
-                <span>{f}</span>
+              <li key={f} className="flex items-center gap-3 font-medium text-neutral-200">
+                <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-amber-500/15 text-amber-400">
+                  <CheckIcon className="h-3.5 w-3.5" />
+                </span>
+                {f}
               </li>
             ))}
           </ul>
 
-          <div className="mt-8">
-            <p className="mb-3 text-sm text-slate-400">Pilihan tema</p>
-            <ul className="flex flex-wrap gap-2">
-              {INVITATION_THEMES.map((t) => (
-                <li key={t} className="rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 text-sm text-slate-200">
-                  {t}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="mt-10 flex flex-wrap items-center gap-4">
+          <div className="flex flex-wrap gap-4">
             <Link
               href={DEMO_HREF}
-              className="rounded-full bg-white px-7 py-4 text-[15px] font-semibold text-slate-950 transition-colors hover:bg-orange-100"
+              className="rounded-full bg-white px-8 py-4 font-bold text-neutral-900 shadow-xl transition-all hover:-translate-y-0.5 hover:bg-neutral-100 hover:shadow-white/20"
             >
-              Lihat demo undangan
+              Lihat Demo
             </Link>
             <a
-              href={waLink("Halo Kak, saya mau konsultasi pembuatan Undangan Pernikahan Digital Website.")}
+              href={waLink("Halo Kak, saya mau konsultasi pembuatan Undangan Pernikahan Website.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border border-white/20 px-7 py-4 text-[15px] font-semibold text-white transition-colors hover:border-orange-500 hover:bg-orange-500/10"
+              className="rounded-full border border-neutral-700 px-8 py-4 font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-amber-500/50 hover:bg-amber-500/10"
             >
-              Tanya harga
+              Tanya Harga
             </a>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="lg:col-span-5">
+        <motion.div variants={scaleUp} className="lg:col-span-5">
           <PhoneMock date={date} />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
 
 /* ============================================================
-   KENAPA KAMI (daftar baris, bukan kartu)
+   KENAPA KAMI
    ============================================================ */
 function WhyUs() {
   return (
-    <section id="kenapa-kami" aria-labelledby="kenapa-title" className="scroll-mt-24 bg-white py-24 md:py-32">
-      <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-12 lg:gap-20">
-        <div className="lg:col-span-5">
-          <div className="lg:sticky lg:top-32">
-            <h2
-              id="kenapa-title"
-              className={`${D} text-4xl font-medium leading-[1.05] tracking-tight text-slate-950 md:text-6xl`}
-            >
-              Kenapa memilih Subur Maju
-            </h2>
-            <p className="mt-6 max-w-sm text-lg leading-relaxed text-slate-600">
-              Bukan sekadar mencetak. Kami memeriksa setiap detail supaya hasilnya sesuai file Anda.
-            </p>
-          </div>
-        </div>
+    <section id="kenapa-kami" aria-labelledby="kenapa-title" className="scroll-mt-24 bg-[#FAFAFA] px-6 py-24">
+      <motion.div
+        className="mx-auto max-w-7xl"
+        initial="hidden"
+        whileInView="visible"
+        viewport={inView}
+        variants={stagger(0.14)}
+      >
+        <motion.div variants={fadeUp} className="mb-16 text-center">
+          <h2 id="kenapa-title" className="mb-4 text-3xl font-extrabold tracking-tight text-neutral-900 md:text-5xl">
+            Nilai Lebih Kami.
+          </h2>
+          <p className="text-lg font-medium text-neutral-500">
+            Bukan sekadar mencetak, kami memastikan setiap detail sempurna.
+          </p>
+        </motion.div>
 
-        <ul className="border-t border-slate-200 lg:col-span-7">
+        <div className="grid gap-6 md:grid-cols-3">
           {dataKenapaKami.map((item) => (
-            <li key={item.judul} className="group relative border-b border-slate-200 py-9">
-              <span
-                aria-hidden="true"
-                className="absolute -bottom-px left-0 h-px w-full origin-left scale-x-0 bg-orange-600 transition-transform duration-500 ease-out group-hover:scale-x-100"
-              />
-              <h3
-                className={`${D} text-2xl font-medium tracking-tight text-slate-950 transition-transform duration-500 ease-out group-hover:translate-x-2 md:text-3xl`}
-              >
-                {item.judul}
-              </h3>
-              <p className="mt-3 max-w-xl leading-relaxed text-slate-600">{item.deskripsi}</p>
-            </li>
+            <motion.article
+              key={item.judul}
+              variants={scaleUp}
+              whileHover={{ y: -6, transition: { duration: 0.35, ease: EASE } }}
+              className="group rounded-3xl border border-neutral-200 bg-white p-10 transition-[border-color,box-shadow] duration-300 hover:border-amber-300 hover:shadow-xl hover:shadow-amber-900/5"
+            >
+              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-neutral-100 text-neutral-900 transition-all duration-300 group-hover:scale-110 group-hover:bg-amber-100 group-hover:text-amber-700">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+              <h3 className="mb-3 text-xl font-bold text-neutral-900">{item.judul}</h3>
+              <p className="text-sm font-medium leading-relaxed text-neutral-500">{item.deskripsi}</p>
+            </motion.article>
           ))}
-        </ul>
-      </div>
+        </div>
+      </motion.div>
     </section>
   );
 }
 
 /* ============================================================
-   KLIEN (marquee CSS: mulus, berhenti saat di-hover)
+   KLIEN (marquee mulus, berhenti saat di-hover)
    ============================================================ */
 function Clients() {
   const items = [...dataKlien, ...dataKlien];
   return (
-    <section id="klien" aria-labelledby="klien-title" className="overflow-hidden border-y border-slate-200 bg-slate-50 py-16">
-      <h2 id="klien-title" className="mx-auto mb-10 max-w-7xl px-6 text-lg font-medium text-slate-600">
-        Pernah melayani kebutuhan cetak untuk berbagai instansi
-      </h2>
-      <div className="sm-marquee relative [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+    <section id="klien" aria-labelledby="klien-title" className="overflow-hidden border-y border-neutral-100 bg-white py-16">
+      <div className="mx-auto mb-8 max-w-7xl px-6 text-center">
+        <h2 id="klien-title" className="text-xs font-bold uppercase tracking-widest text-neutral-500">
+          Pernah melayani kebutuhan cetak untuk berbagai instansi
+        </h2>
+      </div>
+      <div className="sm-marquee relative py-4 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
         <div className="sm-marquee-track">
           {items.map((k, i) => (
             <div
@@ -798,10 +789,10 @@ function Clients() {
                   src={k.logo}
                   alt={`Logo ${k.nama}`}
                   loading="lazy"
-                  className="max-h-14 max-w-[140px] object-contain opacity-60 grayscale transition-all duration-500 group-hover:opacity-100 group-hover:grayscale-0"
+                  className="max-h-14 max-w-[130px] object-contain opacity-50 grayscale transition-all duration-500 group-hover:opacity-100 group-hover:grayscale-0"
                 />
               </div>
-              <span className="text-center text-xs font-medium text-slate-500">{k.nama}</span>
+              <span className="text-center text-xs font-medium text-neutral-500">{k.nama}</span>
             </div>
           ))}
         </div>
@@ -815,112 +806,141 @@ function Clients() {
    ============================================================ */
 function Location() {
   return (
-    <section id="lokasi" aria-labelledby="lokasi-title" className="scroll-mt-24 bg-white py-24 md:py-32">
-      <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-12 lg:gap-16">
-        <div className="flex flex-col lg:col-span-5">
-          <h2
-            id="lokasi-title"
-            className={`${D} text-4xl font-medium leading-[1.05] tracking-tight text-slate-950 md:text-6xl`}
+    <section id="lokasi" aria-labelledby="lokasi-title" className="scroll-mt-24 bg-white px-6 py-24">
+      <motion.div
+        className="mx-auto max-w-7xl"
+        initial="hidden"
+        whileInView="visible"
+        viewport={inView}
+        variants={stagger(0.15)}
+      >
+        <div className="grid items-stretch gap-12 lg:grid-cols-2">
+          <motion.div
+            variants={scaleUp}
+            className="flex flex-col justify-between rounded-[2.5rem] border border-neutral-200 bg-[#FBFBFB] p-10"
           >
-            Kunjungi workshop kami
-          </h2>
-          <p className="mt-6 max-w-md text-lg leading-relaxed text-slate-600">
-            Datang langsung ke Rawamangun atau kirim file dari rumah. Kami melayani kapan saja.
-          </p>
+            <div>
+              <div className="mb-8 flex flex-wrap items-center justify-between gap-3">
+                <h2 id="lokasi-title" className="text-4xl font-extrabold tracking-tight text-neutral-900">
+                  Kunjungi Kami.
+                </h2>
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-green-500/20 bg-green-500/10 px-3 py-1 text-sm font-semibold text-green-700">
+                  <span className="h-2 w-2 animate-pulse rounded-full bg-green-500" />
+                  Buka 24 Jam
+                </span>
+              </div>
 
-          <dl className="mt-10 divide-y divide-slate-200 border-y border-slate-200">
-            <div className="py-5">
-              <dt className="text-sm font-semibold text-slate-900">Alamat</dt>
-              <dd className="mt-1.5">
-                <address className="not-italic leading-relaxed text-slate-600">
-                  Jl. Waru No.15C, RT.2/RW.9,
-                  <br />
-                  Rawamangun, Kec. Pulo Gadung,
-                  <br />
-                  {BUSINESS.city} {BUSINESS.postal}
-                </address>
-              </dd>
+              <ul className="space-y-8">
+                <li className="flex gap-5">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-neutral-200 bg-white text-amber-700 shadow-sm">
+                    <PinIcon />
+                  </div>
+                  <div>
+                    <h3 className="mb-1 text-sm font-bold text-neutral-900">Workshop Rawamangun</h3>
+                    <address className="text-sm font-medium not-italic leading-relaxed text-neutral-500">
+                      Jl. Waru No.15C, RT.2/RW.9,
+                      <br />
+                      Rawamangun, Kec. Pulo Gadung,
+                      <br />
+                      {BUSINESS.city} {BUSINESS.postal}
+                    </address>
+                  </div>
+                </li>
+                <li className="flex gap-5">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-neutral-200 bg-white text-amber-700 shadow-sm">
+                    <PhoneIcon />
+                  </div>
+                  <div>
+                    <h3 className="mb-1 text-sm font-bold text-neutral-900">Hubungi Cepat</h3>
+                    <a
+                      href={`tel:${BUSINESS.phoneTel}`}
+                      className="text-sm font-medium text-neutral-500 underline decoration-neutral-300 underline-offset-4 transition-colors hover:text-neutral-900 hover:decoration-amber-600"
+                    >
+                      {BUSINESS.phoneDisplay} (24 Jam)
+                    </a>
+                  </div>
+                </li>
+              </ul>
             </div>
-            <div className="py-5">
-              <dt className="text-sm font-semibold text-slate-900">WhatsApp dan telepon</dt>
-              <dd className="mt-1.5">
-                <a href={`tel:${BUSINESS.phoneTel}`} className="text-slate-600 underline decoration-slate-300 underline-offset-4 hover:text-slate-950 hover:decoration-orange-600">
-                  {BUSINESS.phoneDisplay}
-                </a>
-              </dd>
-            </div>
-            <div className="py-5">
-              <dt className="text-sm font-semibold text-slate-900">Jam buka</dt>
-              <dd className="mt-1.5 text-slate-600">24 jam, setiap hari</dd>
-            </div>
-          </dl>
 
-          <a
-            href={mapsHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-10 inline-flex w-fit items-center gap-2.5 rounded-full bg-slate-950 px-7 py-4 text-[15px] font-semibold text-white transition-colors hover:bg-orange-700"
+            <a
+              href={mapsHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-10 flex w-full items-center justify-center gap-2 rounded-full bg-neutral-900 px-6 py-4 text-center font-bold text-white shadow-lg shadow-neutral-900/10 transition-all hover:-translate-y-0.5 hover:bg-neutral-800 hover:shadow-xl hover:shadow-neutral-900/20"
+            >
+              Buka Google Maps →
+            </a>
+          </motion.div>
+
+          <motion.div
+            variants={scaleUp}
+            className="relative h-[400px] w-full overflow-hidden rounded-[2.5rem] border border-neutral-200 shadow-sm lg:h-auto"
           >
-            Buka di Google Maps
-            <ArrowUpRight />
-          </a>
+            <iframe
+              title="Lokasi Subur Maju Printing di Google Maps"
+              src={mapsEmbed}
+              className="absolute inset-0 h-full w-full grayscale transition-all duration-700 hover:grayscale-0"
+              style={{ border: 0 }}
+              loading="lazy"
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </motion.div>
         </div>
-
-        <div className="relative min-h-[420px] overflow-hidden rounded-3xl border border-slate-200 bg-slate-100 lg:col-span-7">
-          <iframe
-            title="Lokasi Subur Maju Printing di Google Maps"
-            src={mapsEmbed}
-            className="absolute inset-0 h-full w-full grayscale transition-[filter] duration-700 hover:grayscale-0"
-            style={{ border: 0 }}
-            loading="lazy"
-            allowFullScreen
-            referrerPolicy="no-referrer-when-downgrade"
-          />
-        </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
 
 /* ============================================================
-   CTA PENUTUP (langkah berurutan, jadi pakai nomor)
+   CTA PENUTUP
    ============================================================ */
 function FinalCta() {
-  const steps = [
-    "Kirim file dan kebutuhan Anda lewat WhatsApp.",
-    "Konfirmasi ukuran, bahan, dan harga.",
-    "Kami cetak, Anda ambil di Rawamangun.",
-  ];
   return (
-    <section aria-labelledby="cta-title" className="bg-slate-950 py-24 text-white md:py-32">
-      <div className="mx-auto grid max-w-7xl gap-14 px-6 lg:grid-cols-12 lg:items-center">
-        <div className="lg:col-span-6">
-          <h2 id="cta-title" className={`${D} text-4xl font-medium leading-[1.05] tracking-tight md:text-6xl`}>
-            Siap cetak sekarang?
-          </h2>
-          <p className="mt-6 max-w-md text-lg leading-relaxed text-slate-400">
-            Tidak perlu antre di toko. Ceritakan kebutuhan Anda, kami balas langsung di WhatsApp.
-          </p>
-          <a
-            href={waLink("Halo Kak, saya mau kirim file untuk dicetak.\n\nProduk:\nJumlah:\nUkuran:\nDeadline:")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-10 inline-flex items-center gap-2.5 rounded-full bg-orange-500 px-8 py-4 text-base font-semibold text-slate-950 shadow-lg shadow-orange-500/20 transition-all hover:-translate-y-0.5 hover:bg-orange-400"
-          >
-            <WhatsAppIcon className="h-5 w-5" />
-            Kirim file lewat WhatsApp
-          </a>
-        </div>
+    <section aria-labelledby="cta-title" className="bg-[#FAFAFA] px-6 pb-24">
+      <motion.div
+        className="group relative mx-auto max-w-5xl"
+        initial="hidden"
+        whileInView="visible"
+        viewport={inView}
+        variants={scaleUp}
+      >
+        <div
+          aria-hidden="true"
+          className="absolute -inset-1 rounded-[3rem] bg-gradient-to-r from-orange-600 to-amber-500 opacity-20 blur-xl transition duration-1000 group-hover:opacity-35 group-hover:duration-200"
+        />
+        <div className="relative flex flex-col items-center overflow-hidden rounded-[3rem] border border-neutral-800 bg-gradient-to-b from-neutral-900 to-neutral-950 px-8 py-20 text-center shadow-2xl">
+          <div aria-hidden="true" className="pointer-events-none absolute -left-20 top-0 h-72 w-72 rounded-full bg-orange-500 opacity-15 blur-[120px]" />
+          <div aria-hidden="true" className="pointer-events-none absolute -right-20 bottom-0 h-72 w-72 rounded-full bg-amber-600 opacity-10 blur-[120px]" />
 
-        <ol className="lg:col-span-5 lg:col-start-8">
-          {steps.map((s, i) => (
-            <li key={s} className="flex items-start gap-5 border-t border-white/10 py-6 last:border-b">
-              <span className={`${D} text-3xl italic leading-none text-orange-500`}>{i + 1}</span>
-              <span className="pt-1 text-lg text-slate-200">{s}</span>
-            </li>
-          ))}
-        </ol>
-      </div>
+          <div className="relative z-10 mx-auto max-w-2xl">
+            <span className="mb-8 inline-flex items-center gap-2 rounded-full border border-orange-500/20 bg-orange-500/10 px-4 py-1.5 text-sm font-semibold text-orange-400">
+              <span className="h-2 w-2 animate-pulse rounded-full bg-orange-500" />
+              Respon Cepat 24 Jam
+            </span>
+            <h2 id="cta-title" className="mb-6 text-4xl font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl">
+              Siap Cetak{" "}
+              <span className="bg-gradient-to-r from-orange-400 to-amber-300 bg-clip-text text-transparent">
+                Sekarang?
+              </span>
+            </h2>
+            <p className="mb-10 text-lg leading-relaxed text-neutral-400 md:text-xl">
+              Tidak perlu repot datang ke toko. Kirim file Anda dan konsultasikan kebutuhan cetak langsung melalui
+              WhatsApp.
+            </p>
+            <a
+              href={waLink("Halo Kak, saya mau kirim file untuk dicetak.\n\nProduk:\nJumlah:\nUkuran:\nDeadline:")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-orange-600 to-amber-500 px-8 py-5 text-lg font-bold text-white shadow-[0_0_40px_-10px_rgba(249,115,22,0.5)] transition-all duration-300 hover:-translate-y-1 hover:from-orange-500 hover:to-amber-400 hover:shadow-[0_0_60px_-15px_rgba(249,115,22,0.7)]"
+            >
+              <WhatsAppIcon className="h-6 w-6" />
+              Konsultasi &amp; Order Sekarang
+            </a>
+          </div>
+        </div>
+      </motion.div>
     </section>
   );
 }
@@ -929,69 +949,72 @@ function FinalCta() {
    FOOTER
    ============================================================ */
 const FOOTER_SERVICES = [
-  "Hardcover skripsi",
-  "Digital printing",
-  "Banner dan spanduk",
-  "Stiker dan label",
-  "Brosur dan flyer",
-  "Undangan digital web",
+  "Digital Printing",
+  "Hardcover Skripsi",
+  "Banner & Spanduk",
+  "Stiker & Label",
+  "Brosur & Flyer",
+  "Undangan Web",
 ];
 
 function Footer() {
   return (
-    <footer className="border-t border-slate-200 bg-white">
-      <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 md:grid-cols-12">
-        <div className="md:col-span-5">
-          <div className="flex items-center gap-3">
-            <Image src="/avatar.png" alt="" width={44} height={44} className="rounded-full border border-slate-200 object-cover" />
-            <p className={`${D} text-2xl font-semibold tracking-tight text-slate-950`}>Subur Maju Printing</p>
-          </div>
-          <p className="mt-5 max-w-sm text-sm leading-relaxed text-slate-600">
-            Percetakan digital 24 jam di Jakarta Timur untuk kebutuhan akademik, bisnis, dan acara pribadi, termasuk
-            undangan pernikahan berbasis web.
+    <footer className="border-t border-neutral-200 bg-white text-neutral-900">
+      <motion.div
+        className="mx-auto grid max-w-7xl gap-10 px-6 py-20 md:grid-cols-4"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={stagger(0.1)}
+      >
+        <motion.div variants={fadeUp} className="md:col-span-2">
+          <h3 className="mb-2 text-2xl font-extrabold tracking-tight">Subur Maju.</h3>
+          <p className="max-w-sm text-sm font-medium text-neutral-500">
+            Percetakan digital 24 jam terpercaya di Jakarta Timur. Melayani cetak buku, banner, hingga undangan
+            website eksklusif.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="md:col-span-4">
-          <h3 className="text-sm font-semibold text-slate-900">Layanan</h3>
-          <ul className="mt-4 grid grid-cols-1 gap-2.5 text-sm sm:grid-cols-2">
+        <motion.div variants={fadeUp}>
+          <h3 className="mb-4 font-bold">Layanan</h3>
+          <ul className="space-y-3 text-sm font-medium text-neutral-500">
             {FOOTER_SERVICES.map((s) => (
               <li key={s}>
                 <a
                   href={waLink(`Halo Kak, saya mau tanya ${s}.`)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-slate-600 transition-colors hover:text-orange-700"
+                  className="transition-colors hover:text-amber-700"
                 >
                   {s}
                 </a>
               </li>
             ))}
           </ul>
-        </div>
+        </motion.div>
 
-        <div className="md:col-span-3">
-          <h3 className="text-sm font-semibold text-slate-900">Kontak</h3>
-          <ul className="mt-4 space-y-2.5 text-sm text-slate-600">
+        <motion.div variants={fadeUp}>
+          <h3 className="mb-4 font-bold">Kontak</h3>
+          <ul className="space-y-3 text-sm font-medium text-neutral-500">
             <li>
-              <a href={`tel:${BUSINESS.phoneTel}`} className="transition-colors hover:text-orange-700">
+              <a href={`tel:${BUSINESS.phoneTel}`} className="transition-colors hover:text-amber-700">
                 {BUSINESS.phoneDisplay}
               </a>
             </li>
             <li>
-              <a href={mapsHref} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-orange-700">
+              <a href={mapsHref} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-amber-700">
                 Jl. Waru No.15C, Rawamangun
               </a>
             </li>
           </ul>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
-      <div className="border-t border-slate-200">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-6 py-6 text-xs text-slate-500 sm:flex-row">
+      <div className="border-t border-neutral-100 py-6">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 text-xs font-medium text-neutral-500">
           <p>© {new Date().getFullYear()} Subur Maju Printing.</p>
           <p>
-            Dibuat oleh <span className="font-semibold text-slate-900">LURE</span>
+            Crafted by <span className="font-bold text-neutral-900">LURE</span>
           </p>
         </div>
       </div>
@@ -1000,7 +1023,7 @@ function Footer() {
 }
 
 /* ============================================================
-   SMART ORDER: tombol melayang + modal yang aksesibel
+   SMART ORDER: tombol melayang + modal aksesibel
    ============================================================ */
 function OrderButton({ onOpen, hidden }) {
   return (
@@ -1010,16 +1033,15 @@ function OrderButton({ onOpen, hidden }) {
           type="button"
           onClick={onOpen}
           aria-label="Buka form pesan cepat"
-          initial={{ opacity: 0, y: 24, scale: 0.9 }}
+          initial={{ opacity: 0, y: 24, scale: 0.8 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: 24, scale: 0.9 }}
-          transition={{ duration: 0.5, ease: EASE, delay: 0.8 }}
-          whileHover={{ y: -3 }}
-          whileTap={{ scale: 0.96 }}
-          className="fixed bottom-6 right-6 z-40 flex items-center gap-2.5 rounded-full bg-slate-950 py-3.5 pl-5 pr-6 text-sm font-semibold text-white shadow-2xl shadow-slate-900/30 ring-1 ring-white/10 transition-colors hover:bg-orange-700 md:bottom-8 md:right-8"
+          exit={{ opacity: 0, y: 24, scale: 0.8 }}
+          transition={{ duration: 0.5, ease: EASE, delay: 1 }}
+          whileHover={{ scale: 1.08 }}
+          whileTap={{ scale: 0.94 }}
+          className="fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full border-2 border-white/20 bg-neutral-900 text-2xl text-white shadow-xl shadow-neutral-900/25 transition-colors hover:bg-amber-600 md:bottom-8 md:right-8"
         >
-          <ChatIcon className="h-5 w-5" />
-          Pesan cepat
+          <span aria-hidden="true">💬</span>
         </motion.button>
       )}
     </AnimatePresence>
@@ -1031,11 +1053,11 @@ function OrderModal({ open, onClose }) {
     if (!open) return;
     const onKey = (e) => e.key === "Escape" && onClose();
     document.addEventListener("keydown", onKey);
-    const prevOverflow = document.body.style.overflow;
+    const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     return () => {
       document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = prevOverflow;
+      document.body.style.overflow = prev;
     };
   }, [open, onClose]);
 
@@ -1046,16 +1068,16 @@ function OrderModal({ open, onClose }) {
           role="dialog"
           aria-modal="true"
           aria-label="Form pesan cepat"
-          className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6"
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
         >
-          <div className="absolute inset-0 bg-slate-950/70 backdrop-blur-md" onClick={onClose} aria-hidden="true" />
+          <div className="absolute inset-0 bg-neutral-900/50 backdrop-blur-sm" onClick={onClose} aria-hidden="true" />
           <motion.div
             className="relative max-h-full w-full max-w-2xl overflow-y-auto"
-            initial={{ opacity: 0, y: 40, scale: 0.96 }}
+            initial={{ opacity: 0, y: 40, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 24, scale: 0.97 }}
             transition={{ duration: 0.45, ease: EASE }}
@@ -1064,7 +1086,7 @@ function OrderModal({ open, onClose }) {
               type="button"
               onClick={onClose}
               aria-label="Tutup form"
-              className="absolute right-3 top-3 z-10 grid h-10 w-10 place-items-center rounded-full bg-slate-900/60 text-white backdrop-blur transition-colors hover:bg-slate-900"
+              className="absolute right-3 top-3 z-10 rounded-full bg-neutral-900/60 p-2 text-white backdrop-blur transition-colors hover:bg-neutral-900 hover:text-amber-400"
             >
               <CloseIcon className="h-5 w-5" />
             </button>
@@ -1090,19 +1112,20 @@ export default function Home() {
       <GlobalStyles />
 
       <div
-        className={`${display.variable} ${sans.variable} ${SANS} overflow-x-clip bg-white text-slate-900 antialiased selection:bg-orange-200 selection:text-slate-950`}
+        className={`${jakarta.variable} overflow-x-clip bg-[#FBFBFB] font-[family-name:var(--font-sans)] text-neutral-900 antialiased selection:bg-neutral-900 selection:text-white`}
       >
+        <ScrollProgress />
         <Navbar />
 
         <main>
           <Hero />
           <Services />
           <Invitation />
-          <div id="katalog" className="scroll-mt-24 bg-slate-50">
-            <Catalog />
-          </div>
           <WhyUs />
           <Clients />
+          <div id="katalog" className="scroll-mt-24 bg-[#FAFAFA]">
+            <Catalog />
+          </div>
           <Location />
           <FinalCta />
         </main>
