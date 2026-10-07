@@ -327,7 +327,7 @@ export default function Home() {
                 </p>
                 <div className="flex flex-wrap gap-4">
                   {/* Link demo sudah disesuaikan ke Lure-Annabey */}
-                  <Link href="/undangan/Lure-Annabey" className="bg-white/10 hover:bg-white/20 border border-white/20 text-white px-8 py-4 rounded-full font-semibold transition-all">
+                  <Link href="/undangan-digital" className="bg-white/10 hover:bg-white/20 border border-white/20 text-white px-8 py-4 rounded-full font-semibold transition-all">
                     Lihat Demo Desain
                   </Link>
                   <a href={waLink("Halo Kak, saya mau konsultasi pembuatan Undangan Pernikahan Digital Website.")} target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-500 hover:to-amber-500 text-white px-8 py-4 rounded-full font-bold transition-all shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40">
@@ -338,7 +338,7 @@ export default function Home() {
               
               {/* Mockup Visual Hape - Tema Floral Gold (Sesuai Referensi) */}
               <div className="md:w-1/3 w-full relative z-10 flex justify-center mt-12 md:mt-0">
-                <Link href="/undangan/Lure-Annabey" className="block relative group">
+                <Link href="/undangan-digital" className="block relative group">
                   
                   {/* Efek Cahaya Background Luar */}
                   <div className="absolute -inset-2 bg-gradient-to-r from-amber-200/50 to-orange-100/50 rounded-[3.5rem] blur-2xl opacity-50 group-hover:opacity-100 transition duration-700"></div>
