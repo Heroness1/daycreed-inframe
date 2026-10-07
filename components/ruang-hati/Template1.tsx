@@ -21,7 +21,7 @@ import React, {
    Forest Green × Maroon × Antique Gold × Ivory
 
    AUDIO:
-   /public/music/nusantara-wedding.mp3
+   /publichttps://raw.githubusercontent.com/Heroness1/Ruang-Hati/main/publichttps://raw.githubusercontent.com/Heroness1/Ruang-Hati/main/public/music/casablanca.webm
    ========================================================= */
 
 const WEDDING_DATE = "2027-06-14T09:00:00";
@@ -32,7 +32,7 @@ const HERO_IMAGE =
 const SECOND_IMAGE =
   "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=90&w=1400";
 
-const WEDDING_MUSIC = "/music/casablanca.webm";
+const WEDDING_MUSIC = "https://raw.githubusercontent.com/Heroness1/Ruang-Hati/main/public/music/casablanca.webm";
 const GALLERY = [
   {
     src: HERO_IMAGE,
