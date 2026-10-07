@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lato:wght@300;400;700&display=swap');
+
+.ruang-hati-root {
+  --rh-cream: #F9F6F0;
+  --rh-gold: #B8860B;
+  --rh-gold-light: #D4AF37;
+  --rh-bronze: #8B6914;
+  --rh-dark: #1C1209;
+  --rh-warm: #2C1A0E;
+  font-family: 'Lato', sans-serif;
+  background: var(--rh-cream);
+  color: var(--rh-warm);
+}
+.ruang-hati-root * { box-sizing: border-box; }
+.ruang-hati-root .font-serif { font-family: 'Playfair Display', serif; }
+.ruang-hati-root ::-webkit-scrollbar { width: 0; }
+.ruang-hati-root .arch-frame { border-radius: 50% 50% 0 0 / 40% 40% 0 0; overflow: hidden; }
+.ruang-hati-root .countdown-digit { font-family: 'Playfair Display', serif; font-variant-numeric: tabular-nums; }
+.ruang-hati-root .ornament::before,
+.ruang-hati-root .ornament::after { content: ''; display: inline-block; width: 40px; height: 1px; background: var(--rh-gold-light); vertical-align: middle; margin: 0 12px; }
+.ruang-hati-root .masonry-grid { columns: 2; column-gap: 8px; }
+.ruang-hati-root .masonry-item { break-inside: avoid; margin-bottom: 8px; }
