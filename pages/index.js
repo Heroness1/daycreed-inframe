@@ -5,6 +5,7 @@ import { dataLayanan, dataKenapaKami, dataKlien } from "../data/printData";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import SmartOrder from "../components/SmartOrder";
+import RuangHatiPromo from "../components/RuangHatiPromo";
 
 // nomor whatsapp
 const WA_NUMBER = "6282246926544";
@@ -300,6 +301,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <RuangHatiPromo />
 
         {/* ================= KATALOG ================= */}
         <div className="bg-slate-950">
