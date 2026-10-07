@@ -304,11 +304,11 @@ function Hero() {
     <section
       ref={ref}
       aria-labelledby="hero-title"
-      className="relative flex min-h-[90svh] items-center overflow-hidden px-6 pb-20 pt-32 md:pt-40"
+      className="relative flex min-h-[92svh] items-center overflow-hidden bg-[#0b0a08] px-6 pb-20 pt-32 text-white md:pt-40"
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute right-0 top-0 h-[800px] w-[800px] -translate-y-1/2 translate-x-1/3 rounded-full bg-gradient-to-bl from-amber-100/60 to-transparent blur-3xl"
+        className="pointer-events-none absolute right-0 top-0 h-[800px] w-[800px] -translate-y-1/2 translate-x-1/3 rounded-full bg-gradient-to-bl from-amber-500/20 via-orange-500/10 to-transparent blur-3xl"
       />
 
       <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-14 lg:grid-cols-12">
@@ -321,7 +321,7 @@ function Hero() {
         >
           <motion.span
             variants={fadeUp}
-            className="mb-8 inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2 text-xs font-bold uppercase tracking-widest text-neutral-500 shadow-sm"
+            className="mb-8 inline-flex items-center gap-2 rounded-full border border-amber-500/20 bg-white/[0.06] px-4 py-2 text-xs font-bold uppercase tracking-widest text-amber-200/80 shadow-sm backdrop-blur-md"
           >
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-60" />
@@ -332,7 +332,7 @@ function Hero() {
 
           <h1
             id="hero-title"
-            className="mb-6 text-[2.75rem] font-extrabold leading-[1.05] tracking-tighter text-neutral-900 sm:text-6xl md:text-7xl"
+            className="mb-6 text-[2.75rem] font-extrabold leading-[1.05] tracking-tighter text-white sm:text-6xl md:text-7xl"
           >
             <motion.span variants={blurUp} className="block">
               Digital Printing
@@ -348,9 +348,9 @@ function Hero() {
             </motion.span>
           </h1>
 
-          <motion.p variants={fadeUp} className="mb-10 max-w-lg text-lg font-medium leading-relaxed text-neutral-600">
+          <motion.p variants={fadeUp} className="mb-10 max-w-lg text-lg font-medium leading-relaxed text-neutral-400">
             Cetak cepat, kualitas premium. Dari hardcover skripsi, banner, hingga{" "}
-            <strong className="font-bold text-neutral-900">undangan pernikahan digital</strong> bergaya eksklusif.
+            <strong className="font-bold text-amber-200">undangan pernikahan digital</strong> bergaya eksklusif.
           </motion.p>
 
           <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-4">
@@ -367,7 +367,7 @@ function Hero() {
             </a>
             <a
               href="#layanan"
-              className="rounded-full border border-neutral-200 bg-white px-8 py-4 text-[15px] font-semibold text-neutral-900 transition-all hover:-translate-y-0.5 hover:bg-neutral-50"
+              className="rounded-full border border-white/10 bg-white/[0.06] px-8 py-4 text-[15px] font-semibold text-white backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-amber-500/30 hover:bg-amber-500/10"
             >
               Lihat Layanan
             </a>
@@ -384,7 +384,7 @@ function Hero() {
           <motion.div variants={scaleUp} className="pt-12">
             <motion.div
               style={{ y: yA }}
-              className="relative h-64 overflow-hidden rounded-[2rem] shadow-2xl shadow-neutral-300/50 md:h-80"
+              className="relative h-64 overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl shadow-black/40 md:h-80"
             >
               <Image
                 src={HERO_IMAGES[0]}
@@ -413,10 +413,10 @@ function Hero() {
             <motion.div
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="flex flex-col items-center justify-center rounded-[2rem] border border-neutral-100 bg-white p-6 text-center shadow-xl shadow-neutral-200/60"
+              className="flex flex-col items-center justify-center rounded-[2rem] border border-neutral-100 border border-white/10 bg-white/[0.07] p-6 text-center shadow-xl shadow-black/30 backdrop-blur-xl"
             >
-              <p className="mb-1 text-4xl font-extrabold text-neutral-900">24/7</p>
-              <p className="text-sm font-semibold text-neutral-500">Siap Melayani</p>
+              <p className="mb-1 text-4xl font-extrabold text-white">24/7</p>
+              <p className="text-sm font-semibold text-neutral-400">Siap Melayani</p>
             </motion.div>
           </motion.div>
         </motion.div>
@@ -445,7 +445,7 @@ function ServiceCard({ item, featured }) {
         x.set(e.clientX - r.left);
         y.set(e.clientY - r.top);
       }}
-      className={`group relative flex flex-col overflow-hidden rounded-[2rem] border border-neutral-200 bg-[#FBFBFB] transition-[border-color,box-shadow] duration-500 hover:border-amber-300 hover:shadow-2xl hover:shadow-amber-900/10 ${
+      className={`group relative flex flex-col overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.035] transition-[border-color,box-shadow] duration-500 hover:border-amber-400/30 hover:bg-white/[0.055] hover:shadow-2xl hover:shadow-amber-950/30 ${
         featured ? "md:col-span-2 md:row-span-2" : ""
       }`}
     >
@@ -463,8 +463,8 @@ function ServiceCard({ item, featured }) {
           className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
       </div>
-      <div className="relative z-20 flex flex-grow flex-col bg-white p-8">
-        <h3 className="mb-2 text-2xl font-bold tracking-tight text-neutral-900">{item.judul}</h3>
+      <div className="relative z-20 flex flex-grow flex-col border-t border-white/10 bg-[#171512] p-8">
+        <h3 className="mb-2 text-2xl font-bold tracking-tight text-white">{item.judul}</h3>
         <p className="mb-6 text-sm font-medium leading-relaxed text-neutral-500">{item.deskripsi}</p>
         <div className="mt-auto flex items-center text-sm font-bold uppercase tracking-widest text-amber-700">
           Pesan
@@ -480,7 +480,7 @@ function Services() {
   const useFeatured = dataLayanan.length % 3 === 0;
 
   return (
-    <section id="layanan" aria-labelledby="layanan-title" className="scroll-mt-24 bg-white px-6 py-24">
+    <section id="layanan" aria-labelledby="layanan-title" className="scroll-mt-24 bg-[#11100e] px-6 py-24 text-white">
       <motion.div
         className="mx-auto max-w-7xl"
         initial="hidden"
@@ -489,10 +489,10 @@ function Services() {
         variants={stagger(0.12)}
       >
         <motion.div variants={fadeUp} className="mb-16">
-          <h2 id="layanan-title" className="mb-4 text-4xl font-extrabold tracking-tight text-neutral-900 md:text-5xl">
+          <h2 id="layanan-title" className="mb-4 text-4xl font-extrabold tracking-tight text-white md:text-5xl">
             Layanan Kami.
           </h2>
-          <p className="max-w-xl text-lg font-medium text-neutral-500">
+          <p className="max-w-xl text-lg font-medium text-neutral-400">
             Spesialisasi percetakan dengan mesin presisi tinggi untuk hasil yang tajam dan akurat.
           </p>
         </motion.div>
@@ -725,7 +725,7 @@ function Invitation() {
    ============================================================ */
 function WhyUs() {
   return (
-    <section id="kenapa-kami" aria-labelledby="kenapa-title" className="scroll-mt-24 bg-[#FAFAFA] px-6 py-24">
+    <section id="kenapa-kami" aria-labelledby="kenapa-title" className="scroll-mt-24 bg-[#0b0a08] px-6 py-24 text-white">
       <motion.div
         className="mx-auto max-w-7xl"
         initial="hidden"
@@ -748,12 +748,12 @@ function WhyUs() {
               key={item.judul}
               variants={scaleUp}
               whileHover={{ y: -6, transition: { duration: 0.35, ease: EASE } }}
-              className="group rounded-3xl border border-neutral-200 bg-white p-10 transition-[border-color,box-shadow] duration-300 hover:border-amber-300 hover:shadow-xl hover:shadow-amber-900/5"
+              className="group rounded-3xl border border-white/10 bg-white/[0.045] p-10 backdrop-blur-xl transition-[border-color,box-shadow] duration-300 hover:border-amber-400/30 hover:bg-white/[0.065] hover:shadow-xl hover:shadow-amber-950/30"
             >
-              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-neutral-100 text-neutral-900 transition-all duration-300 group-hover:scale-110 group-hover:bg-amber-100 group-hover:text-amber-700">
+              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-500/10 text-amber-300 transition-all duration-300 group-hover:scale-110 group-hover:bg-amber-100 group-hover:text-amber-700">
                 <CheckIcon className="h-6 w-6" />
               </div>
-              <h3 className="mb-3 text-xl font-bold text-neutral-900">{item.judul}</h3>
+              <h3 className="mb-3 text-xl font-bold text-white">{item.judul}</h3>
               <p className="text-sm font-medium leading-relaxed text-neutral-500">{item.deskripsi}</p>
             </motion.article>
           ))}
@@ -769,9 +769,9 @@ function WhyUs() {
 function Clients() {
   const items = [...dataKlien, ...dataKlien];
   return (
-    <section id="klien" aria-labelledby="klien-title" className="overflow-hidden border-y border-neutral-100 bg-white py-16">
+    <section id="klien" aria-labelledby="klien-title" className="overflow-hidden border-y border-white/10 bg-[#11100e] py-16 text-white">
       <div className="mx-auto mb-8 max-w-7xl px-6 text-center">
-        <h2 id="klien-title" className="text-xs font-bold uppercase tracking-widest text-neutral-500">
+        <h2 id="klien-title" className="text-xs font-bold uppercase tracking-widest text-amber-200/60">
           Pernah melayani kebutuhan cetak untuk berbagai instansi
         </h2>
       </div>
@@ -792,7 +792,7 @@ function Clients() {
                   className="max-h-14 max-w-[130px] object-contain opacity-50 grayscale transition-all duration-500 group-hover:opacity-100 group-hover:grayscale-0"
                 />
               </div>
-              <span className="text-center text-xs font-medium text-neutral-500">{k.nama}</span>
+              <span className="text-center text-xs font-medium text-neutral-400">{k.nama}</span>
             </div>
           ))}
         </div>
@@ -806,7 +806,7 @@ function Clients() {
    ============================================================ */
 function Location() {
   return (
-    <section id="lokasi" aria-labelledby="lokasi-title" className="scroll-mt-24 bg-white px-6 py-24">
+    <section id="lokasi" aria-labelledby="lokasi-title" className="scroll-mt-24 bg-[#11100e] px-6 py-24 text-white">
       <motion.div
         className="mx-auto max-w-7xl"
         initial="hidden"
@@ -817,7 +817,7 @@ function Location() {
         <div className="grid items-stretch gap-12 lg:grid-cols-2">
           <motion.div
             variants={scaleUp}
-            className="flex flex-col justify-between rounded-[2.5rem] border border-neutral-200 bg-[#FBFBFB] p-10"
+            className="flex flex-col justify-between rounded-[2.5rem] border border-white/10 bg-white/[0.045] p-10 backdrop-blur-xl"
           >
             <div>
               <div className="mb-8 flex flex-wrap items-center justify-between gap-3">
@@ -832,12 +832,12 @@ function Location() {
 
               <ul className="space-y-8">
                 <li className="flex gap-5">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-neutral-200 bg-white text-amber-700 shadow-sm">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.06] text-amber-300 shadow-sm">
                     <PinIcon />
                   </div>
                   <div>
-                    <h3 className="mb-1 text-sm font-bold text-neutral-900">Workshop Rawamangun</h3>
-                    <address className="text-sm font-medium not-italic leading-relaxed text-neutral-500">
+                    <h3 className="mb-1 text-sm font-bold text-white">Workshop Rawamangun</h3>
+                    <address className="text-sm font-medium not-italic leading-relaxed text-neutral-400">
                       Jl. Waru No.15C, RT.2/RW.9,
                       <br />
                       Rawamangun, Kec. Pulo Gadung,
@@ -854,7 +854,7 @@ function Location() {
                     <h3 className="mb-1 text-sm font-bold text-neutral-900">Hubungi Cepat</h3>
                     <a
                       href={`tel:${BUSINESS.phoneTel}`}
-                      className="text-sm font-medium text-neutral-500 underline decoration-neutral-300 underline-offset-4 transition-colors hover:text-neutral-900 hover:decoration-amber-600"
+                      className="text-sm font-medium text-neutral-400 underline decoration-neutral-300 underline-offset-4 transition-colors hover:text-neutral-900 hover:decoration-amber-600"
                     >
                       {BUSINESS.phoneDisplay} (24 Jam)
                     </a>
@@ -959,7 +959,7 @@ const FOOTER_SERVICES = [
 
 function Footer() {
   return (
-    <footer className="border-t border-neutral-200 bg-white text-neutral-900">
+    <footer className="border-t border-white/10 bg-[#0b0a08] text-white">
       <motion.div
         className="mx-auto grid max-w-7xl gap-10 px-6 py-20 md:grid-cols-4"
         initial="hidden"
@@ -969,7 +969,7 @@ function Footer() {
       >
         <motion.div variants={fadeUp} className="md:col-span-2">
           <h3 className="mb-2 text-2xl font-extrabold tracking-tight">Subur Maju.</h3>
-          <p className="max-w-sm text-sm font-medium text-neutral-500">
+          <p className="max-w-sm text-sm font-medium text-neutral-400">
             Percetakan digital 24 jam terpercaya di Jakarta Timur. Melayani cetak buku, banner, hingga undangan
             website eksklusif.
           </p>
@@ -1010,7 +1010,7 @@ function Footer() {
         </motion.div>
       </motion.div>
 
-      <div className="border-t border-neutral-100 py-6">
+      <div className="border-t border-white/10 py-6">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 text-xs font-medium text-neutral-500">
           <p>© {new Date().getFullYear()} Subur Maju Printing.</p>
           <p>
@@ -1039,7 +1039,7 @@ function OrderButton({ onOpen, hidden }) {
           transition={{ duration: 0.5, ease: EASE, delay: 1 }}
           whileHover={{ scale: 1.08 }}
           whileTap={{ scale: 0.94 }}
-          className="fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full border-2 border-white/20 bg-neutral-900 text-2xl text-white shadow-xl shadow-neutral-900/25 transition-colors hover:bg-amber-600 md:bottom-8 md:right-8"
+          className="fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full border border-amber-300/30 bg-gradient-to-br from-amber-500 to-orange-600 text-2xl text-white shadow-[0_12px_40px_-10px_rgba(245,158,11,0.55)] transition-colors hover:bg-amber-600 md:bottom-8 md:right-8"
         >
           <span aria-hidden="true">💬</span>
         </motion.button>
@@ -1112,7 +1112,7 @@ export default function Home() {
       <GlobalStyles />
 
       <div
-        className={`${jakarta.variable} overflow-x-clip bg-[#FBFBFB] font-[family-name:var(--font-sans)] text-neutral-900 antialiased selection:bg-neutral-900 selection:text-white`}
+        className={`${jakarta.variable} overflow-x-clip bg-[#0b0a08] font-[family-name:var(--font-sans)] text-neutral-900 antialiased selection:bg-amber-500/30 selection:text-amber-950`}
       >
         <ScrollProgress />
         <Navbar />
@@ -1123,7 +1123,7 @@ export default function Home() {
           <Invitation />
           <WhyUs />
           <Clients />
-          <div id="katalog" className="scroll-mt-24 bg-[#FAFAFA]">
+          <div id="katalog" className="scroll-mt-24 bg-[#0b0a08] px-0 py-8">
             <Catalog />
           </div>
           <Location />
