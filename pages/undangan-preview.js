@@ -7,7 +7,7 @@ const templates = {
   t2: dynamic(() => import("../../components/ruang-hati/Template2"), { ssr: false }),
   t3: dynamic(() => import("../../components/ruang-hati/Template3"), { ssr: false }),
   t4: dynamic(() => import("../../components/ruang-hati/Template4"), { ssr: false }),
-  royal-jawa: dynamic(() => import("../../components/ruang-hati/Template4_RoyalJawa"), { ssr: false }),
+  "royal-jawa": dynamic(() => import("../../components/ruang-hati/Template4_RoyalJawa"), { ssr: false }),
   t5: dynamic(() => import("../../components/ruang-hati/Template5"), { ssr: false }),
 };
 
