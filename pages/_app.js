@@ -1,6 +1,7 @@
 import { Sora } from "next/font/google";
 import { ThemeProvider } from "../context/ThemeContext";
 import "../styles/globals.css";
+import "../styles/ruang-hati.css";
 import Analytics from "../components/Analytics";
 
 const sora = Sora({
