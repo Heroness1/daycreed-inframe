@@ -267,7 +267,7 @@ export default function TemplateJapaneseWedding() {
       {/* Audio Element: Loop otomatis agar lagu diputar berulang */}
       <audio 
         ref={audioRef} 
-        src="/music/jepanghyperpop.webm" 
+        src="https://raw.githubusercontent.com/Heroness1/Ruang-Hati/main/public/music/jepanghyperpop.webm" 
         loop 
       />
 
