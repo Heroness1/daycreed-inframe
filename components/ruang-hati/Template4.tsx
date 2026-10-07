@@ -6,7 +6,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
    JAVANESE MUSLIM WEDDING — ROYAL EDITORIAL 5.0
    ---------------------------------------------------------
    Ganti DATA DI BAGIAN ATAS untuk setiap pasangan.
-   Music: /public/music/nikahanjawa.webm
+   Music: /publichttps://raw.githubusercontent.com/Heroness1/Ruang-Hati/main/public/music/nikahanjawa.webm
 
    Flow:
    Sugeng Rawuh → Mlebet → music intro → Hero → Story →
@@ -18,7 +18,7 @@ const GROOM = "Ahmad Fadillah";
 const BRIDE = "Aisyah Rahmawati";
 const GROOM_SHORT = "Ahmad";
 const BRIDE_SHORT = "Aisyah";
-const WEDDING_MUSIC = "/music/nikahanjawa.webm";
+const WEDDING_MUSIC = "https://raw.githubusercontent.com/Heroness1/Ruang-Hati/main/public/music/nikahanjawa.webm";
 const MAP_URL = "https://maps.google.com/?q=Jakarta,Indonesia";
 
 const HERO_IMAGE =
