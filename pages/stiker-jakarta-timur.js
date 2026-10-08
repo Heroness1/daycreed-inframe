@@ -42,7 +42,7 @@ export default function Page() {
     <main style={styles.page}>
       <section style={styles.hero}>
         <span style={styles.eyebrow}>SUBUR MAJU PRINTING · JAKARTA TIMUR</span>
-        <h1>Stiker Jakarta Timur</h1>
+        <h1 style={styles.heroTitle}>Stiker Jakarta Timur</h1>
         <p>Pesan stiker dan label di Jakarta Timur melalui Subur Maju Printing. Konsultasikan ukuran, bahan, finishing, dan kebutuhan cetak melalui WhatsApp.</p>
         <div style={styles.actions}>
           <a href={waLink("Halo Subur Maju, saya ingin pesan stiker & label.")} style={styles.primary}>Pesan via WhatsApp</a>
