@@ -95,8 +95,8 @@ export default function HardcoverSkripsiJakartaTimur() {
       <main style={styles.page}>
         <section style={styles.hero}>
           <span style={styles.eyebrow}>SUBUR MAJU PRINTING · JAKARTA TIMUR</span>
-          <h1>Hardcover Skripsi Jakarta Timur</h1>
-          <p>
+          <h1 style={styles.heroTitle}>Hardcover Skripsi Jakarta Timur</h1>
+          <p style={styles.heroText}>
             Butuh hardcover skripsi untuk sidang atau pengumpulan tugas akhir?
             Konsultasikan kebutuhan cetak dan finishing Anda dengan Subur Maju
             Printing.
@@ -176,12 +176,12 @@ const styles = {
     letterSpacing: "0.14em",
     opacity: 0.65,
   },
-  hero h1: {
+  heroTitle: {
     fontSize: "clamp(42px, 8vw, 78px)",
     lineHeight: 1,
     margin: "18px 0",
   },
-  hero p: {
+  heroText: {
     maxWidth: 680,
     fontSize: 18,
     lineHeight: 1.7,
