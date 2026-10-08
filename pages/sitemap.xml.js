@@ -1,17 +1,21 @@
 export async function getServerSideProps({ res }) {
   const baseUrl = "https://www.suburmajuprinting.com";
 
-  const urls = ["/", "/undangan-digital", "/pesan"];
+  const urls = [
+    "/",
+    "/undangan-digital",
+    "/pesan",
+    "/hardcover-skripsi-jakarta-timur",
+    "/banner-jakarta-timur",
+    "/stiker-jakarta-timur",
+    "/brosur-jakarta-timur",
+  ];
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls
-  .map(
-    (path) => `  <url>
+${urls.map((path) => `  <url>
     <loc>${baseUrl}${path}</loc>
-  </url>`
-  )
-  .join("\n")}
+  </url>`).join("\n")}
 </urlset>`;
 
   res.setHeader("Content-Type", "text/xml; charset=utf-8");
