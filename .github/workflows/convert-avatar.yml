@@ -1,4 +1,4 @@
-name: Convert Avatar to PNG
+name: Build Modern Favicons
 
 on:
   push:
@@ -11,23 +11,49 @@ permissions:
   contents: write
 
 jobs:
-  convert:
+  favicons:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Convert avatar to real PNG
+
+      - name: Ensure avatar is a real PNG
+        run: |
+          convert public/avatar.png PNG32:public/avatar.tmp.png
+          mv public/avatar.tmp.png public/avatar.png
+
+      - name: Generate modern favicon set
+        run: |
+          convert public/avatar.png -resize 16x16 public/favicon-16x16.png
+          convert public/avatar.png -resize 32x32 public/favicon-32x32.png
+          convert public/avatar.png -resize 48x48 public/favicon-48x48.png
+          convert public/avatar.png -resize 180x180 public/apple-touch-icon.png
+          convert public/avatar.png -resize 192x192 public/android-chrome-192x192.png
+          convert public/avatar.png -resize 512x512 public/android-chrome-512x512.png
+          convert public/avatar.png \
+            \( -clone 0 -resize 16x16 \) \
+            \( -clone 0 -resize 32x32 \) \
+            \( -clone 0 -resize 48x48 \) \
+            -delete 0 public/favicon.ico
+
+      - name: Verify generated files
         run: |
           file public/avatar.png
-          convert public/avatar.png PNG32:public/avatar.png
-          file public/avatar.png
-      - name: Commit converted PNG
+          file public/favicon.ico
+          file public/favicon-16x16.png
+          file public/favicon-32x32.png
+          file public/favicon-48x48.png
+          file public/apple-touch-icon.png
+          file public/android-chrome-192x192.png
+          file public/android-chrome-512x512.png
+
+      - name: Commit generated favicon assets
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/avatar.png
+          git add public/avatar.png public/favicon.ico public/favicon-16x16.png public/favicon-32x32.png public/favicon-48x48.png public/apple-touch-icon.png public/android-chrome-192x192.png public/android-chrome-512x512.png
           if git diff --cached --quiet; then
-            echo "Avatar is already a real PNG"
+            echo "Favicons are already up to date"
           else
-            git commit -m "Convert avatar to real PNG [skip ci]"
+            git commit -m "Generate modern favicon set [skip ci]"
             git push
           fi
