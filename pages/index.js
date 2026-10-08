@@ -5,6 +5,7 @@ import { dataLayanan, dataKenapaKami, dataKlien } from "../data/printData";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import SmartOrder from "../components/SmartOrder";
+import RuangHatiPromo from "../components/RuangHatiPromo";
 
 // nomor whatsapp
 const WA_NUMBER = "6282246926544";
@@ -158,6 +159,9 @@ export default function Home() {
               <a href="#katalog" className="px-4 py-2 rounded-full hover:bg-orange-500/10 hover:text-orange-400 transition-all duration-300">
                 Katalog
               </a>
+              <a href="#ruang-hati" className="px-4 py-2 rounded-full text-[#d6ae72] hover:bg-[#d6ae72]/10 transition-all duration-300">
+                Ruang Hati
+              </a>
               <a href="#lokasi" className="px-4 py-2 rounded-full hover:bg-orange-500/10 hover:text-orange-400 transition-all duration-300">
                 Lokasi
               </a>
@@ -300,6 +304,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <RuangHatiPromo />
 
         {/* ================= KATALOG ================= */}
         <div className="bg-slate-950">
