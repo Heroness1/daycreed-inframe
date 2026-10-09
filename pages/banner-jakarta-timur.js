@@ -8,9 +8,9 @@ const waLink = (text) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(t
 export default function Page() {
   const url = `${SITE_URL}/banner-jakarta-timur`;
   const faqs = [
-    { q: "Bisa pesan banner & spanduk di Jakarta Timur?", a: "Pesan banner dan spanduk di Jakarta Timur melalui Subur Maju Printing. Konsultasikan ukuran, bahan, dan kebutuhan cetak melalui WhatsApp." },
-    { q: "Bisa konsultasi sebelum cetak?", a: "Bisa. Kirim ukuran, jumlah, bahan atau contoh desain melalui WhatsApp untuk dikonsultasikan." },
-    { q: "Bagaimana cara pesan?", a: "Hubungi WhatsApp Subur Maju Printing dan kirim detail kebutuhan cetak Anda." }
+    { q: "Bisa pesan banner & spanduk di Jakarta Timur?", a: "Butuh banner atau spanduk untuk promosi toko, acara, atau informasi usaha? Konsultasikan ukuran, bahan, jumlah, dan kebutuhan finishing dengan Subur Maju Printing di Jakarta Timur melalui WhatsApp." },
+    { q: "Informasi apa yang perlu disiapkan untuk memesan banner?", a: "Siapkan ukuran, jumlah, lokasi penggunaan, bahan yang diinginkan jika sudah tahu, dan file desain bila tersedia. Tim dapat membantu mengonfirmasi spesifikasi melalui WhatsApp." },
+    { q: "Apakah banner bisa digunakan untuk kebutuhan promosi?", a: "Banner atau spanduk dapat digunakan untuk promosi toko, acara, maupun informasi usaha. Pilih spesifikasi berdasarkan lokasi pemasangan dan kebutuhan Anda." }
   ];
   const schema = {
     "@context":"https://schema.org",
@@ -50,8 +50,8 @@ export default function Page() {
         </div>
       </section>
       <section style={styles.section}>
-        <h2>Banner & Spanduk di Jakarta Timur</h2>
-        <p>Pesan banner dan spanduk di Jakarta Timur melalui Subur Maju Printing. Konsultasikan ukuran, bahan, dan kebutuhan cetak melalui WhatsApp. Kirim spesifikasi pesanan agar tim dapat membantu menentukan kebutuhan produksi yang sesuai.</p>
+        <h2>Cetak Banner dan Spanduk sesuai Kebutuhan</h2>
+        <p>Pesan banner dan spanduk di Jakarta Timur melalui Subur Maju Printing. Konsultasikan ukuran, bahan, dan kebutuhan cetak melalui WhatsApp. Sebelum meminta penawaran, siapkan ukuran banner, perkiraan jumlah, lokasi penggunaan (indoor atau outdoor), dan file desain jika sudah tersedia. Tim dapat membantu mengonfirmasi spesifikasi berdasarkan kebutuhan pesanan Anda.</p>
         <div style={styles.grid}>
           <article style={styles.card}><h3>Konsultasi</h3><p>Diskusikan ukuran, bahan, jumlah, dan finishing sebelum produksi.</p></article>
           <article style={styles.card}><h3>Produksi</h3><p>Pesanan diproses berdasarkan spesifikasi yang telah disepakati.</p></article>
