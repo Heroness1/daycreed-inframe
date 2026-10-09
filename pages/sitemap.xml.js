@@ -15,6 +15,9 @@ export async function getServerSideProps({ res }) {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.map((path) => `  <url>
     <loc>${baseUrl}${path}</loc>
+    <lastmod>${new Date().toISOString()}</lastmod>
+    <changefreq>${path === "/" ? "daily" : "weekly"}</changefreq>
+    <priority>${path === "/" ? "1.0" : "0.8"}</priority>
   </url>`).join("\n")}
 </urlset>`;
 
