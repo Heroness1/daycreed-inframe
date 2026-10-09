@@ -8,9 +8,9 @@ const waLink = (text) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(t
 export default function Page() {
   const url = `${SITE_URL}/stiker-jakarta-timur`;
   const faqs = [
-    { q: "Bisa pesan stiker & label di Jakarta Timur?", a: "Pesan stiker dan label di Jakarta Timur melalui Subur Maju Printing. Konsultasikan ukuran, bahan, finishing, dan kebutuhan cetak melalui WhatsApp." },
-    { q: "Bisa konsultasi sebelum cetak?", a: "Bisa. Kirim ukuran, jumlah, bahan atau contoh desain melalui WhatsApp untuk dikonsultasikan." },
-    { q: "Bagaimana cara pesan?", a: "Hubungi WhatsApp Subur Maju Printing dan kirim detail kebutuhan cetak Anda." }
+    { q: "Bisa pesan stiker & label di Jakarta Timur?", a: "Sedang mencari stiker untuk label produk, kemasan, branding, atau kebutuhan promosi? Konsultasikan ukuran, bentuk, jumlah, dan bahan stiker yang diinginkan dengan Subur Maju Printing melalui WhatsApp." },
+    { q: "Apa detail yang perlu disiapkan sebelum mencetak stiker?", a: "Siapkan ukuran, bentuk, jumlah, permukaan penggunaan, dan file desain jika tersedia. Tim dapat membantu mengonfirmasi bahan dan finishing yang sesuai." },
+    { q: "Bisa untuk label produk atau kemasan?", a: "Stiker dapat digunakan untuk berbagai kebutuhan seperti label produk, kemasan, dan promosi. Spesifikasi akhir bergantung pada permukaan dan cara penggunaan." }
   ];
   const schema = {
     "@context":"https://schema.org",
@@ -50,8 +50,8 @@ export default function Page() {
         </div>
       </section>
       <section style={styles.section}>
-        <h2>Stiker & Label di Jakarta Timur</h2>
-        <p>Pesan stiker dan label di Jakarta Timur melalui Subur Maju Printing. Konsultasikan ukuran, bahan, finishing, dan kebutuhan cetak melalui WhatsApp. Kirim spesifikasi pesanan agar tim dapat membantu menentukan kebutuhan produksi yang sesuai.</p>
+        <h2>Stiker dan Label untuk Produk atau Promosi</h2>
+        <p>Pesan stiker dan label di Jakarta Timur melalui Subur Maju Printing. Konsultasikan ukuran, bahan, finishing, dan kebutuhan cetak melalui WhatsApp. Untuk mendapatkan penawaran yang sesuai, siapkan ukuran stiker, bentuk potongan, jumlah, permukaan tempat stiker akan ditempel, serta file desain jika tersedia. Ketersediaan bahan dan finishing perlu dikonfirmasi saat konsultasi.</p>
         <div style={styles.grid}>
           <article style={styles.card}><h3>Konsultasi</h3><p>Diskusikan ukuran, bahan, jumlah, dan finishing sebelum produksi.</p></article>
           <article style={styles.card}><h3>Produksi</h3><p>Pesanan diproses berdasarkan spesifikasi yang telah disepakati.</p></article>
