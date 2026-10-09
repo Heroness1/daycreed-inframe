@@ -18,7 +18,7 @@ export default function Page() {
     name:"Stiker Jakarta Timur",
     serviceType:"Stiker & Label",
     url,
-    description:"Pesan stiker dan label di Jakarta Timur melalui Subur Maju Printing. Konsultasikan ukuran, bahan, finishing, dan kebutuhan cetak melalui WhatsApp.",
+    description:"Pesan stiker dan label untuk produk, kemasan, branding, atau promosi di Jakarta Timur. Konsultasikan ukuran, bentuk, jumlah, bahan, dan finishing dengan Subur Maju Printing.",
     provider:{"@type":"LocalBusiness",name:"Subur Maju Printing",url:SITE_URL,telephone:"+6282246926544"},
     areaServed:{"@type":"City",name:"Jakarta Timur"}
   };
@@ -29,11 +29,11 @@ export default function Page() {
   return <>
     <Head>
       <title>Stiker Jakarta Timur | Subur Maju Printing</title>
-      <meta name="description" content="Pesan stiker dan label di Jakarta Timur melalui Subur Maju Printing. Konsultasikan ukuran, bahan, finishing, dan kebutuhan cetak melalui WhatsApp." />
+      <meta name="description" content="Pesan stiker dan label untuk produk, kemasan, branding, atau promosi di Jakarta Timur. Konsultasikan ukuran, bentuk, jumlah, bahan, dan finishing dengan Subur Maju Printing." />
       <meta name="robots" content="index, follow" />
       <link rel="canonical" href={url} />
       <meta property="og:title" content="Stiker Jakarta Timur | Subur Maju Printing" />
-      <meta property="og:description" content="Pesan stiker dan label di Jakarta Timur melalui Subur Maju Printing. Konsultasikan ukuran, bahan, finishing, dan kebutuhan cetak melalui WhatsApp." />
+      <meta property="og:description" content="Pesan stiker dan label untuk produk, kemasan, branding, atau promosi di Jakarta Timur. Konsultasikan ukuran, bentuk, jumlah, bahan, dan finishing dengan Subur Maju Printing." />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={url} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema)}} />
@@ -43,7 +43,7 @@ export default function Page() {
       <section style={styles.hero}>
         <span style={styles.eyebrow}>SUBUR MAJU PRINTING · JAKARTA TIMUR</span>
         <h1 style={styles.heroTitle}>Stiker Jakarta Timur</h1>
-        <p>Pesan stiker dan label di Jakarta Timur melalui Subur Maju Printing. Konsultasikan ukuran, bahan, finishing, dan kebutuhan cetak melalui WhatsApp.</p>
+        <p>Pesan stiker dan label untuk produk, kemasan, branding, atau promosi di Jakarta Timur. Konsultasikan ukuran, bentuk, jumlah, bahan, dan finishing dengan Subur Maju Printing.</p>
         <div style={styles.actions}>
           <a href={waLink("Halo Subur Maju, saya ingin pesan stiker & label.")} style={styles.primary}>Pesan via WhatsApp</a>
           <Link href="/" style={styles.secondary}>Lihat Semua Layanan</Link>
@@ -51,7 +51,7 @@ export default function Page() {
       </section>
       <section style={styles.section}>
         <h2>Stiker dan Label untuk Produk atau Promosi</h2>
-        <p>Pesan stiker dan label di Jakarta Timur melalui Subur Maju Printing. Konsultasikan ukuran, bahan, finishing, dan kebutuhan cetak melalui WhatsApp. Untuk mendapatkan penawaran yang sesuai, siapkan ukuran stiker, bentuk potongan, jumlah, permukaan tempat stiker akan ditempel, serta file desain jika tersedia. Ketersediaan bahan dan finishing perlu dikonfirmasi saat konsultasi.</p>
+        <p>Pesan stiker dan label untuk produk, kemasan, branding, atau promosi di Jakarta Timur. Konsultasikan ukuran, bentuk, jumlah, bahan, dan finishing dengan Subur Maju Printing. Untuk mendapatkan penawaran yang sesuai, siapkan ukuran stiker, bentuk potongan, jumlah, permukaan tempat stiker akan ditempel, serta file desain jika tersedia. Ketersediaan bahan dan finishing perlu dikonfirmasi saat konsultasi.</p>
         <div style={styles.grid}>
           <article style={styles.card}><h3>Konsultasi</h3><p>Diskusikan ukuran, bahan, jumlah, dan finishing sebelum produksi.</p></article>
           <article style={styles.card}><h3>Produksi</h3><p>Pesanan diproses berdasarkan spesifikasi yang telah disepakati.</p></article>
