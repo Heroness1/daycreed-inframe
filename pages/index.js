@@ -337,111 +337,126 @@ export default function Home() {
         <section
           id="undangan"
           aria-labelledby="undangan-promo"
-          className="relative isolate overflow-hidden border-y border-[#e7dfd1] bg-[#f7f3eb] px-5 py-16 text-[#25352d] sm:px-8 sm:py-20 lg:py-28"
+          className="relative isolate overflow-hidden border-y border-slate-800 bg-slate-950 px-5 py-16 text-slate-200 sm:px-8 sm:py-20 lg:py-24"
         >
-          <div aria-hidden="true" className="pointer-events-none absolute -right-28 -top-28 h-80 w-80 rounded-full bg-[#d9c39a]/35 blur-3xl" />
-          <div aria-hidden="true" className="pointer-events-none absolute -bottom-36 -left-24 h-96 w-96 rounded-full bg-[#b5c1ad]/30 blur-3xl" />
+          <div aria-hidden="true" className="pointer-events-none absolute -right-24 top-0 h-80 w-80 rounded-full bg-emerald-900/20 blur-[110px]" />
+          <div aria-hidden="true" className="pointer-events-none absolute -bottom-36 left-0 h-96 w-96 rounded-full bg-orange-500/5 blur-[110px]" />
 
-          <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1fr_0.9fr] lg:gap-16">
-            <div className="order-2 max-w-2xl lg:order-1">
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#c7b58e]/70 bg-white/70 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[#8b7043] shadow-sm">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#9b8050]" />
-                Ruang Hati · by Subur Maju
+          <div className="relative mx-auto max-w-7xl">
+            <div className="mb-10 flex flex-col gap-4 border-b border-slate-800 pb-7 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <span className="inline-flex items-center gap-2 rounded-full border border-emerald-800/70 bg-emerald-950/50 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.17em] text-emerald-300">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                  Layanan baru · Ruang Hati
+                </span>
+                <h2 id="undangan-promo" className="mt-4 max-w-2xl text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
+                  Undangan digital, <span className="font-serif font-normal italic text-emerald-300">plus kebutuhan cetaknya.</span>
+                </h2>
               </div>
-
-              <p className="mb-3 font-serif text-lg italic text-[#8a927f] sm:text-xl">
-                Sebuah awal, cerita seumur hidup.
-              </p>
-              <h2 id="undangan-promo" className="max-w-xl text-4xl font-semibold leading-[1.08] tracking-[-0.045em] text-[#26372e] sm:text-5xl lg:text-6xl">
-                Undangan yang terasa <span className="font-serif font-normal italic text-[#9a7a45]">seistimewa</span> hari kalian.
-              </h2>
-              <p className="mt-6 max-w-xl text-base leading-8 text-[#69736a] sm:text-lg">
-                Ceritakan hari bahagia lewat undangan website yang elegan, mudah dibagikan, dan nyaman dibuka dari ponsel. Dibuat personal untuk kisah kalian—dengan detail acara, peta lokasi, RSVP, dan hitung mundur.
-              </p>
-
-              <div className="mt-8 grid max-w-xl grid-cols-2 gap-x-5 gap-y-4 border-y border-[#dcd4c6] py-5 sm:grid-cols-3">
-                <div>
-                  <span className="mb-1 block text-[10px] font-bold uppercase tracking-[0.16em] text-[#9a8055]">01</span>
-                  <span className="text-sm font-semibold text-[#35463a]">Desain personal</span>
-                </div>
-                <div>
-                  <span className="mb-1 block text-[10px] font-bold uppercase tracking-[0.16em] text-[#9a8055]">02</span>
-                  <span className="text-sm font-semibold text-[#35463a]">RSVP & lokasi</span>
-                </div>
-                <div className="col-span-2 sm:col-span-1">
-                  <span className="mb-1 block text-[10px] font-bold uppercase tracking-[0.16em] text-[#9a8055]">03</span>
-                  <span className="text-sm font-semibold text-[#35463a]">Mudah dibagikan</span>
-                </div>
-              </div>
-
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Link
-                  href="/undangan-digital"
-                  className="inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-[#2d4034] px-7 py-4 text-sm font-semibold text-white shadow-lg shadow-[#314536]/15 transition duration-300 hover:-translate-y-0.5 hover:bg-[#3c5544] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#9a8055] focus-visible:ring-offset-2"
-                >
-                  Jelajahi koleksi template
-                  <span aria-hidden="true" className="text-lg">↗</span>
-                </Link>
-                <a
-                  href={waLink("Halo Subur Maju, saya ingin konsultasi undangan pernikahan digital dari Ruang Hati. Boleh lihat pilihan template dan paketnya?")}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex min-h-14 items-center justify-center rounded-full border border-[#c9c1b2] bg-white/55 px-7 py-4 text-sm font-semibold text-[#35463a] transition duration-300 hover:border-[#8d9a86] hover:bg-white"
-                >
-                  Konsultasi via WhatsApp
-                </a>
-              </div>
-              <p className="mt-4 text-xs leading-5 text-[#7d857b]">
-                Pilih desain, sesuaikan detail acara, lalu bagikan tautannya kepada keluarga dan teman.
+              <p className="max-w-md text-sm leading-7 text-slate-400 sm:text-base">
+                Satu tempat untuk menyiapkan undangan online dan perlengkapan acara yang senada—praktis, personal, dan tetap sesuai budget.
               </p>
             </div>
 
-            <div className="order-1 relative mx-auto flex w-full max-w-[440px] items-center justify-center py-2 lg:order-2 lg:max-w-none">
-              <div aria-hidden="true" className="absolute inset-x-8 top-10 bottom-10 rounded-[3rem] bg-[#d9c9a9]/50 blur-3xl" />
-              <div aria-hidden="true" className="absolute right-0 top-10 hidden rounded-2xl border border-white/80 bg-white/75 px-4 py-3 shadow-lg backdrop-blur-md sm:block">
-                <span className="block text-[10px] uppercase tracking-[0.18em] text-[#9a8055]">Made for your story</span>
-                <span className="mt-1 block font-serif text-sm italic text-[#405343]">Thoughtfully yours</span>
-              </div>
-              <div aria-hidden="true" className="absolute bottom-12 left-0 hidden rounded-2xl border border-white/80 bg-white/80 px-4 py-3 shadow-lg backdrop-blur-md sm:block">
-                <span className="flex items-center gap-2 text-xs font-semibold text-[#405343]">
-                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#e8ecdf] text-[#687b62]">♡</span>
-                  RSVP & detail acara
-                </span>
-              </div>
+            <div className="grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
+              <div className="order-2 lg:order-1">
+                <p className="max-w-xl text-base leading-8 text-slate-300 sm:text-lg">
+                  Bagikan detail hari bahagia lewat website yang mudah dibuka dari ponsel. Kami bantu mulai dari pilihan desain sampai kebutuhan cetak pelengkap, tanpa harus menghubungi banyak vendor.
+                </p>
 
-              <Link href="/undangan-digital" aria-label="Lihat koleksi undangan digital Ruang Hati" className="group relative block w-[min(78vw,300px)] rounded-[2.6rem] border-[7px] border-[#29332d] bg-[#29332d] p-[5px] shadow-[0_35px_90px_-28px_rgba(40,49,39,0.5)] transition duration-700 hover:-translate-y-2 sm:w-[300px]">
-                <div className="absolute left-1/2 top-3 z-20 h-5 w-[76px] -translate-x-1/2 rounded-full bg-[#202823]" />
-                <div className="relative min-h-[470px] overflow-hidden rounded-[2.1rem] bg-[#f8f3e8] sm:min-h-[500px]">
-                  <div className="relative h-[245px] overflow-hidden">
-                    <img
-                      src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=85"
-                      alt="Dekorasi pernikahan bernuansa romantis sebagai contoh desain undangan"
-                      loading="lazy"
-                      className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-[#f8f3e8]" />
-                    <div className="absolute left-0 right-0 top-10 text-center text-white">
-                      <span className="text-[8px] uppercase tracking-[0.32em]">The Wedding Of</span>
+                <div className="mt-7 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                  <div className="flex gap-3 rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-400/10 text-lg text-emerald-300">↗</span>
+                    <div>
+                      <h3 className="text-sm font-semibold text-white">Undangan website</h3>
+                      <p className="mt-1 text-xs leading-5 text-slate-400">Detail acara, countdown, peta lokasi, dan RSVP sesuai paket.</p>
                     </div>
                   </div>
-                  <div className="relative -mt-12 px-5 pb-7 text-center">
-                    <span className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full border border-[#c9b58d] bg-[#f8f3e8] font-serif text-lg italic text-[#9a8055]">R</span>
-                    <p className="font-serif text-[31px] italic leading-none tracking-[-0.04em] text-[#56694f]">Raisa <span className="text-[#b29a6d]">&</span> Arka</p>
-                    <p className="mt-3 text-[8px] font-medium uppercase tracking-[0.24em] text-[#8d8b79]">Minggu, 18 Oktober 2026</p>
-                    <div className="mx-auto my-5 flex max-w-[170px] items-center gap-3">
-                      <span className="h-px flex-1 bg-[#d5c7aa]" />
-                      <span className="text-[10px] text-[#9a8055]">✦</span>
-                      <span className="h-px flex-1 bg-[#d5c7aa]" />
+                  <div className="flex gap-3 rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-orange-400/10 text-lg text-orange-300">✳</span>
+                    <div>
+                      <h3 className="text-sm font-semibold text-white">Paket online + cetak</h3>
+                      <p className="mt-1 text-xs leading-5 text-slate-400">Kartu ucapan, label souvenir, atau kebutuhan cetak acara yang senada.</p>
                     </div>
-                    <p className="mx-auto max-w-[190px] font-serif text-sm italic leading-6 text-[#777d6c]">Dengan penuh cinta, kami mengundang Anda untuk menjadi bagian dari hari istimewa kami.</p>
-                    <div className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#405343] px-5 py-2.5 text-[9px] font-semibold uppercase tracking-[0.15em] text-white shadow-md">
-                      Buka undangan <span aria-hidden="true">↗</span>
+                  </div>
+                  <div className="flex gap-3 rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-300/10 text-lg text-amber-200">♡</span>
+                    <div>
+                      <h3 className="text-sm font-semibold text-white">Desain lebih personal</h3>
+                      <p className="mt-1 text-xs leading-5 text-slate-400">Pilih gaya yang cocok dengan cerita dan tema acara kalian.</p>
                     </div>
-                    <p className="mt-4 text-[8px] uppercase tracking-[0.2em] text-[#a49b87]">A little story, forever remembered</p>
+                  </div>
+                  <div className="flex gap-3 rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sky-400/10 text-lg text-sky-300">⌁</span>
+                    <div>
+                      <h3 className="text-sm font-semibold text-white">Mudah dibagikan</h3>
+                      <p className="mt-1 text-xs leading-5 text-slate-400">Cukup kirim tautan lewat WhatsApp atau media sosial.</p>
+                    </div>
                   </div>
                 </div>
-              </Link>
-              <span aria-hidden="true" className="absolute -bottom-1 right-4 font-serif text-5xl italic text-[#b9a47d]/70 sm:right-10">♡</span>
+
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                  <Link
+                    href="/undangan-digital"
+                    className="inline-flex min-h-12 items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-emerald-700 to-emerald-600 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-950/40 transition duration-300 hover:-translate-y-0.5 hover:from-emerald-600 hover:to-emerald-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300"
+                  >
+                    Lihat template undangan <span aria-hidden="true">→</span>
+                  </Link>
+                  <a
+                    href={waLink("Halo Subur Maju, saya ingin konsultasi layanan undangan digital Ruang Hati. Saya tertarik melihat pilihan template dan opsi paket undangan online + cetak.")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex min-h-12 items-center justify-center rounded-2xl border border-slate-700 bg-slate-900/70 px-6 py-3.5 text-sm font-semibold text-slate-200 transition hover:border-emerald-700 hover:bg-slate-900"
+                  >
+                    Tanya paket via WhatsApp
+                  </a>
+                </div>
+                <p className="mt-4 text-xs leading-5 text-slate-500">
+                  *Fitur dan opsi cetak dapat disesuaikan dengan template serta kebutuhan acara.
+                </p>
+              </div>
+
+              <div className="order-1 relative mx-auto w-full max-w-[440px] lg:order-2">
+                <div aria-hidden="true" className="absolute inset-8 rounded-[2.5rem] bg-emerald-800/20 blur-3xl" />
+                <div className="relative rounded-[2rem] border border-slate-700/80 bg-slate-900 p-3 shadow-2xl shadow-black/40">
+                  <div className="flex items-center justify-between px-3 pb-3 pt-1">
+                    <div>
+                      <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-300">Ruang Hati</p>
+                      <p className="mt-1 text-xs text-slate-400">Contoh tampilan undangan</p>
+                    </div>
+                    <span className="rounded-full border border-slate-700 px-2.5 py-1 text-[10px] text-slate-400">Mobile preview</span>
+                  </div>
+
+                  <Link href="/undangan-digital" aria-label="Lihat template undangan digital" className="group relative block overflow-hidden rounded-[1.5rem] bg-[#f6f1e7] text-center">
+                    <div className="relative h-[210px] overflow-hidden sm:h-[250px]">
+                      <img
+                        src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=85"
+                        alt="Inspirasi dekorasi pernikahan untuk contoh undangan digital"
+                        loading="lazy"
+                        className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-[#f6f1e7]" />
+                      <span className="absolute left-0 right-0 top-6 text-[9px] font-medium uppercase tracking-[0.3em] text-white">The Wedding Of</span>
+                    </div>
+                    <div className="relative -mt-9 px-5 pb-6 sm:px-8">
+                      <span className="mx-auto mb-3 flex h-9 w-9 items-center justify-center rounded-full border border-[#c6b58f] bg-[#f6f1e7] font-serif text-base italic text-[#7e8b70]">R</span>
+                      <p className="font-serif text-3xl italic tracking-tight text-[#455846]">Raisa <span className="text-[#ad9567]">&</span> Arka</p>
+                      <p className="mt-2 text-[9px] font-semibold uppercase tracking-[0.2em] text-[#8b8a79]">18 Oktober 2026 · Jakarta</p>
+                      <div className="mx-auto my-4 flex max-w-[170px] items-center gap-3">
+                        <span className="h-px flex-1 bg-[#d5c7aa]" />
+                        <span className="text-[10px] text-[#9a8055]">✦</span>
+                        <span className="h-px flex-1 bg-[#d5c7aa]" />
+                      </div>
+                      <p className="mx-auto max-w-[240px] font-serif text-sm italic leading-6 text-[#777d6c]">Dengan bahagia, kami mengundang Anda untuk hadir dan menjadi bagian dari cerita kami.</p>
+                      <span className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#405343] px-5 py-2.5 text-[10px] font-semibold text-white transition group-hover:bg-[#526b55]">Buka contoh undangan <span aria-hidden="true">↗</span></span>
+                    </div>
+                  </Link>
+                  <div className="flex items-center justify-between gap-3 px-2 pb-1 pt-3 text-[10px] text-slate-500">
+                    <span>Online invitation</span>
+                    <span className="text-emerald-300">Online + print, satu tempat</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
