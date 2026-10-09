@@ -25,12 +25,20 @@ export default function Catalog() {
     }
   };
 
-  const filteredProduk = dataProduk.filter((produk) => {
-    const query = searchQuery.toLowerCase();
+  const normalizedSearchQuery = searchQuery.trim().toLowerCase();
 
-    const matchesSearch =
-      produk.nama.toLowerCase().includes(query) ||
-      produk.deskripsi.toLowerCase().includes(query);
+  const filteredProduk = dataProduk.filter((produk) => {
+    const searchableText = [
+      produk.nama,
+      produk.deskripsi,
+      produk.kategori,
+      ...(produk.highlights || []),
+    ]
+      .filter(Boolean)
+      .join(" ")
+      .toLowerCase();
+
+    const matchesSearch = searchableText.includes(normalizedSearchQuery);
 
     const matchesCategory =
       selectedCategory === "Semua" ||
@@ -40,7 +48,7 @@ export default function Catalog() {
   });
 
   const displayedProduk =
-    searchQuery || selectedCategory !== "Semua" || showAll
+    normalizedSearchQuery || selectedCategory !== "Semua" || showAll
       ? filteredProduk
       : filteredProduk.slice(0, 6);
 
@@ -128,7 +136,10 @@ export default function Catalog() {
             {kategoriList.map((kategori, idx) => (
               <button
                 key={idx}
-                onClick={() => setSelectedCategory(kategori)}
+                onClick={() => {
+                setSelectedCategory(kategori);
+                setShowAll(false);
+              }}
                 className={`whitespace-nowrap px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 border ${
                   selectedCategory === kategori
                     ? "bg-orange-500 text-slate-950 border-orange-500 shadow-[0_0_15px_-3px_rgba(249,115,22,0.4)]"
@@ -251,7 +262,9 @@ export default function Catalog() {
 
             {/* ================= SHOW ALL ================= */}
 
-            {!searchQuery && selectedCategory === "Semua" && (
+            {!normalizedSearchQuery &&
+              selectedCategory === "Semua" &&
+              filteredProduk.length > 6 && (
               <div className="text-center mt-12">
 
                 {!showAll ? (
