@@ -18,7 +18,7 @@ export default function Page() {
     name:"Brosur Jakarta Timur",
     serviceType:"Brosur & Flyer",
     url,
-    description:"Pesan brosur dan flyer di Jakarta Timur melalui Subur Maju Printing. Konsultasikan ukuran, bahan, jumlah, dan kebutuhan cetak melalui WhatsApp.",
+    description:"Cetak brosur dan flyer untuk promosi produk, layanan, atau acara di Jakarta Timur. Konsultasikan ukuran, jumlah, jenis kertas, dan opsi lipatan dengan Subur Maju Printing.",
     provider:{"@type":"LocalBusiness",name:"Subur Maju Printing",url:SITE_URL,telephone:"+6282246926544"},
     areaServed:{"@type":"City",name:"Jakarta Timur"}
   };
@@ -29,11 +29,11 @@ export default function Page() {
   return <>
     <Head>
       <title>Brosur Jakarta Timur | Subur Maju Printing</title>
-      <meta name="description" content="Pesan brosur dan flyer di Jakarta Timur melalui Subur Maju Printing. Konsultasikan ukuran, bahan, jumlah, dan kebutuhan cetak melalui WhatsApp." />
+      <meta name="description" content="Cetak brosur dan flyer untuk promosi produk, layanan, atau acara di Jakarta Timur. Konsultasikan ukuran, jumlah, jenis kertas, dan opsi lipatan dengan Subur Maju Printing." />
       <meta name="robots" content="index, follow" />
       <link rel="canonical" href={url} />
       <meta property="og:title" content="Brosur Jakarta Timur | Subur Maju Printing" />
-      <meta property="og:description" content="Pesan brosur dan flyer di Jakarta Timur melalui Subur Maju Printing. Konsultasikan ukuran, bahan, jumlah, dan kebutuhan cetak melalui WhatsApp." />
+      <meta property="og:description" content="Cetak brosur dan flyer untuk promosi produk, layanan, atau acara di Jakarta Timur. Konsultasikan ukuran, jumlah, jenis kertas, dan opsi lipatan dengan Subur Maju Printing." />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={url} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema)}} />
@@ -43,7 +43,7 @@ export default function Page() {
       <section style={styles.hero}>
         <span style={styles.eyebrow}>SUBUR MAJU PRINTING · JAKARTA TIMUR</span>
         <h1 style={styles.heroTitle}>Brosur Jakarta Timur</h1>
-        <p>Pesan brosur dan flyer di Jakarta Timur melalui Subur Maju Printing. Konsultasikan ukuran, bahan, jumlah, dan kebutuhan cetak melalui WhatsApp.</p>
+        <p>Cetak brosur dan flyer untuk promosi produk, layanan, atau acara di Jakarta Timur. Konsultasikan ukuran, jumlah, jenis kertas, dan opsi lipatan dengan Subur Maju Printing.</p>
         <div style={styles.actions}>
           <a href={waLink("Halo Subur Maju, saya ingin pesan brosur & flyer.")} style={styles.primary}>Pesan via WhatsApp</a>
           <Link href="/" style={styles.secondary}>Lihat Semua Layanan</Link>
@@ -51,7 +51,7 @@ export default function Page() {
       </section>
       <section style={styles.section}>
         <h2>Cetak Brosur dan Flyer untuk Promosi</h2>
-        <p>Pesan brosur dan flyer di Jakarta Timur melalui Subur Maju Printing. Konsultasikan ukuran, bahan, jumlah, dan kebutuhan cetak melalui WhatsApp. Agar penawaran lebih akurat, siapkan ukuran jadi, jumlah cetak, jenis lipatan jika diperlukan, pilihan kertas bila sudah ditentukan, dan file desain. Jika belum memiliki desain final, tanyakan terlebih dahulu format file yang disarankan.</p>
+        <p>Cetak brosur dan flyer untuk promosi produk, layanan, atau acara di Jakarta Timur. Konsultasikan ukuran, jumlah, jenis kertas, dan opsi lipatan dengan Subur Maju Printing. Agar penawaran lebih akurat, siapkan ukuran jadi, jumlah cetak, jenis lipatan jika diperlukan, pilihan kertas bila sudah ditentukan, dan file desain. Jika belum memiliki desain final, tanyakan terlebih dahulu format file yang disarankan.</p>
         <div style={styles.grid}>
           <article style={styles.card}><h3>Konsultasi</h3><p>Diskusikan ukuran, bahan, jumlah, dan finishing sebelum produksi.</p></article>
           <article style={styles.card}><h3>Produksi</h3><p>Pesanan diproses berdasarkan spesifikasi yang telah disepakati.</p></article>
