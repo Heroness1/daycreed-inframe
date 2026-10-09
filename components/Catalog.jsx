@@ -15,11 +15,15 @@ export default function Catalog() {
       product_name: produkNama,
     });
     try {
-      await fetch('/api/notif', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ produkNama })
+      const response = await fetch("/api/notif", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ produkNama }),
       });
+
+      if (!response.ok) {
+        throw new Error(`Notif API failed: ${response.status}`);
+      }
     } catch (error) {
       console.error("Gagal mengirim notif", error);
     }
@@ -135,7 +139,7 @@ export default function Catalog() {
 
             {kategoriList.map((kategori, idx) => (
               <button
-                key={idx}
+                key={kategori}
                 onClick={() => {
                 setSelectedCategory(kategori);
                 setShowAll(false);
@@ -161,9 +165,9 @@ export default function Catalog() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-              {displayedProduk.map((produk, index) => (
+              {displayedProduk.map((produk) => (
                 <a
-                  key={index}
+                  key={produk.nama}
                   href={`https://wa.me/6282246926544?text=${encodeURIComponent(
                     `Halo Kak, saya mau tanya/pesan untuk layanan ${produk.nama}. Boleh minta info detailnya?`
                   )}`}
