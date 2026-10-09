@@ -301,6 +301,33 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ================= LANDING PAGE LAYANAN ================= */}
+        <section aria-labelledby="layanan-detail-title" className="relative py-20 px-6 bg-slate-950 border-y border-slate-800/70">
+          <div className="absolute top-0 left-1/4 w-80 h-80 bg-orange-500/5 rounded-full blur-[110px] pointer-events-none" />
+          <div className="max-w-7xl mx-auto relative z-10">
+            <div className="max-w-2xl mx-auto text-center mb-10">
+              <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-bold uppercase tracking-widest">Layanan Unggulan</span>
+              <h2 id="layanan-detail-title" className="text-3xl md:text-4xl font-extrabold text-white tracking-tight mt-4 mb-4">Cari Layanan yang Anda Butuhkan</h2>
+              <p className="text-slate-400 leading-relaxed">Pilih layanan untuk melihat informasi lebih lengkap, opsi pengerjaan, dan cara konsultasi dengan tim Subur Maju Printing.</p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                { title: "Hardcover Skripsi", description: "Jilid skripsi dan tugas akhir.", href: "/hardcover-skripsi-jakarta-timur", tag: "Akademik" },
+                { title: "Banner & Spanduk", description: "Media promosi untuk toko, bisnis, dan acara.", href: "/banner-jakarta-timur", tag: "Promosi" },
+                { title: "Stiker & Label", description: "Stiker produk, kemasan, dan branding.", href: "/stiker-jakarta-timur", tag: "Branding" },
+                { title: "Brosur & Flyer", description: "Materi promosi cetak untuk bisnis dan acara.", href: "/brosur-jakarta-timur", tag: "Marketing" },
+              ].map((item) => (
+                <Link key={item.href} href={item.href} className="group flex h-full flex-col rounded-3xl border border-slate-800 bg-slate-900/70 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-orange-500/50 hover:bg-slate-900 hover:shadow-xl hover:shadow-orange-950/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400">
+                  <span className="mb-5 w-fit rounded-full border border-orange-500/20 bg-orange-500/10 px-3 py-1 text-xs font-semibold text-orange-300">{item.tag}</span>
+                  <h3 className="text-xl font-bold text-white transition-colors group-hover:text-orange-400">{item.title}</h3>
+                  <p className="mt-2 flex-grow text-sm leading-relaxed text-slate-400">{item.description}</p>
+                  <span className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-orange-400">Lihat layanan <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span></span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ================= KATALOG ================= */}
         <div className="bg-slate-950">
           <Catalog />
