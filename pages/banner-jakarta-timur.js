@@ -18,7 +18,7 @@ export default function Page() {
     name:"Banner Jakarta Timur",
     serviceType:"Banner & Spanduk",
     url,
-    description:"Pesan banner dan spanduk di Jakarta Timur melalui Subur Maju Printing. Konsultasikan ukuran, bahan, dan kebutuhan cetak melalui WhatsApp.",
+    description:"Cetak banner dan spanduk untuk promosi toko, acara, atau usaha di Jakarta Timur. Konsultasikan ukuran, bahan, jumlah, dan spesifikasi pesanan melalui WhatsApp Subur Maju Printing.",
     provider:{"@type":"LocalBusiness",name:"Subur Maju Printing",url:SITE_URL,telephone:"+6282246926544"},
     areaServed:{"@type":"City",name:"Jakarta Timur"}
   };
@@ -29,11 +29,11 @@ export default function Page() {
   return <>
     <Head>
       <title>Banner Jakarta Timur | Subur Maju Printing</title>
-      <meta name="description" content="Pesan banner dan spanduk di Jakarta Timur melalui Subur Maju Printing. Konsultasikan ukuran, bahan, dan kebutuhan cetak melalui WhatsApp." />
+      <meta name="description" content="Cetak banner dan spanduk untuk promosi toko, acara, atau usaha di Jakarta Timur. Konsultasikan ukuran, bahan, jumlah, dan spesifikasi pesanan melalui WhatsApp Subur Maju Printing." />
       <meta name="robots" content="index, follow" />
       <link rel="canonical" href={url} />
       <meta property="og:title" content="Banner Jakarta Timur | Subur Maju Printing" />
-      <meta property="og:description" content="Pesan banner dan spanduk di Jakarta Timur melalui Subur Maju Printing. Konsultasikan ukuran, bahan, dan kebutuhan cetak melalui WhatsApp." />
+      <meta property="og:description" content="Cetak banner dan spanduk untuk promosi toko, acara, atau usaha di Jakarta Timur. Konsultasikan ukuran, bahan, jumlah, dan spesifikasi pesanan melalui WhatsApp Subur Maju Printing." />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={url} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema)}} />
@@ -43,7 +43,7 @@ export default function Page() {
       <section style={styles.hero}>
         <span style={styles.eyebrow}>SUBUR MAJU PRINTING · JAKARTA TIMUR</span>
         <h1 style={styles.heroTitle}>Banner Jakarta Timur</h1>
-        <p>Pesan banner dan spanduk di Jakarta Timur melalui Subur Maju Printing. Konsultasikan ukuran, bahan, dan kebutuhan cetak melalui WhatsApp.</p>
+        <p>Cetak banner dan spanduk untuk promosi toko, acara, atau usaha di Jakarta Timur. Konsultasikan ukuran, bahan, jumlah, dan spesifikasi pesanan melalui WhatsApp Subur Maju Printing.</p>
         <div style={styles.actions}>
           <a href={waLink("Halo Subur Maju, saya ingin pesan banner & spanduk.")} style={styles.primary}>Pesan via WhatsApp</a>
           <Link href="/" style={styles.secondary}>Lihat Semua Layanan</Link>
@@ -51,7 +51,7 @@ export default function Page() {
       </section>
       <section style={styles.section}>
         <h2>Cetak Banner dan Spanduk sesuai Kebutuhan</h2>
-        <p>Pesan banner dan spanduk di Jakarta Timur melalui Subur Maju Printing. Konsultasikan ukuran, bahan, dan kebutuhan cetak melalui WhatsApp. Sebelum meminta penawaran, siapkan ukuran banner, perkiraan jumlah, lokasi penggunaan (indoor atau outdoor), dan file desain jika sudah tersedia. Tim dapat membantu mengonfirmasi spesifikasi berdasarkan kebutuhan pesanan Anda.</p>
+        <p>Cetak banner dan spanduk untuk promosi toko, acara, atau usaha di Jakarta Timur. Konsultasikan ukuran, bahan, jumlah, dan spesifikasi pesanan melalui WhatsApp Subur Maju Printing. Sebelum meminta penawaran, siapkan ukuran banner, perkiraan jumlah, lokasi penggunaan (indoor atau outdoor), dan file desain jika sudah tersedia. Tim dapat membantu mengonfirmasi spesifikasi berdasarkan kebutuhan pesanan Anda.</p>
         <div style={styles.grid}>
           <article style={styles.card}><h3>Konsultasi</h3><p>Diskusikan ukuran, bahan, jumlah, dan finishing sebelum produksi.</p></article>
           <article style={styles.card}><h3>Produksi</h3><p>Pesanan diproses berdasarkan spesifikasi yang telah disepakati.</p></article>
