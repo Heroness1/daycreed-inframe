@@ -8,9 +8,9 @@ const waLink = (text) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(t
 export default function Page() {
   const url = `${SITE_URL}/brosur-jakarta-timur`;
   const faqs = [
-    { q: "Bisa pesan brosur & flyer di Jakarta Timur?", a: "Pesan brosur dan flyer di Jakarta Timur melalui Subur Maju Printing. Konsultasikan ukuran, bahan, jumlah, dan kebutuhan cetak melalui WhatsApp." },
-    { q: "Bisa konsultasi sebelum cetak?", a: "Bisa. Kirim ukuran, jumlah, bahan atau contoh desain melalui WhatsApp untuk dikonsultasikan." },
-    { q: "Bagaimana cara pesan?", a: "Hubungi WhatsApp Subur Maju Printing dan kirim detail kebutuhan cetak Anda." }
+    { q: "Bisa pesan brosur & flyer di Jakarta Timur?", a: "Butuh brosur atau flyer untuk memperkenalkan produk, layanan, atau acara? Konsultasikan ukuran, jumlah, jenis kertas, dan opsi lipatan yang dibutuhkan dengan Subur Maju Printing melalui WhatsApp." },
+    { q: "Informasi apa yang diperlukan untuk mencetak brosur?", a: "Siapkan ukuran, jumlah, jenis lipatan, pilihan kertas jika sudah tahu, dan file desain. Hubungi WhatsApp untuk mengonfirmasi spesifikasi dan estimasi harga." },
+    { q: "Apa perbedaan brosur dan flyer?", a: "Flyer umumnya berupa lembar promosi satu lembar, sedangkan brosur dapat memakai format lipat sesuai kebutuhan informasi. Pilihan format sebaiknya disesuaikan dengan konten dan tujuan promosi." }
   ];
   const schema = {
     "@context":"https://schema.org",
@@ -50,8 +50,8 @@ export default function Page() {
         </div>
       </section>
       <section style={styles.section}>
-        <h2>Brosur & Flyer di Jakarta Timur</h2>
-        <p>Pesan brosur dan flyer di Jakarta Timur melalui Subur Maju Printing. Konsultasikan ukuran, bahan, jumlah, dan kebutuhan cetak melalui WhatsApp. Kirim spesifikasi pesanan agar tim dapat membantu menentukan kebutuhan produksi yang sesuai.</p>
+        <h2>Cetak Brosur dan Flyer untuk Promosi</h2>
+        <p>Pesan brosur dan flyer di Jakarta Timur melalui Subur Maju Printing. Konsultasikan ukuran, bahan, jumlah, dan kebutuhan cetak melalui WhatsApp. Agar penawaran lebih akurat, siapkan ukuran jadi, jumlah cetak, jenis lipatan jika diperlukan, pilihan kertas bila sudah ditentukan, dan file desain. Jika belum memiliki desain final, tanyakan terlebih dahulu format file yang disarankan.</p>
         <div style={styles.grid}>
           <article style={styles.card}><h3>Konsultasi</h3><p>Diskusikan ukuran, bahan, jumlah, dan finishing sebelum produksi.</p></article>
           <article style={styles.card}><h3>Produksi</h3><p>Pesanan diproses berdasarkan spesifikasi yang telah disepakati.</p></article>
