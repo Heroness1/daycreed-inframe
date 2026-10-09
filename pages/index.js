@@ -333,151 +333,118 @@ export default function Home() {
           <Catalog />
         </div>
 
-                   {/* ================= PROMO UNDANGAN DIGITAL (NEW) ================= */}
-        <section aria-labelledby="undangan-promo" className="py-16 px-6 bg-slate-950 relative overflow-hidden border-t border-slate-800/50">
-          <div className="absolute top-0 right-1/4 w-72 h-72 bg-amber-600/10 rounded-full blur-[100px] pointer-events-none" />
-          <div className="max-w-7xl mx-auto">
-            <div className="bg-gradient-to-br from-slate-900 to-slate-900/50 border border-slate-800 rounded-[2.5rem] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-10 relative overflow-hidden">
-              
-              {/* Efek kilau di background */}
-              <div className="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-orange-500/10 to-transparent pointer-events-none" />
-              
-              <div className="md:w-2/3 relative z-10">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-bold tracking-widest uppercase border border-amber-500/20 mb-5">
-                  ✨ Layanan Baru
-                </span>
-                <h2 id="undangan-promo" className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-5 leading-tight">
-                  Buat Undangan Pernikahan <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-400">Berbasis Web</span>
-                </h2>
-                <p className="text-slate-400 text-lg mb-8 max-w-xl leading-relaxed">
-                  Tinggalkan cara lama. Bagikan momen bahagiamu dengan undangan digital elegan yang bisa diakses dari mana saja. Dilengkapi fitur buku tamu, countdown acara, dan integrasi Google Maps otomatis.
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  {/* Link demo sudah disesuaikan ke Lure-Annabey */}
-                  <Link href="/undangan-digital" className="bg-white/10 hover:bg-white/20 border border-white/20 text-white px-8 py-4 rounded-full font-semibold transition-all">
-                    Lihat Demo Desain
-                  </Link>
-                  <a href={waLink("Halo Kak, saya mau konsultasi pembuatan Undangan Pernikahan Digital Website.")} target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-500 hover:to-amber-500 text-white px-8 py-4 rounded-full font-bold transition-all shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40">
-                    Pesan Sekarang
-                  </a>
+                   {/* ================= UNDANGAN DIGITAL ================= */}
+        <section
+          id="undangan"
+          aria-labelledby="undangan-promo"
+          className="relative isolate overflow-hidden border-y border-[#e7dfd1] bg-[#f7f3eb] px-5 py-16 text-[#25352d] sm:px-8 sm:py-20 lg:py-28"
+        >
+          <div aria-hidden="true" className="pointer-events-none absolute -right-28 -top-28 h-80 w-80 rounded-full bg-[#d9c39a]/35 blur-3xl" />
+          <div aria-hidden="true" className="pointer-events-none absolute -bottom-36 -left-24 h-96 w-96 rounded-full bg-[#b5c1ad]/30 blur-3xl" />
+
+          <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1fr_0.9fr] lg:gap-16">
+            <div className="order-2 max-w-2xl lg:order-1">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#c7b58e]/70 bg-white/70 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[#8b7043] shadow-sm">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#9b8050]" />
+                Ruang Hati · by Subur Maju
+              </div>
+
+              <p className="mb-3 font-serif text-lg italic text-[#8a927f] sm:text-xl">
+                Sebuah awal, cerita seumur hidup.
+              </p>
+              <h2 id="undangan-promo" className="max-w-xl text-4xl font-semibold leading-[1.08] tracking-[-0.045em] text-[#26372e] sm:text-5xl lg:text-6xl">
+                Undangan yang terasa <span className="font-serif font-normal italic text-[#9a7a45]">seistimewa</span> hari kalian.
+              </h2>
+              <p className="mt-6 max-w-xl text-base leading-8 text-[#69736a] sm:text-lg">
+                Ceritakan hari bahagia lewat undangan website yang elegan, mudah dibagikan, dan nyaman dibuka dari ponsel. Dibuat personal untuk kisah kalian—dengan detail acara, peta lokasi, RSVP, dan hitung mundur.
+              </p>
+
+              <div className="mt-8 grid max-w-xl grid-cols-2 gap-x-5 gap-y-4 border-y border-[#dcd4c6] py-5 sm:grid-cols-3">
+                <div>
+                  <span className="mb-1 block text-[10px] font-bold uppercase tracking-[0.16em] text-[#9a8055]">01</span>
+                  <span className="text-sm font-semibold text-[#35463a]">Desain personal</span>
+                </div>
+                <div>
+                  <span className="mb-1 block text-[10px] font-bold uppercase tracking-[0.16em] text-[#9a8055]">02</span>
+                  <span className="text-sm font-semibold text-[#35463a]">RSVP & lokasi</span>
+                </div>
+                <div className="col-span-2 sm:col-span-1">
+                  <span className="mb-1 block text-[10px] font-bold uppercase tracking-[0.16em] text-[#9a8055]">03</span>
+                  <span className="text-sm font-semibold text-[#35463a]">Mudah dibagikan</span>
                 </div>
               </div>
-              
-              {/* Mockup Visual Hape - Tema Floral Gold (Sesuai Referensi) */}
-              <div className="md:w-1/3 w-full relative z-10 flex justify-center mt-12 md:mt-0">
-                <Link href="/undangan-digital" className="block relative group">
-                  
-                  {/* Efek Cahaya Background Luar */}
-                  <div className="absolute -inset-2 bg-gradient-to-r from-amber-200/50 to-orange-100/50 rounded-[3.5rem] blur-2xl opacity-50 group-hover:opacity-100 transition duration-700"></div>
 
-                  {/* Frame HP */}
-                  <div className="w-[280px] h-[560px] bg-[#FCFAF8] border-[6px] border-slate-800 rounded-[3rem] overflow-hidden relative shadow-2xl transform transition-all duration-700 ease-out group-hover:-translate-y-2 group-hover:rotate-0 rotate-2 ring-4 ring-slate-900/30">
-
-                    {/* Notch / Poni Kamera HP */}
-                    <div className="absolute top-2 left-1/2 -translate-x-1/2 w-20 h-5 bg-black rounded-full z-40 flex items-center justify-end px-2 shadow-sm">
-                       <div className="w-2 h-2 bg-indigo-900/80 rounded-full"></div>
-                    </div>
-
-                    {/* Ornamen Daun Kering (Pojok Atas & Bawah) */}
-                    <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0 overflow-hidden">
-                      <div className="absolute -top-4 -left-6 w-24 h-24 bg-[url('https://images.unsplash.com/photo-1603893641258-0051cb7e5ac5?q=80&w=200')] bg-cover opacity-20 mix-blend-multiply rotate-45 rounded-full blur-[1px]"></div>
-                      <div className="absolute -top-4 -right-6 w-24 h-24 bg-[url('https://images.unsplash.com/photo-1603893641258-0051cb7e5ac5?q=80&w=200')] bg-cover opacity-20 mix-blend-multiply -rotate-90 rounded-full blur-[1px]"></div>
-                      <div className="absolute -bottom-6 -left-6 w-28 h-28 bg-[url('https://images.unsplash.com/photo-1603893641258-0051cb7e5ac5?q=80&w=200')] bg-cover opacity-20 mix-blend-multiply -rotate-45 rounded-full blur-[1px]"></div>
-                      <div className="absolute -bottom-6 -right-6 w-28 h-28 bg-[url('https://images.unsplash.com/photo-1603893641258-0051cb7e5ac5?q=80&w=200')] bg-cover opacity-20 mix-blend-multiply rotate-180 rounded-full blur-[1px]"></div>
-                    </div>
-
-                    {/* Konten Undangan dalam Layar HP */}
-                    <div className="absolute inset-0 z-10 flex flex-col items-center pt-8 pb-12 px-5 text-center overflow-y-auto scrollbar-hide text-stone-700">
-
-                      {/* Foto Couple Kartun/Animasi 2D dengan Masking Awan */}
-                      <div className="relative w-28 h-28 mt-2 mb-3">
-                        <div className="absolute inset-0 bg-[#F2E8D9] rounded-full opacity-50 blur-md transform scale-110"></div>
-                        <img
-                          src="https://images.unsplash.com/photo-1659095141570-be8b9aff59ce?auto=format&fit=crop&q=80&w=300" 
-                          alt="Ilustrasi Pasangan"
-                          className="w-full h-full object-cover p-1 bg-white shadow-sm"
-                          style={{ clipPath: 'polygon(50% 0%, 85% 10%, 100% 50%, 85% 90%, 50% 100%, 15% 90%, 0% 50%, 15% 10%)', borderRadius: '40% 60% 70% 30% / 40% 50% 60% 50%' }}
-                        />
-                      </div>
-
-                      {/* Teks Pembuka Baru */}
-                      <p className="text-[5px] font-medium leading-[1.4] mb-3 px-1 text-stone-600">
-                        Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i sekalian untuk berkenan hadir dan memberikan doa restu pada acara pernikahan kami:
-                      </p>
-
-                      {/* Nama Lure */}
-                      <h3 className="text-xl font-serif italic text-[#A47E45] mt-1 mb-0.5" style={{ textShadow: '0 1px 1px rgba(164, 126, 69, 0.2)' }}>
-                        Lure, S.Kom.
-                      </h3>
-                      <p className="text-[5.5px] font-medium text-stone-600 mb-1.5">Putri dari Bapak H. Fulan & Ibu Hj. Fulanah</p>
-
-                      <span className="text-[10px] font-serif italic text-stone-500 my-0.5">&</span>
-
-                      {/* Nama Annabey */}
-                      <h3 className="text-xl font-serif italic text-[#A47E45] mt-1 mb-0.5" style={{ textShadow: '0 1px 1px rgba(164, 126, 69, 0.2)' }}>
-                        Annabey, S.M.
-                      </h3>
-                      <p className="text-[5.5px] font-medium text-stone-600 mb-3">Putra dari Bapak Fulan & Ibu Fulanah</p>
-
-                      {/* Ornamen Pemisah Bunga Kecil */}
-                      <div className="flex items-center justify-center gap-1 mb-3 opacity-80">
-                         <div className="h-px w-6 bg-gradient-to-r from-transparent to-[#8BA087]"></div>
-                         <span className="text-[6px] text-[#8BA087]">🌿</span>
-                         <div className="h-px w-6 bg-gradient-to-l from-transparent to-[#8BA087]"></div>
-                      </div>
-
-                      {/* Kutipan Pengganti Protokol */}
-                      <p className="text-[4.5px] font-medium leading-[1.4] px-1 mb-4 text-stone-600 italic">
-                        "Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan untukmu..." (QS. Ar-Rum: 21)
-                      </p>
-
-                      {/* Jadwal Acara Baru */}
-                      <div className="w-full flex justify-between px-2 mb-4">
-                        <div className="text-center w-1/2 pr-1">
-                          <h4 className="text-[11px] font-serif italic text-[#A47E45] mb-1.5">Akad Nikah</h4>
-                          <p className="text-[4.5px] font-bold text-stone-700 mb-0.5">JUM'AT, 09 OKTOBER 2026</p>
-                          <p className="text-[4.5px] text-stone-700">Pukul 09.00 WIB</p>
-                        </div>
-                        <div className="text-center w-1/2 pl-1 border-l border-stone-300/50">
-                          <h4 className="text-[11px] font-serif italic text-[#A47E45] mb-1.5">Resepsi</h4>
-                          <p className="text-[4.5px] font-bold text-stone-700 mb-0.5">SABTU, 10 OKTOBER 2026</p>
-                          <p className="text-[4.5px] text-stone-700">Pukul 11.00 WIB - Selesai</p>
-                        </div>
-                      </div>
-
-                      {/* QR Code */}
-                      <div className="flex flex-col items-center mb-3">
-                        <p className="text-[4px] font-bold tracking-widest text-stone-500 mb-1">SCAN KEHADIRAN</p>
-                        <div className="p-0.5 bg-white border border-stone-300 shadow-sm">
-                          <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://suburmaju.com/undangan/Lure-Annabey" alt="QR Code" className="w-9 h-9" />
-                        </div>
-                      </div>
-
-                      {/* Alamat Mewah */}
-                      <p className="text-[4.5px] font-bold text-stone-700 mb-1.5 px-2 leading-[1.3]">
-                        The Tribrata Darmawangsa, Grand Ballroom<br />Jakarta Selatan
-                      </p>
-                      <p className="text-[4.5px] text-stone-500 font-medium px-2 leading-[1.3]">
-                        Merupakan suatu kehormatan apabila Bapak/Ibu/Saudara/i berkenan hadir.
-                      </p>
-
-                    </div>
-
-                    {/* Tombol Aksi Melayang di Bawah HP */}
-                    <div className="absolute bottom-3 left-0 w-full flex justify-center z-20">
-                      <div className="px-5 py-2 bg-gradient-to-r from-[#B49157] to-[#CBA365] text-white text-[8px] font-bold tracking-widest uppercase rounded-full shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 border border-[#F2E8D9]/50">
-                        Buka Undangan
-                      </div>
-                    </div>
-
-                  </div>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href="/undangan-digital"
+                  className="inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-[#2d4034] px-7 py-4 text-sm font-semibold text-white shadow-lg shadow-[#314536]/15 transition duration-300 hover:-translate-y-0.5 hover:bg-[#3c5544] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#9a8055] focus-visible:ring-offset-2"
+                >
+                  Jelajahi koleksi template
+                  <span aria-hidden="true" className="text-lg">↗</span>
                 </Link>
+                <a
+                  href={waLink("Halo Subur Maju, saya ingin konsultasi undangan pernikahan digital dari Ruang Hati. Boleh lihat pilihan template dan paketnya?")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-14 items-center justify-center rounded-full border border-[#c9c1b2] bg-white/55 px-7 py-4 text-sm font-semibold text-[#35463a] transition duration-300 hover:border-[#8d9a86] hover:bg-white"
+                >
+                  Konsultasi via WhatsApp
+                </a>
               </div>
+              <p className="mt-4 text-xs leading-5 text-[#7d857b]">
+                Pilih desain, sesuaikan detail acara, lalu bagikan tautannya kepada keluarga dan teman.
+              </p>
+            </div>
+
+            <div className="order-1 relative mx-auto flex w-full max-w-[440px] items-center justify-center py-2 lg:order-2 lg:max-w-none">
+              <div aria-hidden="true" className="absolute inset-x-8 top-10 bottom-10 rounded-[3rem] bg-[#d9c9a9]/50 blur-3xl" />
+              <div aria-hidden="true" className="absolute right-0 top-10 hidden rounded-2xl border border-white/80 bg-white/75 px-4 py-3 shadow-lg backdrop-blur-md sm:block">
+                <span className="block text-[10px] uppercase tracking-[0.18em] text-[#9a8055]">Made for your story</span>
+                <span className="mt-1 block font-serif text-sm italic text-[#405343]">Thoughtfully yours</span>
+              </div>
+              <div aria-hidden="true" className="absolute bottom-12 left-0 hidden rounded-2xl border border-white/80 bg-white/80 px-4 py-3 shadow-lg backdrop-blur-md sm:block">
+                <span className="flex items-center gap-2 text-xs font-semibold text-[#405343]">
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#e8ecdf] text-[#687b62]">♡</span>
+                  RSVP & detail acara
+                </span>
+              </div>
+
+              <Link href="/undangan-digital" aria-label="Lihat koleksi undangan digital Ruang Hati" className="group relative block w-[min(78vw,300px)] rounded-[2.6rem] border-[7px] border-[#29332d] bg-[#29332d] p-[5px] shadow-[0_35px_90px_-28px_rgba(40,49,39,0.5)] transition duration-700 hover:-translate-y-2 sm:w-[300px]">
+                <div className="absolute left-1/2 top-3 z-20 h-5 w-[76px] -translate-x-1/2 rounded-full bg-[#202823]" />
+                <div className="relative min-h-[470px] overflow-hidden rounded-[2.1rem] bg-[#f8f3e8] sm:min-h-[500px]">
+                  <div className="relative h-[245px] overflow-hidden">
+                    <img
+                      src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=85"
+                      alt="Dekorasi pernikahan bernuansa romantis sebagai contoh desain undangan"
+                      loading="lazy"
+                      className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-[#f8f3e8]" />
+                    <div className="absolute left-0 right-0 top-10 text-center text-white">
+                      <span className="text-[8px] uppercase tracking-[0.32em]">The Wedding Of</span>
+                    </div>
+                  </div>
+                  <div className="relative -mt-12 px-5 pb-7 text-center">
+                    <span className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full border border-[#c9b58d] bg-[#f8f3e8] font-serif text-lg italic text-[#9a8055]">R</span>
+                    <p className="font-serif text-[31px] italic leading-none tracking-[-0.04em] text-[#56694f]">Raisa <span className="text-[#b29a6d]">&</span> Arka</p>
+                    <p className="mt-3 text-[8px] font-medium uppercase tracking-[0.24em] text-[#8d8b79]">Minggu, 18 Oktober 2026</p>
+                    <div className="mx-auto my-5 flex max-w-[170px] items-center gap-3">
+                      <span className="h-px flex-1 bg-[#d5c7aa]" />
+                      <span className="text-[10px] text-[#9a8055]">✦</span>
+                      <span className="h-px flex-1 bg-[#d5c7aa]" />
+                    </div>
+                    <p className="mx-auto max-w-[190px] font-serif text-sm italic leading-6 text-[#777d6c]">Dengan penuh cinta, kami mengundang Anda untuk menjadi bagian dari hari istimewa kami.</p>
+                    <div className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#405343] px-5 py-2.5 text-[9px] font-semibold uppercase tracking-[0.15em] text-white shadow-md">
+                      Buka undangan <span aria-hidden="true">↗</span>
+                    </div>
+                    <p className="mt-4 text-[8px] uppercase tracking-[0.2em] text-[#a49b87]">A little story, forever remembered</p>
+                  </div>
+                </div>
+              </Link>
+              <span aria-hidden="true" className="absolute -bottom-1 right-4 font-serif text-5xl italic text-[#b9a47d]/70 sm:right-10">♡</span>
             </div>
           </div>
         </section>
-                       
-
 
         {/* ================= WHY US ================= */}
         <section id="kenapa-kami" aria-labelledby="kenapa-title" className="py-24 px-6 bg-slate-900 border-y border-slate-800">
