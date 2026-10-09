@@ -78,6 +78,8 @@ const styles={
  page:{minHeight:"100vh",background:"#080808",color:"#fff",fontFamily:"system-ui,-apple-system,BlinkMacSystemFont,sans-serif"},
  hero:{maxWidth:900,margin:"0 auto",padding:"96px 24px 72px"},
  eyebrow:{fontSize:12,letterSpacing:"0.14em",opacity:.65},
+ heroTitle:{fontSize:"clamp(42px,8vw,78px)",lineHeight:1,margin:"18px 0"},
+ heroText:{maxWidth:680,fontSize:18,lineHeight:1.7,opacity:.78},
  actions:{display:"flex",gap:12,flexWrap:"wrap",marginTop:30},
  primary:{padding:"14px 20px",borderRadius:999,background:"#fff",color:"#080808",textDecoration:"none",fontWeight:700},
  secondary:{padding:"14px 20px",borderRadius:999,border:"1px solid #333",color:"#fff",textDecoration:"none"},
